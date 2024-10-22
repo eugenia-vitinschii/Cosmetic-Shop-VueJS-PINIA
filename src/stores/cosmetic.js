@@ -17,5 +17,14 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
            console.err("fetchCosmetics error:", error);
          }
        },
+       async fetchCosmeticsById(id) {
+         // get Cosmetics from db.json by id
+         try {
+           const response = await axios.get(`${baseUrl}/cosmetics/${id}`);
+           this.cosmetics = response.data;
+         } catch (error) {
+           console.error("fetchCosmeticsById(id) error:", error);
+         }
+       },
    }
 })

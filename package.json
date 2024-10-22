@@ -8,12 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vueuse/core": "^11.1.0",
     "axios": "^1.7.7",
     "core-js": "^3.8.3",
     "pinia": "^2.2.4",
     "vue": "^3.2.13",
-    "vue-router": "^4.4.5",
-    "webpack": "^5.95.0"
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -23,7 +23,8 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "sass": "^1.80.3"
+    "sass": "^1.80.3",
+    "webpack": "^5.95.0"
   },
   "eslintConfig": {
     "root": true,

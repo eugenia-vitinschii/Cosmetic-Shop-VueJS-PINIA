@@ -1,5 +1,10 @@
 <template>
-   <p class="heading">header</p>
+   <ul>
+      <li>
+         <router-link class="body-text" to="/">Home</router-link>
+      </li>
+   </ul>
+   
 </template>
 
 

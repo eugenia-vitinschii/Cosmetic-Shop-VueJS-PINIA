@@ -6,7 +6,11 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
    state: () => ({
       cosmetics: []
    }),
-   getters: {},
+   getters: {
+    fileredByBrand: (state) => {
+      return (brandName) => state.cosmetics.filter((item) => item.brand === brandName )
+    }
+   },
    actions: {
       async fetchCosmetics() {
          // get cosmetics from db.json

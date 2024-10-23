@@ -1,71 +1,72 @@
 <template>
   <div class="product__item">
+    <!-- top block  type/ img / price-->
     <div class="product__top">
       <div class="product__content">
         <div class="product__content--brand">
-          <p class="body-text">{{ brand }} / {{ category }}</p>
+          <router-link :to="'/brand/'+brand">
+            <p class="body-text">
+            {{ brand }} 
+          </p>
+          </router-link>
+          <p class="body-text-light">/{{ category }}</p>
         </div>
         <div class="product__content--name">
-          <p class="subheading">{{ name }}</p>
+          <p class="heading">{{ name }}</p>
         </div>
         <div class="product__content--type">
-          <p class="body-text">
+          <p class="small-text">
             {{ product_type }}
           </p>
         </div>
-        <div>
+        <div class="product__content--color" v-if="selected">
           <svg
-            version="1.1"
-            id="Layer_1"
+          fill="#FDFCFA"
+            id="visual"
+            viewBox="0 0 900 600"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 512.001 512.001"
-            xml:space="preserve"
+            version="1.1"
           >
-            <path
-              :style="{ fill: selected }"
-              d="M498.804,31.056L498.804,31.056c-51.112-20.961-109.812-9.179-148.875,29.884l-92.679,92.679
-	l80.325,80.325L505.769,65.751C516.503,55.017,512.85,36.816,498.804,31.056z"
-            />
-            <path
-              :style="{ fill: selected }"
-              d="M498.804,31.056L498.804,31.056c-51.112-20.961-109.812-9.179-148.875,29.884
-	c0,0,42.894,51.236,155.84,4.811C516.503,55.017,512.85,36.816,498.804,31.056z"
-            />
-            <path
-              style="fill: #ffd782"
-              d="M138.019,249.005l116.373-116.373c15.545-2.126,42.765,12.215,67.361,36.81
-	c24.596,24.595,38.936,51.816,36.81,67.361L242.19,353.176L138.019,249.005z"
-            />
-            <path
-              style="opacity: 0.1; enable-background: new"
-              d="M334.064,182.979c-3.744-4.541-7.857-9.083-12.311-13.536
-	c-24.595-24.595-51.816-38.936-67.361-36.81L138.018,249.006l25.848,25.848L280.238,158.48
-	C292.97,156.739,313.529,166.046,334.064,182.979z"
-            />
-            <path
-              style="fill: #5b5d6e"
-              d="M125.312,490.946c-18.663,2.553-51.342-14.666-80.869-44.193
-	c-29.529-29.529-46.746-62.207-44.194-80.87l151.647-151.647c18.663-2.553,51.342,14.666,80.869,44.193s46.746,62.207,44.193,80.869
-	L125.312,490.946z"
-            />
-            <path
-              style="opacity: 0.1; enable-background: new"
-              d="M43.33,408.962l151.647-151.647c13.892-1.9,35.549,7.16,57.892,24.091
-	c-5.816-7.674-12.553-15.428-20.102-22.977c-29.529-29.529-62.207-46.746-80.869-44.193L0.25,365.882
-	c-2.553,18.663,14.664,51.342,44.193,80.869c7.548,7.548,15.303,14.288,22.977,20.102C50.489,444.512,41.43,422.853,43.33,408.962z"
-            />
+            <rect
+              x="0"
+              y="0"
+            ></rect>
+            <g transform="translate(399.3051184116206 277.2495989263084)">
+              <path
+                d="M145.5 -191.7C188.8 -168.9 224.2 -126.6 246.2 -76C268.2 -25.3 276.8 33.7 258.9 82.7C241 131.6 196.6 170.6 149 204.3C101.5 238 50.7 266.5 7.1 256.8C-36.6 247.1 -73.3 199.2 -97.1 157.8C-120.8 116.3 -131.8 81.3 -144.3 46.1C-156.9 10.8 -171.2 -24.7 -166.1 -58.2C-161.1 -91.7 -136.7 -123.1 -105.8 -149.9C-74.8 -176.7 -37.4 -198.8 6.9 -208.3C51.1 -217.7 102.3 -214.4 145.5 -191.7"
+                :style="{ fill: selected }"
+              ></path>
+            </g>
           </svg>
         </div>
       </div>
-      <div class="product__img">
-        <img :src="image_link" alt="product" v-if="image_link" />
-        <img :src="api_featured_image" alt="product" v-else />
+      <!-- item img -->
+      <div class="product__images">
+        <div class="product__img">
+          <img :src="image_link" alt="product" v-if="image_link" />
+          <img :src="api_featured_image" alt="product" v-else />
+        </div>
       </div>
+
+      <!-- item price & colors  -->
       <div class="product__info">
         <div class="product__info--price">
           <p class="body-text">{{ price }} {{ price_sign }}</p>
-          <p class="body-text">heart</p>
+        </div>
+        <div class="product__info--buttons">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#e8eaed"
+          >
+            <path
+              d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"
+            />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
         </div>
         <div class="product__info--colors">
           <select name="colors" id="selected-color" v-model="selected">
@@ -78,16 +79,26 @@
               {{ item.colour_name }}
             </option>
           </select>
-          <div class="option-color" :style="{ background: selected }">
-            <p>{{ selected }}</p>
+          <div class="color">
+            <div
+              class="color__wrapper"
+              v-for="item in product_colors"
+              :key="item.hex_value"
+              :value="item.hex_value"
+            >
+              <div class="color__item" :style="{ background: item.hex_value }">
+                <p class="color__text">{{ item.colour_name }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- description & tags -->
     <div class="product__bottom">
-      <p class="body__text">description {{ description }}</p>
+      <p class="body-text">{{ description }}</p>
       <p
-        class="body__text"
+        class="small-text"
         v-for="(item, index) in tag_list"
         :index="index"
         :key="index"
@@ -96,8 +107,6 @@
       </p>
     </div>
   </div>
-  <p>----------</p>
-  <!-- :id product -->
 </template>
 
 <script setup>

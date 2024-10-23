@@ -1,5 +1,8 @@
 <template>
   <p class="heading">Home page {{ cosmetics.length }}</p>
+  <p class="subheading">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  <p class="body-text">Lorem ipsum dolor sit amet.</p>
+  <p class="small-text">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
   <div class="item">
     <div class="container">
       <div 
@@ -11,6 +14,7 @@
           :key="item.id"
           :id="item.id"
           :image_link="item.image_link"
+          :api_featured_image="item.api_featured_image"
           :name="item.name"
           :product_type="item.product_type"
           :price="item.price"

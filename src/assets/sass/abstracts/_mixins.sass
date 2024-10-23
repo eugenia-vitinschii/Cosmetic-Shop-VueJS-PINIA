@@ -2,20 +2,42 @@
    text-align: center
    padding: 5px 20px
    margin: 10px 5px
-   font-size: $body-text-sm
    border: $border
    color: $color
    background: $bg
-   transition: $transnision
+   transition: $transition //hj
 
-   
-@mixin font-style($font-size, $padding-top, $text-align, $white)
-   font-size: $font-size
+@mixin font-style( $color, $padding-top, $text-align)
+   color: $color
    padding-top: $padding-top
    text-align: $text-align
-   color: $white 
+   
+@mixin font-size($font-size, $line-height)
+   font-size: $font-size
+   line-height: $line-height
 
 @mixin section-wrapper
    margin-top: $margin-top
    border: $border
-   padding: $margin-top
+   padding: $margin-top //kk
+
+//img style
+@mixin img-style
+   width: 100%
+   padding: 3px
+   margin: 3px
+   overflow: hidden
+   background: $light-gray
+   border: 1px solid $light-gray
+   border-radius: 30px
+   background-size: cover
+   -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+
+
+//hover img
+@mixin img-style-hover
+   -webkit-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
+   -moz-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
+   box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)

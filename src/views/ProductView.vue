@@ -2,14 +2,14 @@
    <!-- product page  -->
   <div class="product">
     <div class="container">
-      <div class="product__wrapper">
+      <div class="product__wrapper" v-if="created">
          <!-- product item -->
         <the-product
           :id="cosmetics.id"
           :image_link="cosmetics.image_link"
           :name="cosmetics.name"
           :product_type="cosmetics.product_type"
-          :price=cosmetics.price
+          :price="cosmetics.price"
           :price_sign="cosmetics.price_sign"
           :api_featured_image="cosmetics.api_featured_image"
           :brand="cosmetics.brand"
@@ -25,7 +25,7 @@
 
 <script setup>
 //vue
-import { defineOptions, onMounted, onUnmounted } from "vue";
+import { defineOptions, ref,  onMounted, onUnmounted } from "vue";
 // components
 import TheProduct from "@/components/TheProduct.vue";
 //pinia & router
@@ -43,7 +43,11 @@ const id = route.params.id;
 const { cosmetics } = storeToRefs(store);
 const { fetchCosmeticsById } = store;
 
+let created = ref(false);
+
+
 onMounted(() => {
+  created.value = true
   fetchCosmeticsById(id);
 });
 

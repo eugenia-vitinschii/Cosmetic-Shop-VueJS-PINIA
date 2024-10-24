@@ -14,11 +14,25 @@
    @include font-style( $light-brown, 10px, left)
    @include font-size($body-text-small, 24px)
 
-// @media (max-width: 767px)
 
-a 
-   color: $white
+// medium devices
+@media (max-width: 1024px)
+   .heading
+      @include font-size($heading-md, 38px)
+   .subheading 
+      @include font-size($subheading-md, 28px)
+   .body-text, .body-text-light
+      @include font-size($body-text-md, 22px)
+   .small-text
+      @include font-size($body-text-small-md, 20px)
+// small devices
+@media (max-width: 767px)
+   .heading
+      @include font-size($heading-sm, 35px)
+   .subheading 
+      @include font-size($subheading-sm, 26px)
+   .body-text, .body-text-light
+      @include font-size($body-text-sm, 20px)
+   .small-text
+      @include font-size($body-text-small-sm, 18px)  
 
-
-a:hover
-   text-decoration: underline

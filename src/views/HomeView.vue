@@ -1,12 +1,10 @@
 <template>
   <p class="heading">Home page {{ cosmetics.length }}</p>
-  <p class="subheading">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-  <p class="body-text">Lorem ipsum dolor sit amet.</p>
-  <p class="small-text">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
   <div class="item">
     <div class="container">
       <div 
-      class="item__wrapper"
+      class="item__wrapper products-wrapper"
       v-if="created"
       >
         <the-item

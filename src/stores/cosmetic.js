@@ -9,7 +9,18 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
    getters: {
     fileredByBrand: (state) => {
       return (brandName) => state.cosmetics.filter((item) => item.brand === brandName )
-    }
+    },
+    fileredByProductType: (state) => {
+      return (productType) => state.cosmetics.filter((item) => item.product_type === productType )
+    },
+    // category
+    fileredByCategory: (state) => {
+      return (theCategory) => state.cosmetics.filter((item) => item.category === theCategory)
+    },
+    allBrand: (state) => {
+      let c = state.cosmetics
+      return c 
+    },
    },
    actions: {
       async fetchCosmetics() {

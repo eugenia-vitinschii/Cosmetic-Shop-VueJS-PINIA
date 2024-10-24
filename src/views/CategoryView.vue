@@ -2,12 +2,12 @@
    <div class="brand">
       <div class="container">
          <div class="brand__title">
-            <p class="heading">The {{ brand }}</p>
-            <p class="small-text">{{fileredByBrand(brand).length }}</p>
+            <p class="heading">The {{ category}}</p>
+            <p class="small-text">{{fileredByCategory(category).length }}</p>
          </div>
          <div class="brand__wrapper  products-wrapper"  v-if="created">
         <the-item
-          v-for="item in fileredByBrand(brand)"
+          v-for="item in fileredByCategory(category)"
           :key="item.id"
           :id="item.id"
           :image_link="item.image_link"
@@ -36,16 +36,16 @@ import { useCosmeticStore } from '@/stores/cosmetic';
 import { storeToRefs } from 'pinia';
 
 defineOptions({
-   name: "BrandView"
+   name: "CategoryView"
 })
 const store = useCosmeticStore();
 const { fetchCosmetics} = store;
-const { fileredByBrand} = storeToRefs(store);
+const { fileredByCategory} = storeToRefs(store);
 
 
 
 const route = useRoute();
-const brand = route.params.brand
+const category = route.params.category
 
 let created = ref(false);
 

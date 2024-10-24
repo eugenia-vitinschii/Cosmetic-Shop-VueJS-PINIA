@@ -1,24 +1,15 @@
 .item
    &__wrapper
-      display: flex
-      flex-direction: row
-      justify-content: space-between
-      flex-wrap: wrap
    &__item
       display: flex
       flex-direction: column
       align-items: center
       border: 1px solid $white
-      width: 250px
-      margin: 5px
-      padding: 5px
+      padding: $margin-sm
    &__item:hover
-      border-radius: 30px
-      -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-      -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-      box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+      @include section-wrapper-item
    &__img
-      height: 300px
       @include img-style
+      height: 300px
       img
          width: 100%

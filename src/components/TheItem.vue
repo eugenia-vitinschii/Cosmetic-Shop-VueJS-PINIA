@@ -11,14 +11,15 @@
          <p class="body-text">
             {{ name }}
          </p>
-         <p pclass="body__text">
+         <p pclass="body-text">
             {{ item_type }}
          </p>
       </div>
       <div class="item__info">
-         <p class="body__text">
+         <p class="body-text" v-if="price">
            {{ price}} {{ price_sign }}
          </p>
+          <p class="body-text-light" v-else>not available</p>
       </div>
    </div>
 </template>
@@ -46,6 +47,12 @@ defineProps({
    },
    price: {
       type: String,
+      required: false,
+      default: '0',
+      validator: function(value){
+         if( value > '0')
+			return true
+		}
    },
    price_sign: {
       type: String,

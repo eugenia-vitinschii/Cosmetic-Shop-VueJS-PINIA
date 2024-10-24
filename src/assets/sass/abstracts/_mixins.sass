@@ -5,26 +5,36 @@
    border: $border
    color: $color
    background: $bg
-   transition: $transition //hj
+   transition: $transition 
 
+//fs colos
 @mixin font-style( $color, $padding-top, $text-align)
    color: $color
    padding-top: $padding-top
    text-align: $text-align
-   
+
+//fs
 @mixin font-size($font-size, $line-height)
    font-size: $font-size
    line-height: $line-height
 
+// grid wrapper for  items
 @mixin section-wrapper
    margin-top: $margin-top
    border: $border
-   padding: $margin-top //kk
+   padding: $margin-top 
+
+// item grid wrapper  
+@mixin section-wrapper-item
+   border-radius: 30px
+   -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
 
 //img style
 @mixin img-style
    width: 100%
-   padding: 3px
+   padding: 10px
    margin: 3px
    overflow: hidden
    background: $light-gray
@@ -41,3 +51,4 @@
    -webkit-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
    -moz-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
    box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
+

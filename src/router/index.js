@@ -15,10 +15,25 @@ const router = createRouter({
       props: true
     },
     {
+      path: "/all-brand",
+      name: "all-brand",
+      component: () => import("../views/AllBrandView.vue"),
+    },
+    {
       path: "/brand/:brand",
       name: "brand",
       component: () => import("../views/BrandView.vue"),
-    }
+    },
+    {
+      path: "/product-type/:product_type",
+      name: "product-type",
+      component: () => import("../views/ProductTypeView.vue"),
+    },
+    {
+      path: "/category/:category",
+      name: "category",
+      component: () => import("../views/CategoryView.vue"),
+    },
   ],
 });
 

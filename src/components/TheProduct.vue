@@ -9,15 +9,20 @@
             {{ brand }} 
           </p>
           </router-link>
-          <p class="body-text-light">/{{ category }}</p>
+          <router-link :to="'/category/'+category">
+            <p class="body-text-light">/{{ category }}</p>
+          </router-link>
+          
         </div>
         <div class="product__content--name">
           <p class="heading">{{ name }}</p>
         </div>
         <div class="product__content--type">
-          <p class="small-text">
+          <router-link :to="'/product-type/'+product_type"> 
+            <p class="small-text">
             {{ product_type }}
           </p>
+            </router-link>
         </div>
         <div class="product__content--color" v-if="selected">
           <svg

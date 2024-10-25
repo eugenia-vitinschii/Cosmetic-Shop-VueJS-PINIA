@@ -1,2 +1,16 @@
 .brand
    &__wrapper
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      gap: 15px
+   &__item
+      @include  section-wrapper-item
+      width: 200px
+      height: 100px
+      a
+         display: block
+         margin-top: 30px
+         text-align: center
+         cursor: pointer
+   &__item:hover
+      @include img-style-hover

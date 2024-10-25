@@ -1,17 +1,26 @@
 <template>
    <div class="brand">
       <div class="container">
+             <p class="heading"> lenght: {{allBrand.length}} </p> 
          <div class="brand__wrapper">
-            <p class="heading"> All Brand page {{ allBrand }}</p>
+             <the-brand
+             v-for="item in allBrand"
+            :id="item.id" 
+            :key="item.brand"
+            :brand="item.brand">
+            {{item.brand}}
+            </the-brand> 
          </div>
       </div>
    </div>
-
 </template>
 
 
 <script setup>
 import { defineOptions,  onMounted, onUnmounted } from 'vue';
+//components
+
+import TheBrand from "@/components/TheBrand.vue"
 
 defineOptions({
    name: "AllBrandView"

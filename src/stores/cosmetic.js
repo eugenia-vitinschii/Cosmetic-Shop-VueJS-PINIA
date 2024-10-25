@@ -7,9 +7,11 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       cosmetics: []
    }),
    getters: {
+    //brand
     fileredByBrand: (state) => {
       return (brandName) => state.cosmetics.filter((item) => item.brand === brandName )
     },
+    //productType
     fileredByProductType: (state) => {
       return (productType) => state.cosmetics.filter((item) => item.product_type === productType )
     },
@@ -18,9 +20,11 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       return (theCategory) => state.cosmetics.filter((item) => item.category === theCategory)
     },
     allBrand: (state) => {
-      let c = state.cosmetics
-      return c 
+     return  state.cosmetics.sort((a, b) => a.brand > b.brand? 1 : -1);
+ 
+
     },
+
    },
    actions: {
       async fetchCosmetics() {

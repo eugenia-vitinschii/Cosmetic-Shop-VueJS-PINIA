@@ -20,11 +20,20 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       return (theCategory) => state.cosmetics.filter((item) => item.category === theCategory)
     },
     allBrand: (state) => {
-     return  state.cosmetics.sort((a, b) => a.brand > b.brand? 1 : -1);
- 
-
+    //  return  state.cosmetics.sort((a, b) => a.brand > b.brand? 1 : -1);
+    let brands = state.cosmetics.map(item => item.brand).filter((value, index, self) => self.indexOf(value) === index);
+    return brands
     },
+    allProductTypes: (state) => {
+      let productTypes = state.cosmetics.map(item => item.product_type).filter((value, index, self) => self.indexOf(value) === index);
+    return productTypes 
+    },
+    // category
 
+    allCategory: (state) => {
+      let category = state.cosmetics.map(item => item.category).filter((value, index, self) => self.indexOf(value) === index);
+    return category
+    }
    },
    actions: {
       async fetchCosmetics() {

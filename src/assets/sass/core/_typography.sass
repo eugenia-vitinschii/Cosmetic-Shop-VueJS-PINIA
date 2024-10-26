@@ -14,10 +14,18 @@
    @include font-style( $light-brown, 10px, left)
    @include font-size($body-text-small, 24px)
 
+.brand-text
+   @include font-size($heading, 40px)
+   @include font-style( $violet, 0px, left)
+   text-transform: uppercase
+   letter-spacing: 7px
+
+.brand-text:hover
+   @include font-style( $purple, 0px, left)
 
 // medium devices
 @media (max-width: 1024px)
-   .heading
+   .heading, .brand-text
       @include font-size($heading-md, 38px)
    .subheading 
       @include font-size($subheading-md, 28px)
@@ -27,7 +35,7 @@
       @include font-size($body-text-small-md, 20px)
 // small devices
 @media (max-width: 767px)
-   .heading
+   .heading, .brand-text
       @include font-size($heading-sm, 35px)
    .subheading 
       @include font-size($subheading-sm, 26px)

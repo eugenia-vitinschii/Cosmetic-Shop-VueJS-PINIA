@@ -7,6 +7,7 @@
       class="item__wrapper products-wrapper"
       v-if="created"
       >
+ 
         <the-item
           v-for="item in cosmetics"
           :key="item.id"

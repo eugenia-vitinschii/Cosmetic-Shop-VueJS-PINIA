@@ -7,11 +7,11 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       cosmetics: []
    }),
    getters: {
-    //brand
+    //products by brand
     fileredByBrand: (state) => {
       return (brandName) => state.cosmetics.filter((item) => item.brand === brandName )
     },
-    //productType
+    //products by productType
     fileredByProductType: (state) => {
       return (productType) => state.cosmetics.filter((item) => item.product_type === productType )
     },
@@ -19,17 +19,17 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
     fileredByCategory: (state) => {
       return (theCategory) => state.cosmetics.filter((item) => item.category === theCategory)
     },
+    //brands
     allBrand: (state) => {
-    //  return  state.cosmetics.sort((a, b) => a.brand > b.brand? 1 : -1);
     let brands = state.cosmetics.map(item => item.brand).filter((value, index, self) => self.indexOf(value) === index);
     return brands
     },
+    //product types
     allProductTypes: (state) => {
       let productTypes = state.cosmetics.map(item => item.product_type).filter((value, index, self) => self.indexOf(value) === index);
     return productTypes 
     },
     // category
-
     allCategory: (state) => {
       let category = state.cosmetics.map(item => item.category).filter((value, index, self) => self.indexOf(value) === index);
     return category

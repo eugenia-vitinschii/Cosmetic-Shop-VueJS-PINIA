@@ -5,32 +5,30 @@
         <div class="brand__nav">
           <traverse-history/>
         </div>
-        <div class="brand__items" v-if="created">
-          <the-brand
-            v-for="(item, index) in allBrand"
+        <div class="brand__items">
+         <the-product-type
+            v-for="(item, index) in allProductTypes"
             :index="index"
             :key="index"
             :brand="item"
           >
             {{ brand }}
-          </the-brand>
+            </the-product-type>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-
 <script setup>
-
 import { defineOptions, ref, onMounted, onUnmounted } from "vue";
 
 //components
-import TraverseHistory from "@/components/sections/TraverseHistory.vue"
-import TheBrand from "@/components/TheBrand.vue";
+import TraverseHistory from "@/components/sections/TraverseHistory.vue";
+import TheProductType from "@/components/TheProductType.vue";
 
 defineOptions({
-  name: "AllBrandView",
+  name: "AllProductTypeView",
 });
 
 //pinia
@@ -39,17 +37,17 @@ import { storeToRefs } from "pinia";
 
 const store = useCosmeticStore();
 const { fetchCosmetics } = store;
-const { allBrand  } = storeToRefs(store);
+const { allProductTypes } = storeToRefs(store);
 
-let created = ref(false); 
+let created = ref(false);
 
 onMounted(() => {
-   created.value = true
+  created.value = true;
   fetchCosmetics();
 });
 
 onUnmounted(() => {
-
   store.$reset;
 });
+
 </script>

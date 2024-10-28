@@ -25,9 +25,19 @@ const router = createRouter({
       component: () => import("../views/BrandView.vue"),
     },
     {
+      path: "/all-product-type",
+      name: "all-product-type",
+      component: () => import("../views/AllProductTypeView"),
+    },
+    {
       path: "/product-type/:product_type",
       name: "product-type",
       component: () => import("../views/ProductTypeView.vue"),
+    },
+    {
+      path: "/all-category",
+      name: "all-category",
+      component: () => import("../views/AllCategoryView"),
     },
     {
       path: "/category/:category",

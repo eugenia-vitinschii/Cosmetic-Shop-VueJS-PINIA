@@ -2,9 +2,11 @@
    <!-- product page  -->
   <div class="product">
     <div class="container">
-      <div class="product__wrapper" v-if="created">
-         <!-- product item -->
-        <the-product
+      <div class="product__wrapper" >
+         <traverse-history />
+         <div class="product__items"  v-if="created">
+          <!-- product item -->
+            <the-product
           :id="cosmetics.id"
           :image_link="cosmetics.image_link"
           :name="cosmetics.name"
@@ -18,6 +20,8 @@
           :tag_list="cosmetics.tag_list"
           :product_colors="cosmetics.product_colors"
         />
+         </div>
+
       </div>
     </div>
   </div>
@@ -27,6 +31,7 @@
 //vue
 import { defineOptions, ref,  onMounted, onUnmounted } from "vue";
 // components
+import TraverseHistory from "@/components/sections/TraverseHistory.vue";
 import TheProduct from "@/components/TheProduct.vue";
 //pinia & router
 import { useCosmeticStore } from "@/stores/cosmetic";

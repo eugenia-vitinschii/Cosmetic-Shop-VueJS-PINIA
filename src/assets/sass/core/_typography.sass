@@ -20,9 +20,13 @@
    text-transform: uppercase
    letter-spacing: 7px
 
-.brand-text:hover
+a
+   transition:  $transition
+a:hover
    @include font-style( $purple, 0px, left)
 
+.hover:hover
+   color: $purple  
 // medium devices
 @media (max-width: 1024px)
    .heading, .brand-text

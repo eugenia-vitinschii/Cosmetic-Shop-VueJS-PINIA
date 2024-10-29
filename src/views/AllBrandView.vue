@@ -1,10 +1,13 @@
 <template>
+<!-- all brands -->
   <div class="brand">
     <div class="container">
       <div class="brand__wrapper">
+        <!-- brand nav -->
         <div class="brand__nav">
           <traverse-history/>
         </div>
+        <!-- brands items -->
         <div class="brand__items" v-if="created">
           <the-brand
             v-for="(item, index) in allBrand"

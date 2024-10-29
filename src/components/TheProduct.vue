@@ -49,8 +49,10 @@
       <!-- item img -->
       <div class="product__images">
         <div class="product__img">
-          <img :src="image_link" alt="product" v-if="image_link" />
-          <img :src="api_featured_image" alt="product" v-else />
+        <img 
+            :src="image_link"
+            @error="$event.target.src=api_featured_image"
+            />
         </div>
       </div>
 

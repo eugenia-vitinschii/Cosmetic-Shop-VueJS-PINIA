@@ -4,7 +4,10 @@ const baseUrl = "http://localhost:3000";
 
 export const useCosmeticStore = defineStore( "cosmeticId", {
    state: () => ({
-      cosmetics: []
+      cosmetics: [],
+      limit: 7,
+      page: 1,
+      complected: true,
    }),
    getters: {
     //products by brand
@@ -13,7 +16,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
     },
     //products by productType
     fileredByProductType: (state) => {
-      return (productType) => state.cosmetics.filter((item) => item.product_type === productType )
+      return (productType) => state.cosmetics.filter((item) =>  item.product_type ===  productType )
     },
     // category
     fileredByCategory: (state) => {
@@ -54,5 +57,18 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
            console.error("fetchCosmeticsById(id) error:", error);
          }
        },
+       async loadMore(){
+        this.page++
+        try {
+          const response = await axios.get(`${baseUrl}/cosmetics?_page=${this.page}&_limit=${this.limit}`);
+          this.cosmetics.push(...response.data);
+          if(response.data.lenght < this.limit){
+            this.complected = false
+          }
+        }catch (error){
+          console.log('load more err:', error);
+        }
+        
+       }
    }
 })

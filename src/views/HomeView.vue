@@ -7,7 +7,6 @@
       class="item__wrapper products-wrapper"
       v-if="created"
       >
- 
         <the-item
           v-for="item in cosmetics"
           :key="item.id"
@@ -20,6 +19,9 @@
           :price_sign="item.price_sign"
         />
       </div>
+      <div class="item__button" v-if="store.complected">
+        <button class="button" @click="loadMore()" >load more</button>
+    </div>
     </div>
   </div>
 </template>
@@ -44,13 +46,13 @@ let created = ref(false);
 // store
 const store = useCosmeticStore();
 const { cosmetics } = storeToRefs(store);
-const { fetchCosmetics } = store;
+const { loadMore } = store;
 
 //get cosmetics
 
 onMounted(() => {
   created.value = true
-  fetchCosmetics();
+  loadMore ();
 });
 
 

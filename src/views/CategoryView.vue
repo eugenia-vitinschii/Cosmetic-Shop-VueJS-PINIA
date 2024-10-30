@@ -7,7 +7,7 @@
             <the-router :items="'/all-category'" :item="category" />
          </div>
         <div class="category__title">
-          <p class="heading">The {{ category }}</p>
+          <p class="heading">Category: {{ category }}</p>
           <p class="small-text">{{ fileredByCategory(category).length }}</p>
         </div>
         <div class="category__items products-wrapper" v-if="created">

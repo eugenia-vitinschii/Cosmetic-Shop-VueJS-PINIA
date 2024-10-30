@@ -3,27 +3,25 @@
     <!-- top block  type/ img / price-->
     <div class="product__top">
       <div class="product__content">
+        <!-- brand /category -->
         <div class="product__content--brand">
-          <router-link :to="'/brand/'+brand">
-            <p class="body-text">
+          <router-link :to="'/brand/'+brand" class="body-text">
             {{ brand }} 
-          </p>
           </router-link>
-          <router-link :to="'/category/'+category">
-            <p class="body-text-light">/{{ category }}</p>
+          <router-link :to="'/category/'+category" class="body-text-light">
+          /{{ category }}
           </router-link>
-          
         </div>
         <div class="product__content--name">
           <p class="heading">{{ name }}</p>
         </div>
         <div class="product__content--type">
-          <router-link :to="'/product-type/'+product_type"> 
-            <p class="small-text">
+          <!-- product_type -->
+          <router-link :to="'/product-type/'+product_type" class="small-text"> 
             {{ product_type }}
-          </p>
-            </router-link>
+          </router-link>
         </div>
+        <!-- svg color -->
         <div class="product__content--color" v-if="selected">
           <svg
           fill="#FDFCFA"
@@ -58,8 +56,9 @@
 
       <!-- item price & colors  -->
       <div class="product__info">
-        <div class="product__info--price">
-          <p class="body-text">{{ price }} {{ price_sign }}</p>
+        <div class="product__info--price" >
+          <p class="body-text" v-if="price !== '0.0'">{{ price }} {{ price_sign }}</p>
+          <p class="body-text-light" v-else>not available</p>
         </div>
         <div class="product__info--buttons">
           <svg
@@ -75,7 +74,7 @@
           </svg>
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
         </div>
-        <div class="product__info--colors">
+        <div class="product__info--colors" v-if="product_colors != ''">
           <select name="colors" id="selected-color" v-model="selected">
             <option value="">Select color</option>
             <option
@@ -99,6 +98,7 @@
             </div>
           </div>
         </div>
+        <the-delivery/>
       </div>
     </div>
     <!-- description & tags -->
@@ -118,6 +118,9 @@
 
 <script setup>
 import { defineOptions, defineProps, ref } from "vue";
+//components
+
+import TheDelivery from "@/components/sections/TheDelivery.vue"
 
 defineOptions({
   name: "TheProduct",

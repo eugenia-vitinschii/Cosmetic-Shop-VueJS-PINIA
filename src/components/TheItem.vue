@@ -18,7 +18,7 @@
          </p>
       </div>
       <div class="item__info">
-         <p class="body-text" v-if="price">
+         <p class="body-text" v-if="price !== '0.0'">
            {{ price}} {{ price_sign }}
          </p>
           <p class="body-text-light" v-else>not available</p>

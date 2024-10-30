@@ -1,19 +1,32 @@
 .header
    background: $brown
-   ul
+   &__top
       display: flex
-
+      flex-direction: row
+      justify-content: start
+      align-itemss: flex-start
       li
-         margin-left: $margin-top
+         margin-left: 70px
    &__link
       width: 50px
       height: 50px
+      color: $ivory
+      margin-left: 30px
+   &__button
+      background: $brown
+      border: 1px solid $brown
    &__bottom
-      display: block
-      width: 100%
-      height: 100px
-      background: $ivory
-      margin: 40px 0px 0px 0px
+      border: 1px solid $white
+      height: 100%
+      margin-top: 50px
+      margin-left: -100px
+      ul
+         padding: 0px
+   &__bottom--link
+      text-transform: lowercase
+      color: $ivory
+      margin-left: 0px
+
 .burger
    display: none
 

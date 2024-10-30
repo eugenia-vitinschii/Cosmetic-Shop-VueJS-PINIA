@@ -6,14 +6,14 @@
           <traverse-history/>
         </div>
         <div class="brand__items">
-         <the-product-type
+         <the-category-type
             v-for="(item, index) in allCategory"
             :index="index"
             :key="index"
             :brand="item"
           >
             {{ brand }}
-            </the-product-type>
+            </the-category-type>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@ import { defineOptions, ref, onMounted, onUnmounted } from "vue";
 
 //components
 import TraverseHistory from "@/components/sections/TraverseHistory.vue";
-import TheProductType from "@/components/TheProductType.vue";
+import TheCategoryType from "@/components/TheCategoryType.vue";
 
 defineOptions({
   name: "AllCategoryView",

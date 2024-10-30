@@ -3,7 +3,8 @@
     <div class="container">
       <div class="header__wrapper">
         <nav>
-          <ul>
+          <ul class="header__top">
+            <!-- home -->
             <li>
               <router-link class="header__link" to="/">
                 <svg
@@ -19,6 +20,7 @@
                 </svg>
               </router-link>
             </li>
+            <!-- favorite -->
             <li>
               <router-link class="header__link" to="/">
                 <svg
@@ -34,112 +36,90 @@
                 </svg>
               </router-link>
             </li>
+            <!-- brands -->
             <li>
-              <router-link class="header__link" to="/all-brand">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path
-                    d="M480-120 80-600l120-240h560l120 240-400 480Zm-95-520h190l-60-120h-70l-60 120Zm55 347v-267H218l222 267Zm80 0 222-267H520v267Zm144-347h106l-60-120H604l60 120Zm-474 0h106l60-120H250l-60 120Z"
-                  /></svg
-              ></router-link>
+              <router-link class="header__link menu-item" to="/all-brand">
+              Brands
+              </router-link>
             </li>
-            <li @click="showCategory = !showCategory">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
-              >
-                <path
-                  d="M200-80 40-520l200-120v-240h160v240l200 120L440-80H200Zm480 0q-17 0-28.5-11.5T640-120q0-17 11.5-28.5T680-160h120v-80H680q-17 0-28.5-11.5T640-280q0-17 11.5-28.5T680-320h120v-80H680q-17 0-28.5-11.5T640-440q0-17 11.5-28.5T680-480h120v-80H680q-17 0-28.5-11.5T640-600q0-17 11.5-28.5T680-640h120v-80H680q-17 0-28.5-11.5T640-760q0-17 11.5-28.5T680-800h160q33 0 56.5 23.5T920-720v560q0 33-23.5 56.5T840-80H680Zm-424-80h128l118-326-124-74H262l-124 74 118 326Zm64-200Z"
-                />
-              </svg>
+            <!-- category -->
+            <li>
+              <button @click="showCategory = !showCategory" class="header__button menu-item">Category</button>
             </li>
-            <ul class="header__bottom" v-show="showCategory">
+            <!-- category items -->
+            <div class="header__bottom"  v-show="showCategory">
+            <ul>
               <li>
-                <router-link to="/category/liquid"> LIQUID </router-link>
+                <router-link to="/category/liquid" class="header__bottom--link">LIQUID</router-link>
               </li>
               <li>
-                <router-link to="/category/powder"> POWDER </router-link>
+                <router-link to="/category/powder" class="header__bottom--link">POWDER</router-link>
               </li>
               <li>
-                <router-link to="/category/concealer"> CONCEALER </router-link>
+                <router-link to="/category/concealer" class="header__bottom--link">CONCEALER</router-link>
               </li>
               <li>
-                <router-link to="/category/highlighter"> HIGHLIGHTER </router-link>
+                <router-link to="/category/highlighter" class="header__bottom--link">HIGHLIGHTER</router-link>
               </li>
               <li>
-                <router-link to="/category/liquid"> BB_CC </router-link>
+                <router-link to="/category/bb_cc" class="header__bottom--link"> BB_CC </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid"> CONTOUR </router-link>
+                <router-link to="/category/contour" class="header__bottom--link"> CONTOUR </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid"> CREAM </router-link>
+                <router-link to="/category//cream" class="header__bottom--link"> CREAM </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid"> MINERAL </router-link>
+                <router-link to="/category/mineral" class="header__bottom--link"> MINERAL </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid"> LIPSTICK </router-link>
+                <router-link to="/category//lipstick" class="header__bottom--link"> LIPSTICK </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid"> LIP_GLOSS </router-link>
+                <router-link to="/category/lip_gloss" class="header__bottom--link"> LIP GLOSS </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid"> PALETTE </router-link>
+                <router-link to="/category/palette" class="header__bottom--link"> PALETTE </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid">  PENCIL </router-link>
+                <router-link to="/category/pencil" class="header__bottom--link"> PENCIL </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid">  GEL </router-link>
+                <router-link to="/category/gel" class="header__bottom--link"> GEL </router-link>
               </li>
-
             </ul>
-            <li @click="showTypes = !showTypes">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
-              >
-                <path
-                  d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"
-                />
-              </svg>
+            </div>
+              <!-- type -->
+            <li >
+            <button @click="showTypes = !showTypes" class="header__button menu-item">Types</button>
             </li>
-            <ul class="header__bottom" v-show="showTypes">
+            <div class="header__bottom" v-show="showTypes">
+            <ul>
               <li>
-                <router-link to="/category/liquid">FOUNDATION </router-link>
-              </li>
-              <li>
-                <router-link to="/category/liquid">LIPSTICK </router-link>
+                <router-link to="/product-type/foundation" class="header__bottom--link" >FOUNDATION </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid">EYESHADOW</router-link>
+                <router-link to="/product-type/lipstick" class="header__bottom--link">LIPSTICK </router-link>
               </li>
               <li>
-                <router-link to="/category/liquid">BLUSH</router-link>
+                <router-link to="/product-type/eyeshadow" class="header__bottom--link">EYESHADOW</router-link>
               </li>
               <li>
-                <router-link to="/category/liquid">NAIL_POLISH </router-link>
+                <router-link to="/product-type/blush" class="header__bottom--link">BLUSH</router-link>
               </li>
               <li>
-                <router-link to="/category/liquid">BRONZER</router-link>
+                <router-link to="/product-type/nail_polish" class="header__bottom--link">NAIL_POLISH </router-link>
               </li>
-               <li>
-                <router-link to="/category/liquid">EYELINER</router-link>
+              <li>
+                <router-link to="/product-type/bronzer" class="header__bottom--link">BRONZER</router-link>
               </li>
-
+              <li>
+                <router-link to="/product-type/eyeliner" class="header__bottom--link">EYELINER</router-link>
+              </li>
             </ul>
+            </div>
+
           </ul>
         </nav>
       </div>

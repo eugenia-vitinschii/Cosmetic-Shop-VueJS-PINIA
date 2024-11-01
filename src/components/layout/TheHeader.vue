@@ -5,8 +5,8 @@
         <nav>
           <ul class="header__top">
             <!-- home -->
-            <li>
-              <router-link class="header__link" to="/">
+            <li class="header__link">
+              <router-link  to="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -21,8 +21,8 @@
               </router-link>
             </li>
             <!-- favorite -->
-            <li>
-              <router-link class="header__link" to="/">
+            <li class="header__link"> 
+              <router-link to="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -37,89 +37,82 @@
               </router-link>
             </li>
             <!-- brands -->
-            <li>
-              <router-link class="header__link menu-item" to="/all-brand">
-              Brands
-              </router-link>
+            <li class="header__link"> 
+              <router-link to="/all-brand"> Brands </router-link>
             </li>
             <!-- category -->
-            <li>
-              <button @click="showCategory = !showCategory" class="header__button menu-item">Category</button>
+            <li class="header__link dropdown"> 
+              <router-link to="/all-category"> Category </router-link>
             </li>
             <!-- category items -->
-            <div class="header__bottom"  v-show="showCategory">
-            <ul>
-              <li>
-                <router-link to="/category/liquid" class="header__bottom--link">LIQUID</router-link>
+            <ul class="header__bottom">
+              <li class="header__link">
+                <router-link to="/category/liquid">LIQUID</router-link>
               </li>
-              <li>
-                <router-link to="/category/powder" class="header__bottom--link">POWDER</router-link>
+              <li class="header__link">
+                <router-link to="/category/powder">POWDER</router-link>
               </li>
-              <li>
-                <router-link to="/category/concealer" class="header__bottom--link">CONCEALER</router-link>
+              <li class="header__link">
+                <router-link to="/category/concealer">CONCEALER</router-link>
               </li>
-              <li>
-                <router-link to="/category/highlighter" class="header__bottom--link">HIGHLIGHTER</router-link>
+              <li class="header__link">
+                <router-link to="/category/highlighter">HIGHLIGHTER</router-link>
               </li>
-              <li>
-                <router-link to="/category/bb_cc" class="header__bottom--link"> BB_CC </router-link>
+              <li class="header__link">
+                <router-link to="/category/bb_cc">BB_CC</router-link>
               </li>
-              <li>
-                <router-link to="/category/contour" class="header__bottom--link"> CONTOUR </router-link>
+              <li class="header__link">
+                <router-link to="/category/contour">CONTOUR</router-link>
               </li>
-              <li>
-                <router-link to="/category//cream" class="header__bottom--link"> CREAM </router-link>
+              <li class="header__link"> 
+                <router-link to="/category/cream">CREAM</router-link>
               </li>
-              <li>
-                <router-link to="/category/mineral" class="header__bottom--link"> MINERAL </router-link>
+              <li  class="header__link">
+                <router-link to="/category/mineral"> MINERAL</router-link>
               </li>
-              <li>
-                <router-link to="/category//lipstick" class="header__bottom--link"> LIPSTICK </router-link>
+              <li class="header__link">
+                <router-link to="/category/lipstick" >LIPSTICK</router-link>
               </li>
-              <li>
-                <router-link to="/category/lip_gloss" class="header__bottom--link"> LIP GLOSS </router-link>
+              <li class="header__link">  
+                <router-link to="/category/lip_gloss">  LIP GLOSS </router-link>
               </li>
-              <li>
-                <router-link to="/category/palette" class="header__bottom--link"> PALETTE </router-link>
+              <li class="header__link">
+                <router-link to="/category/palette" >PALETTE</router-link>
               </li>
-              <li>
-                <router-link to="/category/pencil" class="header__bottom--link"> PENCIL </router-link>
+              <li class="header__link">
+                <router-link to="/category/pencil">PENCIL</router-link>
               </li>
-              <li>
-                <router-link to="/category/gel" class="header__bottom--link"> GEL </router-link>
+              <li class="header__link">
+                <router-link to="/category/gel"> GEL</router-link>
               </li>
             </ul>
-            </div>
-              <!-- type -->
-            <li >
-            <button @click="showTypes = !showTypes" class="header__button menu-item">Types</button>
+            <!-- type -->
+            <li class="header__link dropdown">
+              <router-link   to="/all-product-type">Types</router-link>
             </li>
-            <div class="header__bottom" v-show="showTypes">
-            <ul>
-              <li>
-                <router-link to="/product-type/foundation" class="header__bottom--link" >FOUNDATION </router-link>
+            <ul class="header__bottom">
+               <li class="header__link">
+                <router-link to="/product-type/foundation" >FOUNDATION </router-link>
               </li>
-              <li>
-                <router-link to="/product-type/lipstick" class="header__bottom--link">LIPSTICK </router-link>
+               <li class="header__link">
+                <router-link to="/product-type/lipstick">LIPSTICK </router-link>
               </li>
-              <li>
-                <router-link to="/product-type/eyeshadow" class="header__bottom--link">EYESHADOW</router-link>
+               <li class="header__link">
+                <router-link to="/product-type/eyeshadow">EYESHADOW</router-link>
               </li>
-              <li>
-                <router-link to="/product-type/blush" class="header__bottom--link">BLUSH</router-link>
+               <li class="header__link">
+                <router-link to="/product-type/blush" >BLUSH</router-link>
               </li>
-              <li>
-                <router-link to="/product-type/nail_polish" class="header__bottom--link">NAIL_POLISH </router-link>
+               <li class="header__link">
+                <router-link to="/product-type/nail_polish">NAIL_POLISH </router-link>
               </li>
-              <li>
-                <router-link to="/product-type/bronzer" class="header__bottom--link">BRONZER</router-link>
+               <li class="header__link">
+                <router-link to="/product-type/bronzer">BRONZER</router-link>
               </li>
-              <li>
-                <router-link to="/product-type/eyeliner" class="header__bottom--link">EYELINER</router-link>
+              <li class="header__link">
+                <router-link to="/product-type/eyeliner">EYELINER</router-link>
               </li>
             </ul>
-            </div>
-
           </ul>
         </nav>
       </div>
@@ -129,12 +122,9 @@
 
 
 <script setup>
-import { defineOptions, ref } from "vue";
+import { defineOptions } from "vue";
 
 defineOptions({
   name: "TheHeader",
 });
-
-let showCategory = ref(false);
-let showTypes = ref(false);
 </script>

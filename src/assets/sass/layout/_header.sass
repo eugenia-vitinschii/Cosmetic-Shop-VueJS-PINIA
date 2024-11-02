@@ -1,25 +1,27 @@
 .header
-   background: $ivory
+   width: 100%
+   background: $light-gray
    &__top
       display: flex
       flex-direction: row
    &__link
+      padding: 5px 10px
+      margin: 5px 10px 20px 10px
+      width: 150px
+      text-align: center
       display: inline-block
       cursor: pointer
-      color: $black
-      background: $light-gray
-      padding: 10px 20px
-      margin-left: 20px
+      a
+         font-size: $body-text
+         color: $brown
+   &__link:hover
+      @include  section-wrapper-item()
    &__bottom
       position: absolute
       left: 0
-      top: 100%
-      padding-top: 50px
-
-
-.dropdown
-   position: relative
-
-.dropdown:hover + .header__bottom
-   display: block
-   background: #fff
+      width: 100%
+      margin-top: 60px
+      padding-top: 70px
+      background: $light-gray
+      border-top: 2px solid $ivory
+ 

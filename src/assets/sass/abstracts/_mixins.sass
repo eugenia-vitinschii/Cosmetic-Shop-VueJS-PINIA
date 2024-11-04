@@ -26,10 +26,10 @@
 
 // item grid wrapper  
 @mixin section-wrapper-item
-   border-radius: 30px
-   -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-   -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-   box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   @include shadow()
+   transition: $transition 
+   border-radius: $border-radius
+
 
 //img style
 @mixin img-style
@@ -37,9 +37,9 @@
    padding: 10px
    margin: 3px
    overflow: hidden
-   background: $light-gray
+   background: $white
    border: 1px solid $light-gray
-   border-radius: 30px
+   border-radius: $border-radius
    background-size: cover
    -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
    -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
@@ -52,3 +52,12 @@
    -moz-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
    box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
 
+@mixin shadow()
+   -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+
+@mixin shadow-hover()
+   -webkit-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
+   -moz-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
+   box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)

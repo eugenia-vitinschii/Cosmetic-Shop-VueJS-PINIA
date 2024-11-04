@@ -21,7 +21,6 @@
           :product_colors="cosmetics.product_colors"
         />
          </div>
-
       </div>
     </div>
   </div>
@@ -49,6 +48,7 @@ const { cosmetics } = storeToRefs(store);
 const { fetchCosmeticsById } = store;
 
 let created = ref(false);
+
 
 
 onMounted(() => {

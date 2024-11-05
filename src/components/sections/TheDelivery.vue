@@ -20,12 +20,12 @@
       </button>
     </div>
   </div>
-  <Teleport to='body'>   
+
     <return-policy
   :show='showModal'
   @close='showModal = false'
   />
-  </Teleport>
+
 
 </template>
 

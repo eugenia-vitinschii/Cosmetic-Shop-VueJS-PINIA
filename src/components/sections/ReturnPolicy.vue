@@ -1,4 +1,5 @@
 <template>
+<Transition name="popup">
   <div class="modal">
     <div v-if="show" class="modal__wrapper">
       <div class="modal__content">
@@ -15,6 +16,7 @@
       </div>
     </div>
   </div>
+</Transition>
 </template>
 
 <script setup>

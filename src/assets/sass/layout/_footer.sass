@@ -1,13 +1,48 @@
 .footer
+   margin-top: 50px
+   border: 1px solid $purple
    &__wrapper
+      margin-top: 10px
    &__info
       display: flex
+      justify-content: space-between
    &__link
       display: flex
+      margin-right: 20px
    &__link--item
+      text-align: left
+      padding: 0
+      margin-right: 15px
+      ul
+         padding-inline-start: 0
+      li
+         margin-bottom: 10px
+      a:hover
+         color: $green
+   &__link--item:last-child
+      margin-right: 0px
    &__connect
+      width: 300px
+   &__connect--link
+      color: $purple
+   &__connect--link:hover
+      color: $green
    &__title
       p
          text-align: center
 
+@media (max-width: 767px)
+   .footer
+      &__info
+         flex-direction: column
+      &__link
+         width: 100%
+         justify-content: space-between
+      &__connect
+         margin-top: 10px
 
+@media (max-width: 450px)
+   .footer
+      &__link--item
+         li:first-child
+            height: 30px

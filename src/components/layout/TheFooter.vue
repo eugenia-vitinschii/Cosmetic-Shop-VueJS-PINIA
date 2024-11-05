@@ -8,22 +8,22 @@
               <ul>
                 <li>Information</li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >About us</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Contacts</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Terms of use</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >TPrivacy policy</router-link
                   >
                 </li>
@@ -31,19 +31,19 @@
             </div>
             <div class="footer__link--item">
               <ul>
-                <li>Information</li>
+                <li>About Us</li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Product originality</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Promotions</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Terms of use of the site</router-link
                   >
                 </li>
@@ -51,24 +51,24 @@
             </div>
             <div class="footer__link--item">
               <ul>
-                <li>Information</li>
+                <li>Therm Conditions</li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >About delivery</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Exchange and return</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Terms of use</router-link
                   >
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="body-text"
+                  <router-link to="/all-brand" class="small-text"
                     >Privacy policy</router-link
                   >
                 </li>
@@ -76,17 +76,17 @@
             </div>
           </div>
           <div class="footer__connect">
-            <a href="tel:+67373737">@900439409349</a>
+            <a href="tel:+67373737" class="footer__connect--link">+054-39-409-349</a>
             <p>
               You can
-              <a href="mailto:dddd">write us a letter </a>
+              <a href="mailto:dddd" class="footer__connect--link">write us a letter </a>
               call us by phone Daily from 7:55 to 20:05
             </p>
           </div>
         </div>
         <div class="footer__title">
           <p class="heading">Make UP SHOP</p>
-          <p class="body-text">© MAKEUP website 2000-2024</p>
+          <p class="small-text">© MAKEUP website 2000-2024</p>
         </div>
       </div>
     </div>

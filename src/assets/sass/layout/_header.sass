@@ -1,6 +1,23 @@
 .header
    width: 100%
-   background: $light-gray
+   margin-bottom: 50px
+   border-bottom: 1px solid $purple
+   &__data
+      display: flex
+      align-items: center
+      justify-content: space-around
+   &__data--links
+      ul li
+         display: inline
+         margin-left: 10px
+   &__control
+      display: flex
+      align-items: center
+      justify-content: space-between
+   &__control--img
+      width: 200px
+      img
+         width: 100% 
    &__top
       display: flex
       flex-direction: row

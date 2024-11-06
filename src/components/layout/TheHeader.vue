@@ -4,27 +4,27 @@
       <div class="header__wrapper">
         <div class="header__data">
           <div class="header__data--text">
-            <p class="body-text-light">
+            <p class="small-text" title="Free delivery from orders> 10$">
               Free delivery
             </p>
           </div>
           <div class="header__data--links">
             <ul>
               <li>
-                <router-link to="/">Delivery</router-link>
+                <router-link to="/" class="small-text">Promotions</router-link>
               </li>
               <li>
-                <router-link to="/">Delivery</router-link>
+                <router-link to="/" class="small-text">Terms of use</router-link>
               </li>
               <li>
-                <router-link to="/">Delivery</router-link>
+                <router-link to="/" class="small-text">About us</router-link>
               </li>
             </ul>
             
           </div>
           <div class="header__data--promo">
-            <router-link to="/">
-              Promo
+            <router-link to="/all-brand" class="small-text">
+              Brands
             </router-link>
           </div>
         </div>

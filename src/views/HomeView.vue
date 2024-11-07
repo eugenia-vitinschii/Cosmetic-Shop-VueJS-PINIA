@@ -1,4 +1,10 @@
 <template>
+  <div class="swiper">
+    <div class="container">
+      <the-slider/>
+    </div>
+  </div>
+
   <div class="item">
     <div class="container">
       <div class="item__wrapper products-wrapper" v-if="created">
@@ -42,12 +48,14 @@
 <script setup>
 import { defineOptions, onMounted, onUnmounted, ref } from "vue";
 //components
+import TheSlider from "@/components/sections/TheSlider.vue";
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic";
 
 import { storeToRefs } from "pinia";
+
 
 defineOptions({
   name: "HomeView",
@@ -70,4 +78,8 @@ onMounted(() => {
 onUnmounted(() => {
   store.$reset();
 });
+
+
+
+
 </script>

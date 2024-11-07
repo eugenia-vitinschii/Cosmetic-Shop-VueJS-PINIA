@@ -30,7 +30,9 @@
         </div>
         <div class="header__control">
           <div class="header__control--img">
+            <router-link to="/"> 
             <img src="@/assets/img/logo.png" alt="logo">
+            </router-link>
           </div>
           <div class="header__control--buttons">
             <button class="svg-button">

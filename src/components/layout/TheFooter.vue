@@ -1,5 +1,7 @@
 <template>
   <footer class="footer">
+    <div class="footer__decor">
+    </div>
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__info">
@@ -85,8 +87,13 @@
           </div>
         </div>
         <div class="footer__title">
-          <p class="heading">Make UP SHOP</p>
-          <p class="small-text">© MAKEUP website 2000-2024</p>
+          <div class="footer__title--img">
+            <router-link to="/"> 
+               <img src="@/assets/img/logo.png" alt="img">
+              </router-link>
+             
+          </div>
+          <p class="small-text">©BORCELLE 2000-2024</p>
         </div>
       </div>
     </div>

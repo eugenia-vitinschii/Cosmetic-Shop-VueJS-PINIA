@@ -1,6 +1,11 @@
 .footer
    margin-top: 50px
-   border: 1px solid $purple
+   &__decor
+      height: 100px
+      background-image: url('@/assets/img/footer.png')
+      background-repeat: repeat-x
+      background-size: contain
+      border-bottom: 1px solid $purple
    &__wrapper
       margin-top: 10px
    &__info
@@ -22,6 +27,7 @@
    &__link--item:last-child
       margin-right: 0px
    &__connect
+      margin-top: 15px
       width: 300px
    &__connect--link
       color: $purple
@@ -30,6 +36,11 @@
    &__title
       p
          text-align: center
+   &__title--img
+      margin: 0 auto
+      width: 200px
+      img
+         width: 100%
 
 @media (max-width: 767px)
    .footer
@@ -39,7 +50,9 @@
          width: 100%
          justify-content: space-between
       &__connect
+         width: 100%
          margin-top: 10px
+         text-align: center
 
 @media (max-width: 450px)
    .footer

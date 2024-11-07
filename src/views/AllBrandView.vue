@@ -1,6 +1,7 @@
 <template>
 <!-- all brands -->
   <div class="brand">
+    <the-decor/>
     <div class="container">
       <div class="brand__wrapper">
         <!-- brand nav -->
@@ -29,6 +30,7 @@
 import { defineOptions, ref, onMounted, onUnmounted } from "vue";
 
 //components
+import TheDecor from "@/components/sections/TheDecor.vue"
 import TraverseHistory from "@/components/sections/TraverseHistory.vue"
 import TheBrand from "@/components/TheBrand.vue";
 

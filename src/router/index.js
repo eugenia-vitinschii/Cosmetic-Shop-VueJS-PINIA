@@ -44,6 +44,21 @@ const router = createRouter({
       name: "category",
       component: () => import("../views/CategoryView.vue"),
     },
+    {
+      path: "/info",
+      name: "info",
+      component: () => import("../views/InformationView.vue"),
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: () => import("../views/AboutView.vue"),
+    },
+    {
+      path: "/terms",
+      name: "terms",
+      component: () => import("../views/TermsView.vue"),
+    },
   ],
 });
 

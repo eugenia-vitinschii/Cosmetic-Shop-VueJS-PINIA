@@ -11,13 +11,13 @@
           <div class="header__data--links">
             <ul>
               <li>
-                <router-link to="/" class="small-text">Promotions</router-link>
+                <router-link to="/terms" class="small-text">Promotions</router-link>
               </li>
               <li>
-                <router-link to="/" class="small-text">Terms of use</router-link>
+                <router-link to="/info" class="small-text">Terms of use</router-link>
               </li>
               <li>
-                <router-link to="/" class="small-text">About us</router-link>
+                <router-link to="/about" class="small-text">About us</router-link>
               </li>
             </ul>
             

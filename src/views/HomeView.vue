@@ -1,7 +1,24 @@
 <template>
   <div class="swiper">
     <div class="container">
-      <the-slider/>
+      <div class="swiper__wrapper">
+        <swiper
+          :pagination="{
+            type: 'fraction',
+          }"
+          :navigation="true"
+          :modules="modules"
+          class="mySwiper"
+        >
+          <the-slider
+            v-for="item in swiper"
+            :key="item.id"
+            :id="item.id"
+            :link="item.link"
+            :img="item.img"
+          />
+        </swiper>
+      </div>
     </div>
   </div>
 
@@ -56,10 +73,20 @@ import { useCosmeticStore } from "@/stores/cosmetic";
 
 import { storeToRefs } from "pinia";
 
-
 defineOptions({
   name: "HomeView",
 });
+const swiper = [
+  {
+    id: '1',
+    link: "/",
+    img: require("../assets/img/4.jpg"),
+  },{
+    id: '2',
+    link: "/",
+    img: require("../assets/img/2.jpg"),
+  },
+];
 
 let created = ref(false);
 
@@ -78,8 +105,4 @@ onMounted(() => {
 onUnmounted(() => {
   store.$reset();
 });
-
-
-
-
 </script>

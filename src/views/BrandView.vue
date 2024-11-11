@@ -8,7 +8,7 @@
         </div>
         <!-- brand title -->
         <div class="brand__title">
-          <p class="heading">Brand:  {{ brand }}</p>
+          <p class="heading">Brand: {{ brand }}</p>
           <p class="small-text">{{ fileredByBrand(brand).length }}</p>
         </div>
         <!-- brand items -->
@@ -25,9 +25,6 @@
             :price_sign="item.price_sign"
           />
         </div>
-             <div class="item__button" v-if="store.complected">
-        <button class="button" @click="loadMore()" >load more</button>
-    </div>
       </div>
     </div>
   </div>
@@ -52,8 +49,7 @@ defineOptions({
 });
 const store = useCosmeticStore();
  
-const { fileredByBrand } = storeToRefs(store);
-const { loadMore } = store;
+const { fileredByBrand,  } = storeToRefs(store);
 const route = useRoute();
 const brand = route.params.brand;
 
@@ -61,7 +57,7 @@ let created = ref(false);
 
 onMounted(() => {
   created.value = true;
-  loadMore();
+
 });
 
 

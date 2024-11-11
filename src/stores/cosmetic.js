@@ -45,7 +45,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
            const response = await axios.get(`${baseUrl}/cosmetics`);
            this.cosmetics = response.data;
          } catch (error) {
-           console.err("fetchCosmetics error:", error);
+           console.log("fetchCosmetics error:", error);
          }
        },
        async fetchCosmeticsById(id) {
@@ -54,7 +54,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
            const response = await axios.get(`${baseUrl}/cosmetics/${id}`);
            this.cosmetics = response.data;
          } catch (error) {
-           console.error("fetchCosmeticsById(id) error:", error);
+           console.log("fetchCosmeticsById(id) error:", error);
          }
        },
        async loadMore(){

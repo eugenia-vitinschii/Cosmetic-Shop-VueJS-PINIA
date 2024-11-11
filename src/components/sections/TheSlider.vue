@@ -1,17 +1,10 @@
 <template>
-  <swiper
-    :pagination="{
-      type: 'fraction',
-    }"
-    :navigation="true"
-    :modules="modules"
-    class="mySwiper"
-  >
-    <swiper-slide><img src="@/assets/img/1.jpg" alt="brands"></swiper-slide>
-    <swiper-slide> <img src="@/assets/img/2.jpg" alt="brands"></swiper-slide>
-    <swiper-slide><img src="@/assets/img/3.jpg" alt="brands"></swiper-slide>
-    <swiper-slide><img src="@/assets/img/4.jpg" alt="brands"></swiper-slide>
-  </swiper>
+
+  <swiper-slide>
+      <router-link :to="link">
+      <img :src="img" alt="img">
+      </router-link>
+  </swiper-slide>
 </template>
 
  
@@ -33,7 +26,7 @@
 
   export default {
     components: {
-      Swiper,
+      Swiper,ç
       SwiperSlide,
     },
     setup() {
@@ -41,5 +34,10 @@
         modules: [Pagination, Navigation],
       };
     },
+    props:{
+      link: String,
+      img: String
+    }
+    
   };
   </script>

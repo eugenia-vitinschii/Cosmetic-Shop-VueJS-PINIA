@@ -13,7 +13,7 @@
           </router-link>
         </div>
         <div class="product__content--name">
-          <p class="heading">{{ name }}</p>
+          <h1 class="heading">{{ name }}</h1>
         </div>
         <div class="product__content--type">
           <!-- product_type -->

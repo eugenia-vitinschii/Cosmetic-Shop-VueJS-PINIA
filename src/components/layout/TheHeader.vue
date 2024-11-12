@@ -9,7 +9,7 @@
             </p>
           </div>
           <div class="header__data--links">
-            <ul>
+            <ul >
               <li>
                 <router-link to="/terms" class="small-text">Promotions</router-link>
               </li>
@@ -112,7 +112,7 @@
                Types
               </a>
             </li>
-            <ul class="header__bottom" v-show="showType">
+            <ul class="header__bottom" v-show="showType"  @click="showCategory = false">
                <li class="header__link">
                 <router-link to="/product-type/foundation" >FOUNDATION </router-link>
               </li>
@@ -144,12 +144,14 @@
 
 
 <script setup>
-import { defineOptions, ref} from "vue";
+import { defineOptions, ref } from "vue";
 
 defineOptions({
   name: "TheHeader",
 });
 
-const showCategory = ref(false)
-const showType= ref(false)
+let showCategory = ref(false)
+let showType= ref(false)
+
+
 </script>

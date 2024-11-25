@@ -116,14 +116,14 @@
     <!-- description & tags -->
     <div class="product__bottom">
       <p class="body-text">{{ description }}</p>
-      <p
-        class="small-text"
+      <ul>
+        <li class="small-text"
         v-for="(item, index) in tag_list"
         :index="index"
-        :key="index"
-      >
-        #{{ item }}
-      </p>
+        :key="index">
+           #{{ item }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>

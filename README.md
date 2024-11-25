@@ -6,6 +6,13 @@ $\color{#480ca8}{\textsf{Makeup shop "BORCELLE"}}$
 ![SASS](https://img.shields.io/badge/SASS-480ca8?style=flat&logo=sass&logoColor=fff)
 ![HTML](https://img.shields.io/badge/HTML%205-480ca8?style=flat&logo=html5&logoColor=fff)
 
+### swiper
+
+
+![borcelle](https://github.com/user-attachments/assets/82f9d02a-555d-42c1-87be-b7e175a70eda)
+
+
+
 ## Project setup
 ```
 npm install

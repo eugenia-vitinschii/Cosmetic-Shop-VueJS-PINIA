@@ -5,7 +5,7 @@ const baseUrl = "http://localhost:3000";
 export const useCosmeticStore = defineStore( "cosmeticId", {
    state: () => ({
       cosmetics: [],
-      limit: 7,
+      limit: 30,
       page: 1,
       complected: true,
    }),

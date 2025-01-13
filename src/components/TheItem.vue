@@ -1,4 +1,5 @@
 <template>
+  <!-- product item -->
    <div class="item__item">
       <div class="item__img">
          <router-link :to="'/product/'+id">
@@ -13,15 +14,17 @@
          <p class="body-text">
             {{ name }}
          </p>
-         <p pclass="body-text">
-            {{ item_type }}
-         </p>
+         <br>
+         <p class="small-text"> {{ product_type }} </p>
       </div>
       <div class="item__info">
          <p class="body-text" v-if="price !== '0.0'">
            {{ price}} {{ price_sign }}
          </p>
           <p class="body-text-light" v-else>not available</p>
+      </div>
+      <div class="item__button">
+         <button  >Buy</button>
       </div>
    </div>
 </template>
@@ -62,7 +65,9 @@ defineProps({
    api_featured_image: {
       type: String,
    },
-
+   product_type: {
+      type: String,
+   },
 })
 
 

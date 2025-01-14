@@ -20,6 +20,7 @@
           :product_type="item.product_type"
           :price="item.price"
           :price_sign="item.price_sign"
+          :category="item.category"
         />
         <div class="item__item">
           <div class="item__img">

@@ -21,6 +21,8 @@
           :price="item.price"
           :price_sign="item.price_sign"
           :category="item.category"
+          :brand="item.brand"
+          :currency="item.currency"
         />
         <div class="item__item">
           <div class="item__img">

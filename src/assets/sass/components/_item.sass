@@ -1,25 +1,40 @@
 .item
    &__wrapper
-   &__item
+   &__container
       display: flex
       flex-direction: column
-      border: 1px solid $white
+      border: 2px solid $white
       padding: $margin-sm
-   &__item:hover
-      @include section-wrapper-item
-   &__img
-      @include img-style
-      img
-         width: 100%
-   &__data
-      flex: 1 0 auto
-   &__txt-info
-      display: flex
-      width: 100%
       a:hover
          color: $violet
+   &__container:hover
+      @include section-wrapper-item
+   // item data
+   &__data
+      flex: 1 0 auto
+   // item data img
+   &__img
+      @include img-style
+      height: 300px
+      img
+         width: 100%
+   // item data info
    &__info
-      width: 100%
+      margin-top: 20px
+
+   &__info-name
+      height: 80px
+      overflow: hidden
+   &__info-description
+      p
+         text-transform: uppercase
+      a, p
+         padding-top: 4px
+         line-height: 10px
+   &__info-price
+   &__txt
+      
+   // item button 
    &__button
       width: 100%
       flex: 0 0 auto
@@ -28,3 +43,11 @@
          @include button-style($white, $black)
       button:hover
          @include button-style($white, $violet)
+
+// small devices
+@media (max-width: 767px)
+   .item
+      &__img
+      height: 300px
+      &__info-name
+         height: 60px

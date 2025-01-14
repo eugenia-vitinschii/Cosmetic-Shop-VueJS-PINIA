@@ -93,7 +93,7 @@
               </router-link>
              
           </div>
-          <p class="small-text">©BORCELLE 2000-2024</p>
+          <p class="small-text">©BORCELLE 2000-2025</p>
         </div>
       </div>
     </div>

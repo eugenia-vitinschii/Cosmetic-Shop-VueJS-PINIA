@@ -24,7 +24,7 @@
           <router-link :to="'/product-type/' + product_type" class="small-text">
             {{ product_type }}
           </router-link>
-          <router-link :to="'/category/' + category" class="small-text">
+          <router-link :to="'/category/' + category" class="small-text" v-if="category">
             /{{ category }}</router-link
           >
         </div>

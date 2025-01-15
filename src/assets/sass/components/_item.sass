@@ -1,13 +1,13 @@
 .item
    &__wrapper
-   &__container
+   &__item
       display: flex
       flex-direction: column
       border: 2px solid $white
       padding: $margin-sm
       a:hover
          color: $violet
-   &__container:hover
+   &__item:hover
       @include section-wrapper-item
    // item data
    &__data
@@ -45,9 +45,32 @@
          @include button-style($white, $violet)
 
 // small devices
+@media (max-width: 850px)
+   .item
+      &__img
+         height: 250px
+
+         
+// small devices
 @media (max-width: 767px)
    .item
       &__img
-      height: 300px
+         height: 300px
       &__info-name
          height: 60px
+
+@media (max-width: 500px)
+   .item
+      &__img
+         height: 200px
+
+
+@media (max-width: 400px)
+   .item
+      &__img
+         height: 160px
+
+@media (max-width: 327px)
+   .item
+      &__img
+         height: 140px

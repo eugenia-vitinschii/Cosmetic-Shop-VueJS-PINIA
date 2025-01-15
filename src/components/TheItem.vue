@@ -1,6 +1,6 @@
 <template>
   <!-- product item -->
-  <div class="item__container">
+  <div class="item__item">
    <!-- item data -->
     <div class="item__data">
       <!-- item img -->

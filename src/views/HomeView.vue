@@ -1,7 +1,7 @@
 <template>
   <div class="swiper">
     <div class="container">
-      <div class="swiper0__wrapper">
+      <div class="swiper__wrapper">
           <the-slider/>
       </div>
     </div>

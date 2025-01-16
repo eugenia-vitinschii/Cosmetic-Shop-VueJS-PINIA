@@ -38,7 +38,7 @@
     </div>
     <!-- item button -->
     <div class="item__button">
-      <button @click="$emit('addToCart')">Buy</button>
+      <button @click="$emit('addItemCart')">Buy</button>
     </div>
   </div>
 </template>

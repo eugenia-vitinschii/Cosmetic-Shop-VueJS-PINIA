@@ -2,12 +2,14 @@
   <div class="cart">
     <div class="container">
       <div class="cart__wrapper">
-         <div class="cart__heading">
-               <p class="heading"  v-if="user.cart.length >= 1">Coș ({{ user.cart.length }})</p>
-               <p class="heading" v-else>Cosul este gol {{user.cart.length }}</p>
-         </div>
-        <div class="cart__items" >
-          <shopping-item
+        <div class="cart__heading">
+          <p class="heading" v-if="user.cart.length >= 1">
+            Coș ({{ user.cart.length }})
+          </p>
+          <p class="heading" v-else>Cosul este gol {{ user.cart.length }}</p>
+        </div>
+        <div class="cart__items">
+         <shopping-item
             v-for="item in user.cart"
             :key="item.id"
             :id="item.id"
@@ -21,7 +23,8 @@
             :price="item.price"
             :price_sign="item.price_sign"
             :currency="item.currency"
-          />
+         />
+
         </div>
       </div>
     </div>
@@ -41,11 +44,11 @@ defineOptions({
 import ShoppingItem from "@/components/sections/ShoppingItem.vue";
 
 //import store
-import { useCosmeticStore} from "@/stores/cosmetic";
-import {storeToRefs} from 'pinia';
+import { useCosmeticStore } from "@/stores/cosmetic";
+import { storeToRefs } from "pinia";
 
 //pinia const
 const store = useCosmeticStore();
-const {user} = storeToRefs(store);
+const { user } = storeToRefs(store);
 
 </script>

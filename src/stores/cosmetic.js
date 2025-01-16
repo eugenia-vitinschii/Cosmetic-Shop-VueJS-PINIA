@@ -80,11 +80,18 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         if ( this.count !== -1){
           this.cosmetics[this.count].quantity += 1;
         } else {
-          item.quantity =1;
+          item.quantity = 1;
           this.user.cart.push(item)
         }
         localStorage.setItem("cart",JSON.stringify(item));
        },
+       incrementQuantity(id) {
+        this.user.cart.forEach((item) => {
+          if (item.id === id) {
+            return this.count++;
+          }
+        });
+      },
    }
 })
 

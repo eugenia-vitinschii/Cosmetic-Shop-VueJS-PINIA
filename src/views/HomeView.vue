@@ -23,7 +23,7 @@
           :category="item.category"
           :brand="item.brand"
           :currency="item.currency"
-          @addToCart="pushToCart(item)"
+          @addItemCart="pushToCart(item)"
         />
         <div class="item__item">
           <div class="item__img">
@@ -54,7 +54,7 @@
 
 <script setup>
 //vue
-import { defineOptions, onMounted, onUnmounted, ref } from "vue";
+import { defineOptions, onMounted, ref } from "vue";
 
 //components
 import TheSlider from "@/components/sections/TheSlider.vue";
@@ -99,9 +99,8 @@ onMounted(() => {
   loadMore();
 });
 
-onUnmounted(() => {
-  store.$reset();
-});
-
+// onUnmounted(() => {
+//   store.$reset();
+// });
 
 </script>

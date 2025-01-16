@@ -2,7 +2,7 @@
   <div class="swiper">
     <div class="container">
       <div class="swiper__wrapper">
-          <the-slider/>
+        <the-slider />
       </div>
     </div>
   </div>
@@ -23,6 +23,7 @@
           :category="item.category"
           :brand="item.brand"
           :currency="item.currency"
+          @addToCart="pushToCart(item)"
         />
         <div class="item__item">
           <div class="item__img">
@@ -50,8 +51,11 @@
 </template>
  
 
+
 <script setup>
+//vue
 import { defineOptions, onMounted, onUnmounted, ref } from "vue";
+
 //components
 import TheSlider from "@/components/sections/TheSlider.vue";
 import TheItem from "@/components/TheItem.vue";
@@ -65,16 +69,31 @@ defineOptions({
   name: "HomeView",
 });
 
-
 let created = ref(false);
 
 // store
 const store = useCosmeticStore();
 const { cosmetics } = storeToRefs(store);
-const { loadMore } = store;
+const { loadMore, addToCart } = store;
 
-//get cosmetics
+//add to wish list
+function pushToCart(item) {
+  addToCart({
+    id: item.id,
+    image_link: item.image_link,
+    api_featured_image: item.api_featured_image,
+    color: item.color,
+    name: item.name,
+    product_type: item.product_type,
+    price: item.price,
+    price_sign: item.price_sign,
+    category: item.category,
+    brand: item.brand,
+    currency: item.currency,
+  });
+}
 
+//hooks
 onMounted(() => {
   created.value = true;
   loadMore();
@@ -83,4 +102,6 @@ onMounted(() => {
 onUnmounted(() => {
   store.$reset();
 });
+
+
 </script>

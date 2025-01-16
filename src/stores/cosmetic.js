@@ -11,7 +11,8 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       user:{
         cart: [],
         favorite: []
-      }
+      },
+      count: 1,
    }),
    getters: {
     //products by brand
@@ -72,7 +73,18 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         }catch (error){
           console.log('load more err:', error);
         }
-        
-       }
+       },
+       //add to wish list
+       addToCart(item) {
+        this.count = this.user.cart.findIndex((product) => product.id == item.id);
+        if ( this.count !== -1){
+          this.cosmetics[this.count].quantity += 1;
+        } else {
+          item.quantity =1;
+          this.user.cart.push(item)
+        }
+        localStorage.setItem("cart",JSON.stringify(item));
+       },
    }
 })
+

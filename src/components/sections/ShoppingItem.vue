@@ -43,13 +43,19 @@ defineOptions({
 //props
 defineProps({
    id: {
-      type: Number,
+      type: [String, Number],
    },
    image_link: {
       type: String,
    },
    api_featured_image: {
       type: String,
+   },
+   name: {
+      type: String,
+   },
+   color: {
+   type: String,
    },
    product_type:{
        type: String,

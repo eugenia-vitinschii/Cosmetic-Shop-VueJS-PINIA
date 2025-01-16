@@ -8,6 +8,10 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       limit: 30,
       page: 1,
       complected: true,
+      user:{
+        cart: [],
+        favorite: []
+      }
    }),
    getters: {
     //products by brand

@@ -1,9 +1,13 @@
 <template>
-   <div class="cart">
-      <div class="container">
-         <div class="cart__wrapper" >
-            <div class="cart__items" v-if="user.cart.lenght > 1">
-      <shopping-item
+  <div class="cart">
+    <div class="container">
+      <div class="cart__wrapper">
+         <div class="cart__heading">
+               <p class="heading"  v-if="user.cart.length >= 1">Coș ({{ user.cart.length }})</p>
+               <p class="heading" v-else>Cosul este gol</p>
+         </div>
+        <div class="cart__items" >
+          <shopping-item
             v-for="item in user.cart"
             :key="item.id"
             :id="item.id"
@@ -15,25 +19,34 @@
             :price="item.price"
             :price_sign="item.price_sign"
             :currency="item.currency"
-            />
-            </div>
-      
-         </div>
+          />
+        </div>
       </div>
-   </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
 //vue
-import {defineOptions }from "vue"
+import { defineOptions } from "vue";
 
 //vue settings component
 defineOptions({
-   name: "ShoppingView"
-})
+  name: "ShoppingView",
+});
 
 //import components
-import ShoppingItem from "@/components/sections/ShoppingItem.vue"
+import ShoppingItem from "@/components/sections/ShoppingItem.vue";
+
+//store
+import { useCosmeticStore} from "@/stores/cosmetic";
+import {storeToRefs} from 'pinia';
+
+//pinia const
+const store = useCosmeticStore();
+
+const {user} = storeToRefs(store);
+
 
 
 </script>

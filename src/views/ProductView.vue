@@ -69,6 +69,7 @@ function pushToCart(cosmetics) {
     category: cosmetics.category,
     brand: cosmetics.brand,
     currency: cosmetics.currency,
+    product_colors: cosmetics.product_colors
   });
 }
 

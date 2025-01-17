@@ -25,7 +25,7 @@
         >
           /{{ category }}</router-link
         >
-        <p class="body-text">{{ color }}{{ product_colors }}</p>
+        <p class="body-text"> color: {{ product_colors }}</p>
       </div>
     </div>
     <div class="cart__counter">
@@ -60,9 +60,6 @@ defineProps({
     type: String,
   },
   name: {
-    type: String,
-  },
-  color: {
     type: String,
   },
   product_type: {

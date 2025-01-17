@@ -13,14 +13,18 @@
         <div class="category__items products-wrapper" v-if="created">
           <the-item
             v-for="item in fileredByCategory(category)"
-            :key="item.id"
-            :id="item.id"
-            :image_link="item.image_link"
-            :api_featured_image="item.api_featured_image"
-            :name="item.name"
-            :product_type="item.product_type"
-            :price="item.price"
-            :price_sign="item.price_sign"
+          :key="item.id"
+          :id="item.id"
+          :image_link="item.image_link"
+          :api_featured_image="item.api_featured_image"
+          :name="item.name"
+          :product_type="item.product_type"
+          :price="item.price"
+          :price_sign="item.price_sign"
+          :category="item.category"
+          :brand="item.brand"
+          :currency="item.currency"
+          @addItemCart="pushToCart(item)"
           />
         </div>
       </div>
@@ -46,12 +50,29 @@ defineOptions({
   name: "CategoryView",
 });
 
+//pinia store
 const store = useCosmeticStore();
 const { fetchCosmetics } = store;
 const { fileredByCategory } = storeToRefs(store);
-
+const {  addToCart } = store;
 const route = useRoute();
 const category = route.params.category;
+//add to wish list
+function pushToCart(item) {
+  addToCart({
+    id: item.id,
+    image_link: item.image_link,
+    api_featured_image: item.api_featured_image,
+    color: item.color,
+    name: item.name,
+    product_type: item.product_type,
+    price: item.price,
+    price_sign: item.price_sign,
+    category: item.category,
+    brand: item.brand,
+    currency: item.currency,
+  });
+}
 
 let created = ref(false);
 

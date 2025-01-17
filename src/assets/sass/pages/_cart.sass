@@ -4,10 +4,21 @@
    &__items
    &__item
       display: flex
-      
+      justify-content: space-between
+      align-items: flex-start
+   &__item:hover
+      @include section-wrapper-item
    &__img
+      @include img-style
+      width: 300px
+      height: 300px
+      transition: $transition
+      img
+         width: 100%
    &__info
+      width: 250px
    &__counter
+      display: flex
    &__price
    &__delete
 

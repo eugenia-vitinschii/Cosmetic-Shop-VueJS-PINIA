@@ -23,6 +23,7 @@
             :price="item.price"
             :price_sign="item.price_sign"
             :currency="item.currency"
+            :count="count"
          />
 
         </div>
@@ -49,6 +50,6 @@ import { storeToRefs } from "pinia";
 
 //pinia const
 const store = useCosmeticStore();
-const { user } = storeToRefs(store);
+const { user, count } = storeToRefs(store);
 
 </script>

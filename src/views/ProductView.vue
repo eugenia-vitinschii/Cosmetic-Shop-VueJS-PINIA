@@ -4,8 +4,8 @@
     <div class="container">
       <div class="product__wrapper" >
          <traverse-history />
-         <div class="product__items"  v-if="created">
-          <!-- product item -->
+         <div class="product__cosmeticss"  v-if="created">
+          <!-- product cosmetics -->
             <the-product
           :id="cosmetics.id"
           :image_link="cosmetics.image_link"
@@ -19,6 +19,7 @@
           :category="cosmetics.category"
           :tag_list="cosmetics.tag_list"
           :product_colors="cosmetics.product_colors"
+           @addItemCart="pushToCart(cosmetics)"
         />
          </div>
       </div>
@@ -28,35 +29,53 @@
 
 <script setup>
 //vue
-import { defineOptions, ref,  onMounted, onUnmounted } from "vue";
+import { defineOptions, ref,  onMounted } from "vue";
+
 // components
 import TraverseHistory from "@/components/sections/TraverseHistory.vue";
 import TheProduct from "@/components/TheProduct.vue";
+
 //pinia & router
 import { useCosmeticStore } from "@/stores/cosmetic";
 import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
 
+//component settings
 defineOptions({
   name: "ProductView",
 });
 
+//pinia store 
 const store = useCosmeticStore();
 const route = useRoute();
 const id = route.params.id;
 const { cosmetics } = storeToRefs(store);
-const { fetchCosmeticsById } = store;
+const { fetchCosmeticsById ,  addToCart } = store;
+
 
 let created = ref(false);
 
-
+//add to wish list
+function pushToCart(cosmetics) {
+  addToCart({
+    id: cosmetics.id,
+    image_link: cosmetics.image_link,
+    api_featured_image: cosmetics.api_featured_image,
+    color: cosmetics.color,
+    name: cosmetics.name,
+    product_type: cosmetics.product_type,
+    price: cosmetics.price,
+    price_sign: cosmetics.price_sign,
+    category: cosmetics.category,
+    brand: cosmetics.brand,
+    currency: cosmetics.currency,
+  });
+}
 
 onMounted(() => {
   created.value = true
   fetchCosmeticsById(id);
 });
 
-onUnmounted(() => {
-  store.$reset();
-});
+ 
 </script>

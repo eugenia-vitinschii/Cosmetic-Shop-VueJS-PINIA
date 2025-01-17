@@ -25,17 +25,19 @@
         >
           /{{ category }}</router-link
         >
-        <p class="body-text">{{ color }}</p>
+        <p class="body-text">{{ color }}{{ product_colors }}</p>
       </div>
     </div>
     <div class="cart__counter">
-      <p class="body-text">{{ product_colors }}</p>
+      <button class="button">-</button>
+      <p class="body-text"> {{count}} </p>
+      <button class="button">+</button>
     </div>
     <div class="cart__price">
       <p class="body-text">{{ price }} {{ price_sign }} ({{ currency }})</p>
     </div>
     <div class="cart__delete">
-      <button>delete</button>
+      <button class="red-button">delete</button>
     </div>
   </div>
 </template>
@@ -81,5 +83,8 @@ defineProps({
   currency: {
     type: String,
   },
+  count:{
+   type: Number,
+  }
 });
 </script>

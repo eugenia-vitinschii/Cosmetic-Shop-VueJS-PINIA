@@ -13,6 +13,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         favorite: []
       },
       count: 1,
+
    }),
    getters: {
     //products by brand

@@ -3,8 +3,8 @@
     <div class="container">
       <div class="type__wrapper">
         <div class="type__nav brand__nav">
-             <traverse-history />
-            <the-router :items="'/all-product-type'" :item="product_type" />
+          <traverse-history />
+          <the-router :items="'/all-product-type'" :item="product_type" />
         </div>
         <div class="type_title">
           <p class="heading">The {{ product_type }}</p>
@@ -23,6 +23,10 @@
             :product_type="item.product_type"
             :price="item.price"
             :price_sign="item.price_sign"
+            :category="item.category"
+            :brand="item.brand"
+            :currency="item.currency"
+            @addItemCart="pushToCart(item)"
           />
         </div>
       </div>
@@ -48,12 +52,28 @@ defineOptions({
   name: "ProductTypeView",
 });
 const store = useCosmeticStore();
-const { fetchCosmetics } = store;
+const { fetchCosmetics, addToCart  } = store;
 const { fileredByProductType } = storeToRefs(store);
 
 const route = useRoute();
 const product_type = route.params.product_type;
 
+//add to wish list
+function pushToCart(item) {
+  addToCart({
+    id: item.id,
+    image_link: item.image_link,
+    api_featured_image: item.api_featured_image,
+    color: item.color,
+    name: item.name,
+    product_type: item.product_type,
+    price: item.price,
+    price_sign: item.price_sign,
+    category: item.category,
+    brand: item.brand,
+    currency: item.currency,
+  });
+}
 let created = ref(false);
 
 onMounted(() => {

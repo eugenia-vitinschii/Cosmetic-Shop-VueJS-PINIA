@@ -20,6 +20,7 @@
           :tag_list="cosmetics.tag_list"
           :product_colors="cosmetics.product_colors"
            @addItemCart="pushToCart(cosmetics)"
+           @addItemFavorite="pushtoFavorite(cosmetics)"
         />
          </div>
       </div>
@@ -44,20 +45,35 @@ import { useRoute } from "vue-router";
 defineOptions({
   name: "ProductView",
 });
-
 //pinia store 
 const store = useCosmeticStore();
 const route = useRoute();
 const id = route.params.id;
 const { cosmetics } = storeToRefs(store);
-const { fetchCosmeticsById ,  addToCart } = store;
-
+const { fetchCosmeticsById ,  addToCart, addToFavorite } = store;
 
 let created = ref(false);
 
 //add to wish list
 function pushToCart(cosmetics) {
   addToCart({
+    id: cosmetics.id,
+    image_link: cosmetics.image_link,
+    api_featured_image: cosmetics.api_featured_image,
+    color: cosmetics.color,
+    name: cosmetics.name,
+    product_type: cosmetics.product_type,
+    price: cosmetics.price,
+    price_sign: cosmetics.price_sign,
+    category: cosmetics.category,
+    brand: cosmetics.brand,
+    currency: cosmetics.currency,
+    product_colors: cosmetics.product_colors
+  });
+}
+// add to favorite
+function pushtoFavorite(cosmetics){
+    addToFavorite({
     id: cosmetics.id,
     image_link: cosmetics.image_link,
     api_featured_image: cosmetics.api_featured_image,

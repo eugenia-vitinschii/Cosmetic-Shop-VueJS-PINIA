@@ -86,6 +86,16 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         }
         localStorage.setItem("cart",JSON.stringify(item));
        },
+       addToFavorite(item){
+        this.count = this.user.favorite.findIndex((product) => product.id == item.id);
+        if ( this.count !== -1){
+          this.cosmetics[this.count].quantity += 1;
+        } else {
+          item.quantity = 1;
+          this.user.favorite.push(item)
+        }
+        localStorage.setItem("favorite",JSON.stringify(item));
+       },
        incrementQuantity(id) {
         this.user.cart.forEach((item) => {
           if (item.id === id) {

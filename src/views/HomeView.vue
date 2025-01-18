@@ -74,7 +74,7 @@ let created = ref(false);
 // store
 const store = useCosmeticStore();
 const { cosmetics } = storeToRefs(store);
-const { loadMore, addToCart } = store;
+const { loadMore, addToCart} = store;
 
 //add to wish list
 function pushToCart(item) {

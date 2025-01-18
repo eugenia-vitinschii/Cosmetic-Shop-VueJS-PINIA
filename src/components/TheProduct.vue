@@ -60,7 +60,7 @@
         </div>
         <div class="product__info--buttons">
           <!-- wish list button -->
-          <button id="heart">
+          <button @click="$emit('addItemFavorite')">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"

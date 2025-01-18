@@ -4,7 +4,7 @@
       <div class="cart__wrapper">
         <div class="cart__heading">
           <p class="heading" v-if="user.cart.length >= 1">
-            Coș ({{ user.cart.length }})
+            Shopping cart ({{ user.cart.length }})
           </p>
           <p class="heading" v-else>Cosul este gol {{ user.cart.length }}</p>
         </div>
@@ -24,6 +24,7 @@
             :price_sign="item.price_sign"
             :currency="item.currency"
             :count="count"
+            @deleteItem="deleteItem(item)"
          />
 
         </div>

@@ -12,7 +12,7 @@ const router = createRouter({
       path: "/product/:id",
       name: "product",
       component: () => import("../views/ProductView.vue"),
-      props: true
+      props: true,
     },
     {
       path: "/all-brand",
@@ -63,6 +63,11 @@ const router = createRouter({
       path: "/cart",
       name: "cart",
       component: () => import("../views/ShoppingView.vue"),
+    },
+    {
+      path: "/favorites",
+      name: "favorites",
+      component: () => import("../views/FavoriteView.vue"),
     },
   ],
 });

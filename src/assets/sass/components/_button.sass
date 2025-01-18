@@ -12,15 +12,11 @@
 
 // TraverseHistory button 
 .button-svg
-   background: $ivory
-   border: 1px solid $ivory
-   transition: $transition 
-   svg
-      fill: $purple
+   @include button-style($black, $ivory)
 
 .button-svg:hover
-   svg
-      fill: $black
+   color: $purple
+
 
 .load-more
    background: $ivory

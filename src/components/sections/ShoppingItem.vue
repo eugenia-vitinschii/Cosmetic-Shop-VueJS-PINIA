@@ -29,15 +29,15 @@
       </div>
     </div>
     <div class="cart__counter">
-      <button class="button">-</button>
+      <button class="button-svg">-</button>
       <p class="body-text"> {{count}} </p>
-      <button class="button">+</button>
+      <button class="button-svg">+</button>
     </div>
     <div class="cart__price">
       <p class="body-text">{{ price }} {{ price_sign }} ({{ currency }})</p>
     </div>
     <div class="cart__delete">
-      <button class="red-button">delete</button>
+      <button class="red-button" @click="$emit('deleteItem')">delete</button>
     </div>
   </div>
 </template>

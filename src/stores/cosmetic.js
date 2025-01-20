@@ -103,6 +103,12 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
           }
         });
       },
+      removeItem(id){
+        this.user.cart = this.user.cart.filter((item) => item.id !== id)
+      },
+      removeFromFavorites(id){
+        this.user.favorite = this.user.favorite.filter((item) => item.id !== id)
+      }
    }
 })
 

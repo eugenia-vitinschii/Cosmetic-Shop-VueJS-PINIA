@@ -38,11 +38,13 @@
    &__button
       width: 100%
       flex: 0 0 auto
-      button
+      button:last-child
          min-width: 100%
          @include button-style($white, $black)
-      button:hover
+      button:hover:last-child
          @include button-style($white, $violet)
+      p
+         text-align: center
 
 // small devices
 @media (max-width: 850px)

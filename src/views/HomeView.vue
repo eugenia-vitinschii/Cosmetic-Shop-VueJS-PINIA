@@ -23,7 +23,9 @@
           :category="item.category"
           :brand="item.brand"
           :currency="item.currency"
+          :buy="buyItem"
           @addItemCart="pushToCart(item)"
+          @addToFavorite="pushtoFavorite(item)"
         />
         <div class="item__item">
           <div class="item__img">
@@ -70,11 +72,11 @@ defineOptions({
 });
 
 let created = ref(false);
-
+let buyItem = ref(true)
 // store
 const store = useCosmeticStore();
 const { cosmetics } = storeToRefs(store);
-const { loadMore, addToCart} = store;
+const { loadMore, addToCart, addToFavorite} = store;
 
 //add to wish list
 function pushToCart(item) {
@@ -90,6 +92,23 @@ function pushToCart(item) {
     category: item.category,
     brand: item.brand,
     currency: item.currency,
+  });
+
+}// add to favorite
+function pushtoFavorite(cosmetics){
+    addToFavorite({
+    id: cosmetics.id,
+    image_link: cosmetics.image_link,
+    api_featured_image: cosmetics.api_featured_image,
+    color: cosmetics.color,
+    name: cosmetics.name,
+    product_type: cosmetics.product_type,
+    price: cosmetics.price,
+    price_sign: cosmetics.price_sign,
+    category: cosmetics.category,
+    brand: cosmetics.brand,
+    currency: cosmetics.currency,
+    product_colors: cosmetics.product_colors
   });
 }
 

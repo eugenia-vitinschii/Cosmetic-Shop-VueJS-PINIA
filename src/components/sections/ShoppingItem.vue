@@ -29,9 +29,9 @@
       </div>
     </div>
     <div class="cart__counter">
-      <button class="button-svg">-</button>
+      <button class="button-svg" @click="$emit('decrement')">-</button>
       <p class="body-text"> {{count}} </p>
-      <button class="button-svg">+</button>
+      <button class="button-svg" @click="$emit('increment')">+</button>
     </div>
     <div class="cart__price">
       <p class="body-text">{{ price }} {{ price_sign }} ({{ currency }})</p>

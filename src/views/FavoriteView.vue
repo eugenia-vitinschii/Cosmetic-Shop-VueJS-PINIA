@@ -24,6 +24,7 @@
           :brand="item.brand"
           :currency="item.currency"
           @addItemCart="pushToCart(item)"
+          @addToFavorite="deleteFromFavorite(item.id)"
           />
          </div>
       </div>
@@ -55,10 +56,11 @@ import { storeToRefs} from "pinia";
 //pinia actions, data , getters
 const store = useCosmeticStore();
 const {user} = storeToRefs(store);
-const { addToCart} = store;
+const { addToCart, removeFromFavorites} = store;
 
 //add to wish list
 function pushToCart(item) {
+   console.log('add ti cart')
   addToCart({
     id: item.id,
     image_link: item.image_link,
@@ -71,7 +73,13 @@ function pushToCart(item) {
     category: item.category,
     brand: item.brand,
     currency: item.currency,
+
   });
+   
+}
+//delete from favorite
+function deleteFromFavorite(item){
+removeFromFavorites(item)
 }
 
 //hooks

@@ -25,6 +25,7 @@
           :currency="item.currency"
           @addItemCart="pushToCart(item)"
           @addToFavorite="deleteFromFavorite(item.id)"
+           class="heart"
           />
          </div>
       </div>
@@ -60,7 +61,7 @@ const { addToCart, removeFromFavorites} = store;
 
 //add to wish list
 function pushToCart(item) {
-   console.log('add ti cart')
+   console.log('add to cart')
   addToCart({
     id: item.id,
     image_link: item.image_link,
@@ -73,7 +74,6 @@ function pushToCart(item) {
     category: item.category,
     brand: item.brand,
     currency: item.currency,
-
   });
    
 }

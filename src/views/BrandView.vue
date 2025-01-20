@@ -27,6 +27,7 @@
           :brand="item.brand"
           :currency="item.currency"
           @addItemCart="pushToCart(item)"
+          @addToFavorite="pushtoFavorite(item)"
           />
         </div>
       </div>
@@ -56,7 +57,7 @@ const store = useCosmeticStore();
 const { fileredByBrand  } = storeToRefs(store);
 const route = useRoute();
 const brand = route.params.brand;
-const {  addToCart } = store;
+const {  addToCart, addToFavorite } = store;
 
 //add to wish list
 function pushToCart(item) {
@@ -75,7 +76,23 @@ function pushToCart(item) {
   });
 }
 
-
+// add to favorite
+function pushtoFavorite(cosmetics){
+    addToFavorite({
+    id: cosmetics.id,
+    image_link: cosmetics.image_link,
+    api_featured_image: cosmetics.api_featured_image,
+    color: cosmetics.color,
+    name: cosmetics.name,
+    product_type: cosmetics.product_type,
+    price: cosmetics.price,
+    price_sign: cosmetics.price_sign,
+    category: cosmetics.category,
+    brand: cosmetics.brand,
+    currency: cosmetics.currency,
+    product_colors: cosmetics.product_colors
+  });
+}
 let created = ref(false);
 
 onMounted(() => {

@@ -38,7 +38,8 @@
     </div>
     <!-- item button -->
     <div class="item__button" >
-      <button @click="$emit('addToFavorite')"> <svg
+      <button @click="$emit('addToFavorite')" :class="$attrs.class"> 
+        <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
               viewBox="0 -960 960 960"

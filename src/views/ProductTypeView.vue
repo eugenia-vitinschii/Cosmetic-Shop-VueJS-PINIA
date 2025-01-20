@@ -27,6 +27,7 @@
             :brand="item.brand"
             :currency="item.currency"
             @addItemCart="pushToCart(item)"
+             @addToFavorite="pushtoFavorite(item)"
           />
         </div>
       </div>
@@ -52,7 +53,7 @@ defineOptions({
   name: "ProductTypeView",
 });
 const store = useCosmeticStore();
-const { fetchCosmetics, addToCart  } = store;
+const { fetchCosmetics, addToCart, addToFavorite  } = store;
 const { fileredByProductType } = storeToRefs(store);
 
 const route = useRoute();
@@ -72,6 +73,24 @@ function pushToCart(item) {
     category: item.category,
     brand: item.brand,
     currency: item.currency,
+  });
+}
+
+// add to favorite
+function pushtoFavorite(cosmetics){
+    addToFavorite({
+    id: cosmetics.id,
+    image_link: cosmetics.image_link,
+    api_featured_image: cosmetics.api_featured_image,
+    color: cosmetics.color,
+    name: cosmetics.name,
+    product_type: cosmetics.product_type,
+    price: cosmetics.price,
+    price_sign: cosmetics.price_sign,
+    category: cosmetics.category,
+    brand: cosmetics.brand,
+    currency: cosmetics.currency,
+    product_colors: cosmetics.product_colors
   });
 }
 let created = ref(false);

@@ -94,7 +94,8 @@ function pushToCart(item) {
     currency: item.currency,
   });
 
-}// add to favorite
+}
+// add to favorite
 function pushtoFavorite(cosmetics){
     addToFavorite({
     id: cosmetics.id,

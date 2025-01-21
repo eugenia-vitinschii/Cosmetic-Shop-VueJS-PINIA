@@ -30,7 +30,7 @@
     </div>
     <div class="cart__counter">
       <button class="button-svg" @click="$emit('decrement')">-</button>
-      <p class="body-text"> {{count}} </p>
+      <p class="body-text"> {{quantity}} </p>
       <button class="button-svg" @click="$emit('increment')">+</button>
     </div>
     <div class="cart__price">
@@ -80,7 +80,7 @@ defineProps({
   currency: {
     type: String,
   },
-  count:{
+  quantity:{
    type: Number,
   }
 });

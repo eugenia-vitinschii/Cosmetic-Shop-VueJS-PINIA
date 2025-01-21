@@ -38,7 +38,7 @@
     </div>
     <!-- item button -->
     <div class="item__button" >
-      <button @click="$emit('addToFavorite')" :class="$attrs.class"> 
+      <button @click="$emit('addToFavorite')" :class="{heart: isActive}"> 
         <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -100,6 +100,10 @@ defineProps({
   buy:{
     type: Boolean,
     default: true
+  },
+  isActive:{
+ type: Boolean,
+    default: false
   }
 });
 </script>

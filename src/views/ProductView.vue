@@ -19,6 +19,7 @@
           :category="cosmetics.category"
           :tag_list="cosmetics.tag_list"
           :product_colors="cosmetics.product_colors"
+             :isActive="cosmetics.active"
            @addItemCart="pushToCart(cosmetics)"
            @addItemFavorite="pushtoFavorite(cosmetics)"
         />

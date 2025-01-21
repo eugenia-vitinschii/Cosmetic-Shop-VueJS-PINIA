@@ -23,7 +23,7 @@
             :price="item.price"
             :price_sign="item.price_sign"
             :currency="item.currency"
-            :count="count"
+            :quantity="item.quantity"
             @decrement="count--"
             @increment="count++"
             @deleteItem="removeItemFromCart(item.id)"
@@ -53,7 +53,7 @@ import { storeToRefs } from "pinia";
 
 //pinia const
 const store = useCosmeticStore();
-const { user, count } = storeToRefs(store);
+const { user } = storeToRefs(store);
 const { removeItem} = store;
 
 // delete item from cart

@@ -26,6 +26,7 @@
           :buy="buyItem"
           @addItemCart="pushToCart(item)"
           @addToFavorite="pushtoFavorite(item)"
+          :isActive="item.active"
         />
         <div class="item__item">
           <div class="item__img">
@@ -72,10 +73,12 @@ defineOptions({
 });
 
 let created = ref(false);
-let buyItem = ref(true)
+let buyItem = ref(true);
+
+
 // store
 const store = useCosmeticStore();
-const { cosmetics } = storeToRefs(store);
+const { cosmetics, } = storeToRefs(store);
 const { loadMore, addToCart, addToFavorite} = store;
 
 //add to wish list
@@ -92,6 +95,7 @@ function pushToCart(item) {
     category: item.category,
     brand: item.brand,
     currency: item.currency,
+    active: item.active
   });
 
 }
@@ -109,7 +113,9 @@ function pushtoFavorite(cosmetics){
     category: cosmetics.category,
     brand: cosmetics.brand,
     currency: cosmetics.currency,
-    product_colors: cosmetics.product_colors
+    product_colors: cosmetics.product_colors,
+    quantity: 1,
+    active: true
   });
 }
 
@@ -118,6 +124,7 @@ onMounted(() => {
   created.value = true;
   loadMore();
 });
+
 
 // onUnmounted(() => {
 //   store.$reset();

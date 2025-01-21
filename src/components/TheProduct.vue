@@ -60,7 +60,7 @@
         </div>
         <div class="product__info--buttons">
           <!-- wish list button -->
-          <button @click="$emit('addItemFavorite')">
+          <button @click="$emit('addItemFavorite')" :class="{heart: isActive}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -167,6 +167,10 @@ defineProps({
   product_colors: {
     type: Object,
   },
+  isActive:{
+ type: Boolean,
+    default: false
+  }
 });
 
 const selected = ref("");

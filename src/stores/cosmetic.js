@@ -13,7 +13,6 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         favorite: []
       },
       count: 1,
-
    }),
    getters: {
     //products by brand
@@ -90,11 +89,14 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         this.count = this.user.favorite.findIndex((product) => product.id == item.id);
         if ( this.count !== -1){
           this.cosmetics[this.count].quantity += 1;
+          this.user.active = false;
         } else {
           item.quantity = 1;
+          this.user.active = true;
           this.user.favorite.push(item)
         }
         localStorage.setItem("favorite",JSON.stringify(item));
+        
        },
        incrementQuantity(id) {
         this.user.cart.forEach((item) => {

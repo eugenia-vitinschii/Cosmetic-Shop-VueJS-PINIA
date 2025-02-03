@@ -8,7 +8,7 @@ $\color{#480ca8}{\textsf{Makeup shop "BORCELLE"}}$
 
 ## Project setup
 ```
-npm install
+npm install 
 ```
 
 ### Compiles and hot-reloads for development

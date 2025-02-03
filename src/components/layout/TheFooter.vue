@@ -7,10 +7,11 @@
         <div class="footer__info">
           <div class="footer__link">
             <div class="footer__link--item">
+
               <ul>
                 <li>Information</li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
+                  <router-link to="/about" class="small-text"
                     >About us</router-link
                   >
                 </li>
@@ -26,7 +27,7 @@
                 </li>
                 <li>
                   <router-link to="/all-brand" class="small-text"
-                    >TPrivacy policy</router-link
+                    >Privacy policy</router-link
                   >
                 </li>
               </ul>
@@ -89,7 +90,7 @@
         <div class="footer__title">
           <div class="footer__title--img">
             <router-link to="/"> 
-               <img src="@/assets/img/logo.png" alt="img">
+               <img src="@/assets/img/logo.jpeg" alt="img">
               </router-link>
              
           </div>

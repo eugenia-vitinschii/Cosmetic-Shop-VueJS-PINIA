@@ -79,8 +79,8 @@
           </button>
         </div>
         <div class="product__info--colors" v-if="product_colors != ''">
-          <select name="colors" id="selected-color" v-model="selected">
-            <option value="">Select color</option>
+          <select name="colors " id="selected-color" v-model="selected">
+           
             <option
               v-for="item in product_colors"
               :key="item.hex_value"
@@ -88,6 +88,7 @@
             >
               {{ item.colour_name }}
             </option>
+             <option value="">Select color!</option>
           </select>
           <div class="color">
             <div

@@ -57,7 +57,7 @@
 
 <script setup>
 //vue
-import { defineOptions, onMounted, ref } from "vue";
+import { defineOptions, onMounted, ref} from "vue";
 
 //components
 import TheSlider from "@/components/sections/TheSlider.vue";
@@ -120,6 +120,8 @@ function pushtoFavorite(cosmetics){
 }
 
 //hooks
+
+
 onMounted(() => {
   created.value = true;
   loadMore();

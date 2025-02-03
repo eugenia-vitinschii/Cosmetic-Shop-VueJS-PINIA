@@ -101,7 +101,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
        incrementQuantity(id) {
         this.user.cart.forEach((item) => {
           if (item.id === id) {
-            return this.count++;
+            return this.user.cart.quantity++;
           }
         });
       },

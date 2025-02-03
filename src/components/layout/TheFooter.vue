@@ -7,73 +7,43 @@
         <div class="footer__info">
           <div class="footer__link">
             <div class="footer__link--item">
-
               <ul>
-                <li>Information</li>
                 <li>
-                  <router-link to="/about" class="small-text"
-                    >About us</router-link
-                  >
+                  <router-link to="/about" class="body-text">About us</router-link>
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Contacts</router-link
-                  >
+                  <router-link to="/about" class="small-text">Our Vision</router-link>
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Terms of use</router-link
-                  >
+                  <router-link to="/about" class="small-text">Our Mission</router-link>
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Privacy policy</router-link
-                  >
+                  <router-link to="/about" class="small-text">Our guiding principle</router-link>
+                </li>
+                <li>
+                  <router-link to="/about" class="small-text">Digitally Supply chain</router-link>
                 </li>
               </ul>
             </div>
             <div class="footer__link--item">
               <ul>
-                <li>About Us</li>
+                <li >
+                  <router-link to="/info" class="body-text">Our impact</router-link></li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Product originality</router-link
-                  >
+                  <router-link to="/info#impact" class="small-text">Our impact</router-link>
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Promotions</router-link
-                  >
+                  <router-link to="/info#resilience" class="small-text">Planet collective resilience</router-link>
                 </li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Terms of use of the site</router-link
-                  >
+                  <router-link to="/info#innovation" class="small-text">Process waste-less innovation</router-link>
                 </li>
               </ul>
             </div>
             <div class="footer__link--item">
               <ul>
-                <li>Therm Conditions</li>
                 <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >About delivery</router-link
-                  >
-                </li>
-                <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Exchange and return</router-link
-                  >
-                </li>
-                <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Terms of use</router-link
-                  >
-                </li>
-                <li>
-                  <router-link to="/all-brand" class="small-text"
-                    >Privacy policy</router-link
-                  >
+                  <router-link to="/terms" class="body-text">Terms & Conditions</router-link>
                 </li>
               </ul>
             </div>
@@ -90,7 +60,7 @@
         <div class="footer__title">
           <div class="footer__title--img">
             <router-link to="/"> 
-               <img src="@/assets/img/logo.jpeg" alt="img">
+               <img src="@/assets/img/BORCELLE.jpg" alt="img">
               </router-link>
              
           </div>

@@ -11,10 +11,10 @@
           <div class="header__data--links">
             <ul >
               <li>
-                <router-link to="/terms" class="small-text">Promotions</router-link>
+                <router-link to="/promo" class="small-text">Promotions</router-link>
               </li>
               <li>
-                <router-link to="/info" class="small-text">Terms of use</router-link>
+                <router-link to="/terms" class="small-text">Terms of use</router-link>
               </li>
               <li>
                 <router-link to="/about" class="small-text">About us</router-link>
@@ -31,7 +31,7 @@
         <div class="header__control">
           <div class="header__control--img">
             <router-link to="/"> 
-            <img src="@/assets/img/logo.jpeg" alt="logo">
+            <img src="@/assets/img/BORCELLE.jpg" alt="logo">
             </router-link>
           </div>
           <div class="header__control--buttons">

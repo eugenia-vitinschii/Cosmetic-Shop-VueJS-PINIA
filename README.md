@@ -13,7 +13,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run servegit pull
+npm run serve git pull
 ```
 
 ###   \{^_^}/ hi!
@@ -70,7 +70,7 @@ src
          - ReturnPolicy.vue
          - TheDecor.vue
          - TheDelivery.vue
-         - ...
+         - TheSlider.vue
    - router
       - cosmetic.js
    - stores

@@ -74,6 +74,21 @@ const router = createRouter({
       name: "admin",
       component: () => import("../views/admin/AdminView.vue"),
     },
+    {
+      path: "/update",
+      name: "update",
+      component: () => import("../views/admin/UpdateView.vue"),
+    },
+    {
+      path: "/add",
+      name: "add",
+      component: () => import("../views/admin/AddProductView.vue"),
+    },
+    {
+      path: "/all",
+      name: "all",
+      component: () => import("../views/admin/ShowProductsView.vue"),
+    },
   ],
 });
 

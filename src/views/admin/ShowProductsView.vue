@@ -2,7 +2,7 @@
    <div class="admin">
       <div class="container">
          <div class="admin__wrapper">
-            <p class="heading">Admin page</p>
+            <p class="heading">Show  All products</p>
             <the-admin-header/>
          </div>
       </div>
@@ -19,7 +19,7 @@ import TheAdminHeader from "@/components/layout/TheAdminHeader.vue"
 
 //component settings
 defineOptions({
-   name: "AdminView"
+   name: "ShowProductsView"
 })
 
 </script>

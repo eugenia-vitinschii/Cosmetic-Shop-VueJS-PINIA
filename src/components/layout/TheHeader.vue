@@ -59,6 +59,11 @@
         </div>
         <nav>
           <ul class="header__top">
+                <li class="header__link"> 
+              <router-link to="/admin">
+             Admin
+              </router-link>
+            </li>
             <!-- home -->
             <li class="header__link"> 
               <router-link to="/">

@@ -75,9 +75,10 @@ const router = createRouter({
       component: () => import("../views/admin/AdminView.vue"),
     },
     {
-      path: "/update",
+      path: "/update/:id",
       name: "update",
       component: () => import("../views/admin/UpdateView.vue"),
+      props: true 
     },
     {
       path: "/add",

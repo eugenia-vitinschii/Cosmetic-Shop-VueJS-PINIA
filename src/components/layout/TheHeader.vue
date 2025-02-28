@@ -11,7 +11,7 @@
           <div class="header__data--links">
             <ul >
               <li>
-                <router-link to="/promo" class="small-text">Promotions</router-link>
+
               </li>
               <li>
                 <router-link to="/terms" class="small-text">Terms of use</router-link>

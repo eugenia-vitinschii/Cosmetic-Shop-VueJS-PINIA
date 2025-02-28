@@ -53,6 +53,33 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
            console.log("fetchCosmetics error:", error);
          }
        },
+       //updateItem
+       async updateCosmetic(id){
+        try{
+          await axios.put(`${baseUrl}/cosmetics/${id}`,{
+            id: this.cosmetics.id,
+            brand: this.cosmetics.brand,
+            name: this.cosmetics.name,
+            price: this.cosmetics.price,
+            price_sign: this.cosmetics.price_sign,
+            currency: this.cosmetics.currency,
+            image_link: this.cosmetics.image_link,
+            product_link: this.cosmetics.product_link,
+            website_link: this.cosmetics.website_link,
+            description: this.cosmetics.description,
+            rating: this.cosmetics.rating,
+            category: this.cosmetics.category,
+            product_type: this.cosmetics.product_type,
+            tag_list: this.cosmetics.tag_list,
+            updated_at: this.cosmetics.updated_at,
+            product_api_url: this.cosmetics.product_api_url,
+            api_featured_image: this.cosmetics.api_featured_image,
+            product_colors: this.cosmetics.product_colors,
+          })
+        } catch(err){
+          console.log(err)
+        } 
+       },
        async fetchCosmeticsById(id) {
          // get Cosmetics from db.json by id
          try {

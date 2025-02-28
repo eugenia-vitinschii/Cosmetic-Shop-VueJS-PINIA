@@ -8,25 +8,30 @@
                <form class="update__form">
                   <div class="update__form-item">
                      <p class="body-text">General info</p>
+                      <the-input
+                     :label="'id'"
+                     :placeholder="'id'"
+                     v-model:value.trim="cosmetics.id"
+                     />
                      <the-input
                      :label="'brand'"
                      :placeholder="'brand'"
-                     v-model:value="cosmetics.brand"
+                     v-model:value.trim="cosmetics.brand"
                      />
                      <the-input
                      :label="'name'"
                      :placeholder="'name'"
-                     v-model:value="cosmetics.name"
+                     v-model:value.trim="cosmetics.name"
                      />
                      <the-input
                      :label="'price'"
                      :placeholder="'price'"
-                     v-model:value="cosmetics.price"
+                     v-model:value.number="cosmetics.price"
                      />
                      <the-input
                      :label="'currency'"
                      :placeholder="'currency'"
-                     v-model:value="cosmetics.currency"
+                     v-model:value.trim="cosmetics.currency"
                      />
                   </div>
                   <div class="update__form-item">
@@ -34,27 +39,27 @@
                      <the-input
                      :label="'img'"
                      :placeholder="'img'"
-                     v-model:value="cosmetics.image_link"
+                     v-model:value.trim="cosmetics.image_link"
                      />
                       <the-input
                      :label="'api_featured_image'"
                      :placeholder="'api_featured_image'"
-                     v-model:value="cosmetics.api_featured_image"
+                     v-model:value.trim="cosmetics.api_featured_image"
                      />
                       <the-input
                      :label="'product_link'"
                      :placeholder="'product_link'"
-                     v-model:value="cosmetics.product_link"
+                     v-model:value.trim="cosmetics.product_link"
                      />
                       <the-input
                      :label="'website_link'"
                      :placeholder="'website_link'"
-                     v-model:value="cosmetics.website_link"
+                     v-model:value.trim="cosmetics.website_link"
                      />
                        <the-input
                      :label="'product_api_url'"
                      :placeholder="'product_api_url'"
-                     v-model:value="cosmetics.product_api_url"
+                     v-model:value.trim="cosmetics.product_api_url"
                      />
                   </div>
                   <div class="update__form-item">
@@ -63,24 +68,29 @@
                      <the-input
                      :label="'description'"
                      :placeholder="'description'"
-                     v-model:value="cosmetics.description"
+                     v-model:value.trim="cosmetics.description"
                      />
                       <the-input
                      :label="'rating'"
                      :placeholder="'rating'"
-                     v-model:value="cosmetics.rating"
+                     v-model:value.number="cosmetics.rating"
                      />
                       <the-input
                      :label="'category'"
                      :placeholder="'category'"
-                     v-model:value="cosmetics.category"
+                     v-model:value.trim="cosmetics.category"
                      />
                      <the-input
                      :label="'product_type'"
                      :placeholder="'product_type'"
-                     v-model:value="cosmetics.product_type"
+                     v-model:value.trim="cosmetics.product_type"
                      />
                   </div>
+                  <button class="green-button" @click="update()">
+                      Save
+                  </button>
+                
+          <router-link class="red-button" to="/all">Innapoi</router-link>
                </form>
             </div>
          </div>
@@ -119,9 +129,13 @@ import {storeToRefs} from "pinia";
 
 //pinia store variables
 const store = useCosmeticStore();
-const {fetchCosmeticsById} = store;
+const {fetchCosmeticsById,updateCosmetic} = store;
 const { cosmetics } = storeToRefs(store);
 
+//updateProduct
+function update(){
+   updateCosmetic(id);
+}
 
 //use hooks
 onMounted(() => {

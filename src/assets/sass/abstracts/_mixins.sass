@@ -5,7 +5,7 @@
    border: $border
    color: $color
    background: $bg
-   transition: $transition 
+   transition: $transition
 
 //fs colos
 @mixin font-style( $color, $padding-top, $text-align)
@@ -22,14 +22,13 @@
 @mixin section-wrapper
    margin-top: $margin-top
    border: $border
-   padding: $margin-top 
+   padding: $margin-top
 
 // item grid wrapper  
 @mixin section-wrapper-item
    @include shadow()
-   transition: $transition 
+   transition: $transition
    border-radius: $border-radius
-
 
 //img style
 @mixin img-style
@@ -44,7 +43,6 @@
    -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
    -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
    box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-
 
 //hover img
 @mixin img-style-hover
@@ -61,3 +59,20 @@
    -webkit-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
    -moz-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
    box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
+
+// input
+@mixin input()
+   display: block
+   padding: 5px
+   margin: 5px 0px
+   width: 100%
+   background: $white
+   color: $violet
+   font-size: $body-text-sm
+
+   ///import css-variables from 
+@mixin transition() 
+   transition-duration: 0.9s
+   transition-timing-function: ease
+
+   

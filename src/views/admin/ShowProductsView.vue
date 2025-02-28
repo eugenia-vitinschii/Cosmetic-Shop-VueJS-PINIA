@@ -7,14 +7,17 @@
        
         <div class="admin-content">
           <table class="admin__table">
-            <tr>
+            <thead>
+                 <tr>
               <th>Brand</th>
               <th>Name</th>
               <th>Category / Product Type</th>
               <th>Șterge</th>
               <th>Redactează</th>
             </tr>
-            <tr v-for="product in cosmetics" :key="product.id">
+            </thead>
+         <tbody>
+                     <tr v-for="product in cosmetics" :key="product.id">
               <td>{{ product.brand }}</td>
               <td>{{ product.name }}</td>
               <td>{{ product.category }}/ {{ product.product_type }}</td>
@@ -29,6 +32,8 @@
                 </router-link>
               </td>
             </tr>
+         </tbody>
+ 
           </table>
         </div>
       </div>

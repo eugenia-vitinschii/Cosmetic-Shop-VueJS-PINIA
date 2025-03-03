@@ -3,7 +3,7 @@
       <div class="container">
          <div class="update__wrapper">
             <the-admin-header/>
-            <p class="heading">Update: {{cosmetics.name}}</p>
+            <p class="heading">Edit: <span class="bold">{{cosmetics.name}}</span> </p>
             <div class="update__content">
                <form class="update__form">
                   <div class="update__form-item">
@@ -14,46 +14,46 @@
                      v-model:value.trim="cosmetics.id"
                      />
                      <the-input
-                     :label="'brand'"
-                     :placeholder="'brand'"
+                     :label="'Brand'"
+                     :placeholder="'Brand'"
                      v-model:value.trim="cosmetics.brand"
                      />
                      <the-input
-                     :label="'name'"
-                     :placeholder="'name'"
+                     :label="'Name'"
+                     :placeholder="'Name'"
                      v-model:value.trim="cosmetics.name"
                      />
                      <the-input
-                     :label="'price'"
-                     :placeholder="'price'"
+                     :label="'Price'"
+                     :placeholder="'Price'"
                      v-model:value.number="cosmetics.price"
                      />
                      <the-input
-                     :label="'currency'"
-                     :placeholder="'currency'"
+                     :label="'Currency'"
+                     :placeholder="'Currency'"
                      v-model:value.trim="cosmetics.currency"
                      />
                   </div>
                   <div class="update__form-item">
-                     <p class="body-text">! Photo & Sources</p>
+                     <p class="body-text">Photo & Sources</p>
                      <the-input
-                     :label="'img'"
-                     :placeholder="'img'"
+                     :label="'Img'"
+                     :placeholder="'Img'"
                      v-model:value.trim="cosmetics.image_link"
                      />
                       <the-input
-                     :label="'api_featured_image'"
-                     :placeholder="'api_featured_image'"
+                     :label="'Api featured image'"
+                     :placeholder="'Api featured image'"
                      v-model:value.trim="cosmetics.api_featured_image"
                      />
                       <the-input
-                     :label="'product_link'"
-                     :placeholder="'product_link'"
+                     :label="'Product link'"
+                     :placeholder="'Product link'"
                      v-model:value.trim="cosmetics.product_link"
                      />
                       <the-input
-                     :label="'website_link'"
-                     :placeholder="'website_link'"
+                     :label="'Website link'"
+                     :placeholder="'Website link'"
                      v-model:value.trim="cosmetics.website_link"
                      />
                        <the-input
@@ -64,25 +64,24 @@
                   </div>
                   <div class="update__form-item">
                      <p class="body-text">Product Information</p>
-                     <p class="body-text">prodcut colors hex_value & colour_name</p>
                      <the-input
-                     :label="'description'"
-                     :placeholder="'description'"
+                     :label="'Description'"
+                     :placeholder="'Description'"
                      v-model:value.trim="cosmetics.description"
                      />
                       <the-input
-                     :label="'rating'"
-                     :placeholder="'rating'"
+                     :label="'Rating'"
+                     :placeholder="'Rating'"
                      v-model:value.number="cosmetics.rating"
                      />
                       <the-input
-                     :label="'category'"
-                     :placeholder="'category'"
+                     :label="'Category'"
+                     :placeholder="'Category'"
                      v-model:value.trim="cosmetics.category"
                      />
                      <the-input
-                     :label="'product_type'"
-                     :placeholder="'product_type'"
+                     :label="'Product type'"
+                     :placeholder="'Product type'"
                      v-model:value.trim="cosmetics.product_type"
                      />
                   </div>

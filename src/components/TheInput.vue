@@ -1,6 +1,6 @@
 <template>
   <div class="input__wrapper">
-    <label>{{ label }}</label>
+    <label class="body-text">{{ label }}</label>
     <input
       type="text"
       :value="value"

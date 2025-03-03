@@ -53,6 +53,16 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
            console.log("fetchCosmetics error:", error);
          }
        },
+       //create 
+       async createProduct(payload) {
+        try{
+          const {data} = await axios.post(`${baseUrl}/cosmetics`, payload);
+          this.cosmetics.push(data);
+          console.log("Product was created")
+        }catch (err){
+          console.log(err)
+        }
+       },
        //updateItem
        async updateCosmetic(id){
         try{

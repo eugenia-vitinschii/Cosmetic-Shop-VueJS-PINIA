@@ -81,7 +81,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
             category: this.cosmetics.category,
             product_type: this.cosmetics.product_type,
             tag_list: this.cosmetics.tag_list,
-            updated_at: this.cosmetics.updated_at,
+            updated_at: new Date(),
             product_api_url: this.cosmetics.product_api_url,
             api_featured_image: this.cosmetics.api_featured_image,
             product_colors: this.cosmetics.product_colors,

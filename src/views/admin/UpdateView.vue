@@ -9,9 +9,14 @@
                   <div class="update__form-item">
                      <p class="body-text">General info</p>
                       <the-input
-                     :label="'id'"
-                     :placeholder="'id'"
+                     :label="'Id'"
+                     :placeholder="'Id'"
                      v-model:value.trim="cosmetics.id"
+                     />
+                      <the-input
+                     :label="'Updated at'"
+                     :placeholder="'updated_at'"
+                     v-model:value.trim="cosmetics.updated_at"
                      />
                      <the-input
                      :label="'Brand'"

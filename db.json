@@ -23,7 +23,7 @@
         "Vegan",
         "Gluten Free"
       ],
-      "updated_at": "2018-09-02T22:52:06.865Z",
+      "updated_at": "2025-03-03T16:26:25.116Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1042.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/042/original/open-uri20180706-4-1e74943?1530916234",
       "product_colors": [
@@ -26886,6 +26886,52 @@
       "category": "",
       "product_type": "",
       "created_at": "",
+      "product_colors": [
+        {
+          "hex_value": "",
+          "colour_name": ""
+        }
+      ]
+    },
+    {
+      "id": 787879,
+      "brand": "",
+      "name": "",
+      "price": "",
+      "currency": "",
+      "img": "",
+      "api_featured_image": "",
+      "product_link": "",
+      "website_link": "",
+      "product_api_url": "",
+      "description": "",
+      "rating": "",
+      "category": "",
+      "product_type": "",
+      "created_at": 1741019008625,
+      "product_colors": [
+        {
+          "hex_value": "",
+          "colour_name": ""
+        }
+      ]
+    },
+    {
+      "id": 787880,
+      "brand": "",
+      "name": "",
+      "price": "",
+      "currency": "",
+      "img": "",
+      "api_featured_image": "",
+      "product_link": "",
+      "website_link": "",
+      "product_api_url": "",
+      "description": "",
+      "rating": "",
+      "category": "",
+      "product_type": "",
+      "created_at": 1741019067285,
       "product_colors": [
         {
           "hex_value": "",

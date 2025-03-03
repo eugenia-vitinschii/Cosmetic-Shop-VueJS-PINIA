@@ -12,6 +12,11 @@
                 :label="'id'"
                 :placeholder="'id'"
                 v-model:value.trim="postProducts.id"
+              /> 
+              <the-input
+                :label="'created_at'"
+                :placeholder="'created_at'"
+                v-model:value.trim="postProducts.created_at"
               />
               <the-input
                 :label="'brand'"
@@ -142,7 +147,7 @@ const postProducts = ref({
   rating: "",
   category: "",
   product_type: "",
-  created_at: "",
+  created_at:  Date.now(),
   product_colors: [
     {
       hex_value: "",

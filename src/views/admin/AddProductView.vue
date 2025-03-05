@@ -102,8 +102,9 @@
                 v-model:value.trim="postProducts.product_type"
               />
             </div>
-            <button class="green-button" @click.prevent="save()">Save</button>
-            <button class="red-button" @click="$router.go(-1)">Back</button>
+             <button class="delete" @click="$router.go(-1)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"/></svg></button>
+            <button class="edit" @click.prevent="save()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></button>
+           
           </form>
         </div>
       </div>

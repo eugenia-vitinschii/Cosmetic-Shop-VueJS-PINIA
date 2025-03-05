@@ -1,18 +1,28 @@
 .button
    @include button-style($white, $brown)
 
-.red-button
-   @include button-style($white, $red)
+.edit svg
+   transition: $transition 
+   fill: $green
+   
 
-.button:hover, .red-button:hover
+.delete svg
+   transition: $transition 
+   fill: $red
+   
+.edit svg:hover, .delete svg:hover
+   fill: $black
+
+.button:hover
    @include button-style($brown, #fff)
 
-.button:active, .red-button:active
+.button:active
    @include button-style($black, #fff)
 
 // TraverseHistory button 
 .button-svg
    @include button-style($black, $ivory)
+   
 
 .button-svg:hover
    color: $purple

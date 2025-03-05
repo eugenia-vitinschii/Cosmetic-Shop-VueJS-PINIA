@@ -147,7 +147,7 @@ const postProducts = ref({
   rating: "",
   category: "",
   product_type: "",
-  created_at:  Date.now(),
+  created_at:  new Date(),
   product_colors: [
     {
       hex_value: "",

@@ -13,6 +13,11 @@
                      :placeholder="'Id'"
                      v-model:value.trim="cosmetics.id"
                      />
+                       <the-input
+                     :label="'created_a'"
+                     :placeholder="'created_a'"
+                     v-model:value.trim="cosmetics.created_at"
+                     />
                       <the-input
                      :label="'Updated at'"
                      :placeholder="'updated_at'"

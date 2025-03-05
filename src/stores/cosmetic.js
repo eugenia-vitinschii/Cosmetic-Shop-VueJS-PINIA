@@ -100,6 +100,15 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
            console.log("fetchCosmeticsById(id) error:", error);
          }
        },
+           // delete product in db.json
+    async deleteProduct(id) {
+      try {
+        await axios.delete(`${baseUrl}/cosmetics/${id}`);
+        this.cosmetics = this.cosmetics.filter((prev) => prev.id !== id);
+      } catch (err) {
+        console.error("Post ERROR!", err);
+      }
+    },
        async loadMore(){
         this.page++
         try {

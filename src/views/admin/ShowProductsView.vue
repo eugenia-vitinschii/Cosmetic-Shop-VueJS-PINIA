@@ -22,8 +22,8 @@
               <td>{{ product.name }}</td>
               <td>{{ product.category }}/ {{ product.product_type }}</td>
               <td>
-                <button class="red-button">
-                  Șterge @click="deleteItem(product.id)"
+                <button class="red-button" @click="deleteItem(product.id)">
+                  Șterge 
                 </button>
               </td>
               <td>
@@ -63,7 +63,16 @@ import { storeToRefs } from "pinia";
 //pinia variables
 const store = useCosmeticStore();
 const { cosmetics } = storeToRefs(store);
-const { fetchCosmetics } = store;
+const { fetchCosmetics, deleteProduct } = store;
+
+//delete item
+const deleteItem = (id) => {
+  const confirm = window.confirm("delete item?");
+  if (confirm){
+    deleteProduct(id);
+
+  }
+}
 
 // use hooks
 onMounted(() => {

@@ -95,9 +95,12 @@
                      v-model:value.trim="cosmetics.product_type"
                      />
                   </div>
-                            <router-link class="delete" to="/all"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"/></svg></router-link>
+                  <router-link class="delete tooltip" to="/all">
+                   <span class="tooltip-text small-text">back</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"/></svg></router-link>
 
-                  <button class="edit" @click="update()">
+                  <button class="edit tooltip" @click="update()">
+      <span class="tooltip-text small-text">save</span>
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
                   </button>
                 

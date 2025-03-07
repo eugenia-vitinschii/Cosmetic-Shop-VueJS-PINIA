@@ -1,7 +1,7 @@
 .heading
    @include font-style( $brown, 10px, left)
    @include font-size($heading, 40px)
-.subheading 
+.subheading
    @include font-style( $dark-brown, 10px, left)
    @include font-size($subheading, 32px)
 .body-text, .body-text-light
@@ -19,8 +19,7 @@
    @include font-style( $violet, 0px, left)
    text-transform: uppercase
    letter-spacing: 7px
- 
- 
+
 .menu-item
    @include font-size($subheading, 32px)
    @include font-style( $ivory, 10px, left)
@@ -45,8 +44,27 @@
    .body-text, .body-text-light
       @include font-size($body-text-sm, 20px)
    .small-text
-      @include font-size($body-text-small-sm, 18px)  
+      @include font-size($body-text-small-sm, 18px)
 
 //adition classes for fonts
 .bold
    font-weight: bold
+
+//tooltip
+.tooltip
+   position: relative
+   display: inline-block
+
+.tooltip-text
+   visibility: hidden
+   position: absolute
+   top: 30px
+   padding: 3px
+   background: $purple
+   color: $white
+   z-index: 4
+   font-size: 10px
+   @include transition()
+
+.tooltip:hover .tooltip-text
+   visibility: visible

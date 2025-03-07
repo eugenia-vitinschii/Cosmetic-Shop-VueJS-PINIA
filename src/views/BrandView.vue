@@ -9,7 +9,8 @@
         <!-- brand title -->
         <div class="brand__title">
           <p class="heading">Brand: {{ brand }}</p>
-          <p class="small-text">Au fost gasite ( {{ fileredByBrand(brand).length }} ) produse</p>
+          <p class="small-text">
+             {{ fileredByBrand(brand).length }}  products were found</p>
         </div>
         <!-- brand items -->
         <div class="brand__items products-wrapper" v-if="created">

@@ -38,7 +38,8 @@
     </div>
     <!-- item button -->
     <div class="item__button" >
-      <button @click="$emit('addToFavorite')" :class="{heart: isActive}"> 
+      <button @click="$emit('addToFavorite')" :class="{heart: isActive}"  class="tooltip">
+      <span class="tooltip-text small-text">favorite</span>
         <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"

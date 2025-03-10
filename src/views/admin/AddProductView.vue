@@ -12,7 +12,7 @@
                 :label="'id'"
                 :placeholder="'id'"
                 v-model:value.trim="postProducts.id"
-              /> 
+              />
               <the-input
                 :label="'created_at'"
                 :placeholder="'created_at'"
@@ -92,40 +92,69 @@
                 v-model:value.number="postProducts.rating"
               />
               <!-- category -->
-               <div class="input__wrapper">
-              <label for="brand">Category</label>
-              <select name="brand" id="brand" v-model="postProducts.category">
-                <option value="Liquid">Liquid</option>
-                <option value="Powder">Powder</option>
-                <option value="Concealer">Concealer</option>
-                <option value="Highligter">Highlighter</option>
-                <option value="BB/CC">BB/CC</option>
-                <option value="Contour">Contour</option>
-                <option value="Cream">Cream</option>
-                <option value="Mineral">Mineral</option>
-                <option value="Lipstick">Lipstick</option>
-                <option value="Lip Gloss">Lip Gloss</option>
-                <option value="Palette">Palette</option>
-                <option value="Pencil">Pencil</option>
-                <option value="Gel">Gel</option>
-              </select>
+              <div class="input__wrapper">
+                <label for="category">Category</label>
+                <select name="category" id="category" v-model="postProducts.category">
+                  <option value="Liquid">Liquid</option>
+                  <option value="Powder">Powder</option>
+                  <option value="Concealer">Concealer</option>
+                  <option value="Highligter">Highlighter</option>
+                  <option value="BB/CC">BB/CC</option>
+                  <option value="Contour">Contour</option>
+                  <option value="Cream">Cream</option>
+                  <option value="Mineral">Mineral</option>
+                  <option value="Lipstick">Lipstick</option>
+                  <option value="Lip Gloss">Lip Gloss</option>
+                  <option value="Palette">Palette</option>
+                  <option value="Pencil">Pencil</option>
+                  <option value="Gel">Gel</option>
+                </select>
+              </div>
+              <!-- type-->
+              <div class="input__wrapper">
+                <label for="product_type">Type</label>
+                <select
+                  name="product_type"
+                  id="product_type"
+                  v-model="postProducts.product_type"
+                >
+                  <option value="Foundation">Foundation</option>
+                  <option value="Lipstick">Lipstick</option>
+                  <option value="Eyeshadow">Eyeshadow</option>
+                  <option value="Blush">Blush</option>
+                  <option value="Nail Polish">Nail Polish</option>
+                  <option value="Bronzer">Bronzer</option>
+                </select>
+              </div>
             </div>
-             
-              <the-input
-                :label="'product_type'"
-                :placeholder="'product_type'"
-                v-model:value.trim="postProducts.product_type"
-              />
-            </div>
-             <button class="delete tooltip" @click="$router.go(-1)">
+            <button class="delete tooltip" @click="$router.go(-1)">
               <span class="tooltip-text small-text">back</span>
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
-              </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"
+                />
+              </svg>
+            </button>
             <button class="edit tooltip" @click.prevent="save()">
               <span class="tooltip-text small-text">save</span>
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              </button>
-           
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"
+                />
+              </svg>
+            </button>
           </form>
         </div>
       </div>
@@ -169,7 +198,7 @@ const postProducts = ref({
   rating: "",
   category: "",
   product_type: "",
-  created_at:  new Date(),
+  created_at: new Date(),
   product_colors: [
     {
       hex_value: "",

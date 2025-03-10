@@ -84,11 +84,25 @@
                      :placeholder="'Rating'"
                      v-model:value.number="cosmetics.rating"
                      />
-                      <the-input
-                     :label="'Category'"
-                     :placeholder="'Category'"
-                     v-model:value.trim="cosmetics.category"
-                     />
+                            <!-- category -->
+               <div class="input__wrapper">
+              <label for="brand">Category</label>
+              <select name="brand" id="brand" v-model="cosmetics.category">
+                <option value="Liquid">Liquid</option>
+                <option value="Powder">Powder</option>
+                <option value="Concealer">Concealer</option>
+                <option value="Highligter">Highlighter</option>
+                <option value="BB/CC">BB/CC</option>
+                <option value="Contour">Contour</option>
+                <option value="Cream">Cream</option>
+                <option value="Mineral">Mineral</option>
+                <option value="Lipstick">Lipstick</option>
+                <option value="Lip Gloss">Lip Gloss</option>
+                <option value="Palette">Palette</option>
+                <option value="Pencil">Pencil</option>
+                <option value="Gel">Gel</option>
+              </select>
+            </div>
                      <the-input
                      :label="'Product type'"
                      :placeholder="'Product type'"

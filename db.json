@@ -11,9 +11,9 @@
       "product_link": "https://deciem.com/product/rdn-coverage-foundation-33-n-30ml",
       "website_link": "https://deciem.com/",
       "description": "Coverage Foundations are full-coverage formulations available in a comprehensive shade range across 21 shades. These foundations contain higher pigment levels than our Serum Foundations but still offer a smooth finish that avoids the heavy makeup look that can make skin appear more aged. The texture is that of a lightweight, non-oily cream.",
-      "rating": null,
-      "category": "liquid",
-      "product_type": "foundation",
+      "rating": "4",
+      "category": "Liquid",
+      "product_type": "Foundation",
       "tag_list": [
         "water free",
         "cruelty free",
@@ -24,7 +24,7 @@
         "Gluten Free"
       ],
       "created_at": "2018-07-06T22:27:54.541Z",
-      "updated_at": "2025-03-10T14:30:16.735Z",
+      "updated_at": "2025-03-10T15:27:09.739Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1042.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/042/original/open-uri20180706-4-1e74943?1530916234",
       "product_colors": [
@@ -26660,7 +26660,7 @@
       "id": 170,
       "brand": "maybelline",
       "name": "Maybelline Eye Studio Lasting Drama Gel Eyeliner",
-      "price": "11.99",
+      "price": 11.9,
       "price_sign": null,
       "currency": null,
       "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/2054f702d243c286219e0330af836bf5_ra,w158,h184_pa,w158,h184.png",
@@ -26672,7 +26672,7 @@
       "product_type": "eyeliner",
       "tag_list": [],
       "created_at": "2016-10-01T18:27:42.507Z",
-      "updated_at": "2017-12-23T20:51:13.684Z",
+      "updated_at": "2025-03-10T15:12:04.738Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/170.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/170/original/open-uri20171223-4-1hy3kmf?1514062273",
       "product_colors": [
@@ -26752,6 +26752,75 @@
       "updated_at": "2025-03-10T15:03:08.719Z",
       "product_api_url": "",
       "api_featured_image": "",
+      "product_colors": [
+        {
+          "hex_value": "",
+          "colour_name": ""
+        }
+      ]
+    },
+    {
+      "id": 787884,
+      "brand": "",
+      "name": "",
+      "price": "",
+      "currency": "",
+      "img": "",
+      "api_featured_image": "",
+      "product_link": "",
+      "website_link": "",
+      "product_api_url": "",
+      "description": "",
+      "rating": "2",
+      "category": "",
+      "product_type": "",
+      "created_at": "2025-03-10T15:24:46.228Z",
+      "product_colors": [
+        {
+          "hex_value": "",
+          "colour_name": ""
+        }
+      ]
+    },
+    {
+      "id": 787885,
+      "brand": "",
+      "name": "",
+      "price": "",
+      "currency": "",
+      "img": "",
+      "api_featured_image": "",
+      "product_link": "",
+      "website_link": "",
+      "product_api_url": "",
+      "description": "",
+      "rating": "5",
+      "category": "",
+      "product_type": "",
+      "created_at": "2025-03-10T15:25:21.134Z",
+      "product_colors": [
+        {
+          "hex_value": "",
+          "colour_name": ""
+        }
+      ]
+    },
+    {
+      "id": 787886,
+      "brand": "",
+      "name": "",
+      "price": "",
+      "currency": "",
+      "img": "",
+      "api_featured_image": "",
+      "product_link": "",
+      "website_link": "",
+      "product_api_url": "",
+      "description": "",
+      "rating": "",
+      "category": "Concealer",
+      "product_type": "",
+      "created_at": "2025-03-10T15:38:02.445Z",
       "product_colors": [
         {
           "hex_value": "",

@@ -81,11 +81,17 @@
                 :placeholder="'Description'"
                 v-model:value.trim="cosmetics.description"
               />
-              <the-input
-                :label="'Rating'"
-                :placeholder="'Rating'"
-                v-model:value.number="cosmetics.rating"
-              />
+                        <div class="input__wrapper">
+                <label for="rating">Rating {{cosmetics.rating }} </label>
+                <input
+                  type="range"
+                  name="rating"
+                  id="rating"
+                  min="0"
+                  max="5"
+                  v-model="cosmetics.rating"
+                />
+              </div>
               <!-- category -->
               <div class="input__wrapper">
                 <label for="category">Category</label>

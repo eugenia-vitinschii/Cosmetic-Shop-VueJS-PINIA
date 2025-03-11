@@ -86,15 +86,25 @@
                 :placeholder="'description'"
                 v-model:value.trim="postProducts.description"
               />
-              <the-input
-                :label="'rating'"
-                :placeholder="'rating'"
-                v-model:value.number="postProducts.rating"
-              />
+              <div class="input__wrapper">
+                <label for="rating">Rating {{postProducts.rating }} </label>
+                <input
+                  type="range"
+                  name="rating"
+                  id="rating"
+                  min="0"
+                  max="5"
+                  v-model="postProducts.rating"
+                />
+              </div>
               <!-- category -->
               <div class="input__wrapper">
                 <label for="category">Category</label>
-                <select name="category" id="category" v-model="postProducts.category">
+                <select
+                  name="category"
+                  id="category"
+                  v-model="postProducts.category"
+                >
                   <option value="Liquid">Liquid</option>
                   <option value="Powder">Powder</option>
                   <option value="Concealer">Concealer</option>

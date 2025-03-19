@@ -1,6 +1,8 @@
 .header
    width: 100%
-   margin-bottom: 50px
+   nav
+      display: flex
+      align-items: center
    &__data
       display: flex
       align-items: center
@@ -10,8 +12,8 @@
       margin-bottom: 10px
    &__data--links
       ul li
-         display: inline
-         margin-left: 10px
+      display: inline
+      margin-left: 10px
       a:hover
          color: $violet
    &__data--promo
@@ -26,7 +28,7 @@
    &__control--img
       width: 200px
       img
-         width: 100% 
+         width: 100%
    &__control--buttons
       display: flex
       align-items: center
@@ -40,23 +42,17 @@
       flex-direction: row
    &__link
       padding: 5px 10px
-      margin: 5px 10px 
+      margin: 5px 10px
       text-align: center
       cursor: pointer
       a
          font-size: $body-text
          color: $black
-         
+      a:hover
+         color: $gold
+
    &__link:hover
-   &__bottom
-      position: absolute
-      left: 0
-      width: 100%
-      margin-top: 60px
-      padding-top: 70px
-      background: $light-gray
-      border-top: 2px solid $ivory
- 
+
 
 @media ( max-width: 550px )
    .header
@@ -65,8 +61,35 @@
       &__data--text
          display: none
 
-
 .header-fav, .header-cart
-   
+
+// dropdown menu
+.dropdown
+   position: relative
+   display: inline-block
+   &__menu
+      display: none
+      position: fixed
+      overflow: hidden
+      z-index: 5
+      left: 0
+      right: 0
+      width: 100%
+      background: $gold
+      a
+         color: $ivory
+      a:hover
+         color: $light-gray 
+   &__menu--items
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      width: 100%
+   &__menu--item
 
 
+.dropdown:hover
+   color: $gold
+
+.dropdown:hover .dropdown__menu
+   display: block

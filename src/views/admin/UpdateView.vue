@@ -96,7 +96,7 @@
               <div class="input__wrapper">
                 <label for="category">Category</label>
                 <select name="category" id="category" v-model="cosmetics.category">
-                  <option value="Liquid">Liquid</option>
+                  <option value="liquid">liquid</option>
                   <option value="Powder">Powder</option>
                   <option value="Concealer">Concealer</option>
                   <option value="Highligter">Highlighter</option>
@@ -104,10 +104,10 @@
                   <option value="Contour">Contour</option>
                   <option value="Cream">Cream</option>
                   <option value="Mineral">Mineral</option>
-                  <option value="Lipstick">Lipstick</option>
+                  <option value="lipstick">lipstick</option>
                   <option value="Lip Gloss">Lip Gloss</option>
-                  <option value="Palette">Palette</option>
-                  <option value="Pencil">Pencil</option>
+                  <option value="palette">palette</option>
+                  <option value="pencil">pencil</option>
                   <option value="Gel">Gel</option>
                 </select>
               </div>
@@ -120,7 +120,7 @@
                   v-model="cosmetics.product_type"
                 >
                   <option value="Foundation">Foundation</option>
-                  <option value="Lipstick">Lipstick</option>
+                  <option value="lipstick">lipstick</option>
                   <option value="Eyeshadow">Eyeshadow</option>
                   <option value="Blush">Blush</option>
                   <option value="Nail Polish">Nail Polish</option>

@@ -53,7 +53,6 @@
 
    &__link:hover
 
-
 @media ( max-width: 550px )
    .header
       &__data
@@ -62,6 +61,9 @@
          display: none
 
 .header-fav, .header-cart
+//hidden nav button
+.header-nav
+   display: none
 
 // dropdown menu
 .dropdown
@@ -74,22 +76,58 @@
       z-index: 5
       left: 0
       right: 0
-      width: 100%
       background: $gold
       a
          color: $ivory
       a:hover
-         color: $light-gray 
+         color: $light-gray
    &__menu--items
       display: flex
       flex-direction: row
-      justify-content: space-around
-      width: 100%
+      justify-content: flex-start
+      max-width: 1400px
+      margin: 0px auto
+      padding: 0px 10px
    &__menu--item
-
 
 .dropdown:hover
    color: $gold
 
 .dropdown:hover .dropdown__menu
    display: block
+
+//mobile dropdown menu
+// @media (max-width: 1200px)
+//    .dropdown
+//       &__menu--items
+//          justify-content: flex-start
+
+@media (max-width: 470px)
+   .header-nav
+      display: block
+   .dropdown
+      overflow: scroll
+      &__menu
+         flex-direction: column
+      &__menu--items
+         flex-direction: column
+         a
+            margin-bottom: 1px
+   .header   
+      nav
+         display: none
+         flex-direction: column
+         height: 100vh
+         overflow: hidden
+         a
+            text-align: left
+      &__top
+         flex-direction: column
+         a:last-child
+         padding-bottom: 1px
+         margin-bottom: 1px
+   .header   
+      nav.active
+         display: block
+
+      

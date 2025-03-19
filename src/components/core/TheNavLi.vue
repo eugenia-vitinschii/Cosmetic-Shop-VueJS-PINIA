@@ -1,6 +1,6 @@
 <template>
   <li>
-    <router-link :to="/category/'liquid'"> LIQUID </router-link>
+    <router-link to="/category/liquid"> LIQUID </router-link>
   </li>
 </template>
 

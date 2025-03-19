@@ -89,21 +89,32 @@
               </router-link>
               <span class="small-text">{{ user.cart.length }}</span>
             </div>
+            <div class="header-nav tooltip">
+              <span class="tooltip-text small-text">menu</span>
+              <button    
+              @click="showNav = !showNav "
+              > 
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+              </button>
+            </div>
           </div>
         </div>
         <!-- header nav -->
-        <nav>
+        <nav v-bind:class="{ active: showNav  }">
+          <button  @click="showNav = !showNav ">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+          </button>
           <ul class="header__top">
             <li class="header__link">
-              <router-link to="/admin"> Admin </router-link>
+              <router-link to="/admin">Admin</router-link>
             </li>
             <!-- home -->
             <li class="header__link">
-              <router-link to="/"> Home </router-link>
+              <router-link to="/">Home</router-link>
             </li>
             <!-- brands -->
             <li class="header__link">
-              <router-link to="/all-brand"> Brands </router-link>
+              <router-link to="/all-brand">Brands</router-link>
             </li>
           </ul>
             <!-- category -->
@@ -176,37 +187,49 @@
             <div class="dropdown">
               <p class="header__link">Types</p>
               <ul class="header__bottom dropdown__menu">
-                <li class="header__link">
-                  <router-link to="/product-type/foundation"
-                    >FOUNDATION
-                  </router-link>
-                </li>
-                <li class="header__link">
-                  <router-link to="/product-type/lipstick"
-                    >LIPSTICK
-                  </router-link>
-                </li>
+                <!-- make up -->
+                <div class="dropdown__menu--items">
+                  <ul class="dropdown__menu--item">
                 <li class="header__link">
                   <router-link to="/product-type/eyeshadow"
-                    >EYESHADOW</router-link
+                    >Eyeshadow</router-link
                   >
                 </li>
+                 <li class="header__link">
+                  <router-link to="/product-type/lipstick"
+                    >Lipstick
+                  </router-link>
+                </li>   <li class="header__link">
+                  <router-link to="/product-type/eyeliner"
+                    >Eyeliner</router-link
+                  >
+                </li>
+                  </ul>
+
+                  <ul class="dropdown__menu--item">
+                             <li class="header__link">
+                  <router-link to="/product-type/foundation"
+                    >Foundation
+                  </router-link>
+                </li>
+               
+
                 <li class="header__link">
-                  <router-link to="/product-type/blush">BLUSH</router-link>
+                  <router-link to="/product-type/blush">Blush</router-link>
                 </li>
                 <li class="header__link">
                   <router-link to="/product-type/nail_polish"
-                    >NAIL_POLISH
+                    >Nail Polish
                   </router-link>
                 </li>
                 <li class="header__link">
-                  <router-link to="/product-type/bronzer">BRONZER</router-link>
+                  <router-link to="/product-type/bronzer">Bronzer</router-link>
                 </li>
-                <li class="header__link">
-                  <router-link to="/product-type/eyeliner"
-                    >EYELINER</router-link
-                  >
-                </li>
+                  </ul>
+                </div>
+
+       
+             
               </ul>
             </div>
         </nav>
@@ -218,12 +241,15 @@
 
 <script setup>
 //vue
-import { defineOptions } from "vue";
+import { defineOptions, ref } from "vue";
 
 //component settings
 defineOptions({
   name: "TheHeader",
 });
+
+//variables
+const showNav = ref(false)
 
 //import store
 import { useCosmeticStore } from "@/stores/cosmetic";

@@ -3,8 +3,8 @@
       <div class="container">
          <div class="a__wrapper">
             <ul>
-               <li><router-link to="/all">Show product list</router-link></li>
-               <li><router-link to="/add">Add new product</router-link></li>
+               <li><router-link to="/all" class="header__link">Show product list</router-link></li>
+               <li><router-link to="/add" class="header__link">Add new product</router-link></li>
             </ul>
          </div>
       </div>

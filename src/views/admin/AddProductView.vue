@@ -3,7 +3,7 @@
     <div class="container">
       <div class="add__wrapper">
         <the-admin-header />
-        <p class="heading bold">Add product page</p>
+        <p class="heading bold">Add new  product</p>
         <div class="add__contaner">
           <form class="add__form">
             <div class="update__form-item">

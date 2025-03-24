@@ -3,7 +3,7 @@
     <div class="container">
       <div class="admin__wrapper">
          <the-admin-header /> 
-        <p class="heading">All products {{cosmetics.length}} (produse)</p>
+        <p class="heading">All products {{cosmetics.length}} </p>
        
         <div class="admin-content">
           <table class="admin__table">

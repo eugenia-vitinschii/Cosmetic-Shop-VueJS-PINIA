@@ -197,40 +197,41 @@
                 <!-- make up -->
                 <div class="dropdown__menu--items">
                   <ul class="dropdown__menu--item">
-                <li class="header__link">
-                  <router-link to="/product-type/eyeshadow"
+                <li>
+                  <router-link to="/product-type/eyeshadow" class="header__link"
                     >Eyeshadow</router-link
                   >
                 </li>
-                 <li class="header__link">
-                  <router-link to="/product-type/lipstick"
+                 <li>
+                  <router-link to="/product-type/lipstick" class="header__link"
                     >Lipstick
                   </router-link>
-                </li>   <li class="header__link">
-                  <router-link to="/product-type/eyeliner"
+                </li>   
+                <li>
+                  <router-link to="/product-type/eyeliner" class="header__link"
                     >Eyeliner</router-link
                   >
                 </li>
                   </ul>
 
                   <ul class="dropdown__menu--item">
-                             <li class="header__link">
-                  <router-link to="/product-type/foundation"
+                             <li>
+                  <router-link to="/product-type/foundation" class="header__link"
                     >Foundation
                   </router-link>
                 </li>
                
 
-                <li class="header__link">
-                  <router-link to="/product-type/blush">Blush</router-link>
+                <li>
+                  <router-link to="/product-type/blush" class="header__link">Blush</router-link>
                 </li>
-                <li class="header__link">
-                  <router-link to="/product-type/nail_polish"
+                <li>
+                  <router-link to="/product-type/nail_polish" class="header__link"
                     >Nail Polish
                   </router-link>
                 </li>
-                <li class="header__link">
-                  <router-link to="/product-type/bronzer">Bronzer</router-link>
+                <li>
+                  <router-link to="/product-type/bronzer" class="header__link">Bronzer</router-link>
                 </li>
                   </ul>
                 </div>

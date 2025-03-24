@@ -105,79 +105,83 @@
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
           </button>
           <ul class="header__top">
-            <li class="header__link">
-              <router-link to="/admin">Admin</router-link>
+            <li >
+              <router-link to="/admin" class="header__link">Admin</router-link>
             </li>
             <!-- home -->
-            <li class="header__link">
-              <router-link to="/">Home</router-link>
+            <li >
+              <router-link to="/" class="header__link">Home</router-link>
             </li>
             <!-- brands -->
-            <li class="header__link">
-              <router-link to="/all-brand">Brands</router-link>
+            <li >
+              <router-link to="/all-brand" class="header__link">Brands</router-link>
             </li>
           </ul>
             <!-- category -->
             <div class="dropdown">
-              <p class="header__link">Category</p>
+              <!-- button -->
+              <div class="dropdown__button">
+                 <router-link to="/category/all-category" class="header__link">Category</router-link>
+              <button @click="showDropdown = !showDropdown" v-bind:class="{ active: showDropdown  }"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg></button> 
+              </div>
               <!-- category items -->
-              <div class="header__bottom dropdown__menu">
+              <div class="header__bottom dropdown__menu"  v-bind:class="{ active: showDropdown  }">
                 <div class="dropdown__menu--items">
                   <!-- eyes -->
                   <ul class="dropdown__menu--item">
-                    <li class="header__link">
-                      <router-link to="/category/liquid">Liquid</router-link>
+                    <li>
+                      <router-link to="/category/liquid" class="header__link">Liquid</router-link>
                     </li>
-                    <li class="header__link">
-                      <router-link to="/category/palette">Palette</router-link>
+                    <li>
+                      <router-link to="/category/palette" class="header__link"> Palette</router-link>
                     </li>
-                    <li class="header__link">
-                      <router-link to="/category/pencil">Pencil</router-link>
+                    <li>
+                      <router-link to="/category/pencil" class="header__link">Pencil</router-link>
                     </li>
                   </ul>
                 <!-- lips -->
                 <ul class="dropdown__menu--item">
-                  <li class="header__link">
-                    <router-link to="/category/lipstick">Lipstick</router-link>
+                  <li>
+                    <router-link to="/category/lipstick" class="header__link">Lipstick</router-link>
                   </li>
-                  <li class="header__link">
-                    <router-link to="/category/lip_gloss">
+                  <li>
+                    <router-link to="/category/lip_gloss" class="header__link">
                       Lip gloss
                     </router-link>
                   </li>
                 </ul>
                 <!-- face -->
                 <ul class="dropdown__menu--item">
-                  <li class="header__link">
-                    <router-link to="/category/powder">Powder</router-link>
+                  <li>
+                    <router-link to="/category/powder" class="header__link">Powder</router-link>
                   </li>
-                  <li class="header__link">
-                    <router-link to="/category/concealer"
+                  <li>
+                    <router-link to="/category/concealer" class="header__link"
                       >Concealer</router-link
                     >
                   </li>
-                  <li class="header__link">
-                    <router-link to="/category/highlighter"
+                  <li>
+                    <router-link to="/category/highlighter" class="header__link"
                       >Highlighter</router-link
                     >
                   </li>
                 </ul>
                 <!-- skin -->
               <ul class="dropdown__menu--item">
-                <li class="header__link">
-                  <router-link to="/category/bb_cc">BB_CC</router-link>
+                <li>
+                  <router-link to="/category/bb_cc" class="header__link">BB_CC</router-link>
                 </li>
-                <li class="header__link">
-                  <router-link to="/category/contour">Contour</router-link>
+                <li>
+                  <router-link to="/category/contour" class="header__link">Contour</router-link>
                 </li>
-                <li class="header__link">
-                  <router-link to="/category/cream">Cream</router-link>
+                <li>
+                  <router-link to="/category/cream" class="header__link">Cream</router-link>
                 </li>
-                <li class="header__link">
-                  <router-link to="/category/mineral">Mineral</router-link>
+                <li>
+                  <router-link to="/category/mineral" class="header__link">Mineral</router-link>
                 </li>
-                <li class="header__link">
-                  <router-link to="/category/gel">Gel</router-link>
+                <li>
+                  <router-link to="/category/gel" class="header__link">Gel</router-link>
                 </li>
                 </ul>
             </div>
@@ -185,7 +189,10 @@
             </div>
             <!-- type -->
             <div class="dropdown">
-              <p class="header__link">Types</p>
+               <div class="dropdown__button">
+                 <router-link to="/category/all-product-type" class="header__link">Types</router-link>
+              <button @click="showDropdown = !showDropdown" v-bind:class="{ active: showDropdown  }"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg></button> 
+              </div>
               <ul class="header__bottom dropdown__menu">
                 <!-- make up -->
                 <div class="dropdown__menu--items">
@@ -250,7 +257,7 @@ defineOptions({
 
 //variables
 const showNav = ref(false)
-
+const showDropdown= ref(false)
 //import store
 import { useCosmeticStore } from "@/stores/cosmetic";
 import { storeToRefs } from "pinia";

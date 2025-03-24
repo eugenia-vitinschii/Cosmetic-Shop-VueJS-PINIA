@@ -45,11 +45,10 @@
       margin: 5px 10px
       text-align: center
       cursor: pointer
-      a
-         font-size: $body-text
-         color: $black
-      a:hover
-         color: $gold
+      font-size: $body-text
+      color: $black
+   &__link:hover
+      color: $gold
 
    &__link:hover
 
@@ -69,6 +68,9 @@
 .dropdown
    position: relative
    display: inline-block
+   &__button
+      button
+         display: none
    &__menu
       display: none
       position: fixed
@@ -96,27 +98,42 @@
 .dropdown:hover .dropdown__menu
    display: block
 
-//mobile dropdown menu
-// @media (max-width: 1200px)
-//    .dropdown
-//       &__menu--items
-//          justify-content: flex-start
 
+//small devices
 @media (max-width: 470px)
+   .dropdown:hover .dropdown__menu
+      display: none
    .header-nav
       display: block
    .dropdown
+      position: inherit
+      width: 100%
       overflow: scroll
+      &__button
+         display: flex
+      button.active
+         svg
+            fill: blue
+      button
+         display: block
+         svg
+            fill: red
+      p
+         text-align: left
       &__menu
-         flex-direction: column
+         position: inherit
+         flex-direction: column  
+      &__menu.active
+         display: block   
       &__menu--items
          flex-direction: column
-         a
-            margin-bottom: 1px
+         a,li
+            text-align: left
+            margin: 0px
    .header   
       nav
          display: none
-         flex-direction: column
+         flex-direction: row-reverse
          height: 100vh
          overflow: hidden
          a

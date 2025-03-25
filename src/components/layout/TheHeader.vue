@@ -121,7 +121,7 @@
             <div class="dropdown">
               <!-- button -->
               <div class="dropdown__button">
-                 <router-link to="/category/all-category" class="header__link">Category</router-link>
+                 <router-link to="/all-category" class="header__link">Category</router-link>
               <button @click="showDropdown = !showDropdown" v-bind:class="{ active: showDropdown  }"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg></button> 
               </div>
               <!-- category items -->
@@ -190,10 +190,10 @@
             <!-- type -->
             <div class="dropdown">
                <div class="dropdown__button">
-                 <router-link to="/category/all-product-type" class="header__link">Types</router-link>
+                 <router-link to="/all-product-type" class="header__link">Types</router-link>
               <button @click="showDropdown = !showDropdown" v-bind:class="{ active: showDropdown  }"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg></button> 
               </div>
-              <ul class="header__bottom dropdown__menu">
+              <div class="header__bottom dropdown__menu">
                 <!-- make up -->
                 <div class="dropdown__menu--items">
                   <ul class="dropdown__menu--item">
@@ -235,10 +235,7 @@
                 </li>
                   </ul>
                 </div>
-
-       
-             
-              </ul>
+              </div>
             </div>
         </nav>
       </div>

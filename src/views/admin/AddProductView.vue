@@ -106,18 +106,19 @@
                   v-model="postProducts.category"
                 >
                   <option value="liquid">liquid</option>
-                  <option value="Powder">Powder</option>
-                  <option value="Concealer">Concealer</option>
-                  <option value="Highligter">Highlighter</option>
-                  <option value="BB/CC">BB/CC</option>
-                  <option value="Contour">Contour</option>
-                  <option value="Cream">Cream</option>
-                  <option value="Mineral">Mineral</option>
+                  <option value="powder">Powder</option>
+                  <option value="concealer">concealer</option>
+                  <option value="highlighter">highlighter</option>
+                  <option value="bb_cc">BB/CC</option>
+                  <option value="contour">Contour</option>
+                  <option value="cream">cream</option>
+                  <option value="mineral">mineral</option>
                   <option value="lipstick">lipstick</option>
-                  <option value="Lip Gloss">Lip Gloss</option>
+                  <option value="lip_gloss">lip Gloss</option>
+                  <option value="lip_stain">lip stain</option> 
                   <option value="palette">palette</option>
                   <option value="pencil">pencil</option>
-                  <option value="Gel">Gel</option>
+                  <option value="gel">gel</option>
                 </select>
               </div>
               <!-- type-->
@@ -128,12 +129,12 @@
                   id="product_type"
                   v-model="postProducts.product_type"
                 >
-                  <option value="Foundation">Foundation</option>
+                  <option value="foundation">foundation</option>
                   <option value="lipstick">lipstick</option>
-                  <option value="Eyeshadow">Eyeshadow</option>
-                  <option value="Blush">Blush</option>
-                  <option value="Nail Polish">Nail Polish</option>
-                  <option value="Bronzer">Bronzer</option>
+                  <option value="eyeshadow">eyeshadow</option>
+                  <option value="blush">blush</option>
+                  <option value="nail_polish">nail_polish</option>
+                  <option value="bronzer">bronzer</option>
                 </select>
               </div>
             </div>

@@ -98,8 +98,8 @@
                 <select name="category" id="category" v-model="cosmetics.category">
                   <option value="liquid">liquid</option>
                   <option value="Powder">Powder</option>
-                  <option value="Concealer">Concealer</option>
-                  <option value="Highligter">Highlighter</option>
+                  <option value="concealer">concealer</option>
+                  <option value="Highligter">highlighter</option>
                   <option value="BB/CC">BB/CC</option>
                   <option value="Contour">Contour</option>
                   <option value="Cream">Cream</option>

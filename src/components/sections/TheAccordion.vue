@@ -1,10 +1,10 @@
 <template>
   <details class="accordion">
-    <summary class="accordion__title">
+    <summary class="accordion__title subheading">
       {{title}} 
       </summary>
     <div class="accordion__content">
-      <p class="body-text">
+      <p class="body-text-light">
        {{content}}
       </p>
     </div>

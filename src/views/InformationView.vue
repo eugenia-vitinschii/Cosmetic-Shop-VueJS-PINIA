@@ -23,11 +23,15 @@
           We have the power to envision a better future and the desire to speed
           toward it. We are working hard to drive continued progress toward our
           sustainability and social commitments, and increase transparency as we
-          recognize the role SHEIN can play in supporting the communities we
+          recognize the role Borcelle can play in supporting the communities we
           reach and the environment we all share.
         </p>
+        <div class="picture">
+  <img src="@/assets/img/info-1.jpg" alt="img">
+</div>
       </section>
     </div>
+    
   </div>
   <div class="section">
     <div class="container">
@@ -40,14 +44,17 @@
           to reduce the environmental impact of our products and facilities,
           guided by the following e greenhouse  issions
            pe 1, 2 a by 25% by 203 eve net zero emissions no
-          later than 2050*. Use 100% renewable electricity for SHEIN-directly
+          later than 2050*. Use 100% renewable electricity for Borcelle-directly
           operated operations by urce 100% forest-sustainable viscose
-          and paper packaging for SHEIN-branded products by 2 re all
-          packaging supplied for SHEIN-branded products contains 50% preferred
-          materials by   of the polyester used for SHEIN-branded
-          products to recycled polyester by 20 ource 50% of SHEIN-branded
-          products through our evoluSHEIN by Design initiative by 2030.
+          and paper packaging for Borcelle-branded products by 2 re all
+          packaging supplied for Borcelle-branded products contains 50% preferred
+          materials by   of the polyester used for Borcelle-branded
+          products to recycled polyester by 20 ource 50% of Borcelle-branded
+          products through our evoluBorcelle by Design initiative by 2030.
         </p>
+                <div class="picture">
+  <img src="@/assets/img/info-2.jpg" alt="img">
+</div>
       </section>
     </div>
   </div>
@@ -67,6 +74,9 @@
           supply chain by 2050 in alignment with our World Circular Textiles Day
           commitment
         </p>
+                <div class="picture">
+  <img src="@/assets/img/info-3.jpg" alt="img">
+</div>
       </section>
     </div>
   </div>

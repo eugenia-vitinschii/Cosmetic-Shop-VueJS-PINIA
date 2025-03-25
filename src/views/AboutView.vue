@@ -1,4 +1,7 @@
 <template>
+<div class="picture">
+  <img src="@/assets/img/about.jpg" alt="img">
+</div>
   <div class="about">
     <div class="container">
       <div class="about__wrapper">
@@ -16,6 +19,9 @@
       </div>
     </div>
   </div>
+  <div class="picture">
+  <img src="@/assets/img/about-2.jpg" alt="img">
+</div>
 </template>
 
 <script setup>

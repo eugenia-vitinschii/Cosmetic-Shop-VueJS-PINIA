@@ -1,9 +1,10 @@
 .heading
-   @include font-style( $brown, 10px, left)
+   @include font-style( $dark-brown, 10px, left)
    @include font-size($heading, 40px)
 .subheading
-   @include font-style( $dark-brown, 10px, left)
+   @include font-style( $brown, 10px, left)
    @include font-size($subheading, 32px)
+
 .body-text, .body-text-light
    @include font-size($body-text,24px)
 .body-text
@@ -14,11 +15,7 @@
    @include font-style( $light-brown, 10px, left)
    @include font-size($body-text-small, 24px)
 
-.brand-text
-   @include font-size($heading, 40px)
-   @include font-style( $violet, 0px, left)
-   text-transform: uppercase
-   letter-spacing: 7px
+ 
 
 .menu-item
    @include font-size($subheading, 32px)
@@ -27,7 +24,7 @@
 
 // medium devices
 @media (max-width: 1024px)
-   .heading, .brand-text
+   .heading 
       @include font-size($heading-md, 38px)
    .subheading, .menu-item
       @include font-size($subheading-md, 28px)
@@ -35,9 +32,10 @@
       @include font-size($body-text-md, 22px)
    .small-text
       @include font-size($body-text-small-md, 20px)
+
 // small devices
 @media (max-width: 767px)
-   .heading, .brand-text
+   .heading  
       @include font-size($heading-sm, 35px)
    .subheading, .menu-item
       @include font-size($subheading-sm, 26px)

@@ -6,7 +6,13 @@
       </div>
     </div>
   </div>
-
+  <div class="swiper">
+    <div class="container">
+      <div class="swiper__wrapper">
+        <top-sliders/>
+      </div>
+    </div>
+  </div>
   <div class="item">
     <div class="container">
       <div class="item__wrapper products-wrapper" v-if="created">
@@ -61,12 +67,14 @@ import { defineOptions, onMounted, ref} from "vue";
 
 //components
 import TheSlider from "@/components/sections/TheSlider.vue";
+import TopSliders  from "@/components/sections/Sliders/TopSliders.vue"
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic";
 
 import { storeToRefs } from "pinia";
+ 
 
 defineOptions({
   name: "HomeView",

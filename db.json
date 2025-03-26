@@ -1,4 +1,421 @@
 {
+  "top":[
+    {
+      "id": 1042,
+      "brand": "deciem",
+      "name": "Coverage foundation",
+      "price": 7,
+      "price_sign": "$",
+      "currency": "CAD",
+      "image_link": "https://3bc01d2807fb1bc0d25c-a86d2521f1af8989841b9619f5314be5.ssl.cf1.rackcdn.com/products/market-img/rdn-coverage-foundation-33-n-30ml.png?v=daa322f179d80e450613c75826602292",
+      "product_link": "https://deciem.com/product/rdn-coverage-foundation-33-n-30ml",
+      "website_link": "https://deciem.com/",
+      "description": "Coverage foundations are full-coverage formulations available in a comprehensive shade range across 21 shades. These foundations contain higher pigment levels than our Serum foundations but still offer a smooth finish that avoids the heavy makeup look that can make skin appear more aged. The texture is that of a lightweight, non-oily cream.",
+      "rating": "4",
+      "category": "liquid",
+      "product_type": "eyeshadow",
+      "tag_list": [
+        "water free",
+        "cruelty free",
+        "alcohol free",
+        "oil free",
+        "silicone free",
+        "Vegan",
+        "Gluten Free"
+      ],
+      "created_at": "2018-07-06T22:27:54.541Z",
+      "updated_at": "2025-03-25T13:10:04.383Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1042.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/042/original/open-uri20180706-4-1e74943?1530916234",
+      "product_colors": [
+        {
+          "hex_value": "#f4e5d6",
+          "colour_name": "1.0P"
+        },
+        {
+          "hex_value": "#f3e8d1",
+          "colour_name": "1.0N"
+        },
+        {
+          "hex_value": "#f3e8d1",
+          "colour_name": "1.0NS"
+        },
+        {
+          "hex_value": "#f2d7ba",
+          "colour_name": "1.1P"
+        },
+        {
+          "hex_value": "#efdbba",
+          "colour_name": "1.1N"
+        },
+        {
+          "hex_value": "#f0d5af",
+          "colour_name": "1.2N"
+        },
+        {
+          "hex_value": "#e5c5a1",
+          "colour_name": "1.2P"
+        },
+        {
+          "hex_value": "#e6c796",
+          "colour_name": "1.2Y"
+        },
+        {
+          "hex_value": "#e6c796",
+          "colour_name": "1.2YG"
+        },
+        {
+          "hex_value": "#e3be8e",
+          "colour_name": "2.0P"
+        },
+        {
+          "hex_value": "#e5cb9f",
+          "colour_name": "2.0N"
+        },
+        {
+          "hex_value": "#dcc399",
+          "colour_name": "2.0YG"
+        },
+        {
+          "hex_value": "#ddb279",
+          "colour_name": "2.1P"
+        },
+        {
+          "hex_value": "#dcad6d",
+          "colour_name": "2.1Y"
+        },
+        {
+          "hex_value": "#d59c62",
+          "colour_name": "3.0R"
+        },
+        {
+          "hex_value": "#d19e61",
+          "colour_name": "3.0Y"
+        },
+        {
+          "hex_value": "#b3754a",
+          "colour_name": "3.1R"
+        },
+        {
+          "hex_value": "#c28651",
+          "colour_name": "3.1Y"
+        },
+        {
+          "hex_value": "#916C4F",
+          "colour_name": "3.2N"
+        },
+        {
+          "hex_value": "#8E6346",
+          "colour_name": "3.2R"
+        },
+        {
+          "hex_value": "#664A37",
+          "colour_name": "3.3N"
+        }
+      ]
+    },
+    {
+      "id": 1033,
+      "brand": "rejuva minerals",
+      "name": "Pressed powder foundation",
+      "price": 13,
+      "price_sign": "$",
+      "currency": "USD",
+      "image_link": "https://www.purpicks.com/wp-content/uploads/2018/06/Rejuva-Minerals-Multi-Purpose-powder-Eye-Shadow-Face-1.jpg",
+      "product_link": "https://www.purpicks.com/product/rejuva-minerals-multi-purpose-powder-eye-shadow-face/",
+      "website_link": "https://purpicks.com/",
+      "description": "Coconut Cream - Warm Undertones (yellow) Light Shade. May also be used as a highlighting shade! About our pressed foundations:<ul><li>Provides a silky smooth, natural 'semi-matte' finish</li><li>All skin types</li><li>Will not dry out skin (apply light moisturizer underneath for best results)</li><li>Resists caking and settling in lines and pores</li><li>Layers to provide a light-medium (buildable) coverage</li><li>Eco-friendly, biodegradable compact</li><li>Colored with minerals and enhanced with organic fruits and botanicals</li><li>Infused with conditioning organic jojoba oil</li><li>Formulated without common skin irritants.</li></ul>",
+      "rating": null,
+      "category": "powder",
+      "product_type": "foundation",
+      "tag_list": [
+        "purpicks",
+        "EWG Verified",
+        "Hypoallergenic",
+        "No Talc"
+      ],
+      "created_at": "2018-06-30T19:19:31.736Z",
+      "updated_at": "2025-03-10T14:24:51.287Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1033.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/033/original/open-uri20180630-4-1mibdm?1530390382",
+      "product_colors": [
+        {
+          "hex_value": "#FBE9CD",
+          "colour_name": "Coconut Cream"
+        },
+        {
+          "hex_value": "#E6B588",
+          "colour_name": "Dune"
+        },
+        {
+          "hex_value": "#EBC8A0",
+          "colour_name": "Glow"
+        },
+        {
+          "hex_value": "#F8E3D5",
+          "colour_name": "Nude"
+        },
+        {
+          "hex_value": "#D8B39B",
+          "colour_name": "Radiance"
+        },
+        {
+          "hex_value": "#E7CDBA",
+          "colour_name": "Sand"
+        },
+        {
+          "hex_value": "#F1C4A8",
+          "colour_name": "Sea Shell"
+        },
+        {
+          "hex_value": "#D1B594",
+          "colour_name": "Taffy"
+        },
+        {
+          "hex_value": "#9C7248",
+          "colour_name": "Bahama Mama"
+        },
+        {
+          "hex_value": "#DDA983",
+          "colour_name": "St Tropez"
+        }
+      ]
+    },
+    {
+      "id": 1028,
+      "brand": "marienatie",
+      "name": "Pressed foundation",
+      "price": 13,
+      "price_sign": "$",
+      "currency": "USD",
+      "image_link": "https://www.purpicks.com/wp-content/uploads/csm/caramel_1024x1024_e5fbf151-0cfd-42c9-a5ec-f49d6104bcbc1.jpg",
+      "product_link": "https://www.purpicks.com/product/marie-natie-pressed-foundation/",
+      "website_link": "https://purpicks.com/",
+      "description": "A pressed foundation by MarieNatie providing a silky and flawless finish – it provides great coverage and protects skin with SPF 10.  Titanium dioxide acts as an absorbent of oil and jojoba oil helps to cleanse and moisturize the skin.",
+      "rating": null,
+      "category": "powder",
+      "product_type": "foundation",
+      "tag_list": [
+        "purpicks",
+        "CertClean"
+      ],
+      "created_at": "2018-06-30T19:19:31.368Z",
+      "updated_at": "2018-09-02T22:52:06.609Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1028.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/028/original/open-uri20180630-4-1u219s0?1530390378",
+      "product_colors": [
+        {
+          "hex_value": "#F8DBC3",
+          "colour_name": "Ivory"
+        },
+        {
+          "hex_value": "#ECBFA3",
+          "colour_name": "Natural Beige"
+        },
+        {
+          "hex_value": "#FAE3C9",
+          "colour_name": "Sunny Beige"
+        },
+        {
+          "hex_value": "#F3D2B7",
+          "colour_name": "Warm Tan"
+        },
+        {
+          "hex_value": "#E7C09D",
+          "colour_name": "Tan"
+        },
+        {
+          "hex_value": "#F4D3B8",
+          "colour_name": "Honey"
+        },
+        {
+          "hex_value": "#D4AD8C",
+          "colour_name": "Caramel"
+        },
+        {
+          "hex_value": "#D8AD91",
+          "colour_name": "Chocolate"
+        },
+        {
+          "hex_value": "#C29F90",
+          "colour_name": "Deep Golden"
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "brand": "glossier",
+      "name": "Stretch concealer",
+      "price": 22,
+      "price_sign": "$",
+      "currency": "USD",
+      "image_link": "https://static-assets.glossier.com/production/spree/images/attachments/000/001/631/portrait_normal/SC_Carousel_1_copy_2.jpg?1506948615",
+      "product_link": "https://www.glossier.com/products/stretch-concealer",
+      "website_link": "https://www.glossier.com",
+      "description": "A traditional concealer sets to a stiff, flat, dry finish—a dead giveaway that you’re wearing it. Ours is a new type of concealer with elastic micro waxes that move with your face instead of caking on top of it, and nourishing oils that give a dewy, glowing finish. The buildable formula covers everything from dark circles to redness and blemishes. In five shades painstakingly developed to enhance, brighten, and—most importantly—completely disappear into the widest range of skin tones.",
+      "rating": null,
+      "category": "concealer",
+      "product_type": "foundation",
+      "tag_list": [],
+      "created_at": "2017-12-27T03:11:01.369Z",
+      "updated_at": "2017-12-27T03:12:42.235Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1004.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/004/original/open-uri20171227-4-1wp63cr?1514344255",
+      "product_colors": [
+        {
+          "hex_value": "#96644A",
+          "colour_name": "Deep"
+        },
+        {
+          "hex_value": "#4F3425",
+          "colour_name": "Rich"
+        },
+        {
+          "hex_value": "#BC8E5A",
+          "colour_name": "Dark"
+        },
+        {
+          "hex_value": "#E5BE93",
+          "colour_name": "Medium"
+        },
+        {
+          "hex_value": "#F1DBC3",
+          "colour_name": "Light"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "brand": "glossier",
+      "name": "Wowder",
+      "price": 27,
+      "price_sign": "$",
+      "currency": "USD",
+      "image_link": "https://static-assets.glossier.com/production/spree/images/attachments/000/001/476/portrait_normal/carousel-1.jpg?1501534121",
+      "product_link": "https://www.glossier.com/products/wowder",
+      "website_link": "https://www.glossier.com",
+      "description": "It’s not powder, it’s Wowder—for non-dewy days. Wowder will: cut shine, blur the appearance of pores, set makeup, look like skin. Wowder won’t: leave a chalky film, cake into fine lines, flatten skin’s texture, or announce its presence in photographs (no camera flashback). In three sheer, glowy, adaptable shades...because no skin tone is HD-white. Pair with the angelically soft Wowder Brush for all-over and targeted application—perfect size, perfect shape, perfect density for the optimal matte-not-flat finish.",
+      "rating": null,
+      "category": "powder",
+      "product_type": "foundation",
+      "tag_list": [],
+      "created_at": "2017-12-27T02:50:48.250Z",
+      "updated_at": "2017-12-27T02:53:24.450Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1002.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/002/original/open-uri20171227-4-1ne7r73?1514343097",
+      "product_colors": [
+        {
+          "hex_value": "#EABC98",
+          "colour_name": "Light/Medium"
+        },
+        {
+          "hex_value": "#9B674E",
+          "colour_name": "Dark/Deep"
+        },
+        {
+          "hex_value": "#714831",
+          "colour_name": "Rich"
+        }
+      ]
+    },
+    {
+      "id": 1001,
+      "brand": "glossier",
+      "name": "Haloscope",
+      "price": 27,
+      "price_sign": "$",
+      "currency": "USD",
+      "image_link": "https://static-assets.glossier.com/production/spree/images/attachments/000/001/109/portrait_normal/Haloscope_01-compressor.jpg?1498613775",
+      "product_link": "https://www.glossier.com/products/haloscope",
+      "website_link": "https://www.glossier.com",
+      "description": "Skincare + makeup = Haloscope, the galaxy’s first dew effect highlighter. It’s a dual-delivery formula: the outer halo is infused with genuine crystal extracts for all-day enlightenment, with a solid oil core of vitamin-rich moisturizers for a hydrated, dewy finish. Expect an otherworldly sheen that’s never dry, never glittery. Comes in…",
+      "rating": null,
+      "category": "highlighter",
+      "product_type": "foundation",
+      "tag_list": [],
+      "created_at": "2017-12-27T02:44:12.059Z",
+      "updated_at": "2017-12-27T02:58:27.019Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1001.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/001/original/open-uri20171227-4-1das33x?1514342770",
+      "product_colors": [
+        {
+          "hex_value": "#D19668",
+          "colour_name": "Topaz"
+        },
+        {
+          "hex_value": "#FBE9E1",
+          "colour_name": "Quartz"
+        },
+        {
+          "hex_value": "#F0EDEB",
+          "colour_name": "Moonstone"
+        }
+      ]
+    },
+    {
+      "id": 1000,
+      "brand": "glossier",
+      "name": "Perfecting Skin Tint",
+      "price": 32,
+      "price_sign": "$",
+      "currency": "USD",
+      "image_link": "https://static-assets.glossier.com/production/spree/images/attachments/000/000/726/portrait_normal/PST_Carousel_02-compressor.jpg?1470088244",
+      "product_link": "https://www.glossier.com/products/perfecting-skin-tint",
+      "website_link": "https://www.glossier.com",
+      "description": "In the land between bare skin and makeup makeup exists the imperceptible wash of color that is our Perfecting Skin Tint. What does it do? Evens out discoloration and leaves your face looking toned, smooth, and dewy. The breathable, ultra thin formula auto-fits to skin, making application as simple as throwing on moisturizer. What won’t it do? Hide your freckles, spackle your pores, or erase any other evidence that you are, in fact, a real human being.",
+      "rating": null,
+      "category": null,
+      "product_type": "foundation",
+      "tag_list": [],
+      "created_at": "2017-12-27T02:34:21.781Z",
+      "updated_at": "2017-12-27T02:57:42.311Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1000.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/000/original/open-uri20171227-4-14arcgf?1514342096",
+      "product_colors": [
+        {
+          "hex_value": "#F1DBC3",
+          "colour_name": "Light"
+        },
+        {
+          "hex_value": "#E5BE93",
+          "colour_name": "Medium"
+        },
+        {
+          "hex_value": "#4F3425",
+          "colour_name": "Rich"
+        },
+        {
+          "hex_value": "#BC8E5A",
+          "colour_name": "Dark"
+        },
+        {
+          "hex_value": "#96644A",
+          "colour_name": "Deep"
+        }
+      ]
+    },
+    {
+      "id": 939,
+      "brand": "nyx",
+      "name": "SFX Setting powder",
+      "price": 10,
+      "price_sign": "$",
+      "currency": "USD",
+      "image_link": "https://www.nyxcosmetics.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-cpd-nyxusa-master-catalog/default/dwd3ce6c29/ProductImages/2016/More/SFX_Setting_powder/sfxsettingpowder_main.jpg?sw=390&sh=390&sm=fit",
+      "product_link": "https://www.nyxcosmetics.com/sfx-setting-powder/NYX_391.html?cgid=powder",
+      "website_link": "https://www.nyxcosmetics.com",
+      "description": "",
+      "rating": null,
+      "category": "powder",
+      "product_type": "foundation",
+      "tag_list": [],
+      "created_at": "2017-12-24T02:31:31.850Z",
+      "updated_at": "2017-12-24T02:31:32.238Z",
+      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/939.json",
+      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/939/original/open-uri20171224-4-1mv4cht?1514082691",
+      "product_colors": []
+    }
+  ],
   "cosmetics": [
     {
       "id": 1042,

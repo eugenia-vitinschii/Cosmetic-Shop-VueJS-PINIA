@@ -9,14 +9,8 @@ import {useCosmeticStore} from "./cosmetic"
 export const useSliderStore = defineStore( "sliderId", {
    state: () => ({
       top: [],
-      limit: 30,
-      page: 1,
-      complected: true,
-      user:{
-        cart: [],
-        favorite: []
-      },
-      count: 1,
+      brand: [],
+      category: [],
       cosmeticStore: useCosmeticStore()
    }),
    getters: {
@@ -32,6 +26,15 @@ export const useSliderStore = defineStore( "sliderId", {
            console.log(" fetchTopProducts error:", error);
          }
        },
+       async fetchBrandProducts() {
+        // get cosmetics from db.json
+        try {
+          const response = await axios.get(`${baseUrl}/brand`);
+          this.brand = response.data;
+        } catch (error) {
+          console.log(" fetchTopProducts error:", error);
+        }
+      },
        pushToCart(item) {
          return this.cosmeticStore.addToCart(item)
         },

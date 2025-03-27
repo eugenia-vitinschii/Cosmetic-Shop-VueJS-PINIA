@@ -3,7 +3,6 @@
     :pagination="{
       type: 'fraction',
     }"
-    :navigation="true"
     :modules="modules"
     :slidesPerView="4"
         :autoplay="{
@@ -26,8 +25,8 @@
         :brand="item.brand"
         :currency="item.currency"
         :buy="buyItem"
-        @addItemCart="pushToCart(item)"
-        @addToFavorite="pushtoFavorite(item)"
+        @addItemCart="addToCart(item)"
+        @addToFavorite="addToFavorite(item)"
         :isActive="item.active"
       />
     </swiper-slide>
@@ -47,7 +46,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay,Pagination, Navigation } from "swiper/modules";
+import { Autoplay,Pagination } from "swiper/modules";
 
 export default {
   components: {
@@ -56,7 +55,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Autoplay,Pagination, Navigation],
+      modules: [Autoplay,Pagination],
     };
   },
 };
@@ -82,8 +81,45 @@ defineOptions({
 // store
 const store = useSliderStore();
 const { top } = storeToRefs(store);
-const { fetchTopProducts } = store;
+const { fetchTopProducts,  pushToCart, pushToFavorite } = store;
 
+// add to wish list
+function addToCart(item) {
+ pushToCart({
+    id: item.id,
+    image_link: item.image_link,
+    api_featured_image: item.api_featured_image,
+    color: item.color,
+    name: item.name,
+    product_type: item.product_type,
+    price: item.price,
+    price_sign: item.price_sign,
+    category: item.category,
+    brand: item.brand,
+    currency: item.currency,
+    active: item.active
+  });
+
+}
+// add to favorite
+function addToFavorite(top){
+    pushToFavorite({
+    id: top.id,
+    image_link: top.image_link,
+    api_featured_image: top.api_featured_image,
+    color: top.color,
+    name:top.name,
+    product_type: top.product_type,
+    price: top.price,
+    price_sign:top.price_sign,
+    category: top.category,
+    brand: top.brand,
+    currency: top.currency,
+    product_colors: top.product_colors,
+    quantity: 1,
+    active: true
+  });
+}
 onMounted(() => {
   fetchTopProducts();
 });

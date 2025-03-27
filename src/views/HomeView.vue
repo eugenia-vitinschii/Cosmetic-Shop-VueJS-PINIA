@@ -9,6 +9,7 @@
   <div class="swiper">
     <div class="container">
       <div class="swiper__wrapper">
+        <p class="heading">Top products</p>
         <top-sliders/>
       </div>
     </div>

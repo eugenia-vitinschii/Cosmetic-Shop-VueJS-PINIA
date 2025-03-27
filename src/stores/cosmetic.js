@@ -145,6 +145,9 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         localStorage.setItem("favorite",JSON.stringify(item));
         
        },
+       test(b){
+        return 4 + b
+       },
        incrementQuantity(id) {
         this.user.cart.forEach((item) => {
           if (item.id === id) {

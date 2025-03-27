@@ -2,6 +2,10 @@ import { defineStore  } from "pinia";
 import axios from "axios";
 const baseUrl = "http://localhost:3000";
 
+//import cosmetic store
+import {useCosmeticStore} from "./cosmetic"
+
+
 export const useSliderStore = defineStore( "sliderId", {
    state: () => ({
       top: [],
@@ -13,6 +17,7 @@ export const useSliderStore = defineStore( "sliderId", {
         favorite: []
       },
       count: 1,
+      cosmeticStore: useCosmeticStore()
    }),
    getters: {
 
@@ -27,6 +32,11 @@ export const useSliderStore = defineStore( "sliderId", {
            console.log(" fetchTopProducts error:", error);
          }
        },
-
+       pushToCart(item) {
+         return this.cosmeticStore.addToCart(item)
+        },
+        pushToFavorite(item){
+          return this.cosmeticStore.addToFavorite(item)
+        },
    }
 })

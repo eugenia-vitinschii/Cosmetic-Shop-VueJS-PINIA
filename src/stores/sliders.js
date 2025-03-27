@@ -27,12 +27,21 @@ export const useSliderStore = defineStore( "sliderId", {
          }
        },
        async fetchBrandProducts() {
-        // get cosmetics from db.json
+        // get brand from db.json
         try {
           const response = await axios.get(`${baseUrl}/brand`);
           this.brand = response.data;
         } catch (error) {
-          console.log(" fetchTopProducts error:", error);
+          console.log(" fetchBrandProducts error:", error);
+        }
+      }, 
+      async fetchCategoryProducts() {
+        // get categoryfrom db.json
+        try {
+          const response = await axios.get(`${baseUrl}/category`);
+          this.category = response.data;
+        } catch (error) {
+          console.log(" fetchCategoryProducts error:", error);
         }
       },
        pushToCart(item) {

@@ -25,6 +25,15 @@
       </div>
     </div>
   </div>
+  <!-- category -->
+  <div class="swiper">
+    <div class="container">
+      <div class="swiper__wrapper">
+        <p class="heading">Lipstick products</p>
+        <category-sliders/>
+      </div>
+    </div>
+  </div>
 </template>
  
 
@@ -37,6 +46,7 @@ import { defineOptions} from "vue";
 import TheSlider from "@/components/sections/TheSlider.vue";
 import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
 import BrandSliders  from "@/components/sections/Sliders/BrandSliders.vue";
+import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
 // import TheItem from "@/components/TheItem.vue";
 
 //pinia

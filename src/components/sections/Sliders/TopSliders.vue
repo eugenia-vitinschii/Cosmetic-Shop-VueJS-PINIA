@@ -9,6 +9,22 @@
       delay: 2500,
       disableOnInteraction: false,
     }"
+                :breakpoints= "{
+            1054:{
+             slidesPerView: 5,
+            },
+                896:{
+                slidesPerView: 4,
+
+              },
+              663:{
+                slidesPerView: 3,
+              }
+              ,
+             200:{
+                slidesPerView: 2,
+              }
+            }"
     class="mySwiper"
   >
     <swiper-slide v-for="item in top" :key="item.id">

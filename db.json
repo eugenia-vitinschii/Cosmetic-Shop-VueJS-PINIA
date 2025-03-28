@@ -1,5 +1,5 @@
 {
-  "top":[
+  "top": [
     {
       "id": 1042,
       "brand": "deciem",
@@ -416,7 +416,7 @@
       "product_colors": []
     }
   ],
-  "brand":[
+  "brand": [
     {
       "id": 682,
       "brand": "dior",
@@ -714,7 +714,7 @@
       ]
     }
   ],
-  "category":[
+  "category": [
     {
       "id": 1047,
       "brand": "colourpop",
@@ -27920,6 +27920,30 @@
           "colour_name": "Charcoal 954 "
         }
       ]
+    },
+    {
+      "id": 1048,
+      "brand": "ziaja",
+      "name": "Anti-wrinkle night cream",
+      "price": 5,
+      "currency": "",
+      "img": "",
+      "api_featured_image": "https://en.ziaja.com/media/cache/resolve/product_main/media/product/image/ZIAJA%2520EN_DE_ES/Rose%2520butter/880x1280px-01.jpg",
+      "product_link": "https://en.ziaja.com/product/9736-anti-wrinkle-night-cream",
+      "website_link": "https://en.ziaja.com/product/9736-anti-wrinkle-night-cream",
+      "product_api_url": "https://en.ziaja.com/media/cache/resolve/product_main/media/product/image/ZIAJA%2520EN_DE_ES/Rose%2520butter/880x1280px-01.jpg",
+      "description": "Moisturising emulsion of rich consistency for everyday face care 30+. Perfect for mature skin lacking firmness and elasticity. Rose butter obtained from rosa canina oil. Contains polyunsaturated fatty acids, mainly linoleic and linolenic. Has high nutritional value and natural regenerating properties. Perfectly conditions the skin, regulates skin protective barrier functions, improves skin elasticity, visibly smooths, intensely moisturises and lightens the epidermis providing anti-ageing effect.",
+      "rating": "",
+      "category": "cream",
+      "product_type": "",
+      "created_at": "2025-03-28T13:38:59.451Z",
+      "product_colors": [
+        {
+          "hex_value": "",
+          "colour_name": ""
+        }
+      ],
+      "image_link": "https://en.ziaja.com/media/cache/resolve/product_main/media/product/image/ZIAJA%2520EN_DE_ES/Rose%2520butter/880x1280px-01.jpg"
     }
   ]
 }

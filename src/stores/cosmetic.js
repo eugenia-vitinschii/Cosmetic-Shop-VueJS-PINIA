@@ -10,7 +10,8 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       complected: true,
       user:{
         cart: [],
-        favorite: []
+        favorite: [],
+        viewed: []
       },
       count: 1,
    }),

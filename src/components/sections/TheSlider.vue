@@ -8,24 +8,19 @@
     class="mySwiper"
   >
     <swiper-slide>
-      <a href="/">
-        <img src="@/assets/img/1.jpg" alt="#" />
-      </a>
+      <router-link to="/product-type/foundation"><img src="@/assets/img/1.jpg" alt="#" /></router-link>
     </swiper-slide>
+
     <swiper-slide>
-      <a href="/">
-        <img src="@/assets/img/2.jpg" alt="#" />
-      </a>
+      <router-link to="/brand/annabelle"><img src="@/assets/img/2.jpg" alt="#" /></router-link>
     </swiper-slide>
-        <swiper-slide>
-      <a href="/">
-        <img src="@/assets/img/3.jpg" alt="#" />
-      </a>
+    
+    <swiper-slide>
+      <router-link to="/category/cream"><img src="@/assets/img/3.jpg" alt="#" /> </router-link>
     </swiper-slide>
-        <swiper-slide>
-      <a href="/">
-        <img src="@/assets/img/4.jpg" alt="#" />
-      </a>
+
+    <swiper-slide>
+      <router-link to="/brand/maybelline">  <img src="@/assets/img/4.jpg" alt="#" /></router-link>
     </swiper-slide>
   </swiper>
 </template>

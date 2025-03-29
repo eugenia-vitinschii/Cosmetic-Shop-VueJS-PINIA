@@ -94,12 +94,14 @@ function pushtoFavorite(cosmetics){
     product_colors: cosmetics.product_colors
   });
 }
+
+//variables
 let created = ref(false);
 
+//hooks
 onMounted(() => {
   created.value = true;
 
 });
-
 
 </script>

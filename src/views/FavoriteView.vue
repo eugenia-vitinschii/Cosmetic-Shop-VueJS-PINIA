@@ -31,13 +31,31 @@
       </div>
    </div>
 </div>
-   
+  <!-- top -->
+  <div class="swiper">
+    <div class="container">
+      <div class="swiper__wrapper">
+        <p class="heading">Top products</p>
+        <top-sliders/>
+      </div>
+    </div>
+  </div>
+  <!-- category -->
+  <div class="swiper">
+    <div class="container">
+      <div class="swiper__wrapper">
+        <p class="heading">Lipstick</p>
+        <category-sliders/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
 //vue
 import {defineOptions, ref} from "vue"
 import {onMounted} from "vue"
+
 //component settings
 defineOptions({
    name: "FavoriteView"
@@ -46,6 +64,8 @@ defineOptions({
 
 //import components
 import TheItem from "@/components/TheItem.vue";
+import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
+import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
 
 //ref 
 let created = ref(false);

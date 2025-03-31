@@ -2,11 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // import routes
 import adminRoutes from "./admin.routes";
-import accountRoutes from "./account.routes"
-import aboutRoutes from "./about.routes"
-import brandRoutes from "./brand.routes"
-import categoryRoutes from "./category.routes"
-import producttypeRoutes from "./product-type.routes"
+import accountRoutes from "./account.routes";
+import aboutRoutes from "./about.routes";
+import brandRoutes from "./brand.routes";
+import categoryRoutes from "./category.routes";
+import producttypeRoutes from "./product-type.routes";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,13 +22,12 @@ const router = createRouter({
       component: () => import("../views/ProductView.vue"),
       props: true,
     },
-
-     ...adminRoutes,
-     ...accountRoutes,
-     ...aboutRoutes,
-     ...brandRoutes,
-     ...categoryRoutes,
-     ...producttypeRoutes,
+    ...adminRoutes,
+    ...accountRoutes,
+    ...aboutRoutes,
+    ...brandRoutes,
+    ...categoryRoutes,
+    ...producttypeRoutes,
   ],
 });
 

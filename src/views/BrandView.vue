@@ -38,7 +38,7 @@
 
 
 <script setup>
-import { defineOptions, ref, onMounted } from "vue";
+import { defineOptions, ref, onMounted, onUnmounted } from "vue";
 //vue router
 import { useRoute } from "vue-router";
 
@@ -104,5 +104,7 @@ onMounted(() => {
   created.value = true;
 
 });
-
+onUnmounted(() => {
+  store.$reset;
+});
 </script>

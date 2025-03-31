@@ -128,7 +128,7 @@
                 </select>
               </div>
             </div>
-            <router-link class="delete tooltip" to="/all">
+            <router-link class="delete tooltip" to="/admin/update">
               <span class="tooltip-text small-text">back</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

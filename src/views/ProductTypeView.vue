@@ -4,7 +4,7 @@
       <div class="type__wrapper">
         <div class="type__nav brand__nav">
           <traverse-history />
-          <the-router :items="'/all-product-type'" :item="product_type" />
+          <the-router :items="'/product-type'" :item="product_type" />
         </div>
         <div class="type_title">
           <p class="heading">The {{ product_type }}</p>

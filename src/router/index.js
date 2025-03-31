@@ -5,6 +5,9 @@ import adminRoutes from "./admin.routes";
 import accountRoutes from "./account.routes"
 import aboutRoutes from "./about.routes"
 import brandRoutes from "./brand.routes"
+import categoryRoutes from "./category.routes"
+import producttypeRoutes from "./product-type.routes"
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -19,40 +22,13 @@ const router = createRouter({
       component: () => import("../views/ProductView.vue"),
       props: true,
     },
-    // {
-    //   path: "/brand",
-    //   name: "brand",
-    //   component: () => import("../views/AllBrandView.vue"),
-    // },
-    // {
-    //   path: "/brand/:brand",
-    //   name: "brand",
-    //   component: () => import("../views/BrandView.vue"),
-    // },
-    {
-      path: "/all-product-type",
-      name: "all-product-type",
-      component: () => import("../views/AllProductTypeView"),
-    },
-    {
-      path: "/product-type/:product_type",
-      name: "product-type",
-      component: () => import("../views/ProductTypeView.vue"),
-    },
-    {
-      path: "/all-category",
-      name: "all-category",
-      component: () => import("../views/AllCategoryView"),
-    },
-    {
-      path: "/category/:category",
-      name: "category",
-      component: () => import("../views/CategoryView.vue"),
-    },
+
      ...adminRoutes,
      ...accountRoutes,
      ...aboutRoutes,
-     ...brandRoutes
+     ...brandRoutes,
+     ...categoryRoutes,
+     ...producttypeRoutes,
   ],
 });
 

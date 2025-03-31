@@ -3,7 +3,6 @@ const routes = [
     {
       path: "/brand",
       name: "brand",
-      
       children: [
         {
           path: '',

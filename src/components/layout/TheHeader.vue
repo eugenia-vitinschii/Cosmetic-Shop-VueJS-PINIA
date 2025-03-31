@@ -40,7 +40,7 @@
           <div class="header__control--buttons">
             <div class="header-user tooltip">
               <span class="tooltip-text small-text">user</span>
-              <router-link to="/favorites">
+              <router-link to="/sign-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"

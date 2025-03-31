@@ -9,6 +9,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
       page: 1,
       complected: true,
       user:{
+        account: [],
         cart: [],
         favorite: [],
         viewed: []
@@ -45,6 +46,15 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
     }
    },
    actions: {
+    //login
+    async login(){
+      let result  = await axios.get(`${baseUrl}/account=${this.name}&password=${this.password}`);
+      if(result.status == 200 && result.data.lenght > 0 ){
+        localStorage.setItem("user-info", JSON.stringify(result.data[0])),
+        this.$router.push({name:"home"})
+      }
+      console.warn(result)
+    },
       async fetchCosmetics() {
          // get cosmetics from db.json
          try {

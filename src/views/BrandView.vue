@@ -4,7 +4,7 @@
       <div class="brand__wrapper">
         <div class="brand__nav">
            <traverse-history />
-        <the-router :items="'/all-brand'" :item="brand" />
+        <the-router :items="'/brand'" :item="brand" />
         </div>
         <!-- brand title -->
         <div class="brand__title">

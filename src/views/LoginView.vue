@@ -4,9 +4,9 @@
       <div class="login__wrapper">
          <p class="heading">Login</p>
          <div class="login__container">
-            <input type="text" name="name">
-            <input type="password" name="password">
-            <button>Login</button>
+            <input type="text" name="name" v-model="name">
+            <input type="password" name="password" v-model="password">
+            <button @click="login">Login</button>
          </div>
          <router-link to="/sign-up">SignUp</router-link>
       </div>
@@ -22,4 +22,14 @@ import {defineOptions} from "vue";
 defineOptions({
    name: "LoginView"
 })
+
+//pinia
+import { useCosmeticStore } from "@/stores/cosmetic";
+// import { storeToRefs } from "pinia";
+ 
+const store = useCosmeticStore();
+
+// pinia store
+
+const {  login} = store;
 </script>

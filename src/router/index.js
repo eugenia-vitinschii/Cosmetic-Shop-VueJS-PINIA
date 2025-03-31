@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+// import routes
+import adminRoutes from "./admin.routes";
+import accountRoutes from "./account.routes"
+import aboutRoutes from "./about.routes"
+import brandRoutes from "./brand.routes"
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -9,31 +14,21 @@ const router = createRouter({
       component: () => import("../views/HomeView.vue"),
     },
     {
-      path: "/sign-up",
-      name: "signup",
-      component: () => import("../views/SignUpView.vue"),
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: () => import("../views/LoginView.vue"),
-    },
-    {
       path: "/product/:id",
       name: "product",
       component: () => import("../views/ProductView.vue"),
       props: true,
     },
-    {
-      path: "/all-brand",
-      name: "all-brand",
-      component: () => import("../views/AllBrandView.vue"),
-    },
-    {
-      path: "/brand/:brand",
-      name: "brand",
-      component: () => import("../views/BrandView.vue"),
-    },
+    // {
+    //   path: "/brand",
+    //   name: "brand",
+    //   component: () => import("../views/AllBrandView.vue"),
+    // },
+    // {
+    //   path: "/brand/:brand",
+    //   name: "brand",
+    //   component: () => import("../views/BrandView.vue"),
+    // },
     {
       path: "/all-product-type",
       name: "all-product-type",
@@ -54,52 +49,10 @@ const router = createRouter({
       name: "category",
       component: () => import("../views/CategoryView.vue"),
     },
-    {
-      path: "/info",
-      name: "info",
-      component: () => import("../views/InformationView.vue"),
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
-      path: "/terms",
-      name: "terms",
-      component: () => import("../views/TermsView.vue"),
-    },
-    {
-      path: "/cart",
-      name: "cart",
-      component: () => import("../views/ShoppingView.vue"),
-    },
-    {
-      path: "/favorites",
-      name: "favorites",
-      component: () => import("../views/FavoriteView.vue"),
-    },
-    {
-      path: "/admin",
-      name: "admin",
-      component: () => import("../views/admin/AdminView.vue"),
-    },
-    {
-      path: "/update/:id",
-      name: "update",
-      component: () => import("../views/admin/UpdateView.vue"),
-      props: true 
-    },
-    {
-      path: "/add",
-      name: "add",
-      component: () => import("../views/admin/AddProductView.vue"),
-    },
-    {
-      path: "/all",
-      name: "all",
-      component: () => import("../views/admin/ShowProductsView.vue"),
-    },
+     ...adminRoutes,
+     ...accountRoutes,
+     ...aboutRoutes,
+     ...brandRoutes
   ],
 });
 

@@ -25,7 +25,7 @@
             </ul>
           </div>
           <div class="header__data--promo">
-            <router-link to="/all-brand" class="small-text">
+            <router-link to="/brand" class="small-text">
               Brands
             </router-link>
           </div>
@@ -114,7 +114,7 @@
             </li>
             <!-- brands -->
             <li >
-              <router-link to="/all-brand" class="header__link">Brands</router-link>
+              <router-link to="/brand" class="header__link">Brands</router-link>
             </li>
           </ul>
             <!-- category -->

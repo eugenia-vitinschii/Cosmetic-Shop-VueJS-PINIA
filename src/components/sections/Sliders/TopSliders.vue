@@ -86,7 +86,7 @@ import { defineOptions, onMounted } from "vue";
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
-import { useSliderStore } from "@/stores/sliders";
+import { useSliderStore } from "@/stores";
 
 import { storeToRefs } from "pinia";
 

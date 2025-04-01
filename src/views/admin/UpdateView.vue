@@ -188,7 +188,7 @@ const route = useRoute();
 const id = route.params.id;
 
 // pinia store imports
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 import { storeToRefs } from "pinia";
 
 //pinia store variables

@@ -48,7 +48,7 @@ defineOptions({
 import ShoppingItem from "@/components/sections/ShoppingItem.vue";
 
 //import store
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 import { storeToRefs } from "pinia";
 
 //pinia const

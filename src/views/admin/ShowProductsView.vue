@@ -59,7 +59,7 @@ defineOptions({
 });
 
 //pinia store imports
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 import { storeToRefs } from "pinia";
 
 //pinia variables

@@ -187,7 +187,7 @@ defineOptions({
 });
 
 //import pinia store
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 
 //pinia variables
 const store = useCosmeticStore();

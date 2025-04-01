@@ -39,7 +39,7 @@ defineOptions({
 });
 
 //pinia
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 import { storeToRefs } from "pinia";
 
 const store = useCosmeticStore();

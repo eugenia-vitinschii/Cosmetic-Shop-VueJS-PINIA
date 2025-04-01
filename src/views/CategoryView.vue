@@ -44,7 +44,7 @@ import TheRouter from "@/components/sections/TheRouter";
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 import { storeToRefs } from "pinia";
 
 defineOptions({

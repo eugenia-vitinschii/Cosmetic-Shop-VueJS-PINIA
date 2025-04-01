@@ -3,7 +3,7 @@ import axios from "axios";
 const baseUrl = "http://localhost:3000";
 
 //import cosmetic store
-import {useCosmeticStore} from "./cosmetic"
+import {useCosmeticStore} from "@/stores";
 
 
 export const useSliderStore = defineStore( "sliderId", {

@@ -71,7 +71,7 @@ import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue"
 let created = ref(false);
 
 //import store
-import {useCosmeticStore} from "@/stores/cosmetic";
+import {useCosmeticStore} from "@/stores";
 import { storeToRefs} from "pinia";
 
 //pinia actions, data , getters

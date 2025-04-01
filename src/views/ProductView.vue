@@ -39,7 +39,7 @@ import TraverseHistory from "@/components/sections/TraverseHistory.vue";
 import TheProduct from "@/components/TheProduct.vue";
 
 //pinia & router
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
 

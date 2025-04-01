@@ -257,7 +257,7 @@ defineOptions({
 const showNav = ref(false)
 const showDropdown= ref(false)
 //import store
-import { useCosmeticStore } from "@/stores/cosmetic";
+import { useCosmeticStore } from "@/stores";
 import { storeToRefs } from "pinia";
 
 //pinia const

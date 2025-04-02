@@ -3,7 +3,7 @@
     <div class="container">
       <div class="add__wrapper">
         <the-admin-header />
-        <p class="heading bold">Add new  product</p>
+        <p class="heading bold">Add new product</p>
         <div class="add__contaner">
           <form class="add__form">
             <div class="update__form-item">
@@ -87,7 +87,7 @@
                 v-model:value.trim="postProducts.description"
               />
               <div class="input__wrapper">
-                <label for="rating">Rating {{postProducts.rating }} </label>
+                <label for="rating">Rating {{ postProducts.rating }} </label>
                 <input
                   type="range"
                   name="rating"
@@ -115,7 +115,7 @@
                   <option value="mineral">mineral</option>
                   <option value="lipstick">lipstick</option>
                   <option value="lip_gloss">lip Gloss</option>
-                  <option value="lip_stain">lip stain</option> 
+                  <option value="lip_stain">lip stain</option>
                   <option value="palette">palette</option>
                   <option value="pencil">pencil</option>
                   <option value="gel">gel</option>

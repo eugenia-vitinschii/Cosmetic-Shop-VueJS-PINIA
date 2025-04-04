@@ -1,9 +1,14 @@
+//pinia
 import { defineStore  } from "pinia";
+
+//axios
 import axios from "axios";
+
+//baseUrl
 const baseUrl = "http://localhost:3000";
 
 //import cosmetic store
-import {useCosmeticStore} from "@/stores";
+import { useCosmeticStore } from "@/stores";
 
 
 export const useSliderStore = defineStore( "sliderId", {

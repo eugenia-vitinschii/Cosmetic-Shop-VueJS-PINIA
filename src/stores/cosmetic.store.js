@@ -1,6 +1,12 @@
+//pinia
 import { defineStore  } from "pinia";
+
+//axios
 import axios from "axios";
+
+//base url
 const baseUrl = "http://localhost:3000";
+
 
 export const useCosmeticStore = defineStore( "cosmeticId", {
    state: () => ({

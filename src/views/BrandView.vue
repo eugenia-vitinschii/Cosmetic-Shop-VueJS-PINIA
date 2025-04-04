@@ -75,6 +75,7 @@ function pushToCart(item) {
     category: item.category,
     brand: item.brand,
     currency: item.currency,
+    quantity: item.quantity
   });
 }
 

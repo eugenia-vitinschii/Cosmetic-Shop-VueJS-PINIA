@@ -1,4 +1,4 @@
-$\color{#480ca8}{\textsf{Makeup shop "BORCELLE"}}$ 
+### Makeup shop "BORCELLE" 
 
 ![PINIA](https://img.shields.io/badge/PINIA-480ca8?style=flat&logo=vuedotjs&logoColor=fff)
 ![VUE](https://img.shields.io/badge/Vue%20JS%203-480ca8?style=flat&logo=vuedotjs&logoColor=fff)
@@ -13,7 +13,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve git pull
+npm run serve 
 ```
 
 ###   \{^_^}/ hi!
@@ -24,8 +24,14 @@ json-server -w db.json
 ```
 
 
+###  Starts all
+```
+npm run dev
+```
+
 # Folders
 
+```
 src
    - assets
       - sass
@@ -106,3 +112,4 @@ src
       - ...View.vue
    - App.vue
    main.js
+```

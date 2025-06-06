@@ -1,0 +1,154 @@
+.header
+   width: 100%
+   nav
+      display: flex
+      align-items: center
+      button
+         display: none
+   &__data
+      display: flex
+      align-items: center
+      justify-content: space-around
+      border-bottom: 1px solid $light-brown
+   &__data--text
+      margin-bottom: 10px
+   &__data--links
+      ul li
+      display: inline
+      margin-left: 10px
+      a:hover
+         color: $gold
+   &__data--promo
+      a:hover
+         color: $gold
+      a::before
+         content: '★'
+   &__control
+      display: flex
+      align-items: center
+      justify-content: space-between
+   &__control--img
+      width: 200px
+      img
+         width: 100%
+   &__control--buttons
+      display: flex
+      align-items: center
+      svg
+         fill: $black
+         margin-left: 7px
+      svg:hover
+         fill: $brown
+   &__top
+      display: flex
+      flex-direction: row
+   &__link
+      padding: 5px 10px
+      margin: 5px 10px
+      text-align: center
+      cursor: pointer
+      font-size: $body-text
+      color: $black
+   &__link:hover
+      color: $gold
+
+   &__link:hover
+
+@media ( max-width: 550px )
+   .header
+      &__data
+         justify-content: space-between
+      &__data--text
+         display: none
+
+.header-fav, .header-cart
+//hidden nav button
+
+.header-nav
+   display: none
+
+// dropdown menu
+.dropdown
+   position: relative
+   display: inline-block
+   &__button
+      button
+         display: none
+   &__menu
+      display: none
+      position: fixed
+      overflow: hidden
+      z-index: 5
+      left: 0
+      right: 0
+      border-top: 1px solid $gold
+      background: $ivory
+      a
+         color: $black
+      a:hover
+         color: $gold
+   &__menu--items
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      max-width: 1400px
+      margin: 0px auto
+      padding: 0px 10px
+   &__menu--item
+
+.dropdown:hover
+   color: $gold
+
+.dropdown:hover .dropdown__menu
+   display: block
+
+
+//small devices
+@media (max-width: 470px)
+   .dropdown:hover .dropdown__menu
+      display: none
+   .header-nav
+      display: block
+   .dropdown
+      position: inherit
+      width: 100%
+      overflow: scroll
+      &__button
+         display: flex
+      button.active
+         svg
+            fill: blue
+      button
+         display: block
+         svg
+            fill: red
+      p
+         text-align: left
+      &__menu
+         position: inherit
+         flex-direction: column  
+      &__menu.active
+         display: block   
+      &__menu--items
+         flex-direction: column
+         a,li
+            text-align: left
+            margin: 0px
+   .header   
+      nav
+         display: none
+         flex-direction: row-reverse
+         height: 100vh
+         overflow: hidden
+         a
+            text-align: left
+      &__top
+         flex-direction: column
+         a:last-child
+         padding-bottom: 1px
+         margin-bottom: 1px
+   .header   
+      nav.active
+         display: block
+
+      

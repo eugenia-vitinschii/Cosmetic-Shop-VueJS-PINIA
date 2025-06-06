@@ -1,0 +1,87 @@
+.item
+   &__wrapper
+   &__item
+      display: flex
+      flex-direction: column
+      border: 2px solid $white
+      padding: $margin-sm
+      a:hover
+         color: $gold
+   &__item:hover
+      @include section-wrapper-item
+   // item data
+   &__data
+      flex: 1 0 auto
+   // item data img
+   &__img
+      @include img-style
+      height: 300px
+      img
+         width: 100%
+   // item data info
+   &__info
+      margin-top: 20px
+
+   &__info-name
+      height: 80px
+      overflow: hidden
+   &__info-description
+      p
+         text-transform: uppercase
+      a, p
+         padding-top: 4px
+         line-height: 10px
+   &__info-price
+   &__txt
+      
+   // item button 
+   &__button
+      width: 100%
+      flex: 0 0 auto
+      svg
+         fill: $gold
+      button:last-child
+         min-width: 100%
+         @include button-style($white, $light-brown)
+      button:hover:last-child
+         @include button-style($white, $gold)
+      p
+         text-align: center
+
+// small devices
+@media (max-width: 850px)
+   .item
+      &__img
+         height: 250px
+
+         
+// small devices
+@media (max-width: 767px)
+   .item
+      &__img
+         height: 300px
+      &__info-name
+         height: 60px
+
+@media (max-width: 500px)
+   .item
+      &__img
+         height: 200px
+
+
+@media (max-width: 400px)
+   .item
+      &__img
+         height: 160px
+
+@media (max-width: 327px)
+   .item
+      &__img
+         height: 140px
+
+
+
+//buttons
+.heart
+   svg
+      fill: red

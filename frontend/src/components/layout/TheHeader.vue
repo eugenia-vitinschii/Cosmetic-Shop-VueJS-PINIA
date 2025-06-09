@@ -244,23 +244,26 @@
 </template>
 
 
-<script setup>
+<script setup lang="ts">
 //vue
-import { defineOptions, ref } from "vue";
+import { ref } from "vue";
+
+//import store
+import { useCosmeticStore } from "@/stores/cosmetic.store";
+import { storeToRefs } from "pinia";
 
 //component settings
 defineOptions({
   name: "TheHeader",
 });
 
+
 //variables
-const showNav = ref(false)
-const showDropdown= ref(false)
-//import store
-import { useCosmeticStore } from "@/stores";
-import { storeToRefs } from "pinia";
+const showNav = ref<boolean>(false);
+const showDropdown= ref<boolean>(false);
 
 //pinia const
 const store = useCosmeticStore();
 const { user } = storeToRefs(store);
+
 </script>

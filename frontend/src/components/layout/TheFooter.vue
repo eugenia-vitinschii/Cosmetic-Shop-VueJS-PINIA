@@ -72,8 +72,7 @@
 </template>
 
 
-<script setup>
-import { defineOptions } from "vue";
+<script setup lang="ts">
 
 defineOptions({
   name: "TheFooter",

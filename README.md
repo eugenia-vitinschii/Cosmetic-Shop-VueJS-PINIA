@@ -16,9 +16,10 @@ npm install
 npm run serve 
 ```
 
-###   \{^_^}/ hi!
+### Loading db.json 
 
-###  Loading db.json
+###  (˶ᵔ ᵕ ᵔ˶)
+
 ```
 json-server -w db.json
 ```

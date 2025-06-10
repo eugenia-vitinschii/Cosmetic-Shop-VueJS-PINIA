@@ -19,7 +19,7 @@
       "product_link": "https://deciem.com/product/rdn-coverage-foundation-33-n-30ml",
       "website_link": "https://deciem.com/",
       "description": "Coverage foundations are full-coverage formulations available in a comprehensive shade range across 21 shades. These foundations contain higher pigment levels than our Serum foundations but still offer a smooth finish that avoids the heavy makeup look that can make skin appear more aged. The texture is that of a lightweight, non-oily cream.",
-      "rating": "4",
+      "rating": 4,
       "category": "liquid",
       "product_type": "eyeshadow",
       "tag_list": [
@@ -1251,7 +1251,7 @@
       "product_link": "https://deciem.com/product/rdn-coverage-foundation-33-n-30ml",
       "website_link": "https://deciem.com/",
       "description": "Coverage foundations are full-coverage formulations available in a comprehensive shade range across 21 shades. These foundations contain higher pigment levels than our Serum foundations but still offer a smooth finish that avoids the heavy makeup look that can make skin appear more aged. The texture is that of a lightweight, non-oily cream.",
-      "rating": "4",
+      "rating": 4,
       "category": "liquid",
       "product_type": "eyeshadow",
       "tag_list": [
@@ -27929,30 +27929,6 @@
           "colour_name": "Charcoal 954 "
         }
       ]
-    },
-    {
-      "id": 1048,
-      "brand": "ziaja",
-      "name": "Anti-wrinkle night cream",
-      "price": 5,
-      "currency": "",
-      "img": "",
-      "api_featured_image": "https://en.ziaja.com/media/cache/resolve/product_main/media/product/image/ZIAJA%2520EN_DE_ES/Rose%2520butter/880x1280px-01.jpg",
-      "product_link": "https://en.ziaja.com/product/9736-anti-wrinkle-night-cream",
-      "website_link": "https://en.ziaja.com/product/9736-anti-wrinkle-night-cream",
-      "product_api_url": "https://en.ziaja.com/media/cache/resolve/product_main/media/product/image/ZIAJA%2520EN_DE_ES/Rose%2520butter/880x1280px-01.jpg",
-      "description": "Moisturising emulsion of rich consistency for everyday face care 30+. Perfect for mature skin lacking firmness and elasticity. Rose butter obtained from rosa canina oil. Contains polyunsaturated fatty acids, mainly linoleic and linolenic. Has high nutritional value and natural regenerating properties. Perfectly conditions the skin, regulates skin protective barrier functions, improves skin elasticity, visibly smooths, intensely moisturises and lightens the epidermis providing anti-ageing effect.",
-      "rating": "",
-      "category": "cream",
-      "product_type": "",
-      "created_at": "2025-03-28T13:38:59.451Z",
-      "product_colors": [
-        {
-          "hex_value": "",
-          "colour_name": ""
-        }
-      ],
-      "image_link": "https://en.ziaja.com/media/cache/resolve/product_main/media/product/image/ZIAJA%2520EN_DE_ES/Rose%2520butter/880x1280px-01.jpg"
     }
   ]
 }

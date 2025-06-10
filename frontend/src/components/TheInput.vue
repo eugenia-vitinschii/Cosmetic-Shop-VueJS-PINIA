@@ -3,36 +3,34 @@
     <label class="body-text">{{ label }}</label>
     <input
       type="text"
-      :value="value"
-      @input="$emit('update:value', $event.target.value)"
+      :value="modelValue"
+      @input="onInput"
       :placeholder="placeholder"
     />
   </div>
 </template>
    
 
-<script setup>
-
-import { defineOptions } from "vue";
-import { defineProps } from "vue";
-
+<script setup lang="ts">
+//compinent
 defineOptions({
   name: "TheInput",
 });
 
-defineProps({
-  value: {
-    type: [Object, String],
-    defaul: "",
-  },
-  label: {
-    type: String,
-    default: "",
-  },
+const props = defineProps<{
+  modelValue: number | string,
+  label: string,
+  placeholder: string
+}>()
 
-  placeholder: {
-    type: String,
-    default: "text",
-  },
-});
+//emit
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string |number):void
+}>()
+
+const onInput = (e: Event) => {
+  const target = e.target as HTMLInputElement
+  const value = typeof props.modelValue === 'number' ? Number (target.value) : target.value
+  emit('update: modelValue', value)
+}
 </script>

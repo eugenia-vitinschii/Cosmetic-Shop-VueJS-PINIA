@@ -6,19 +6,15 @@
   </div>
 </template>
 
-<script setup>
-import { defineOptions, defineProps } from "vue";
-
+<script setup lang="ts">
+//component
 defineOptions({
   name: "TheBrand",
 });
 
-defineProps({
-  id: {
-    type: String,
-  },
-  brand: {
-    type: String,
-  },
-});
+//props
+const props = defineProps<{
+  brand: string
+}>()
+
 </script>

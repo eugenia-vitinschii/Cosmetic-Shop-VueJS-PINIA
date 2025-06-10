@@ -23,6 +23,7 @@
           :category="item.category"
           :brand="item.brand"
           :currency="item.currency"
+          :rating="item.rating"
           @addItemCart="pushToCart(item)"
           @addToFavorite="deleteFromFavorite(item.id)"
           :isActive="item.active"

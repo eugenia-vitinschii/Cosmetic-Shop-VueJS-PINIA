@@ -26,6 +26,7 @@
           :price_sign="item.price_sign"
           :category="item.category"
           :brand="item.brand"
+          :rating="item.rating"
           :currency="item.currency"
           @addItemCart="pushToCart(item)"
           @addToFavorite="pushtoFavorite(item)"

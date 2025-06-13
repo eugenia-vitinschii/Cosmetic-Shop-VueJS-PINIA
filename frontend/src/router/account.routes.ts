@@ -11,7 +11,6 @@ const routes: RouteRecordRaw[]= [
       path: "/product/:id",
       name: "product",
       component: () => import("@/views/ProductView.vue"),
-      props: true,
     },
   {
     path: "/sign-up",

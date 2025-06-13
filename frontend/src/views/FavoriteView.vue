@@ -51,10 +51,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 //vue
-import {defineOptions, ref} from "vue"
-import {onMounted} from "vue"
+import {ref,onMounted } from "vue"
 
 //component settings
 defineOptions({
@@ -68,11 +67,12 @@ import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
 import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
 
 //ref 
-let created = ref(false);
+let created = ref<boolean>(false);
 
 //import store
-import {useCosmeticStore} from "@/stores";
+import {useCosmeticStore} from "@/stores/cosmetic.store";
 import { storeToRefs} from "pinia";
+import type { Product } from "@/models/product";
 
 //pinia actions, data , getters
 const store = useCosmeticStore();
@@ -80,25 +80,17 @@ const {user} = storeToRefs(store);
 const { addToCart, removeFromFavorites} = store;
 
 //add to wish list
-function pushToCart(item) {
-  addToCart({
-    id: item.id,
-    image_link: item.image_link,
-    api_featured_image: item.api_featured_image,
-    color: item.color,
-    name: item.name,
-    product_type: item.product_type,
-    price: item.price,
-    price_sign: item.price_sign,
-    category: item.category,
-    brand: item.brand,
-    currency: item.currency,
-  });
+function pushToCart(item: Product) {
+  const cartItem: Product = {
+    ...item,
+    quantity: 1
+  };
+  addToCart(cartItem);
    
 }
 //delete from favorite
-function deleteFromFavorite(item){
-removeFromFavorites(item)
+function deleteFromFavorite(id: number){
+removeFromFavorites(id)
 }
 
 //hooks

@@ -21,6 +21,9 @@
             {{ product_type }}
           </router-link>
         </div>
+        <div class="product__starts">
+          <star-rating :ratingStar="rating"/>
+        </div>
         <!-- svg color -->
         <div class="product__content--color" v-if="selected">
           <svg
@@ -53,14 +56,14 @@
       <!-- item price & colors  -->
       <div class="product__info">
         <div class="product__info--price">
-          <p class="body-text" v-if="price !== '0.0'">
+          <p class="body-text" v-if="price">
             {{ price }} {{ price_sign }}
           </p>
           <p class="body-text-light" v-else>not available</p>
         </div>
         <div class="product__info--buttons">
           <!-- wish list button -->
-          <button @click="$emit('addItemFavorite')" :class="{heart: isActive}"  class="tooltip">
+          <button @click="$emit('addItemFavorite')"  class="tooltip">
       <span class="tooltip-text small-text">favorite</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +88,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-40-82v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 121 79.5 212T440-162Zm276-102q41-45 62.5-100.5T800-480q0-98-54.5-179T600-776v16q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q17 0 28.5 11.5T600-440v120h40q26 0 47 15.5t29 40.5Z"/></svg>
           </a>
         </div>
-        <div class="product__info--colors" v-if="product_colors != ''">
+        <div class="product__info--colors" v-if="product_colors">
           <select name="colors " id="selected-color" v-model="selected">
            
             <option
@@ -128,61 +131,21 @@
   </div>
 </template>
 
-<script setup>
-import { defineOptions, defineProps, ref } from "vue";
+<script setup lang="ts">
+//vue
+import { ref } from "vue";
+//product model
+import type {ProductData} from "@/models/product";
 //components
-
+import StarRating from "./sections/StarRating.vue";
 import TheDelivery from "@/components/sections/TheDelivery.vue";
 
 defineOptions({
   name: "TheProduct",
 });
 
-defineProps({
-  id: {
-    type: Number,
-  },
-  image_link: {
-    type: String,
-  },
-  name: {
-    type: String,
-  },
-  product_type: {
-    type: String,
-  },
-  price: {
-    type: Number,
-  },
-  price_sign: {
-    type: String,
-  },
-  api_featured_image: {
-    type: String,
-  },
-  brand: {
-    type: String,
-  },
-  description: {
-    type: String,
-  },
-  category: {
-    type: String,
-  },
-  tag_list: {
-    type: Array,
-  },
-  product_colors: {
-    type: Object,
-  },
-  website_link: {
-    type: String,
-  },
-  isActive:{
- type: Boolean,
-    default: false
-  }
-});
+const props = defineProps<Omit<ProductData, "quantity" | 
+"product_link" |"created_at" | "updated_at">>();
 
 const selected = ref("");
 </script>

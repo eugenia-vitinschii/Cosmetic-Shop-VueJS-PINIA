@@ -25,9 +25,9 @@
 </template>
 
 
-<script setup>
-
-import { defineOptions, ref, onMounted, onUnmounted } from "vue";
+<script setup lang="ts">
+//vue
+import { ref, onMounted} from "vue";
 
 //components
 import TheDecor from "@/components/sections/TheDecor.vue"
@@ -39,22 +39,19 @@ defineOptions({
 });
 
 //pinia
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { storeToRefs } from "pinia";
 
 const store = useCosmeticStore();
 const { fetchCosmetics } = store;
 const { allBrand  } = storeToRefs(store);
 
-let created = ref(false); 
+let created = ref<boolean>(false); 
 
 onMounted(() => {
-   created.value = true
+  created.value = true
   fetchCosmetics();
 });
 
-onUnmounted(() => {
 
-  store.$reset;
-});
 </script>

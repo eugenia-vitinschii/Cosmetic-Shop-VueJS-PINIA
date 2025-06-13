@@ -13,19 +13,15 @@
    </div>
 </template>
 
-<script setup>
-import {defineOptions, defineProps} from 'vue';
-
+<script setup lang="ts">
  defineOptions({
    name: "TheRouter"
  })
 
-defineProps({
-   items: {
-      type: String
-   },
-   item: {
-      type: String
-   }
-})
+//props
+const props = defineProps<{
+   items: string,
+   item: string
+}>()
+
 </script>

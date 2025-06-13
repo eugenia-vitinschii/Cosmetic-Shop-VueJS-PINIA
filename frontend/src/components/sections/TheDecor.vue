@@ -9,9 +9,8 @@
   </div>
 </template>
 
-<script setup>
-import {defineOptions} from 'vue'
-
+<script setup lang="ts">
+//component
 defineOptions({
    name: "TheDecor"
 })

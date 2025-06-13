@@ -26,7 +26,6 @@
           :rating="item.rating"
           @addItemCart="pushToCart(item)"
           @addToFavorite="deleteFromFavorite(item.id)"
-          :isActive="item.active"
           />
          </div>
       </div>

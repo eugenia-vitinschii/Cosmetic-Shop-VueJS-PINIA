@@ -4,7 +4,7 @@
     <div class="container">
       <div class="product__wrapper" >
          <traverse-history />
-         <div class="product__cosmeticss"  v-if="created">
+         <div class="product__cosmetics"  v-if="created">
           <!-- product cosmetics -->
             <the-product
           :id="cosmetics.id"
@@ -17,10 +17,10 @@
           :brand="cosmetics.brand"
           :description="cosmetics.description"
           :category="cosmetics.category"
+          :rating="cosmetics.rating"
           :tag_list="cosmetics.tag_list"
           :product_colors="cosmetics.product_colors"
           :website_link="cosmetics.website_link"
-             :isActive="cosmetics.active"
            @addItemCart="pushToCart(cosmetics)"
            @addItemFavorite="pushtoFavorite(cosmetics)"
         />
@@ -92,7 +92,8 @@ function pushtoFavorite(cosmetics){
 }
 
 onMounted(() => {
-  created.value = true
+  created.value = true;
+  console.log('mounted product');
   fetchCosmeticsById(id);
 });
 

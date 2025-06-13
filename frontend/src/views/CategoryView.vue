@@ -35,8 +35,8 @@
 </template>
 
 
-<script setup>
-import { defineOptions, ref, onMounted, onUnmounted } from "vue";
+<script setup lang="ts">
+import {ref, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 
 //componets
@@ -45,8 +45,8 @@ import TheRouter from "@/components/sections/TheRouter.vue";
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
-import { useCosmeticStore } from "@/stores";
-import { storeToRefs } from "pinia";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
+
 
 defineOptions({
   name: "CategoryView",
@@ -54,44 +54,23 @@ defineOptions({
 
 //pinia store
 const store = useCosmeticStore();
-const { fetchCosmetics } = store;
-const { fileredByCategory } = storeToRefs(store);
+const { fetchCosmetics,  fileredByCategory  } = store;
 const {  addToCart, addToFavorite } = store;
 const route = useRoute();
-const category = route.params.category;
+const category = route.params.category as string;
+
+
+//product
+import type { Product } from "@/models/product";
+
 //add to wish list
-function pushToCart(item) {
-  addToCart({
-    id: item.id,
-    image_link: item.image_link,
-    api_featured_image: item.api_featured_image,
-    color: item.color,
-    name: item.name,
-    product_type: item.product_type,
-    price: item.price,
-    price_sign: item.price_sign,
-    category: item.category,
-    brand: item.brand,
-    currency: item.currency,
-  });
+function pushToCart(item: Product) {
+  addToCart(item);
 }
 
 // add to favorite
-function pushtoFavorite(cosmetics){
-    addToFavorite({
-    id: cosmetics.id,
-    image_link: cosmetics.image_link,
-    api_featured_image: cosmetics.api_featured_image,
-    color: cosmetics.color,
-    name: cosmetics.name,
-    product_type: cosmetics.product_type,
-    price: cosmetics.price,
-    price_sign: cosmetics.price_sign,
-    category: cosmetics.category,
-    brand: cosmetics.brand,
-    currency: cosmetics.currency,
-    product_colors: cosmetics.product_colors
-  });
+function pushtoFavorite(item: Product){
+    addToFavorite(item);
 }
 let created = ref(false);
 
@@ -101,6 +80,6 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  store.$reset;
+  store.$reset()
 });
 </script>

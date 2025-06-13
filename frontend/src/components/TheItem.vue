@@ -41,7 +41,7 @@
     </div>
     <!-- item button -->
     <div class="item__button" >
-      <button @click="$emit('addToFavorite')" :class="{heart: isActive}"  class="tooltip">
+      <button @click="$emit('addToFavorite')" class="tooltip">
       <span class="tooltip-text small-text">favorite</span>
         <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineOptions } from "vue";
 //components
 import StarRating from "./sections/StarRating.vue";
 //product model
@@ -71,10 +70,11 @@ defineOptions({
 });
 
 
-const props = defineProps<Omit<ProductData, "quantity" | "product_link" | "tag_list" | "created_at" | "updated_at" | "product_colors">
- & {isActive:boolean}>();
+const props = defineProps<Omit<ProductData, "quantity" | 
+"product_link" | "tag_list" | 
+"created_at" | "updated_at" | 
+"product_colors">>();
 
 
 </script>
 
- product_colors

@@ -19,12 +19,14 @@
 </Transition>
 </template>
 
-<script setup>
-import { defineProps } from "vue";
+<script setup lang="ts">
 
-defineProps({
-  show: {
-    type: Boolean,
-  },
+defineOptions({
+  name: 'ReturnPolicy'
 });
+
+const props = defineProps<{
+  show: boolean
+}>();
+
 </script>

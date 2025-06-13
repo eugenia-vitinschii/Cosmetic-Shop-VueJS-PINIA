@@ -11,22 +11,17 @@
   </details>
 </template>
 
-<script setup>
-import {defineOptions, defineProps} from 'vue';
-
+<script setup lang="ts">
 //component settings
 defineOptions({
    name: "TheAccordion"
 });
 
 //props
-defineProps({
-   title:{
-      type: String,
-   },
-   content:{
-      type: String,
-   }
-})
+const props = defineProps<{
+  title: string,
+  content: string
+}>()
+
 
 </script>

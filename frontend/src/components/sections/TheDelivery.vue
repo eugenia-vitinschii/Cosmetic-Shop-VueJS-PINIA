@@ -29,8 +29,8 @@
 
 </template>
 
-<script setup>
-import { defineOptions, defineProps, ref } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 //components 
 import ReturnPolicy from './ReturnPolicy.vue'
 
@@ -38,11 +38,9 @@ defineOptions({
   name: "TheDelivery",
 });
 
-defineProps({
-  source: {
-    type: String
-  }
-})
+const props = defineProps<{
+  source: string
+}>()
 
 const showModal = ref(false)
 </script>

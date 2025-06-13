@@ -40,11 +40,9 @@
         :category="item.category"
         :brand="item.brand"
         :currency="item.currency"
-        :buy="buyItem"
         :rating="item.rating"
         @addItemCart="addToCart(item)"
         @addToFavorite="addToFavorite(item)"
-        :isActive="item.active"
       />
     </swiper-slide>
   </swiper>

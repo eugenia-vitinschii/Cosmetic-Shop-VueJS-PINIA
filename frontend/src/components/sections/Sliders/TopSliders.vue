@@ -27,9 +27,8 @@
             }"
     class="mySwiper"
   >
-    <swiper-slide v-for="item in top" :key="item.id">
+    <!-- <swiper-slide v-for="item in top" :key="item.id">
       <the-item
-        :key="item.id"
         :id="item.id"
         :image_link="item.image_link"
         :api_featured_image="item.api_featured_image"
@@ -44,13 +43,13 @@
         @addItemCart="addToCart(item)"
         @addToFavorite="addToFavorite(item)"
       />
-    </swiper-slide>
+    </swiper-slide> -->
   </swiper>
 </template>
 
  
 
-  <script>
+  <!-- <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 
@@ -74,68 +73,42 @@ export default {
     };
   },
 };
-</script>
+</script> -->
 
 
-<script setup>
+<script setup lang="ts">
 //vue
-import { defineOptions, onMounted } from "vue";
+import { onMounted } from "vue";
 
 //components
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
-import { useSliderStore } from "@/stores";
+// import { useSliderStore } from "@/stores/cosmetic.store";
+// import { storeToRefs } from "pinia";
 
-import { storeToRefs } from "pinia";
-
+// //product
+// import type { Product } from "@/models/product";
 defineOptions({
   name: "TopSliders",
 });
 
-// store
-const store = useSliderStore();
-const { top } = storeToRefs(store);
-const { fetchTopProducts,  pushToCart, pushToFavorite } = store;
+// // store
+// const store = useSliderStore();
+// const { top } = storeToRefs(store);
+// const { fetchTopProducts,  pushToCart, pushToFavorite } = store;
 
-// add to wish list
-function addToCart(item) {
- pushToCart({
-    id: item.id,
-    image_link: item.image_link,
-    api_featured_image: item.api_featured_image,
-    color: item.color,
-    name: item.name,
-    product_type: item.product_type,
-    price: item.price,
-    price_sign: item.price_sign,
-    category: item.category,
-    brand: item.brand,
-    currency: item.currency,
-    active: item.active
-  });
 
-}
-// add to favorite
-function addToFavorite(top){
-    pushToFavorite({
-    id: top.id,
-    image_link: top.image_link,
-    api_featured_image: top.api_featured_image,
-    color: top.color,
-    name:top.name,
-    product_type: top.product_type,
-    price: top.price,
-    price_sign:top.price_sign,
-    category: top.category,
-    brand: top.brand,
-    currency: top.currency,
-    product_colors: top.product_colors,
-    quantity: 1,
-    active: true
-  });
-}
-onMounted(() => {
-  fetchTopProducts();
-});
+// // add to wish list
+// function addToCart(item: Product) {
+//  pushToCart(item);
+
+// }
+// // add to favorite
+// function addToFavorite(item: Product){
+//     pushToFavorite(item);
+// }
+// onMounted(() => {
+//   fetchTopProducts();
+// });
 </script>

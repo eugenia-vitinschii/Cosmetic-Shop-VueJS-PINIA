@@ -7,7 +7,7 @@ export interface ProductColor {
 }
 
 export interface ProductData {
-   id?: number;
+   id?: string;
    quantity?: number;
    brand?: string;
    name?: string;
@@ -27,10 +27,11 @@ export interface ProductData {
    product_api_url?: string;
    api_featured_image?: string;
    product_colors?: ProductColor[];
+   sliderTags?: string[];
 }
 
 export class Product {
-   id?: number;
+   id?: string;
    quantity?: number;
    brand?: string;
    name?: string;
@@ -49,7 +50,8 @@ export class Product {
    updated_at?: string;
    product_api_url?: string;
    api_featured_image?: string;
-   product_colors?: ProductColor[];
+   product_colors: ProductColor[];
+   sliderTags?: string[];
 
 
    constructor(data: ProductData = {}) {
@@ -73,5 +75,6 @@ export class Product {
       this.product_api_url = data.product_api_url ;
       this.api_featured_image = data.api_featured_image;
       this.product_colors = data.product_colors ;
+      this.sliderTags = data.sliderTags ?? [];
    }
 }

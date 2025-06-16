@@ -5,38 +5,46 @@
         <the-admin-header />
         <p class="heading bold">Add new product</p>
         <div class="add__contaner">
-          <form class="add__form">
+          <form class="add__form" v-if="postProducts">
             <div class="update__form-item">
               <p class="body-text">General info</p>
+              <div class="input__wrapper">
+                 <label class="body-text">Include in slider</label>
+                  <select multiple v-model="postProducts.sliderTags">
+                    <option value="top">Top Products</option>
+                    <option value="week">Weekly Products</option>
+                    <option value="brand">Weekly brand</option>
+                  </select>
+              </div>
               <the-input
                 :label="'id'"
                 :placeholder="'id'"
-                v-model:value.trim="postProducts.id"
+                v-model.trim="postProducts.id"
               />
               <the-input
                 :label="'created_at'"
                 :placeholder="'created_at'"
-                v-model:value.trim="postProducts.created_at"
+                v-model.trim="postProducts.created_at"
               />
               <the-input
                 :label="'brand'"
                 :placeholder="'brand'"
-                v-model:value.trim="postProducts.brand"
+                v-model.trim="postProducts.brand"
               />
               <the-input
                 :label="'name'"
                 :placeholder="'name'"
-                v-model:value.trim="postProducts.name"
+                v-model.trim="postProducts.name"
               />
               <the-input
                 :label="'price'"
                 :placeholder="'price'"
-                v-model:value.number="postProducts.price"
+                v-model.number="postProducts.price"
               />
               <the-input
                 :label="'currency'"
                 :placeholder="'currency'"
-                v-model:value.trim="postProducts.currency"
+                v-model.trim="postProducts.currency"
               />
             </div>
             <div class="update__form-item">
@@ -44,47 +52,35 @@
               <the-input
                 :label="'img'"
                 :placeholder="'img'"
-                v-model:value.trim="postProducts.image_link"
+                v-model.trim="postProducts.image_link"
               />
               <the-input
                 :label="'api_featured_image'"
                 :placeholder="'api_featured_image'"
-                v-model:value.trim="postProducts.api_featured_image"
+                v-model.trim="postProducts.api_featured_image"
               />
               <the-input
                 :label="'product_link'"
                 :placeholder="'product_link'"
-                v-model:value.trim="postProducts.product_link"
+                v-model.trim="postProducts.product_link"
               />
               <the-input
                 :label="'website_link'"
                 :placeholder="'website_link'"
-                v-model:value.trim="postProducts.website_link"
+                v-model.trim="postProducts.website_link"
               />
               <the-input
                 :label="'product_api_url'"
                 :placeholder="'product_api_url'"
-                v-model:value.trim="postProducts.product_api_url"
+                v-model.trim="postProducts.product_api_url"
               />
             </div>
             <div class="update__form-item">
               <p class="body-text bold">Product Information</p>
-              <p class="body-text">prodcut colors hex_value & colour_name</p>
-              <the-input
-                :label="'hex_value'"
-                :placeholder="'hex_value'"
-                v-model:value.trim="postProducts.product_colors.hex_value"
-              />
-              <the-input
-                :label="' colour_name'"
-                :placeholder="' colour_name'"
-                v-model:value.trim="postProducts.product_colors.colour_name"
-              />
-
               <the-input
                 :label="'description'"
                 :placeholder="'description'"
-                v-model:value.trim="postProducts.description"
+                v-model.trim="postProducts.description"
               />
               <div class="input__wrapper">
                 <label for="rating">Rating {{ postProducts.rating }} </label>
@@ -138,6 +134,8 @@
                 </select>
               </div>
             </div>
+            <!-- colors -->
+
             <button class="delete tooltip" @click="$router.go(-1)">
               <span class="tooltip-text small-text">back</span>
               <svg
@@ -173,9 +171,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 //vue
-import { defineOptions, ref } from "vue";
+import { ref } from "vue";
 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
@@ -187,60 +185,21 @@ defineOptions({
 });
 
 //import pinia store
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
+import { Product } from "@/models/product";
 
 //pinia variables
 const store = useCosmeticStore();
 const { createProduct } = store;
 
 //variables
-const postProducts = ref({
-  id: "",
-  brand: "",
-  name: "",
-  price: "",
-  currency: "",
-  img: "",
-  api_featured_image: "",
-  product_link: "",
-  website_link: "",
-  product_api_url: "",
-  description: "",
-  rating: "",
-  category: "",
-  product_type: "",
-  created_at: new Date(),
-  product_colors: [
-    {
-      hex_value: "",
-      colour_name: "",
-    },
-  ],
-});
+const postProducts = ref<Product>(new Product())
 
 //functions
 const save = () => {
   createProduct(postProducts.value);
-  postProducts.value.id = "";
-  postProducts.value.brand = "";
-  postProducts.value.name = "";
-  postProducts.value.price = "";
-  postProducts.value.currency = "";
-  postProducts.value.img = "";
-  postProducts.value.api_featured_image = "";
-  postProducts.value.product_link = "";
-  postProducts.value.website_link = "";
-  postProducts.value.product_api_url = "";
-  postProducts.value.description = "";
-  postProducts.value.rating = "";
-  postProducts.value.category = "";
-  postProducts.value.product_type = "";
-  postProducts.value.created_at = new Date();
-  postProducts.value.product_colors = [
-    {
-      hex_value: "",
-      colour_name: "",
-    },
-  ];
+  postProducts.value = new Product
 };
+
+
 </script>

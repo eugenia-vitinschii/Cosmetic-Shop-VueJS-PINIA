@@ -24,12 +24,23 @@
 </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+//component
+defineOptions({
+  name:'AboutView'
+})
 //import components
 import TheAccordion from "../components/sections/TheAccordion.vue";
 
+//interface
+interface InfoData{
+  id: string,
+  title: string,
+  content: string
+}
+
 //variables
-const info = [
+const info: InfoData[] = [
   {
     id: "1",
     title: "Digitally Empowered Agile Supply Chain",

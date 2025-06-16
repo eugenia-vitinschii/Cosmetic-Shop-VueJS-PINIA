@@ -15,6 +15,6 @@ Termify will not be responsible for any outcome that may occur during the course
  
 </template>
 
-<script setup>
+<script setup lang="ts">
  
 </script>

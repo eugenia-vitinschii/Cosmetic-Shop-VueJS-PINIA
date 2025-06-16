@@ -34,7 +34,7 @@
     <div class="container">
       <div class="swiper__wrapper">
         <p class="heading">Dior</p>
-        <brand-sliders/>
+      
       </div>
     </div>
   </div>
@@ -43,28 +43,22 @@
     <div class="container">
       <div class="swiper__wrapper">
         <p class="heading">Lipstick</p>
-        <category-sliders/>
+      
       </div>
     </div>
   </div>
 </template>
  
-<script setup>
-//vue
-import { defineOptions} from "vue";
-
+<script setup lang="ts">
 //components
 import TheSlider from "@/components/sections/TheSlider.vue";
 import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
-import BrandSliders  from "@/components/sections/Sliders/BrandSliders.vue";
-import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
+// import BrandSliders  from "@/components/sections/Sliders/BrandSliders.vue";
+// import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
 
 // component settings
 defineOptions({
   name: "HomeView",
 });
-
-
-console.log('home')
 
 </script>

@@ -9,11 +9,7 @@
    </div>
 </template>
 
-<script setup>
-
-//vue
-import {defineOptions} from "vue";
-
+<script setup lang="ts"> 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue"
 

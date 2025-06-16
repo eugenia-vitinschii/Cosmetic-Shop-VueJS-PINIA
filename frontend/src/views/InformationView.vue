@@ -82,10 +82,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SmallNavItem from "@/components/core/SmallNavItem.vue";
 
-const nav = [
+//interface
+interface NavData {
+  id: string,
+  name: string,
+  section: string,
+}
+
+const nav: NavData[] = [
   {
     id: "1",
     name: "OUR IMPACT",

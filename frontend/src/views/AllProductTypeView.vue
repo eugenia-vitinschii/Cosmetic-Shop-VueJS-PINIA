@@ -21,8 +21,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineOptions, ref, onMounted, onUnmounted } from "vue";
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
 
 //components
 import TheDecor from "@/components/sections/TheDecor.vue"
@@ -34,7 +34,7 @@ defineOptions({
 });
 
 //pinia
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { storeToRefs } from "pinia";
 
 const store = useCosmeticStore();

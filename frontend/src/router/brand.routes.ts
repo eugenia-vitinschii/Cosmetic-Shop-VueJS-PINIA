@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[]= [
         component: () => import("@/views/AllBrandView.vue"),
       },
       {
-        path: "/brand/:brand",
+        path: "brand",
         component: () => import("@/views/BrandView.vue"),
       },
     ],

@@ -18,7 +18,7 @@ const routes: RouteRecordRaw[]= [
         component: () => import("@/views/admin/AddProductView.vue"),
       },
       {
-        path: "/update/:id",
+        path: "update/:id",
         component: () => import("@/views/admin/UpdateView.vue"),
         props: true,
       },

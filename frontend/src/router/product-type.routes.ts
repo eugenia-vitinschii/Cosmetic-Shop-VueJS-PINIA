@@ -4,13 +4,13 @@ import type { RouteRecordRaw} from 'vue-router';
 const routes: RouteRecordRaw[]= [
    {
      path: "/product-type",
-     name: "/product-type",
+     name: "productType",
      children: [
        {
          path: '',
        component: () =>  import("@/views/AllProductTypeView.vue"),
        },
-       { path: '/product-type/:product_type',
+       { path: ':product_type',
          component: () => import("@/views/ProductTypeView.vue"),
        }
      ]

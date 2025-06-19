@@ -73,35 +73,40 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
        },
     //create 
        async createProduct(payload: Product) {
+        if (!payload.name || !payload.brand) return; 
         try{
-          const {data} = await axios.post(`${baseUrl}/cosmetics`, payload);
+          const createdAt = new Date().toISOString()
+          const {data} = await axios.post(`${baseUrl}/cosmetics`,{
+            ...payload,
+            created_at: createdAt,
+            updated_at: createdAt,
+          });
           this.cosmetics.push(data);
-          console.log("Product was created")
         }catch (err){
           console.log(err)
         }
        },
        //updateItem
-       async updateCosmetic(id: number){
+       async updateProduct(id: number){
         const product = this.cosmetics.find((p) => p.id === id);
         if(!product) return;
         try{
           await axios.put(`${baseUrl}/cosmetics/${id}`,{
            ...product,
-           updated_at: new Date().toISOString,
+           updated_at: new Date().toISOString(),
           })
         } catch(err){
           console.log(err)
         } 
        },
        //fetch by id
-       async fetchCosmeticsById(id: number) {
+       async fetchProductById(id: number) {
          // get Cosmetics from db.json by id
          try {
            const response = await axios.get(`${baseUrl}/cosmetics/${id}`);
            this.cosmetics = [response.data];
          } catch (error) {
-           console.log("fetchCosmeticsById(id) error:", error);
+           console.log("fetchProductById(id) error:", error);
          }
        },
         // delete product from db.json

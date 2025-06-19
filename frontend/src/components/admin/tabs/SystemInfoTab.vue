@@ -5,20 +5,20 @@
          <the-input 
          :label="'id'" 
          :placeholder="'id'" 
-         v-model.trim="modelValue.id"
+         v-model="modelValue.id"
         />
          <the-input 
          :label="'Сreated at'" 
          :placeholder="'2025-03-10T15:12:04.738Z'" 
-         v-model.trim="modelValue.created_at" />
+         v-model="modelValue.created_at" />
          <the-input 
          :label="'updated_at'" 
          :placeholder="'2025-03-10T15:12:04.738Zt'" 
-         v-model.trim="modelValue.created_at" />
+         v-model="modelValue.created_at" />
          <the-input 
          :label="'Product api url'" 
          :placeholder="'wwww.name.com/sd/e34'"
-         v-model.trim="modelValue.product_api_url" />
+         v-model="modelValue.product_api_url" />
       </div>
    </div>
 </template>

@@ -57,7 +57,7 @@
 
 <script setup lang="ts">
 //vue
-import {ref} from 'vue';
+import {ref, watch } from 'vue';
 
 //product model
 import type { ProductData } from '@/models/product';
@@ -67,15 +67,10 @@ import CategorizationTab from './tabs/CategorizationTab.vue';
 import GeneralTab from './tabs/GeneralTab.vue';
 import MediaTab from './tabs/MediaTab.vue';
 import SystemInfoTab from'./tabs/SystemInfoTab.vue';
-import { watch } from 'vue';
-
-//props
-defineProps<{
-   modelValue: ProductData
-}>()
 
 //tab logic
 const activeTab = ref('GeneralTab')
+
 const tabs = [
    {key: 'GeneralTab', label:'General'},
    {key: 'CategorizationTab', label:'Categorization'},
@@ -90,16 +85,21 @@ const emit = defineEmits<{
    (e: 'submit', value: ProductData): void
 }>()
 
+//props
+const props = defineProps<{
+   modelValue: ProductData
+}>()
+
 //local copy
-const product = ref<Partial<ProductData>>({})
+const product = ref<Partial<ProductData>>({...props.modelValue})
 
 watch(product, (newVal) => {
-   emit('update:modelValue', newVal)
+   emit('update:modelValue', newVal as ProductData)
 }, {deep: true})
 
 //handleSubmit
 function handleSubmit(){
-   emit('submit', product.value)
+   emit('submit', product.value as ProductData)
 }
 
 </script>

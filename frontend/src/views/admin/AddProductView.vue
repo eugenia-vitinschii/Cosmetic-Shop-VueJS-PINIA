@@ -37,12 +37,18 @@ const store = useCosmeticStore();
 const { createProduct } = store;
 
 //variables
-const product = ref<Product>({})
+const product = ref<Partial<Product>>({})
 
 // //functions
 const save = () => {
-  createProduct(product.value);
-  product.value = new Product
+  const now = new Date().toISOString();
+  createProduct({
+    ...product.value,
+    created_at: now,
+    updated_at: now
+  });
+
+  product.value = {}
 };
 
 

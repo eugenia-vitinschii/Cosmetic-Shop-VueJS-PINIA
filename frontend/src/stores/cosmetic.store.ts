@@ -87,20 +87,20 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         }
        },
        //updateItem
-       async updateProduct(id: number){
-        const product = this.cosmetics.find((p) => p.id === id);
-        if(!product) return;
+       async updateProduct(id: string, payload: Product){
         try{
-          await axios.put(`${baseUrl}/cosmetics/${id}`,{
-           ...product,
-           updated_at: new Date().toISOString(),
-          })
+          const {data} = await axios.put(`${baseUrl}/cosmetics/${id}`, payload);
+            
+          const index = this.cosmetics.findIndex(p => p.id === id);
+          if( index !== -1){
+            this.cosmetics[index] = data;
+          }
         } catch(err){
           console.log(err)
         } 
        },
        //fetch by id
-       async fetchProductById(id: number) {
+       async fetchProductById(id: string) {
          // get Cosmetics from db.json by id
          try {
            const response = await axios.get(`${baseUrl}/cosmetics/${id}`);
@@ -110,7 +110,7 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
          }
        },
         // delete product from db.json
-        async deleteProduct(id: number) {
+        async deleteProduct(id: string) {
           try {
             await axios.delete(`${baseUrl}/cosmetics/${id}`);
             this.cosmetics = this.cosmetics.filter((item) => item.id !== id);
@@ -154,16 +154,16 @@ export const useCosmeticStore = defineStore( "cosmeticId", {
         localStorage.setItem("favorite",JSON.stringify(this.user.favorite));
       //incriment
        },
-       incrementQuantity(id: number) {
+       incrementQuantity(id: string) {
         const item = this.user.cart.find((p) => p.id === id);
         if(item) {
           item.quantity = (item.quantity || 0) +1
         }
       },
-      removeItem(id:number){
+      removeItem(id:string){
         this.user.cart = this.user.cart.filter((item) => item.id !== id)
       },
-      removeFromFavorites(id: number){
+      removeFromFavorites(id: string){
         this.user.favorite = this.user.favorite.filter((item) => item.id !== id)
       }
    }

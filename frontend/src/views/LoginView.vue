@@ -14,22 +14,19 @@
 </div>
 </template>
 
-<script setup>
-//vue
-import {defineOptions} from "vue";
-
+<script setup lang="ts">
 //component settings
 defineOptions({
    name: "LoginView"
 })
 
 //pinia
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
 // import { storeToRefs } from "pinia";
  
 const store = useCosmeticStore();
 
 // pinia store
 
-const {  login} = store;
+const { login} = store;
 </script>

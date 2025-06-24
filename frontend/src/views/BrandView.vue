@@ -1,10 +1,10 @@
 <template>
   <div class="brand">
     <div class="container">
-      <div class="brand__wrapper">
+      <div class="brand__wrapper" v-if="brand">
         <div class="brand__nav">
            <traverse-history />
-        <the-router :items="'/brand'" :item="brand" />
+        <the-router :base="'/brand'" :sub="brand" />
         </div>
         <!-- brand title -->
         <div class="brand__title">
@@ -33,13 +33,14 @@
           />
         </div>
       </div>
+      <p class="body-text" v-else>Something is wrong, try again</p>
     </div>
   </div>
 </template>
 
 
-<script setup>
-import { defineOptions, ref, onMounted, onUnmounted } from "vue";
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
 //vue router
 import { useRoute } from "vue-router";
 
@@ -49,8 +50,11 @@ import TheRouter from "@/components/sections/TheRouter.vue";
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { storeToRefs } from "pinia";
+
+//product
+import type { Product } from "@/models/product";
 
 defineOptions({
   name: "BrandView",
@@ -58,44 +62,20 @@ defineOptions({
 const store = useCosmeticStore();
 // pinia store
 const { fileredByBrand  } = storeToRefs(store);
-const route = useRoute();
-const brand = route.params.brand;
 const {  addToCart, addToFavorite } = store;
 
+//router
+const route = useRoute();
+const brand = route.params.brand  as string;
+
 //add to wish list
-function pushToCart(item) {
-  addToCart({
-    id: item.id,
-    image_link: item.image_link,
-    api_featured_image: item.api_featured_image,
-    color: item.color,
-    name: item.name,
-    product_type: item.product_type,
-    price: item.price,
-    price_sign: item.price_sign,
-    category: item.category,
-    brand: item.brand,
-    currency: item.currency,
-    quantity: item.quantity
-  });
+function pushToCart(item: Product) {
+  addToCart(item);
 }
 
 // add to favorite
-function pushtoFavorite(cosmetics){
-    addToFavorite({
-    id: cosmetics.id,
-    image_link: cosmetics.image_link,
-    api_featured_image: cosmetics.api_featured_image,
-    color: cosmetics.color,
-    name: cosmetics.name,
-    product_type: cosmetics.product_type,
-    price: cosmetics.price,
-    price_sign: cosmetics.price_sign,
-    category: cosmetics.category,
-    brand: cosmetics.brand,
-    currency: cosmetics.currency,
-    product_colors: cosmetics.product_colors
-  });
+function pushtoFavorite(item: Product){
+    addToFavorite(item);
 }
 
 //variables

@@ -3,12 +3,12 @@
       <router-link to="/" class="body-text-light hover-text">
          home
       </router-link>
-      <router-link :to="items" class="body-text-light hover-text">
-         {{ items}}
+      <router-link :to="`${base}`" class="body-text-light hover-text">
+         {{ base}}
       </router-link>
-      <span>/</span>
-      <router-link :to="item" class="body-text">
-         {{ item}}
+      <span v-if="sub">/</span>
+      <router-link :to="`${base}/${sub}`" class="body-text">
+         {{ sub}}
       </router-link>
    </div>
 </template>
@@ -20,8 +20,8 @@
 
 //props
 const props = defineProps<{
-   items: string,
-   item: string
+   base?: string,
+   sub?: string
 }>()
 
 </script>

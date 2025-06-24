@@ -8,11 +8,14 @@ const routes: RouteRecordRaw[]= [
     children: [
       {
         path:'',
+        name: "AllBrands",
         component: () => import("@/views/AllBrandView.vue"),
       },
       {
-        path: "brand",
+        path: ":brand",
+        name: "BrandProducts",
         component: () => import("@/views/BrandView.vue"),
+        props: true,
       },
     ],
   },

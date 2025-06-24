@@ -35,10 +35,7 @@
   </div>
 </template>
 
-<script setup>
-//import vue
-import { defineOptions } from "vue";
-
+<script setup lang="ts">
 //vue settings component
 defineOptions({
   name: "ShoppingView",
@@ -48,7 +45,7 @@ defineOptions({
 import ShoppingItem from "@/components/sections/ShoppingItem.vue";
 
 //import store
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { storeToRefs } from "pinia";
 
 //pinia const

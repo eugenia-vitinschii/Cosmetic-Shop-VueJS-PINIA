@@ -22,10 +22,7 @@
   </div>
 </template>
 
-<script setup>
-//vue
-import { defineOptions } from "vue";
-
+<script setup lang="ts">
 //component settings
 defineOptions({
   name: "SignUp",

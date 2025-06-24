@@ -5,7 +5,7 @@
     <div class="item__data">
       <!-- item img -->
       <div class="item__img">
-        <router-link :to="'/product/' + id">
+        <router-link :to="`/product/${id}`">
           <img
             :src="image_link"
             @error="$event.target.src = api_featured_image"

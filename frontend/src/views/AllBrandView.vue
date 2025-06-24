@@ -16,7 +16,6 @@
             :key="index"
             :brand="item"
           >
-            {{ brand }}
           </the-brand>
         </div>
       </div>

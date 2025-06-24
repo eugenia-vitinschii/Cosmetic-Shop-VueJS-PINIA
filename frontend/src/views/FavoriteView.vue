@@ -89,7 +89,7 @@ function pushToCart(item: Product) {
    
 }
 //delete from favorite
-function deleteFromFavorite(id: number){
+function deleteFromFavorite(id: string){
 removeFromFavorites(id)
 }
 

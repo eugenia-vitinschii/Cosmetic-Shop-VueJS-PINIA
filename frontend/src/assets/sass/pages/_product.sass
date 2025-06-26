@@ -4,21 +4,21 @@
 .product // product page :id
    &__wrapper
    &__item
-   &__top //top blocks
+   &__layout //top blocks
       display: flex
       justify-content: space-between
 
-   &__content //brand name product type
+   &__details //brand name product type
       width: 33%
-   &__content--brand
-   &__content--name
-   &__content--type
-   &__content--color
-      width: 100%
-   &__images
+ 
+   &__brand
+   &__name
+   &__type
+   &__media //product img
       width: 33%
-      padding-right: 20px
-   &__img //product img
+      padding-right: 20px      
+   &__img
+
       @include img-style
       transition: $transition
       img
@@ -29,10 +29,17 @@
    &__info //price colors
       width: 33%
       text-align: center
-   &__info--price
+   &__price
       p
          text-align: center
-   &__info--colors
+   &__color-list
+      height: 200px
+      overflow: scroll
+   &__color-preview
+      cursor: pointer
+      border: 1px solid $light-gray
+   &__color-preview:hover
+      border: 1px solid $ivory
    &__bottom
       display: inline
       margin-right: 10px
@@ -76,7 +83,4 @@
       color: $white
 
 
-// //select
-// .color, ::picker(select)  
-//   appearance: base-select
  

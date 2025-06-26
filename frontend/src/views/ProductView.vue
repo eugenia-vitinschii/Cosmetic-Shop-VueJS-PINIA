@@ -7,22 +7,24 @@
          <div class="product__cosmetics"  v-if="created">
           <!-- product cosmetics -->
             <the-product
-          :id="cosmetics.id"
-          :image_link="cosmetics.image_link"
-          :name="cosmetics.name"
-          :product_type="cosmetics.product_type"
-          :price="cosmetics.price"
-          :price_sign="cosmetics.price_sign"
-          :api_featured_image="cosmetics.api_featured_image"
-          :brand="cosmetics.brand"
-          :description="cosmetics.description"
-          :category="cosmetics.category"
-          :rating="cosmetics.rating"
-          :tag_list="cosmetics.tag_list"
-          :product_colors="cosmetics.product_colors"
-          :website_link="cosmetics.website_link"
-           @addItemCart="pushToCart(cosmetics)"
-           @addItemFavorite="pushtoFavorite(cosmetics)"
+            v-if="item"
+          :id="item.id"
+          :image_link="item.image_link"
+          :name="item.name"
+          :product_type="item.product_type"
+          :price="item.price"
+          :price_sign="item.price_sign"
+          :api_featured_image="item.api_featured_image"
+          :brand="item.brand"
+          :description="item.description"
+          :category="item.category"
+          :currency="item.currency"
+          :rating="item.rating"
+          :tag_list="item.tag_list"
+          :product_colors="item.product_colors"
+          :website_link="item.website_link"
+           @addItemCart="pushToCart"
+           @addItemFavorite="pushtoFavorite(item)"
         />
          </div>
       </div>
@@ -30,18 +32,21 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 //vue
-import { defineOptions, ref,  onMounted } from "vue";
+import {ref,  onMounted, computed} from "vue";
 
 // components
 import TraverseHistory from "@/components/sections/TraverseHistory.vue";
 import TheProduct from "@/components/TheProduct.vue";
 
 //pinia & router
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
+
+//product
+import type { Product, ProductColor } from "@/models/product";
 
 //component settings
 defineOptions({
@@ -49,53 +54,34 @@ defineOptions({
 });
 //pinia store 
 const store = useCosmeticStore();
-const route = useRoute();
-const id = route.params.id;
-const { cosmetics } = storeToRefs(store);
-const { fetchCosmeticsById ,  addToCart, addToFavorite } = store;
 
+
+const { cosmetics } = storeToRefs(store);
+const { fetchProductById ,  addToCart, addToFavorite } = store;
+
+const route = useRoute();
+const id = route.params.id as string;
 let created = ref(false);
 
 //add to wish list
-function pushToCart(cosmetics) {
-  addToCart({
-    id: cosmetics.id,
-    image_link: cosmetics.image_link,
-    api_featured_image: cosmetics.api_featured_image,
-    color: cosmetics.color,
-    name: cosmetics.name,
-    product_type: cosmetics.product_type,
-    price: cosmetics.price,
-    price_sign: cosmetics.price_sign,
-    category: cosmetics.category,
-    brand: cosmetics.brand,
-    currency: cosmetics.currency,
-    product_colors: cosmetics.product_colors
-  });
+function pushToCart({item, color}:{ item: Product; color: ProductColor | null}) {
+  if(!color){
+    alert("Please select a color befor adding to cart");
+    return
+  }
+  addToCart(item, color);
 }
 // add to favorite
-function pushtoFavorite(cosmetics){
-    addToFavorite({
-    id: cosmetics.id,
-    image_link: cosmetics.image_link,
-    api_featured_image: cosmetics.api_featured_image,
-    color: cosmetics.color,
-    name: cosmetics.name,
-    product_type: cosmetics.product_type,
-    price: cosmetics.price,
-    price_sign: cosmetics.price_sign,
-    category: cosmetics.category,
-    brand: cosmetics.brand,
-    currency: cosmetics.currency,
-    product_colors: cosmetics.product_colors
-  });
+function pushtoFavorite(item: Product){
+    addToFavorite(item);
 }
+const item = computed(() => cosmetics.value.find((p) => p.id === id))
+
 
 onMounted(() => {
   created.value = true;
   console.log('mounted product');
-  fetchCosmeticsById(id);
+  fetchProductById(id);
 });
 
- 
 </script>

@@ -44,10 +44,11 @@ const save = () => {
   const now = new Date().toISOString();
   createProduct({
     ...product.value,
+       product_colors: [],
     created_at: now,
     updated_at: now
   });
-
+  //clean form
   product.value = {}
 };
 

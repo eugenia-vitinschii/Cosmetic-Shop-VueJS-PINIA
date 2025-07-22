@@ -32,9 +32,23 @@
    &__price
       p
          text-align: center
+
    &__color-list
       height: 200px
       overflow: scroll
+   &__color-option
+      display: block
+      border: 2px solid transparent
+      width: 100%
+      padding: 10px
+      margin-top: 3px
+      span
+         background: $ivory
+         padding: 3px
+   &__color-option:hover,  
+      &__color-option:focus-visible
+      border-color: $dark-brown
+      @include  shadow()
    &__color-preview
       cursor: pointer
       border: 1px solid $light-gray

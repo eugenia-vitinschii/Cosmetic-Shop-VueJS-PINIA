@@ -28,7 +28,6 @@
           :brand="item.brand"
           :rating="item.rating"
           :currency="item.currency"
-          @addItemCart="pushToCart(item)"
           @addToFavorite="pushtoFavorite(item)"
           />
         </div>
@@ -62,16 +61,11 @@ defineOptions({
 const store = useCosmeticStore();
 // pinia store
 const { fileredByBrand  } = storeToRefs(store);
-const {  addToCart, addToFavorite } = store;
+const { addToFavorite } = store;
 
 //router
 const route = useRoute();
 const brand = route.params.brand  as string;
-
-//add to wish list
-function pushToCart(item: Product) {
-  addToCart(item);
-}
 
 // add to favorite
 function pushtoFavorite(item: Product){

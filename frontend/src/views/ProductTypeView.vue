@@ -27,7 +27,6 @@
             :brand="item.brand"
             :currency="item.currency"
             :rating="item.rating"
-            @addItemCart="pushToCart(item)"
              @addToFavorite="pushtoFavorite(item)"
           />
         </div>
@@ -37,8 +36,8 @@
 </template>
 
 
-<script setup>
-import { defineOptions, ref, onMounted, onUnmounted } from "vue";
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 
 //componets
@@ -47,35 +46,18 @@ import TheRouter from "@/components/sections/TheRouter.vue";
 import TheItem from "@/components/TheItem.vue";
 
 //pinia
-import { useCosmeticStore } from "@/stores";
+import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { storeToRefs } from "pinia";
 
 defineOptions({
   name: "ProductTypeView",
 });
 const store = useCosmeticStore();
-const { fetchCosmetics, addToCart, addToFavorite  } = store;
+const { fetchCosmetics, addToFavorite  } = store;
 const { fileredByProductType } = storeToRefs(store);
 
 const route = useRoute();
 const product_type = route.params.product_type;
-
-//add to wish list
-function pushToCart(item) {
-  addToCart({
-    id: item.id,
-    image_link: item.image_link,
-    api_featured_image: item.api_featured_image,
-    color: item.color,
-    name: item.name,
-    product_type: item.product_type,
-    price: item.price,
-    price_sign: item.price_sign,
-    category: item.category,
-    brand: item.brand,
-    currency: item.currency,
-  });
-}
 
 // add to favorite
 function pushtoFavorite(cosmetics){

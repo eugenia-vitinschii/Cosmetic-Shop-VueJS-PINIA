@@ -24,8 +24,7 @@
           :brand="item.brand"
           :currency="item.currency"
           :rating="item.rating"
-          @addItemCart="pushToCart(item)"
-          @addToFavorite="deleteFromFavorite(item.id)"
+          @addToFavorite="deleteFromFavorite(item)"
           />
          </div>
       </div>
@@ -72,22 +71,13 @@ let created = ref<boolean>(false);
 //import store
 import {useCosmeticStore} from "@/stores/cosmetic.store";
 import { storeToRefs} from "pinia";
-import type { Product } from "@/models/product";
+// import type { Product } from "@/models/product";
 
 //pinia actions, data , getters
 const store = useCosmeticStore();
 const {user} = storeToRefs(store);
-const { addToCart, removeFromFavorites} = store;
+const { removeFromFavorites} = store;
 
-//add to wish list
-function pushToCart(item: Product) {
-  const cartItem: Product = {
-    ...item,
-    quantity: 1
-  };
-  addToCart(cartItem);
-   
-}
 //delete from favorite
 function deleteFromFavorite(id: string){
 removeFromFavorites(id)

@@ -11,7 +11,7 @@
           <p class="small-text">{{ fileredByCategory(category).length }}</p>
         </div>
         <div class="category__items products-wrapper" v-if="created">
-          <the-item
+          <the-product-card
             v-for="item in fileredByCategory(category)"
           :key="item.id"
           :id="item.id"
@@ -41,7 +41,7 @@ import { useRoute } from "vue-router";
 //componets
 import TraverseHistory from "@/components/sections/TraverseHistory.vue";
 import TheRouter from "@/components/sections/TheRouter.vue";
-import TheItem from "@/components/TheItem.vue";
+import TheProductCard from "@/components/TheProductCard.vue";
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic.store";

@@ -10,7 +10,7 @@
          
          <!-- favorite items -->
          <div class="favorite__items products-wrapper" v-if="created">
-          <the-item
+          <the-product-card
          v-for="item in user.favorite"
           :key="item.id"
           :id="item.id"
@@ -59,9 +59,8 @@ defineOptions({
    name: "FavoriteView"
 })
 
-
 //import components
-import TheItem from "@/components/TheItem.vue";
+import TheProductCard from "@/components/TheProductCard.vue";
 import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
 import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
 

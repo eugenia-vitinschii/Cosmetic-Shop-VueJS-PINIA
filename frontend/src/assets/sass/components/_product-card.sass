@@ -1,27 +1,38 @@
 @use '../abstracts/mixins' as *  
 @use '../abstracts/variables' as *
 
-.item
-   &__wrapper
-   &__item
-      display: flex
-      flex-direction: column
-      border: 2px solid $white
-      padding: $margin-sm
+//product-card component
+.product-card
+   display: flex
+   flex-direction: column
+   border: 2px solid $white
+   padding: $margin-sm
+   position: relative
       a:hover
-         color: $gold
-   &__item:hover
+         сolor: $gold
+   .product-card:hover
       @include section-wrapper-item
-   // item data
-   &__data
-      flex: 1 0 auto
-   // item data img
-   &__img
+      position: relative
+   &__image-wrapper
       @include img-style
       height: 300px
       img
          width: 100%
-   // item data info
+   &__favorite 
+      position: absolute
+      top: 8px
+      right: 8px
+      background: transparent
+      cursor: pointer
+      color: $brown
+   &__favorite.active
+      color: $red
+
+
+
+
+   &__data
+      flex: 1 0 auto
    &__info
       margin-top: 20px
 
@@ -39,15 +50,9 @@
       
    // item button 
    &__button
-      width: 100%
-      flex: 0 0 auto
+      
       svg
-         fill: $gold
-      button:last-child
-         min-width: 100%
-         @include button-style($white, $light-brown)
-      button:hover:last-child
-         @include button-style($white, $gold)
+         fill: $red
       p
          text-align: center
 

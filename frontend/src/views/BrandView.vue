@@ -10,12 +10,12 @@
         <div class="brand__title">
           <p class="heading">Brand: {{ brand }}</p>
           <p class="small-text">
-             {{ fileredByBrand(brand).length }}  products were found</p>
+             {{ cosmetic.filteredByBrand(brand).length }}  products were found</p>
         </div>
         <!-- brand items -->
         <div class="brand__items products-wrapper" v-if="created">
           <the-product-card
-            v-for="item in fileredByBrand(brand)"
+            v-for="item in cosmetic.filteredByBrand(brand)"
           :key="item.id"
           :id="item.id"
           :image_link="item.image_link"
@@ -28,7 +28,8 @@
           :brand="item.brand"
           :rating="item.rating"
           :currency="item.currency"
-          @addToFavorite="pushtoFavorite(item)"
+          :isFavorite="item.id ? user.isFavorite(item.id) :false"
+          @toggleFavorite="user.toggleFavorite(item)"
           />
         </div>
       </div>
@@ -39,7 +40,7 @@
 
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted} from "vue";
 //vue router
 import { useRoute } from "vue-router";
 
@@ -50,27 +51,19 @@ import TheProductCard from "@/components/TheProductCard.vue";
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic.store";
-import { storeToRefs } from "pinia";
+import { useUserStore } from "@/stores/user.store";
 
-//product
-import type { Product } from "@/models/product";
 
 defineOptions({
   name: "BrandView",
 });
-const store = useCosmeticStore();
-// pinia store
-const { fileredByBrand  } = storeToRefs(store);
-const { addToFavorite } = store;
+
+const cosmetic = useCosmeticStore();
+const user = useUserStore();
 
 //router
 const route = useRoute();
 const brand = route.params.brand  as string;
-
-// add to favorite
-function pushtoFavorite(item: Product){
-    addToFavorite(item);
-}
 
 //variables
 let created = ref(false);
@@ -81,6 +74,6 @@ onMounted(() => {
 
 });
 onUnmounted(() => {
-  store.$reset;
+  cosmetic.$reset;
 });
 </script>

@@ -11,7 +11,7 @@
         <!-- brands items -->
         <div class="brand__items" v-if="created">
           <the-brand
-            v-for="(item, index) in allBrand"
+            v-for="(item, index) in allBrands"
             :index="index"
             :key="index"
             :brand="item"
@@ -43,7 +43,7 @@ import { storeToRefs } from "pinia";
 
 const store = useCosmeticStore();
 const { fetchCosmetics } = store;
-const { allBrand  } = storeToRefs(store);
+const { allBrands  } = storeToRefs(store);
 
 let created = ref<boolean>(false); 
 

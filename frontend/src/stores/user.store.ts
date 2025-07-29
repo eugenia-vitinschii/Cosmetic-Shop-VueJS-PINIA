@@ -12,6 +12,38 @@ export const useUserStore = defineStore("user", () => {
     cart: [],
     favorite: []
   })
+  
+  function  loadFavorite(){
+    const saved = localStorage.getItem('favorite');
+    
+    if(saved){
+      user.favorite = JSON.parse(saved)
+    }
+  }
+
+  function toggleFavorite(item: Product){
+    const index = user.favorite.findIndex((p) => p.id === item.id);
+
+    if(index !== -1){
+      user.favorite.splice(index, 1)
+    } else {
+      user.favorite.push({...item})
+    }
+
+    localStorage.setItem('favorite', JSON.stringify(user.favorite))
+  }
+
+  function isFavorite(id: string):boolean{
+    if(!id) return false;
+    return user.favorite.some((p) => p.id === id)
+  }
+
+  function resetFavorite(){
+    user.favorite = [];
+    localStorage.removeItem('favorite')
+  }
+
+  //delete
   function addToCart(item: Product) {
     const index = user.cart.findIndex((p) => p.id == item.id);
     if (index !== -1) {
@@ -22,6 +54,7 @@ export const useUserStore = defineStore("user", () => {
     }
     localStorage.setItem("cart", JSON.stringify(user.cart));
   }
+  //delete
   function addToFavorite(item: Product) {
     const index = user.favorite.findIndex((p) => p.id == item.id);
     if (index !== -1) {
@@ -44,5 +77,5 @@ export const useUserStore = defineStore("user", () => {
   function removeFromFavorites(id: string) {
     user.favorite = user.favorite.filter((item) => item.id !== id)
   }
-  return { user, addToCart, addToFavorite, incrementQuantity, removeFromCart, removeFromFavorites }
+  return { user, addToCart, addToFavorite, incrementQuantity, removeFromCart, removeFromFavorites, loadFavorite , toggleFavorite, isFavorite, resetFavorite}
 })

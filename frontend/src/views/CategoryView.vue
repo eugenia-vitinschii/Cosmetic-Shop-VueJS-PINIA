@@ -8,11 +8,11 @@
          </div>
         <div class="category__title">
           <p class="heading">Category: {{ category }}</p>
-          <p class="small-text">{{ fileredByCategory(category).length }}</p>
+          <p class="small-text">{{ filtered(category).length }}</p>
         </div>
         <div class="category__items products-wrapper" v-if="created">
           <the-product-card
-            v-for="item in fileredByCategory(category)"
+            v-for="item in filtered(category)"
           :key="item.id"
           :id="item.id"
           :image_link="item.image_link"
@@ -35,7 +35,7 @@
 
 
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted } from "vue";
+import {ref, onMounted, onUnmounted, computed } from "vue";
 import { useRoute } from "vue-router";
 
 //componets
@@ -45,35 +45,36 @@ import TheProductCard from "@/components/TheProductCard.vue";
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic.store";
+import { useUserStore } from "@/stores/user.store";
 
+import type { Product } from "@/models/product";
 
 defineOptions({
   name: "CategoryView",
 });
 
-//pinia store
-const store = useCosmeticStore();
-const { fetchCosmetics,  fileredByCategory  } = store;
-const { addToFavorite } = store;
+
+const cosmetic = useCosmeticStore();
+const user = useUserStore()
+
 const route = useRoute();
 const category = route.params.category as string;
 
-
-//product
-import type { Product } from "@/models/product";
-
-// add to favorite
-function pushtoFavorite(item: Product){
-    addToFavorite(item);
-}
 let created = ref(false);
+
+
+const filtered = computed(() => cosmetic.fileredByCategory)
+
+function pushtoFavorite(item: Product){
+   user.addToFavorite(item);
+}
 
 onMounted(() => {
   created.value = true;
-  fetchCosmetics();
+  cosmetic.fetchCosmetics();
 });
 
 onUnmounted(() => {
-  store.$reset()
+  cosmetic.$reset()
 });
 </script>

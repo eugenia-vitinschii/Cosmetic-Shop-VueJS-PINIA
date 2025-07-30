@@ -25,7 +25,8 @@
           :brand="item.brand"
           :rating="item.rating"
           :currency="item.currency"
-           @addToFavorite="pushtoFavorite(item)"
+          :isFavorite="item.id ? user.isFavorite(item.id) :false"
+          @toggleFavorite="user.toggleFavorite(item)"
           />
         </div>
       </div>
@@ -47,8 +48,6 @@ import TheProductCard from "@/components/TheProductCard.vue";
 import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { useUserStore } from "@/stores/user.store";
 
-import type { Product } from "@/models/product";
-
 defineOptions({
   name: "CategoryView",
 });
@@ -62,12 +61,7 @@ const category = route.params.category as string;
 
 let created = ref(false);
 
-
 const filtered = computed(() => cosmetic.fileredByCategory)
-
-function pushtoFavorite(item: Product){
-   user.addToFavorite(item);
-}
 
 onMounted(() => {
   created.value = true;

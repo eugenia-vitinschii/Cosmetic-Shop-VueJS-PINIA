@@ -10,12 +10,12 @@
         <div class="brand__title">
           <p class="heading">Brand: {{ brand }}</p>
           <p class="small-text">
-             {{ cosmetic.filteredByBrand(brand).length }}  products were found</p>
+             {{ filtered(brand).length }}  products were found</p>
         </div>
         <!-- brand items -->
         <div class="brand__items products-wrapper" v-if="created">
           <the-product-card
-            v-for="item in cosmetic.filteredByBrand(brand)"
+            v-for="item in filtered(brand)"
           :key="item.id"
           :id="item.id"
           :image_link="item.image_link"
@@ -40,7 +40,7 @@
 
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted} from "vue";
+import { ref, onMounted, onUnmounted, computed} from "vue";
 //vue router
 import { useRoute } from "vue-router";
 
@@ -68,10 +68,13 @@ const brand = route.params.brand  as string;
 //variables
 let created = ref(false);
 
+//filtered
+const filtered = computed(() => cosmetic.filteredByBrand )
+
 //hooks
 onMounted(() => {
   created.value = true;
-
+  cosmetic.fetchCosmetics();
 });
 onUnmounted(() => {
   cosmetic.$reset;

@@ -13,7 +13,7 @@
             :key="index"
             :brand="item"
           >
-            {{ brand }}
+            {{ item }}
             </the-product-type>
         </div>
       </div>

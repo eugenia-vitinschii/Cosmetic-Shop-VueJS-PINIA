@@ -16,29 +16,31 @@ export const useCosmeticStore = defineStore("cosmetic", () => {
     complected: true,
     count: 1
   })
+  const products = computed(() => cosmetics.products);
 
-  const fileredByBrand = (brandName: string) => {
+  const filteredByBrand = (brandName: string) => {
     return cosmetics.products.filter((item) => item.brand === brandName)
   };
 
   const fileredByProductType = (productType: string) => {
-    return cosmetics.products.filter((item) => item.product_type === productType)
+    return products.value.filter((item) => item.product_type === productType)
   };
 
   const fileredByCategory = (theCategory: string) => {
-    return cosmetics.products.filter((item) => item.category === theCategory)
+    return products.value.filter((item) => item.category?.toLocaleLowerCase() === theCategory.toLocaleLowerCase())
   };
 
   const allBrands = computed(() => {
     return [...new Set(cosmetics.products.map((item) => item.brand))]
   });
 
-  const allProductTypes = () => {
+  const allProductTypes = computed(()  => {
     return [...new Set(cosmetics.products.map((item) => item.product_type))]
-  };
+  });
 
   const allCategory = computed(() => {
-    return [...new Set(cosmetics.products.map((item) => item.category))]
+    return [...new Set(cosmetics.products.map((item) => item.category)
+      .filter((category): category is string => typeof category === 'string'))]
   })
 
   async function fetchCosmetics() {
@@ -71,6 +73,6 @@ export const useCosmeticStore = defineStore("cosmetic", () => {
       console.log('load more err:', error);
     }
   }
-  return { fileredByBrand, fileredByProductType, fileredByCategory, allBrands, allProductTypes, allCategory, fetchCosmetics, fetchProductById, loadMore }
+  return { cosmetics, products, filteredByBrand, fileredByProductType, fileredByCategory, allBrands, allProductTypes, allCategory, fetchCosmetics, fetchProductById, loadMore }
 })
 

@@ -19,7 +19,7 @@ export const useCosmeticStore = defineStore("cosmetic", () => {
   const products = computed(() => cosmetics.products);
 
   const filteredByBrand = (brandName: string) => {
-    return cosmetics.products.filter((item) => item.brand === brandName)
+    return products.value.filter((item) => item.brand === brandName)
   };
 
   const fileredByProductType = (productType: string) => {
@@ -31,17 +31,21 @@ export const useCosmeticStore = defineStore("cosmetic", () => {
   };
 
   const allBrands = computed(() => {
-    return [...new Set(cosmetics.products.map((item) => item.brand))]
+    return [...new Set(products.value.map((item) => item.brand))]
   });
 
   const allProductTypes = computed(()  => {
-    return [...new Set(cosmetics.products.map((item) => item.product_type))]
+    return [...new Set(products.value.map((item) => item.product_type))]
   });
 
   const allCategory = computed(() => {
-    return [...new Set(cosmetics.products.map((item) => item.category)
+    return [...new Set(products.value.map((item) => item.category)
       .filter((category): category is string => typeof category === 'string'))]
   })
+
+  const productsByTag = (tag: string) =>{
+    return products.value.filter( p=> p.sliderTags?.includes(tag))
+  };
 
   async function fetchCosmetics() {
     try {
@@ -73,6 +77,6 @@ export const useCosmeticStore = defineStore("cosmetic", () => {
       console.log('load more err:', error);
     }
   }
-  return { cosmetics, products, filteredByBrand, fileredByProductType, fileredByCategory, allBrands, allProductTypes, allCategory, fetchCosmetics, fetchProductById, loadMore }
+  return { cosmetics, products, filteredByBrand, fileredByProductType, fileredByCategory, allBrands, allProductTypes, allCategory, productsByTag ,fetchCosmetics, fetchProductById, loadMore }
 })
 

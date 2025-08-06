@@ -29,6 +29,7 @@ export interface ProductData {
    product_colors?: ProductColor[];
    sliderTags?: string[];
    selectedColor?: ProductColor;
+   colorKey?: string;
 }
 
 export class Product {
@@ -54,7 +55,7 @@ export class Product {
    product_colors:  ProductColor[];
    sliderTags?: string[];
    selectedColor?: ProductColor;
-
+   colorKey?: string;
 
    constructor(data: ProductData = {}) {
       this.id = data.id;
@@ -79,5 +80,6 @@ export class Product {
       this.product_colors = data.product_colors ?? [];
       this.sliderTags = data.sliderTags ?? [];
       this.selectedColor =  data.selectedColor;
+      this.colorKey = data.colorKey ?? `${data.id}-${data.selectedColor?.hex_value ?? "default"}`;
    }
 }

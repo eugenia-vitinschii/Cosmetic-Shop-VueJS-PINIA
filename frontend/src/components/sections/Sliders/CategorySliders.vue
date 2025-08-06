@@ -12,8 +12,10 @@
       200:{slidesPerView: 2,}
     }"
     class="mySwiper"
-  >
-    <swiper-slide v-for="item in cosmetic.productsByTag('category')" :key="item.id">
+    >
+    <swiper-slide 
+      v-for="item in cosmetic.productsByTag('category')" 
+      :key="item.id">
       <the-product-card
           :id="item.id"
           :image_link="item.image_link"
@@ -34,16 +36,12 @@
 </template>
 
 <script setup lang="ts">
-//vue
 import { defineOptions, onMounted } from "vue";
-
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { useUserStore } from "@/stores/user.store";
-
 // components
 import TheProductCard from "@/components/TheProductCard.vue";
-
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 
@@ -54,19 +52,15 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay } from "swiper/modules";
 
-
 //pinia variables
 const cosmetic = useCosmeticStore();
 const user = useUserStore();
 
 const modules = [Autoplay];
 
-
 defineOptions({
   name: "CategorySliders",
 });
-
-
 onMounted(() => {
 cosmetic.fetchCosmetics();
 });

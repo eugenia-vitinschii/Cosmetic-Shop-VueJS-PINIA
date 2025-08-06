@@ -3,7 +3,7 @@
   <div class="swiper">
     <div class="container">
       <div class="swiper__wrapper">
-        <the-slider />
+        <the-slider/>
       </div>
     </div>
   </div>
@@ -12,8 +12,8 @@
   <div class="swiper">
     <div class="container">
       <div class="swiper__wrapper">
-        <p class="heading">Top products</p>
-        <top-sliders/>
+        <p class="heading">Brand</p>
+        <brand-sliders/>
       </div>
     </div>
   </div>
@@ -33,8 +33,8 @@
   <div class="swiper">
     <div class="container">
       <div class="swiper__wrapper">
-        <p class="heading">Dior</p>
-      
+        <p class="heading">Top Products</p>
+              <top-sliders/>
       </div>
     </div>
   </div>
@@ -42,8 +42,8 @@
   <div class="swiper">
     <div class="container">
       <div class="swiper__wrapper">
-        <p class="heading">Lipstick</p>
-      
+        <p class="heading">Powder</p>
+      <category-sliders/>
       </div>
     </div>
   </div>
@@ -53,8 +53,8 @@
 //components
 import TheSlider from "@/components/sections/TheSlider.vue";
 import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
-// import BrandSliders  from "@/components/sections/Sliders/BrandSliders.vue";
-// import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
+import BrandSliders  from "@/components/sections/Sliders/BrandSliders.vue";
+import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
 
 // component settings
 defineOptions({

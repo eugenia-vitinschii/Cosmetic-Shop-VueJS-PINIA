@@ -4,14 +4,15 @@
    <div class="container">
       <div class="favorite__wrapper">
          <div class="favorite__title">
-            <p class="heading" v-if="user.favorite.length >= 1">Favorite ({{user.favorite.length}})</p>
+            <p class="heading" v-if="favorite.length >= 1">Favorite ({{favorite.length}})</p>
             <router-link to="/" class="body text" v-else>No Favorite items, add now!</router-link>
          </div>
          
          <!-- favorite items -->
          <div class="favorite__items products-wrapper" v-if="created">
+            <button @click="user.resetFavorite()"> clear</button>
           <the-product-card
-         v-for="item in user.favorite"
+         v-for="item in favorite"
           :key="item.id"
           :id="item.id"
           :image_link="item.image_link"
@@ -23,8 +24,8 @@
           :category="item.category"
           :brand="item.brand"
           :currency="item.currency"
-          :rating="item.rating"
-          @addToFavorite="deleteFromFavorite(item)"
+          :isFavorite="item.id ? user.isFavorite(item.id) :false"
+          @toggleFavorite="user.toggleFavorite(item)"
           />
          </div>
       </div>
@@ -35,7 +36,7 @@
     <div class="container">
       <div class="swiper__wrapper">
         <p class="heading">Top products</p>
-        <top-sliders/>
+        <!-- <top-sliders/> -->
       </div>
     </div>
   </div>
@@ -44,7 +45,7 @@
     <div class="container">
       <div class="swiper__wrapper">
         <p class="heading">Lipstick</p>
-        <category-sliders/>
+        <!-- <category-sliders/> -->
       </div>
     </div>
   </div>
@@ -53,6 +54,12 @@
 <script setup lang="ts">
 //vue
 import {ref,onMounted } from "vue"
+import TheProductCard from "@/components/TheProductCard.vue";
+// import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
+// import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
+
+import { useUserStore } from "@/stores/user.store";
+import { storeToRefs } from "pinia";
 
 //component settings
 defineOptions({
@@ -60,27 +67,21 @@ defineOptions({
 })
 
 //import components
-import TheProductCard from "@/components/TheProductCard.vue";
-import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
-import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
+
 
 //ref 
 let created = ref<boolean>(false);
 
 //import store
-import {useCosmeticStore} from "@/stores/cosmetic.store";
-import { storeToRefs} from "pinia";
+const user = useUserStore();
+const { favorite } = storeToRefs(user)
+
 // import type { Product } from "@/models/product";
 
 //pinia actions, data , getters
-const store = useCosmeticStore();
-const {user} = storeToRefs(store);
-const { removeFromFavorites} = store;
+ 
 
-//delete from favorite
-function deleteFromFavorite(id: string){
-removeFromFavorites(id)
-}
+
 
 //hooks
 onMounted(() => {

@@ -9,191 +9,6 @@
   ],
   "cosmetics": [
     {
-      "id": "1042",
-      "brand": "deciem",
-      "name": "Coverage foundation",
-      "price": 9,
-      "price_sign": "$",
-      "currency": "CAD",
-      "image_link": "https://3bc01d2807fb1bc0d25c-a86d2521f1af8989841b9619f5314be5.ssl.cf1.rackcdn.com/products/market-img/rdn-coverage-foundation-33-n-30ml.png?v=daa322f179d80e450613c75826602292",
-      "product_link": "https://deciem.com/product/rdn-coverage-foundation-33-n-30ml",
-      "website_link": "https://deciem.com/",
-      "description": "Coverage foundations are full-coverage formulations available in a comprehensive shade range across 21 shades. These foundations contain higher pigment levels than our Serum foundations but still offer a smooth finish that avoids the heavy makeup look that can make skin appear more aged. The texture is that of a lightweight, non-oily cream.",
-      "rating": 4,
-      "category": "liquid",
-      "product_type": "eyeshadow",
-      "tag_list": [
-        "water free",
-        "cruelty free",
-        "alcohol free",
-        "oil free",
-        "silicone free",
-        "Vegan",
-        "Gluten Free"
-      ],
-      "created_at": "2018-07-06T22:27:54.541Z",
-      "updated_at": "2025-06-16T14:16:11.289Z",
-      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1042.json",
-      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/042/original/open-uri20180706-4-1e74943?1530916234",
-      "product_colors": [
-        {
-          "hex_value": "#f4e5d6",
-          "colour_name": "1.0P"
-        },
-        {
-          "hex_value": "#f3e8d1",
-          "colour_name": "1.0N"
-        },
-        {
-          "hex_value": "#f3e8d1",
-          "colour_name": "1.0NS"
-        },
-        {
-          "hex_value": "#f2d7ba",
-          "colour_name": "1.1P"
-        },
-        {
-          "hex_value": "#efdbba",
-          "colour_name": "1.1N"
-        },
-        {
-          "hex_value": "#f0d5af",
-          "colour_name": "1.2N"
-        },
-        {
-          "hex_value": "#e5c5a1",
-          "colour_name": "1.2P"
-        },
-        {
-          "hex_value": "#e6c796",
-          "colour_name": "1.2Y"
-        },
-        {
-          "hex_value": "#e6c796",
-          "colour_name": "1.2YG"
-        },
-        {
-          "hex_value": "#e3be8e",
-          "colour_name": "2.0P"
-        },
-        {
-          "hex_value": "#e5cb9f",
-          "colour_name": "2.0N"
-        },
-        {
-          "hex_value": "#dcc399",
-          "colour_name": "2.0YG"
-        },
-        {
-          "hex_value": "#ddb279",
-          "colour_name": "2.1P"
-        },
-        {
-          "hex_value": "#dcad6d",
-          "colour_name": "2.1Y"
-        },
-        {
-          "hex_value": "#d59c62",
-          "colour_name": "3.0R"
-        },
-        {
-          "hex_value": "#d19e61",
-          "colour_name": "3.0Y"
-        },
-        {
-          "hex_value": "#b3754a",
-          "colour_name": "3.1R"
-        },
-        {
-          "hex_value": "#c28651",
-          "colour_name": "3.1Y"
-        },
-        {
-          "hex_value": "#916C4F",
-          "colour_name": "3.2N"
-        },
-        {
-          "hex_value": "#8E6346",
-          "colour_name": "3.2R"
-        },
-        {
-          "hex_value": "#664A37",
-          "colour_name": "3.3N"
-        }
-      ],
-      "sliderTags": [
-        "brand-loreal"
-      ]
-    },
-    {
-      "id": "1033",
-      "brand": "rejuva minerals",
-      "name": "Pressed powder foundation",
-      "price": 13,
-      "price_sign": "$",
-      "currency": "USD",
-      "image_link": "https://www.purpicks.com/wp-content/uploads/2018/06/Rejuva-Minerals-Multi-Purpose-powder-Eye-Shadow-Face-1.jpg",
-      "product_link": "https://www.purpicks.com/product/rejuva-minerals-multi-purpose-powder-eye-shadow-face/",
-      "website_link": "https://purpicks.com/",
-      "description": "Coconut Cream - Warm Undertones (yellow) Light Shade. May also be used as a highlighting shade! About our pressed foundations:<ul><li>Provides a silky smooth, natural 'semi-matte' finish</li><li>All skin types</li><li>Will not dry out skin (apply light moisturizer underneath for best results)</li><li>Resists caking and settling in lines and pores</li><li>Layers to provide a light-medium (buildable) coverage</li><li>Eco-friendly, biodegradable compact</li><li>Colored with minerals and enhanced with organic fruits and botanicals</li><li>Infused with conditioning organic jojoba oil</li><li>Formulated without common skin irritants.</li></ul>",
-      "rating": 4,
-      "category": "powder",
-      "product_type": "foundation",
-      "tag_list": [
-        "purpicks",
-        "EWG Verified",
-        "Hypoallergenic",
-        "No Talc"
-      ],
-      "created_at": "2018-06-30T19:19:31.736Z",
-      "updated_at": "2025-03-10T14:24:51.287Z",
-      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1033.json",
-      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/033/original/open-uri20180630-4-1mibdm?1530390382",
-      "product_colors": [
-        {
-          "hex_value": "#FBE9CD",
-          "colour_name": "Coconut Cream"
-        },
-        {
-          "hex_value": "#E6B588",
-          "colour_name": "Dune"
-        },
-        {
-          "hex_value": "#EBC8A0",
-          "colour_name": "Glow"
-        },
-        {
-          "hex_value": "#F8E3D5",
-          "colour_name": "Nude"
-        },
-        {
-          "hex_value": "#D8B39B",
-          "colour_name": "Radiance"
-        },
-        {
-          "hex_value": "#E7CDBA",
-          "colour_name": "Sand"
-        },
-        {
-          "hex_value": "#F1C4A8",
-          "colour_name": "Sea Shell"
-        },
-        {
-          "hex_value": "#D1B594",
-          "colour_name": "Taffy"
-        },
-        {
-          "hex_value": "#9C7248",
-          "colour_name": "Bahama Mama"
-        },
-        {
-          "hex_value": "#DDA983",
-          "colour_name": "St Tropez"
-        }
-      ],
-      "sliderTags": []
-    },
-    {
       "id": "1028",
       "brand": "marienatie",
       "name": "Pressed foundation",
@@ -252,6 +67,9 @@
           "hex_value": "#C29F90",
           "colour_name": "Deep Golden"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -294,6 +112,9 @@
           "hex_value": "#F1DBC3",
           "colour_name": "Light"
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -328,6 +149,9 @@
           "hex_value": "#714831",
           "colour_name": "Rich"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -362,6 +186,9 @@
           "hex_value": "#F0EDEB",
           "colour_name": "Moonstone"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -404,6 +231,9 @@
           "hex_value": "#96644A",
           "colour_name": "Deep"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -425,7 +255,10 @@
       "updated_at": "2017-12-24T02:31:32.238Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/939.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/939/original/open-uri20171224-4-1mv4cht?1514082691",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "brand"
+      ]
     },
     {
       "id": "938",
@@ -455,6 +288,9 @@
           "hex_value": "#E3AA8F",
           "colour_name": "Magical"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -493,6 +329,9 @@
           "hex_value": "#F3C6B1",
           "colour_name": "Light/Medium"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -575,6 +414,9 @@
           "hex_value": "#AA7D68",
           "colour_name": "Cocoa"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -608,6 +450,9 @@
           "hex_value": "#EAE9D5",
           "colour_name": "Green"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -642,6 +487,9 @@
           "hex_value": "#E1EDDF",
           "colour_name": "Mint Green"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -726,6 +574,9 @@
           "hex_value": "#F9B2AC",
           "colour_name": "Sunkissed"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -756,6 +607,9 @@
           "hex_value": "#E6B896",
           "colour_name": "Medium/Dark"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -790,6 +644,9 @@
           "hex_value": "#E1EDDF",
           "colour_name": "Mint Green"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -811,7 +668,10 @@
       "updated_at": "2017-12-24T02:31:12.282Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/929.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/929/original/open-uri20171224-4-vwf6hc?1514082671",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "category"
+      ]
     },
     {
       "id": "912",
@@ -943,6 +803,9 @@
           "hex_value": "#F1F2F4",
           "colour_name": "Deep"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -1104,7 +967,10 @@
       "updated_at": "2017-12-24T02:30:11.232Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/907.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/907/original/open-uri20171224-4-1b7ug0q?1514082611",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "brand"
+      ]
     },
     {
       "id": "906",
@@ -1336,6 +1202,9 @@
           "hex_value": "#A0C8AD",
           "colour_name": "Green"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -3556,7 +3425,7 @@
       "image_link": "https://www.clinique.com/media/export/cms/products/181x209/clq_6MNY_181x209.png",
       "product_link": "https://www.clinique.com/product/1599/5276/makeup/foundations/even-better-makeup-broad-spectrum-spf-15",
       "website_link": "https://www.clinique.com",
-      "description": "Wear oil-free, dermatologist-developed Even Better Makeup SPF 15 and something amazing happens: Without any makeup, see improved clarity, a more even skin tone, visibly diminished age spots. For all ethnicities. In just 4 to 6 weeks. Broad spectrum SPF helps protect against future darkening. For continued benefits—even after you take it off—partner with Even Better Clinical Dark Spot Corrector.",
+      "description": "Wear oil-free, dermatologist-developed Even Better Makeup SPF 15 and something amazing happens: Without any makeup, see improved clarity, a more even skin tone, visibly diminished age spots. For all ethnicities. In just 4 to 6 brands. Broad spectrum SPF helps protect against future darkening. For continued benefits—even after you take it off—partner with Even Better Clinical Dark Spot Corrector.",
       "rating": 4,
       "category": null,
       "product_type": "foundation",
@@ -5013,6 +4882,9 @@
           "hex_value": "#F3D7B2",
           "colour_name": "001 Precious Rocks"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -5039,6 +4911,9 @@
           "hex_value": "#E7D6CA",
           "colour_name": "001"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -5077,6 +4952,9 @@
           "hex_value": "#CEDFC6",
           "colour_name": "400 Green"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -5143,6 +5021,9 @@
           "hex_value": "#B27854",
           "colour_name": "060 Light Mocha"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -5462,7 +5343,7 @@
       "image_link": "https://www.smashbox.com/media/images/products/388x396/sbx_sku_62862_388x396_0.jpg",
       "product_link": "http://www.smashbox.com/product/17619/35610/Face/BB-CC/24-Hour-CC-Spot-concealer/NEW",
       "website_link": "http://www.smashbox.com/",
-      "description": "We created this 24-hour, waterproof concealer in our L.A. photo studio to instantly cover dark spots, sun spots and post-acne marks while fading the look of them in as little as 4 weeks. You’re basically concealing and treating all at once, which means imperfections have met their match. Dab on this first-of-its-kind cover-up strategically, then get ready for your big reveal! 24-hour wear thanks to Photoset Polymers created with medical-grade liquid bandage technology that bends and adheres to skinWaterproofSweat & humidity-resistantTo use:Shake well and withdraw the applicator carefully before usingWipe down the applicator after each use (oil-based makeup remover will take care of any excess)Always screw cap tightlyIf traveling with product, we suggest storing in a bagFull disclosure: It's not for under eyes. For dark circles, check out BB Eye.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.INGREDIENTS: DIMETHICONE , ISODODECANE , DIMETHICONE SILYLATE , PHENYL TRIMETHICONE , SILICA , POLYMETHYL METHACRYLATE , LECITHIN , GLYCYRRHIZA GLABRA (LICORICE) ROOT EXTRACT , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , BISABOLOL , PEG-10 DIMETHICONE , DIMETHOXYTOLYL PROPYLRESORCINOL , CETYL PEG/PPG-10/1 DIMETHICONE , DISTEARDIMONIUM HECTORITE , WATER\\AQUA\\EAU , PROPYLENE CARBONATE , TOCOPHERYL LINOLEATE/OLEATE , SORBITAN SESQUIOLEATE , TETRAHEXYLDECYL ASCORBATE , TRIETHOXYCAPRYLYLSILANE , POLYMETHYLSILSESQUIOXANE , HYDROGENATED POLYDECENE , CAPRYLYL GLYCOL , BUTYLENE GLYCOL , LINOLEIC ACID , GLYCYRRHETINIC ACID , [+/- MICA , TITANIUM DIOXIDE (CI 77891) , IRON OXIDES (CI 77491) , IRON OXIDES (CI 77492) , IRON OXIDES (CI 77499)]\n                <ILNILN40982>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            We created this 24-hour, waterproof concealer in our L.A. photo studio to instantly cover dark spots, sun spots and post-acne marks while fading the look of them in as little as 4 weeks. You’re basically concealing and treating all at once, which means imperfections have met their match. Dab on this first-of-its-kind cover-up strategically, then get ready for your big reveal! 24-hour wear thanks to Photoset Polymers created with medical-grade liquid bandage technology that bends and adheres to skinWaterproofSweat & humidity-resistantTo use:Shake well and withdraw the applicator carefully before usingWipe down the applicator after each use (oil-based makeup remover will take care of any excess)Always screw cap tightlyIf traveling with product, we suggest storing in a bagFull disclosure: It's not for under eyes. For dark circles, check out BB Eye.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.INGREDIENTS: DIMETHICONE , ISODODECANE , DIMETHICONE SILYLATE , PHENYL TRIMETHICONE , SILICA , POLYMETHYL METHACRYLATE , LECITHIN , GLYCYRRHIZA GLABRA (LICORICE) ROOT EXTRACT , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , BISABOLOL , PEG-10 DIMETHICONE , DIMETHOXYTOLYL PROPYLRESORCINOL , CETYL PEG/PPG-10/1 DIMETHICONE , DISTEARDIMONIUM HECTORITE , WATER\\AQUA\\EAU , PROPYLENE CARBONATE , TOCOPHERYL LINOLEATE/OLEATE , SORBITAN SESQUIOLEATE , TETRAHEXYLDECYL ASCORBATE , TRIETHOXYCAPRYLYLSILANE , POLYMETHYLSILSESQUIOXANE , HYDROGENATED POLYDECENE , CAPRYLYL GLYCOL , BUTYLENE GLYCOL , LINOLEIC ACID , GLYCYRRHETINIC ACID , [+/- MICA , TITANIUM DIOXIDE (CI 77891) , IRON OXIDES (CI 77491) , IRON OXIDES (CI 77492) , IRON OXIDES (CI 77499)]\n                <ILNILN40982>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            ",
+      "description": "We created this 24-hour, waterproof concealer in our L.A. photo studio to instantly cover dark spots, sun spots and post-acne marks while fading the look of them in as little as 4 brands. You’re basically concealing and treating all at once, which means imperfections have met their match. Dab on this first-of-its-kind cover-up strategically, then get ready for your big reveal! 24-hour wear thanks to Photoset Polymers created with medical-grade liquid bandage technology that bends and adheres to skinWaterproofSweat & humidity-resistantTo use:Shake well and withdraw the applicator carefully before usingWipe down the applicator after each use (oil-based makeup remover will take care of any excess)Always screw cap tightlyIf traveling with product, we suggest storing in a bagFull disclosure: It's not for under eyes. For dark circles, check out BB Eye.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.INGREDIENTS: DIMETHICONE , ISODODECANE , DIMETHICONE SILYLATE , PHENYL TRIMETHICONE , SILICA , POLYMETHYL METHACRYLATE , LECITHIN , GLYCYRRHIZA GLABRA (LICORICE) ROOT EXTRACT , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , BISABOLOL , PEG-10 DIMETHICONE , DIMETHOXYTOLYL PROPYLRESORCINOL , CETYL PEG/PPG-10/1 DIMETHICONE , DISTEARDIMONIUM HECTORITE , WATER\\AQUA\\EAU , PROPYLENE CARBONATE , TOCOPHERYL LINOLEATE/OLEATE , SORBITAN SESQUIOLEATE , TETRAHEXYLDECYL ASCORBATE , TRIETHOXYCAPRYLYLSILANE , POLYMETHYLSILSESQUIOXANE , HYDROGENATED POLYDECENE , CAPRYLYL GLYCOL , BUTYLENE GLYCOL , LINOLEIC ACID , GLYCYRRHETINIC ACID , [+/- MICA , TITANIUM DIOXIDE (CI 77891) , IRON OXIDES (CI 77491) , IRON OXIDES (CI 77492) , IRON OXIDES (CI 77499)]\n                <ILNILN40982>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            We created this 24-hour, waterproof concealer in our L.A. photo studio to instantly cover dark spots, sun spots and post-acne marks while fading the look of them in as little as 4 brands. You’re basically concealing and treating all at once, which means imperfections have met their match. Dab on this first-of-its-kind cover-up strategically, then get ready for your big reveal! 24-hour wear thanks to Photoset Polymers created with medical-grade liquid bandage technology that bends and adheres to skinWaterproofSweat & humidity-resistantTo use:Shake well and withdraw the applicator carefully before usingWipe down the applicator after each use (oil-based makeup remover will take care of any excess)Always screw cap tightlyIf traveling with product, we suggest storing in a bagFull disclosure: It's not for under eyes. For dark circles, check out BB Eye.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.INGREDIENTS: DIMETHICONE , ISODODECANE , DIMETHICONE SILYLATE , PHENYL TRIMETHICONE , SILICA , POLYMETHYL METHACRYLATE , LECITHIN , GLYCYRRHIZA GLABRA (LICORICE) ROOT EXTRACT , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , BISABOLOL , PEG-10 DIMETHICONE , DIMETHOXYTOLYL PROPYLRESORCINOL , CETYL PEG/PPG-10/1 DIMETHICONE , DISTEARDIMONIUM HECTORITE , WATER\\AQUA\\EAU , PROPYLENE CARBONATE , TOCOPHERYL LINOLEATE/OLEATE , SORBITAN SESQUIOLEATE , TETRAHEXYLDECYL ASCORBATE , TRIETHOXYCAPRYLYLSILANE , POLYMETHYLSILSESQUIOXANE , HYDROGENATED POLYDECENE , CAPRYLYL GLYCOL , BUTYLENE GLYCOL , LINOLEIC ACID , GLYCYRRHETINIC ACID , [+/- MICA , TITANIUM DIOXIDE (CI 77891) , IRON OXIDES (CI 77491) , IRON OXIDES (CI 77492) , IRON OXIDES (CI 77499)]\n                <ILNILN40982>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            ",
       "rating": 4,
       "category": "bb_cc",
       "product_type": "foundation",
@@ -5778,7 +5659,7 @@
       "image_link": "https://www.smashbox.com/media/images/products/388x396/sbx_sku_42069_388x396_0.jpg",
       "product_link": "http://www.smashbox.com/product/17619/21835/Face/BB-CC/Camera-Ready-BB-Cream-SPF-35/Studio-Artist-Favorite",
       "website_link": "http://www.smashbox.com/",
-      "description": "Wonder why models in our L.A. photo studio hoard this 5-in-1 miracle-worker BB cream? It cuts down on prep time and instantly creates even, radiant skin.Pat on for fuller coverage. Primes. Perfects. Hydrates. Banishes shine. Protects with SPF 35 Reduces appearance of fine lines & wrinkles in just 4 weeks Wear alone or under foundation for more coverage Apply a pea-sized amount to face and lightly blend with fingertips.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.ACTIVE INGREDIENTS: OCTINOXATE 7.50% , OCTISALATE 4.00% , OXYBENZONE 2.50% , TITANIUM DIOXIDE 1.10% INGREDIENTS: WATER\\AQUA\\EAU , DIMETHICONE , BUTYLENE GLYCOL , PHENYL TRIMETHICONE , PENTYLENE GLYCOL , GLYCERYL STEARATE , BEHENYL ALCOHOL , TRIOCTYLDODECYL CITRATE , POLYMETHYLSILSESQUIOXANE , OCTYLDODECYL STEAROYL STEARATE , PEG-40 STEARATE , POLYGLYCERYL-10 PENTASTEARATE , AMMONIUM ACRYLOYLDIMETHYLTAURATE/VP COPOLYMER , TRITICUM VULGARE (WHEAT) GERM EXTRACT , HORDEUM VULGARE (BARLEY) EXTRACT\\EXTRAIT D'ORGE , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , LAMINARIA SACCHARINA EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , POLYQUATERNIUM-51 , ACETYL HEXAPEPTIDE-8 , TREHALOSE , ORYZANOL , OCTYLDODECYL NEOPENTANOATE , UREA , POLYGLYCERYL-6 POLYRICINOLEATE , PROPYLENE GLYCOL LAURATE , GLYCYRRHETINIC ACID , TOCOPHERYL ACETATE , SUCROSE , GLYCERIN , SODIUM STEAROYL LACTYLATE , CAFFEINE , LINOLEIC ACID , CHOLESTEROL , LECITHIN , SQUALANE , SODIUM PCA , ISOPROPYL TITANIUM TRIISOSTEARATE , PROPYLENE GLYCOL STEARATE , STEARIC ACID , POLYSORBATE 20 , SORBITAN LAURATE , XANTHAN GUM , ALUMINUM HYDROXIDE , SODIUM HYALURONATE , SILICA , DISODIUM EDTA , PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE , SODIUM DEHYDROACETATE , CHLORPHENESIN , PHENOXYETHANOL , [+/- TITANIUM DIOXIDE (CI 77891) , ZINC OXIDE (CI 77947) , IRON OXIDES (CI 77491, CI 77492, CI 77499) , MICA]\n                <ILNILN37872>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            Wonder why models in our L.A. photo studio hoard this 5-in-1 miracle-worker BB cream? It cuts down on prep time and instantly creates even, radiant skin.Pat on for fuller coverage. Primes. Perfects. Hydrates. Banishes shine. Protects with SPF 35 Reduces appearance of fine lines & wrinkles in just 4 weeks Wear alone or under foundation for more coverage Apply a pea-sized amount to face and lightly blend with fingertips.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.ACTIVE INGREDIENTS: OCTINOXATE 7.50% , OCTISALATE 4.00% , OXYBENZONE 2.50% , TITANIUM DIOXIDE 1.10% INGREDIENTS: WATER\\AQUA\\EAU , DIMETHICONE , BUTYLENE GLYCOL , PHENYL TRIMETHICONE , PENTYLENE GLYCOL , GLYCERYL STEARATE , BEHENYL ALCOHOL , TRIOCTYLDODECYL CITRATE , POLYMETHYLSILSESQUIOXANE , OCTYLDODECYL STEAROYL STEARATE , PEG-40 STEARATE , POLYGLYCERYL-10 PENTASTEARATE , AMMONIUM ACRYLOYLDIMETHYLTAURATE/VP COPOLYMER , TRITICUM VULGARE (WHEAT) GERM EXTRACT , HORDEUM VULGARE (BARLEY) EXTRACT\\EXTRAIT D'ORGE , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , LAMINARIA SACCHARINA EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , POLYQUATERNIUM-51 , ACETYL HEXAPEPTIDE-8 , TREHALOSE , ORYZANOL , OCTYLDODECYL NEOPENTANOATE , UREA , POLYGLYCERYL-6 POLYRICINOLEATE , PROPYLENE GLYCOL LAURATE , GLYCYRRHETINIC ACID , TOCOPHERYL ACETATE , SUCROSE , GLYCERIN , SODIUM STEAROYL LACTYLATE , CAFFEINE , LINOLEIC ACID , CHOLESTEROL , LECITHIN , SQUALANE , SODIUM PCA , ISOPROPYL TITANIUM TRIISOSTEARATE , PROPYLENE GLYCOL STEARATE , STEARIC ACID , POLYSORBATE 20 , SORBITAN LAURATE , XANTHAN GUM , ALUMINUM HYDROXIDE , SODIUM HYALURONATE , SILICA , DISODIUM EDTA , PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE , SODIUM DEHYDROACETATE , CHLORPHENESIN , PHENOXYETHANOL , [+/- TITANIUM DIOXIDE (CI 77891) , ZINC OXIDE (CI 77947) , IRON OXIDES (CI 77491, CI 77492, CI 77499) , MICA]\n                <ILNILN37872>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            ",
+      "description": "Wonder why models in our L.A. photo studio hoard this 5-in-1 miracle-worker BB cream? It cuts down on prep time and instantly creates even, radiant skin.Pat on for fuller coverage. Primes. Perfects. Hydrates. Banishes shine. Protects with SPF 35 Reduces appearance of fine lines & wrinkles in just 4 brands Wear alone or under foundation for more coverage Apply a pea-sized amount to face and lightly blend with fingertips.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.ACTIVE INGREDIENTS: OCTINOXATE 7.50% , OCTISALATE 4.00% , OXYBENZONE 2.50% , TITANIUM DIOXIDE 1.10% INGREDIENTS: WATER\\AQUA\\EAU , DIMETHICONE , BUTYLENE GLYCOL , PHENYL TRIMETHICONE , PENTYLENE GLYCOL , GLYCERYL STEARATE , BEHENYL ALCOHOL , TRIOCTYLDODECYL CITRATE , POLYMETHYLSILSESQUIOXANE , OCTYLDODECYL STEAROYL STEARATE , PEG-40 STEARATE , POLYGLYCERYL-10 PENTASTEARATE , AMMONIUM ACRYLOYLDIMETHYLTAURATE/VP COPOLYMER , TRITICUM VULGARE (WHEAT) GERM EXTRACT , HORDEUM VULGARE (BARLEY) EXTRACT\\EXTRAIT D'ORGE , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , LAMINARIA SACCHARINA EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , POLYQUATERNIUM-51 , ACETYL HEXAPEPTIDE-8 , TREHALOSE , ORYZANOL , OCTYLDODECYL NEOPENTANOATE , UREA , POLYGLYCERYL-6 POLYRICINOLEATE , PROPYLENE GLYCOL LAURATE , GLYCYRRHETINIC ACID , TOCOPHERYL ACETATE , SUCROSE , GLYCERIN , SODIUM STEAROYL LACTYLATE , CAFFEINE , LINOLEIC ACID , CHOLESTEROL , LECITHIN , SQUALANE , SODIUM PCA , ISOPROPYL TITANIUM TRIISOSTEARATE , PROPYLENE GLYCOL STEARATE , STEARIC ACID , POLYSORBATE 20 , SORBITAN LAURATE , XANTHAN GUM , ALUMINUM HYDROXIDE , SODIUM HYALURONATE , SILICA , DISODIUM EDTA , PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE , SODIUM DEHYDROACETATE , CHLORPHENESIN , PHENOXYETHANOL , [+/- TITANIUM DIOXIDE (CI 77891) , ZINC OXIDE (CI 77947) , IRON OXIDES (CI 77491, CI 77492, CI 77499) , MICA]\n                <ILNILN37872>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            Wonder why models in our L.A. photo studio hoard this 5-in-1 miracle-worker BB cream? It cuts down on prep time and instantly creates even, radiant skin.Pat on for fuller coverage. Primes. Perfects. Hydrates. Banishes shine. Protects with SPF 35 Reduces appearance of fine lines & wrinkles in just 4 brands Wear alone or under foundation for more coverage Apply a pea-sized amount to face and lightly blend with fingertips.\n              \n                Formulated without Parabens, Sodium Lauryl Sulfate, Phthalates, Oil, Fragrance & Talc.ACTIVE INGREDIENTS: OCTINOXATE 7.50% , OCTISALATE 4.00% , OXYBENZONE 2.50% , TITANIUM DIOXIDE 1.10% INGREDIENTS: WATER\\AQUA\\EAU , DIMETHICONE , BUTYLENE GLYCOL , PHENYL TRIMETHICONE , PENTYLENE GLYCOL , GLYCERYL STEARATE , BEHENYL ALCOHOL , TRIOCTYLDODECYL CITRATE , POLYMETHYLSILSESQUIOXANE , OCTYLDODECYL STEAROYL STEARATE , PEG-40 STEARATE , POLYGLYCERYL-10 PENTASTEARATE , AMMONIUM ACRYLOYLDIMETHYLTAURATE/VP COPOLYMER , TRITICUM VULGARE (WHEAT) GERM EXTRACT , HORDEUM VULGARE (BARLEY) EXTRACT\\EXTRAIT D'ORGE , CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT , LAMINARIA SACCHARINA EXTRACT , PYRUS MALUS (APPLE) FRUIT EXTRACT , SCUTELLARIA BAICALENSIS ROOT EXTRACT , POLYQUATERNIUM-51 , ACETYL HEXAPEPTIDE-8 , TREHALOSE , ORYZANOL , OCTYLDODECYL NEOPENTANOATE , UREA , POLYGLYCERYL-6 POLYRICINOLEATE , PROPYLENE GLYCOL LAURATE , GLYCYRRHETINIC ACID , TOCOPHERYL ACETATE , SUCROSE , GLYCERIN , SODIUM STEAROYL LACTYLATE , CAFFEINE , LINOLEIC ACID , CHOLESTEROL , LECITHIN , SQUALANE , SODIUM PCA , ISOPROPYL TITANIUM TRIISOSTEARATE , PROPYLENE GLYCOL STEARATE , STEARIC ACID , POLYSORBATE 20 , SORBITAN LAURATE , XANTHAN GUM , ALUMINUM HYDROXIDE , SODIUM HYALURONATE , SILICA , DISODIUM EDTA , PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE , SODIUM DEHYDROACETATE , CHLORPHENESIN , PHENOXYETHANOL , [+/- TITANIUM DIOXIDE (CI 77891) , ZINC OXIDE (CI 77947) , IRON OXIDES (CI 77491, CI 77492, CI 77499) , MICA]\n                <ILNILN37872>\n                  Please be aware that ingredient lists may change or vary from time to time. Please refer to the ingredient list on the product package you receive for the most up to date list of ingredients.\n              \n            ",
       "rating": 4,
       "category": "bb_cc",
       "product_type": "foundation",
@@ -6185,7 +6066,7 @@
       "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/fd47eaa9241a010e48fc32cf4611d772_ra,w158,h184_pa,w158,h184.png",
       "product_link": "https://well.ca/products/covergirl-olay-simply-ageless_74462.html",
       "website_link": "https://well.ca",
-      "description": "This breakthrough formula with Olay Regenerist Serum and SPF 22 stays \nsuspended over fine lines and wrinkles, unlike the leading anti-aging \ndepartment store foundation that can gather in wrinkles and make skin \nlook older. Clinically shown to provide significant improvement in skin \ncondition in just four weeks.Features: SPF 22Stays suspended over fine lines and wrinklesEven coverageDermatologically-tested",
+      "description": "This breakthrough formula with Olay Regenerist Serum and SPF 22 stays \nsuspended over fine lines and wrinkles, unlike the leading anti-aging \ndepartment store foundation that can gather in wrinkles and make skin \nlook older. Clinically shown to provide significant improvement in skin \ncondition in just four brands.Features: SPF 22Stays suspended over fine lines and wrinklesEven coverageDermatologically-tested",
       "rating": 5,
       "category": "cream",
       "product_type": "foundation",
@@ -7309,43 +7190,6 @@
       "product_colors": []
     },
     {
-      "id": "347",
-      "brand": null,
-      "name": "DaLish Silk to Matte foundation",
-      "price": 44,
-      "price_sign": "$",
-      "currency": "USD",
-      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/e98af12555201b5d34a30e3029191c6d_ra,w158,h184_pa,w158,h184.jpg",
-      "product_link": "https://well.ca/products/dalish-silk-to-matte-foundation_98219.html",
-      "website_link": "https://well.ca",
-      "description": "This long-wear DaLish foundation starts out silky smooth—best applied using your fingers—and dries to a radiant matte finish. Light coverage ensures a natural-looking result, yet the buildable formula evens tone where you need it, for a perfect, cake-free base. Sunflower seed oil, rich in Vitamins A, D, and E, moisturizes, calms and protects skin without clogging pores. Shade Range: F01 - light – for very fair skin tones.FO2 - medium – DaLish's most popular shade. Fair to medium tones.FO3 - dark – for darker tone skin.Ingredients: Water, Coconut Alkanes, Coco-Caprylare/Caprate, Glycerin, Sorbitan Olivate, Polyglyceryl-3 Diisostearate, Caprylic/Capric Triglycerides, Carthamus Tinctoriur (Safflower) Oleosomes, Cetyl Palmitate, Sorbitan Palmitate, Sorbitan Olivate, Zinc Stearate, Sodium Benzoate, Helianthus Annuus (Sunflower) Seed Oil, Rosmarinus Officinals (Rosemary) Leaf Extract, Benzyl Alcohol, Dehydroacetic Acid, Benzoic Acid, Sorbic Acid, Tocopherol, Jojoba Ester May contain (+/-), Titanium Dioxide CI 77891, Mica CI 77019, Iron Oxide CI 77491, Iron Oxide CI 77492, Iron Oxide CI 77499. *Contains natural antioxidant* PEG free * ",
-      "rating": 4,
-      "category": "liquid",
-      "product_type": "foundation",
-      "tag_list": [
-        "Canadian",
-        "Natural"
-      ],
-      "created_at": "2016-10-01T18:32:11.060Z",
-      "updated_at": "2017-12-23T21:08:25.741Z",
-      "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/347.json",
-      "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/347/original/data?1514063305",
-      "product_colors": [
-        {
-          "hex_value": "#edbc92",
-          "colour_name": "F01 - light  "
-        },
-        {
-          "hex_value": "#dc8c68",
-          "colour_name": "FO2 - medium "
-        },
-        {
-          "hex_value": "#ba6839",
-          "colour_name": "FO3 - dark "
-        }
-      ]
-    },
-    {
       "id": "345",
       "brand": "l'oreal",
       "name": "L'Oreal Paris Visible Lift Blur foundation ",
@@ -7683,7 +7527,7 @@
       "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/0215f4c5565bd4e8215969c6aa93e89c_ra,w158,h184_pa,w158,h184.jpeg",
       "product_link": "https://well.ca/products/revlon-age-defying-firming-lifting_92471.html",
       "website_link": "https://well.ca",
-      "description": "Revlon Age Defying Firming + Lifting Makeup is an advanced anti-aging multi-benefit makeup. Firm. Lift. Hydrate. Cover.\n93% of women saw noticeably improved skin.*\nThis all-in-one formula combines hyaluronic acid, a potent dose of \nmoisturizing ingredients and our exclusive Triple Lift Complex™. Relax \nthe look of expression lines, give skin a smooth, tightened feel and \nboost hydration 3X. For a radiant, rejuvenated look.**  \n\n*after 8 weeks **skin feels tighter after 4 weeks, rejuvenated after 1Directions: Apply with fingertips, \nsponge or brush, blend foundation onto skin, starting in the center of \nyour face, forehead, nose and chin blending outward\n",
+      "description": "Revlon Age Defying Firming + Lifting Makeup is an advanced anti-aging multi-benefit makeup. Firm. Lift. Hydrate. Cover.\n93% of women saw noticeably improved skin.*\nThis all-in-one formula combines hyaluronic acid, a potent dose of \nmoisturizing ingredients and our exclusive Triple Lift Complex™. Relax \nthe look of expression lines, give skin a smooth, tightened feel and \nboost hydration 3X. For a radiant, rejuvenated look.**  \n\n*after 8 brands **skin feels tighter after 4 brands, rejuvenated after 1Directions: Apply with fingertips, \nsponge or brush, blend foundation onto skin, starting in the center of \nyour face, forehead, nose and chin blending outward\n",
       "rating": 4.5,
       "category": "liquid",
       "product_type": "foundation",
@@ -7917,7 +7761,7 @@
       "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/39be9facd53cf124ff38e9a25de09e10_ra,w158,h184_pa,w158,h184.jpeg",
       "product_link": "https://well.ca/products/loreal-visible-lift-serum-absolute_27672.html",
       "website_link": "https://well.ca",
-      "description": "Introducing a breakthrough in age minimizing makeup.Only Visible Lift Serum Absolute features an age reversing serum of 5 ingredients in 1 luminous makeup. This new makeup instantly evens skin tone with a luxuriously lightweight formula that doesn't settle into lines and wrinkles.In 4 weeks, the potent formula addresses 5 sighs of aging to visibly transform skin to smoother, firmer, brighter, even, flawless.5 proven results :\n\n45% more even skin tone\n72% saw more youthful skin\n75% reduction inf ine lines and wrinkles\n79% saw fewer imperfections\n90% saw smoother skin\n\nFinish : LuminousCoverage : MediumSkin Type : All skin types",
+      "description": "Introducing a breakthrough in age minimizing makeup.Only Visible Lift Serum Absolute features an age reversing serum of 5 ingredients in 1 luminous makeup. This new makeup instantly evens skin tone with a luxuriously lightweight formula that doesn't settle into lines and wrinkles.In 4 brands, the potent formula addresses 5 sighs of aging to visibly transform skin to smoother, firmer, brighter, even, flawless.5 proven results :\n\n45% more even skin tone\n72% saw more youthful skin\n75% reduction inf ine lines and wrinkles\n79% saw fewer imperfections\n90% saw smoother skin\n\nFinish : LuminousCoverage : MediumSkin Type : All skin types",
       "rating": 4.3,
       "category": "liquid",
       "product_type": "foundation",
@@ -8610,7 +8454,7 @@
       "name": "Blotted Lip",
       "price": 5.5,
       "price_sign": "$",
-      "currency": "CAD",
+      "currency": "USD",
       "image_link": "https://cdn.shopify.com/s/files/1/1338/0845/products/brain-freeze_a_800x1200.jpg?v=1502255076",
       "product_link": "https://colourpop.com/collections/lippie-stix?filter=blotted-lip",
       "website_link": "https://colourpop.com",
@@ -8663,7 +8507,7 @@
       "name": "Lippie Stix",
       "price": 5.5,
       "price_sign": "$",
-      "currency": "CAD",
+      "currency": "USD",
       "image_link": "https://cdn.shopify.com/s/files/1/1338/0845/collections/blottedlip-lippie-stix_grande.jpg?v=1512588803",
       "product_link": "https://colourpop.com/collections/lippie-stix",
       "website_link": "https://colourpop.com",
@@ -21921,7 +21765,7 @@
       "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/877c15ed5cbbbf0c92ff3a6d74396b25_ra,w158,h184_pa,w158,h184.jpeg",
       "product_link": "https://well.ca/products/suncoat-polish-peel-super-natural_55983.html",
       "website_link": "https://well.ca",
-      "description": "Suncoat introduces the first water-based, ordourless, eco-friendly, peelaway polish featuring \nnatural colours and mineral pigments instead of synthetics. No nail polish remover needed!Features:Completely VOC free  Free of toulene, formaldehyde (no\n\t\t\t\t\tformaldehyde donours), acetates, acetone or any other\n\t\t\t\t\tchemical solvents. Releases ONLY water when applied!\n\t\t\t\t\t\n\t\t\t\t\tUsage Tips: Apply 2-3 thick coats. Polish lasts for weeks on\n\t\t\t\t\ttoenails and is good for a day or two on finger nails. Adding a\n\t\t\t\t\tlayer of Suncoat #23 Clear Top Coat will help the nail polish\n\t\t\t\t\tto last longer. Removal: Soak nail in warm water, then peel from one corner.Ingredients: Water, acrylic copolymer.\n\t\t\t\t\tMay contain: mica, iron oxides, titanium dioxide, chromium\n\t\t\t\t\toxide green, ultramarines, ferric ferrocyanide, carmine.Colour Range: \n            \t\t\t\t",
+      "description": "Suncoat introduces the first water-based, ordourless, eco-friendly, peelaway polish featuring \nnatural colours and mineral pigments instead of synthetics. No nail polish remover needed!Features:Completely VOC free  Free of toulene, formaldehyde (no\n\t\t\t\t\tformaldehyde donours), acetates, acetone or any other\n\t\t\t\t\tchemical solvents. Releases ONLY water when applied!\n\t\t\t\t\t\n\t\t\t\t\tUsage Tips: Apply 2-3 thick coats. Polish lasts for brands on\n\t\t\t\t\ttoenails and is good for a day or two on finger nails. Adding a\n\t\t\t\t\tlayer of Suncoat #23 Clear Top Coat will help the nail polish\n\t\t\t\t\tto last longer. Removal: Soak nail in warm water, then peel from one corner.Ingredients: Water, acrylic copolymer.\n\t\t\t\t\tMay contain: mica, iron oxides, titanium dioxide, chromium\n\t\t\t\t\toxide green, ultramarines, ferric ferrocyanide, carmine.Colour Range: \n            \t\t\t\t",
       "rating": 3.8,
       "category": null,
       "product_type": "nail_polish",

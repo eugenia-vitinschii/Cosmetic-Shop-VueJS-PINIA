@@ -8,11 +8,11 @@
          </div>
         <div class="category__title">
           <p class="heading">Category: {{ category }}</p>
-          <p class="small-text">{{ filtered(category).length }}</p>
+          <p class="small-text">{{  cosmetic.fileredByCategory(category).length }}</p>
         </div>
-        <div class="category__items products-wrapper" v-if="created">
+        <div class="category__items products-wrapper">
           <the-product-card
-            v-for="item in filtered(category)"
+            v-for="item in cosmetic.fileredByCategory(category)"
           :key="item.id"
           :id="item.id"
           :image_link="item.image_link"
@@ -36,7 +36,7 @@
 
 
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted, computed } from "vue";
+import { onMounted, watch,  computed } from "vue";
 import { useRoute } from "vue-router";
 
 //componets
@@ -52,23 +52,20 @@ defineOptions({
   name: "CategoryView",
 });
 
-
 const cosmetic = useCosmeticStore();
 const user = useUserStore()
 
 const route = useRoute();
-const category = route.params.category as string;
+const category =  computed (() => route.params.category as string);
 
-let created = ref(false);
-
-const filtered = computed(() => cosmetic.fileredByCategory)
 
 onMounted(() => {
-  created.value = true;
   cosmetic.fetchCosmetics();
+  cosmetic.fileredByCategory(route.params.category as string)
 });
 
-onUnmounted(() => {
-  cosmetic.$reset()
-});
+watch( () => route.params.category,
+    (newCategory) => cosmetic.fileredByCategory( newCategory as string)
+)
+
 </script>

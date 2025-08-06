@@ -1,7 +1,7 @@
 //stores/user.store.ts
 
 import { defineStore } from "pinia";
-import { reactive } from "vue";
+import { reactive, computed } from "vue";
 
 import type { UserData } from "@/types/user";
 
@@ -12,6 +12,8 @@ export const useUserStore = defineStore("user", () => {
     cart: [],
     favorite: []
   })
+
+  const favorite = computed(() => user.favorite);
   
   function  loadFavorite(){
     const saved = localStorage.getItem('favorite');
@@ -77,5 +79,5 @@ export const useUserStore = defineStore("user", () => {
   function removeFromFavorites(id: string) {
     user.favorite = user.favorite.filter((item) => item.id !== id)
   }
-  return { user, addToCart, addToFavorite, incrementQuantity, removeFromCart, removeFromFavorites, loadFavorite , toggleFavorite, isFavorite, resetFavorite}
+  return { user, favorite ,  addToCart, addToFavorite, incrementQuantity, removeFromCart, removeFromFavorites, loadFavorite , toggleFavorite, isFavorite, resetFavorite}
 })

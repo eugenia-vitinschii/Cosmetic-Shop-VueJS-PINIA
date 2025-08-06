@@ -44,7 +44,7 @@ export const useCosmeticStore = defineStore("cosmetic", () => {
   })
 
   const productsByTag = (tag: string) =>{
-    return products.value.filter( p=> p.sliderTags?.includes(tag))
+    return products.value.filter( p => p.sliderTags?.includes(tag))
   };
 
   async function fetchCosmetics() {

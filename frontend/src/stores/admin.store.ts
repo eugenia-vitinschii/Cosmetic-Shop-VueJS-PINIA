@@ -1,22 +1,33 @@
 //stores/admin.store.ts
 
 import { defineStore } from "pinia";
-import { reactive } from "vue";
+import { ref } from "vue";
+
+import { useCosmeticStore } from "./cosmetic.store";
 
 
-import type { CosmeticState } from "@/types/cosmetic"
+// import type { CosmeticState } from "@/types/cosmetic"
 import { Product } from "@/models/product"
 import { api } from "@/utils/api"
 
-export const adminStore = defineStore("admin", () => {
-   const admin = reactive<CosmeticState>({
-      products: [],
-      limit: 30,
-      page: 1,
-      complected: true,
-      count: 1
-   })
+export const useAdminStore = defineStore("admin", () => {
+   const products = ref<Product[]>([]);
+   const limit = ref(30);
+   const page = ref(1)
+   const complected = ref(true);
+   const count = ref(1)
 
+   const cosmetics = useCosmeticStore();
+
+   const fetchAllProducts = async () => {
+      await cosmetics.fetchCosmetics();
+
+      if (cosmetics.products.length) {
+         products.value = cosmetics.products.slice();
+      }
+      console.warn('Products not loaded yet!')
+   }
+   
    async function createProduct(payload: Product) {
       if (!payload.name || !payload.brand) return;
       try {
@@ -26,7 +37,7 @@ export const adminStore = defineStore("admin", () => {
             created_at: createdAt,
             updated_at: createdAt,
          });
-         admin.products.push(data);
+         products.value.push(data);
       } catch (err) {
          console.log(err)
       }
@@ -36,9 +47,9 @@ export const adminStore = defineStore("admin", () => {
       try {
          const { data } = await api.put(`/cosmetics/${id}`, payload);
 
-         const index = admin.products.findIndex(p => p.id === id);
+         const index = products.value.findIndex(p => p.id === id);
          if (index !== -1) {
-            admin.products[index] = data;
+            products.value[index] = data;
          }
       } catch (err) {
          console.log(err)
@@ -48,14 +59,13 @@ export const adminStore = defineStore("admin", () => {
    async function deleteProduct(id: string) {
       try {
          await api.delete(`/cosmetics/${id}`);
-         admin.products= admin.products.filter((item) => item.id !== id);
+         products.value = products.value.filter((item) => item.id !== id);
       } catch (err) {
          console.error("Delete item ERROR!", err);
       }
    }
 
-
-   return { createProduct, updateProduct, deleteProduct }
+   return { products, limit, page, complected, count, fetchAllProducts, createProduct, updateProduct, deleteProduct }
 })
 
 

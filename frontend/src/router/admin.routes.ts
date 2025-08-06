@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[]= [
       },
       {
         path: "all",
-        component: () => import("@/views/admin/ShowProductsView.vue"),
+        component: () => import("@/views/admin/ProductDashboardView.vue"),
       },
       {
         path: "add",

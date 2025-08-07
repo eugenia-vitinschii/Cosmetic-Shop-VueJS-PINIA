@@ -27,7 +27,17 @@ export const useAdminStore = defineStore("admin", () => {
       }
       console.warn('Products not loaded yet!')
    }
-   
+
+   async function fetchProductById(id: string): Promise<Product | null> {
+    try {
+      const response = await api.get(`/cosmetics/${id}`);
+      return response.data;
+    } catch (error) {
+      console.log("Admin: fetchProductById(id) error:", error);
+      return null
+    }
+  }
+
    async function createProduct(payload: Product) {
       if (!payload.name || !payload.brand) return;
       try {
@@ -65,7 +75,7 @@ export const useAdminStore = defineStore("admin", () => {
       }
    }
 
-   return { products, limit, page, complected, count, fetchAllProducts, createProduct, updateProduct, deleteProduct }
+   return { products, limit, page, complected, count, fetchAllProducts,fetchProductById, createProduct, updateProduct, deleteProduct }
 })
 
 

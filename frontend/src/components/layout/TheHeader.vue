@@ -87,7 +87,7 @@
                   />
                 </svg>
               </router-link>
-              <span class="small-text">{{ user.cart.length }}</span>
+              <!-- <span class="small-text">{{ user.cart.length }}</span> -->
             </div>
             <div class="header-nav tooltip">
               <span class="tooltip-text small-text">menu</span>
@@ -249,8 +249,8 @@
 import { ref } from "vue";
 
 //import store
-import { useCosmeticStore } from "@/stores/cosmetic.store";
-import { storeToRefs } from "pinia";
+// import { useCosmeticStore } from "@/stores/cosmetic.store";
+// import { storeToRefs } from "pinia";
 
 //component settings
 defineOptions({
@@ -263,7 +263,7 @@ const showNav = ref<boolean>(false);
 const showDropdown= ref<boolean>(false);
 
 //pinia const
-const store = useCosmeticStore();
-const { user } = storeToRefs(store);
+// const store = useCosmeticStore();
+// const { user } = storeToRefs(store);
 
 </script>

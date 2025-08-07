@@ -12,8 +12,7 @@ defineOptions({
 });
 
 const props = defineProps<{
-  id: string,
-  type: string,
+  brand: string
 }>()
 
 </script>

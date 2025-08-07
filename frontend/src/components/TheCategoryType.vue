@@ -14,8 +14,7 @@ defineOptions({
 
 //props
 const props = defineProps<{
-  id: string,
-  brand: string
+  brand: string,
 }>()
 
 </script>

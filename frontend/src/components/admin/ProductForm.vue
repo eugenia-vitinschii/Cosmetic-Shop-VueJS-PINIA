@@ -19,9 +19,8 @@
          <CategorizationTab v-model="product" v-if="activeTab === 'CategorizationTab'"/>
          <MediaTab v-model="product" v-if="activeTab === 'MediaTab'"/>
          <SystemInfoTab v-model="product" v-if="activeTab === 'SystemInfoTab'"/>
+         <ProductColorsTab v-model="product" v-if="activeTab === 'ProductColorsTab'"/>
 </div>
-
-
          <div class="add__buttons">
                         <button class="delete tooltip" @click="$router.go(-1)" type="button">
               <span class="tooltip-text small-text">back</span>
@@ -67,7 +66,7 @@ import CategorizationTab from './tabs/CategorizationTab.vue';
 import GeneralTab from './tabs/GeneralTab.vue';
 import MediaTab from './tabs/MediaTab.vue';
 import SystemInfoTab from'./tabs/SystemInfoTab.vue';
-
+import ProductColorsTab from './tabs/ProductColorsTab.vue';
 //tab logic
 const activeTab = ref('GeneralTab')
 
@@ -76,6 +75,7 @@ const tabs = [
    {key: 'CategorizationTab', label:'Categorization'},
    {key: 'MediaTab', label:'Media'},
    {key: 'SystemInfoTab', label:'System Info'},
+   {key: 'ProductColorsTab', label:'Product colors'},
 ]
 
 

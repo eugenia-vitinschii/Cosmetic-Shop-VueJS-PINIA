@@ -90,6 +90,6 @@ const tagOptions = [
 ];
 //SliderOptions
 const sliderOptions = [
-   "top", "week", "brand"
+   "top", "brand", "category"
 ];
 </script>

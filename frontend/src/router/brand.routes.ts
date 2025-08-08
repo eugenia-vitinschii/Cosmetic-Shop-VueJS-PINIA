@@ -9,12 +9,12 @@ const routes: RouteRecordRaw[]= [
       {
         path:'',
         name: "AllBrands",
-        component: () => import("@/views/AllBrandView.vue"),
+        component: () => import("@/views/public/catalog/BrandListView.vue"),
       },
       {
         path: ":brand",
         name: "BrandProducts",
-        component: () => import("@/views/BrandView.vue"),
+        component: () => import("@/views/public/catalog/BrandDetails.vue"),
         props: true,
       },
     ],

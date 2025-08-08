@@ -8,10 +8,10 @@ const routes: RouteRecordRaw[]= [
      children: [
        {
          path: '',
-       component: () =>  import("@/views/AllProductTypeView.vue"),
+       component: () =>  import("@/views/public/catalog/ProductTypeListView.vue"),
        },
        { path: ':product_type',
-         component: () => import("@/views/ProductTypeView.vue"),
+         component: () => import("@/views/public/catalog/ProductTypeDetails.vue"),
        }
      ]
    },

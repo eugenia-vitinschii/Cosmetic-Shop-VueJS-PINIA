@@ -5,17 +5,17 @@ const routes: RouteRecordRaw[]= [
   {
     path: "/info",
     name: "info",
-    component: () => import("@/views/InformationView.vue"),
+    component: () => import("@/views/public/info/InformationView.vue"),
   },
   {
     path: "/about",
     name: "about",
-    component: () => import("@/views/AboutView.vue"),
+    component: () => import("@/views/public/info/AboutView.vue"),
   },
   {
     path: "/terms",
     name: "terms",
-    component: () => import("@/views/TermsView.vue"),
+    component: () => import("@/views/public/info/TermsView.vue"),
   },
 ];
 

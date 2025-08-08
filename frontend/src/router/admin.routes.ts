@@ -7,7 +7,7 @@ const routes: RouteRecordRaw[]= [
     children: [
       {
         path: "",
-        component: () => import("@/views/admin/AdminView.vue"),
+        component: () => import("@/views/admin/AdminDashboardView.vue"),
       },
       {
         path: "all",
@@ -15,11 +15,11 @@ const routes: RouteRecordRaw[]= [
       },
       {
         path: "add",
-        component: () => import("@/views/admin/AddProductView.vue"),
+        component: () => import("@/views/admin/ProductAddView.vue"),
       },
       {
         path: "update/:id",
-        component: () => import("@/views/admin/UpdateView.vue"),
+        component: () => import("@/views/admin/ProductEditView.vue"),
         props: true,
       },
     ],

@@ -8,11 +8,11 @@ const routes: RouteRecordRaw[]= [
        {
          path: '',
          name: 'category',
-       component: () => import("@/views/AllCategoryView.vue"),
+       component: () => import("@/views/public/catalog/CategoryListView.vue"),
        },
        { path: ':category',
         name: 'categoryItems',
-         component: () => import("@/views/CategoryView.vue"),
+         component: () => import("@/views/public/catalog/CategoryDetails.vue"),
        }
      ]
    },

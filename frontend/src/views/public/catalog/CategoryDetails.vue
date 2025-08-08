@@ -3,15 +3,15 @@
     <div class="container">
       <div class="category__wrapper">
          <div class="category__nav brand__nav">
-            <traverse-history />
-            <the-router :items="'/category'" :item="category" />
+            <button-back />
+            <router-links :items="'/category'" :item="category" />
          </div>
         <div class="category__title">
           <p class="heading">Category: {{ category }}</p>
           <p class="small-text">{{  cosmetic.fileredByCategory(category).length }}</p>
         </div>
         <div class="category__items products-wrapper">
-          <the-product-card
+          <product-card
             v-for="item in cosmetic.fileredByCategory(category)"
           :key="item.id"
           :id="item.id"
@@ -40,9 +40,9 @@ import { onMounted, watch,  computed } from "vue";
 import { useRoute } from "vue-router";
 
 //componets
-import TraverseHistory from "@/components/sections/TraverseHistory.vue";
-import TheRouter from "@/components/sections/TheRouter.vue";
-import TheProductCard from "@/components/TheProductCard.vue";
+import ButtonBack from "@/components/sections/ButtonBack.vue";
+import RouterLinks from "@/components/sections/RouterLinks.vue";
+import ProductCard from "@/components/product/ProductCard.vue";
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic.store";

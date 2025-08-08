@@ -3,8 +3,8 @@
     <div class="container">
       <div class="brand__wrapper" v-if="brand">
         <div class="brand__nav">
-           <traverse-history />
-        <the-router :base="'/brand'" :sub="brand" />
+           <button-back />
+        <router-links :base="'/brand'" :sub="brand" />
         </div>
         <!-- brand title -->
         <div class="brand__title">
@@ -14,7 +14,7 @@
         </div>
         <!-- brand items -->
         <div class="brand__items products-wrapper">
-          <the-product-card
+          <product-card
             v-for="item in filtered(brand)"
           :key="item.id"
           :id="item.id"
@@ -45,9 +45,9 @@ import { onMounted, watch, computed} from "vue";
 import { useRoute } from "vue-router";
 
 //componets
-import TraverseHistory from "@/components/sections/TraverseHistory.vue";
-import TheRouter from "@/components/sections/TheRouter.vue";
-import TheProductCard from "@/components/TheProductCard.vue";
+import ButtonBack from "@/components/sections/ButtonBack.vue";
+import RouterLinks from "@/components/sections/RouterLinks.vue";
+import ProductCard from "@/components/product/ProductCard.vue";
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic.store";

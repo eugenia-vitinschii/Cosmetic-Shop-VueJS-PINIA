@@ -30,7 +30,7 @@ defineOptions({
   name:'AboutView'
 })
 //import components
-import TheAccordion from "@/src/components/sections/TheAccordion.vue";
+import TheAccordion from '@/components/sections/TheAccordion.vue'
 
 //interface
 interface InfoData{

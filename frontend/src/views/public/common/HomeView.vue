@@ -52,9 +52,9 @@
 <script setup lang="ts">
 //components
 import TheSlider from "@/components/sections/TheSlider.vue";
-import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
-import BrandSliders  from "@/components/sections/Sliders/BrandSliders.vue";
-import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
+import TopSliders  from "@/components/sliders/TopSliders.vue";
+import BrandSliders  from "@/components/sliders/BrandSliders.vue";
+import CategorySliders  from "@/components/sliders/CategorySliders.vue";
 
 // component settings
 defineOptions({

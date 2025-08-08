@@ -9,7 +9,7 @@
           <p class="heading" v-else>Cosul este gol {{ user.cart.length }}</p>
         </div>
         <div class="cart__items">
-         <shopping-item
+         <cart-item
             v-for="item in user.cart"
             :key="item.id"
             :id="item.id"
@@ -39,7 +39,7 @@ defineOptions({
 });
 
 //import components
-import ShoppingItem from "@/components/sections/ShoppingItem.vue";
+import CartItem from "@/components/sections/CartItem.vue";
 
 //import store
 import { useCosmeticStore } from "@/stores/cosmetic.store";

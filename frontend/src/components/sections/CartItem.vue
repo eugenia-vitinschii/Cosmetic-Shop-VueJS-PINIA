@@ -51,7 +51,7 @@
 import type {ProductData} from "@/models/product";
 
 defineOptions({
-  name: "ShoppingItem",
+  name: "CartItem",
 });
 
 //props

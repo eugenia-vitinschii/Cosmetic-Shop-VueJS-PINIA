@@ -43,7 +43,7 @@
 
 <script  setup lang="ts">
 //components
-import TheInput from '@/components/TheInput.vue';
+import TheInput from '@/components/ui/TheInput.vue';
 
 //inteface general tab
 interface GeneralTab{

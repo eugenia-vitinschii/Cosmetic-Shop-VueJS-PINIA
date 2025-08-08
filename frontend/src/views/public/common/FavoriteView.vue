@@ -11,7 +11,7 @@
          <!-- favorite items -->
          <div class="favorite__items products-wrapper" v-if="created">
             <button @click="user.resetFavorite()"> clear</button>
-          <the-product-card
+          <product-card
          v-for="item in favorite"
           :key="item.id"
           :id="item.id"
@@ -36,7 +36,7 @@
     <div class="container">
       <div class="swiper__wrapper">
         <p class="heading">Top products</p>
-        <!-- <top-sliders/> -->
+        <top-sliders/>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@
     <div class="container">
       <div class="swiper__wrapper">
         <p class="heading">Lipstick</p>
-        <!-- <category-sliders/> -->
+        <category-sliders/>
       </div>
     </div>
   </div>
@@ -54,9 +54,9 @@
 <script setup lang="ts">
 //vue
 import {ref,onMounted } from "vue"
-import TheProductCard from "@/components/TheProductCard.vue";
-// import TopSliders  from "@/components/sections/Sliders/TopSliders.vue";
-// import CategorySliders  from "@/components/sections/Sliders/CategorySliders.vue";
+import ProductCard from "@/components/product/ProductCard.vue";
+import TopSliders from "@/components/sliders/TopSliders.vue";
+import CategorySliders from "@/components/sliders/CategorySliders.vue";
 
 import { useUserStore } from "@/stores/user.store";
 import { storeToRefs } from "pinia";

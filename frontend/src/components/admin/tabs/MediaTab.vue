@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 //components
-import TheInput from '@/components/TheInput.vue';
+import TheInput from '@/components/ui/TheInput.vue';
 
 interface ProductMedia {
    image_link?: string;

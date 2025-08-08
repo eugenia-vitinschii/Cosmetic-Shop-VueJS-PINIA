@@ -6,17 +6,17 @@
       <div class="brand__wrapper">
         <!-- brand nav -->
         <div class="brand__nav">
-          <traverse-history/>
+          <button-back/>
         </div>
         <!-- brands items -->
         <div class="brand__items" v-if="created">
-          <the-brand
+          <brand-link
             v-for="(item, index) in allBrands"
             :index="index"
             :key="index"
             :brand="item"
           >
-          </the-brand>
+          </brand-link>
         </div>
       </div>
     </div>
@@ -30,8 +30,9 @@ import { ref, onMounted} from "vue";
 
 //components
 import TheDecor from "@/components/sections/TheDecor.vue"
-import TraverseHistory from "@/components/sections/TraverseHistory.vue"
-import TheBrand from "@/components/TheBrand.vue";
+import ButtonBack from "@/components/sections/ButtonBack.vue";
+import BrandLink from "@/components/ui/BrandLink.vue";
+
 
 defineOptions({
   name: "BrandListView",

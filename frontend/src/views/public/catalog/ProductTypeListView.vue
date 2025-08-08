@@ -4,17 +4,17 @@
     <div class="container">
       <div class="brand__wrapper">
         <div class="brand__nav">
-          <traverse-history/>
+          <button-back/>
         </div>
         <div class="brand__items">
-         <the-product-type
+         <product-type-link
             v-for="(item, index) in allProductTypes"
             :index="index"
             :key="index"
             :brand="item"
           >
             {{ item }}
-            </the-product-type>
+            </product-type-link>
         </div>
       </div>
     </div>
@@ -26,8 +26,8 @@ import { ref, onMounted, onUnmounted } from "vue";
 
 //components
 import TheDecor from "@/components/sections/TheDecor.vue"
-import TraverseHistory from "@/components/sections/TraverseHistory.vue";
-import TheProductType from "@/components/TheProductType.vue";
+import ButtonBack from "@/components/sections/ButtonBack.vue";
+import ProductTypeLink from "@/components/ui/ProductTypeLink.vue";
 
 defineOptions({
   name: "ProductTypeListView",

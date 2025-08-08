@@ -35,7 +35,7 @@ import { ref } from "vue";
 import ReturnPolicy from './ReturnPolicy.vue'
 
 defineOptions({
-  name: "TheDelivery",
+  name: "DeliveryInfo",
 });
 
 const props = defineProps<{

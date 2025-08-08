@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
  defineOptions({
-   name: "TheRouter"
+   name: "RouterLinks"
  })
 
 //props

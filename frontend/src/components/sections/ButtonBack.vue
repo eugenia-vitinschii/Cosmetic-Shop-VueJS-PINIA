@@ -18,6 +18,6 @@
 <script setup lang="ts">
 //component
 defineOptions({
-  name: "TraverseHistory",
+  name: "ButtonBack",
 });
 </script>

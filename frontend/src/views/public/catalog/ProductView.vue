@@ -3,10 +3,10 @@
   <div class="product">
     <div class="container">
       <div class="product__wrapper" >
-         <traverse-history />
+         <button-back />
          <div class="product__cosmetics"  v-if="created">
           <!-- product cosmetics -->
-            <the-product
+            <product-details
             v-if="item"
           :id="item.id"
           :image_link="item.image_link"
@@ -37,8 +37,8 @@
 import {ref,  onMounted, computed} from "vue";
 
 // components
-import TraverseHistory from "@/components/sections/TraverseHistory.vue";
-import TheProduct from "@/components/TheProduct.vue";
+import ButtonBack from "@/components/sections/ButtonBack.vue";
+import ProductDetails from "@/components/product/ProductDetails.vue";
 
 //pinia & router
 import { useCosmeticStore } from "@/stores/cosmetic.store";

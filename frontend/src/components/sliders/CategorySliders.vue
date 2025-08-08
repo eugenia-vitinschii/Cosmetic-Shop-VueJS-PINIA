@@ -16,7 +16,7 @@
     <swiper-slide 
       v-for="item in cosmetic.productsByTag('category')" 
       :key="item.id">
-      <the-product-card
+      <product-card
           :id="item.id"
           :image_link="item.image_link"
           :api_featured_image="item.api_featured_image"
@@ -41,7 +41,7 @@ import { defineOptions, onMounted } from "vue";
 import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { useUserStore } from "@/stores/user.store";
 // components
-import TheProductCard from "@/components/TheProductCard.vue";
+import ProductCard from "../product/ProductCard.vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 

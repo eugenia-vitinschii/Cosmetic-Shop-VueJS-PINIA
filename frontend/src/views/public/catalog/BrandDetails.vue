@@ -55,7 +55,7 @@ import { useUserStore } from "@/stores/user.store";
 
 
 defineOptions({
-  name: "BrandView",
+  name: "BrandDetails",
 });
 
 const cosmetic = useCosmeticStore();

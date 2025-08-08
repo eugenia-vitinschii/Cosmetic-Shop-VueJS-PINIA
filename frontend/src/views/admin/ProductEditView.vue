@@ -35,7 +35,7 @@ import type { Product } from "@/models/product";
 
 //component settings
 defineOptions({
-  name: "UpdateView",
+  name: "ProductEditView",
   inheritAttrs: false,
 });
 

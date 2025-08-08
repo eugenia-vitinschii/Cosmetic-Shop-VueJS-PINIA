@@ -8,18 +8,38 @@
           <table class="admin__table" v-if="admin.products">
             <thead>
               <tr>
+                <th>Img </th>
                 <th>Brand</th>
                 <th>Name</th>
                 <th>Category / Product Type</th>
+                <th>Sliders Tags</th>
                 <th></th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="product in admin.products" :key="product.id">
+                <td>
+                  <div class="admin__img">
+                    <img :src="product.image_link"  @error="$event.target.src = api_featured_image">
+                  </div>
+                </td>
                 <td>{{ product.brand }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.category }}/ {{ product.product_type }}</td>
+                 <td>
+                <div class="input__wrapper">
+            <select multiple v-model="product.sliderTags">
+                              <option 
+               v-for="option in sliderOptions"
+               :key="option"
+               :value="option"
+               >
+               {{ option }}
+            </option>
+            </select>
+         </div>
+                </td>
                 <td>
                   <button @click="deleteItem(product.id)" class="delete tooltip">
                     <span class="tooltip-text small-text">delete</span>
@@ -75,7 +95,11 @@ const deleteItem = (id?: string) => {
     admin.deleteProduct(id);
   }
 }
+ 
 
+const sliderOptions = [
+   "top", "brand", "category"
+];
 // use hooks
 onMounted(() => {
   admin.fetchAllProducts();

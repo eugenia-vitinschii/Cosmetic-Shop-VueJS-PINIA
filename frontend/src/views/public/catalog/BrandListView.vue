@@ -34,7 +34,7 @@ import TraverseHistory from "@/components/sections/TraverseHistory.vue"
 import TheBrand from "@/components/TheBrand.vue";
 
 defineOptions({
-  name: "AllBrandView",
+  name: "BrandListView",
 });
 
 //pinia

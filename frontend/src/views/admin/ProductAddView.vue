@@ -25,7 +25,7 @@ import ProductForm from "@/components/admin/ProductForm.vue";
 
 //component settings
 defineOptions({
-  name: "AddProductView",
+  name: "ProductAddView",
 });
 
 // import pinia store

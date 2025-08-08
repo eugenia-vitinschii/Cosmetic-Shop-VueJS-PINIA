@@ -51,7 +51,7 @@ import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { useUserStore } from "@/stores/user.store";
 
 defineOptions({
-  name: "ProductTypeView",
+  name: "ProductTypeDetails",
 });
 
 const cosmetic = useCosmeticStore();

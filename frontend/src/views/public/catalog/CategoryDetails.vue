@@ -49,7 +49,7 @@ import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { useUserStore } from "@/stores/user.store";
 
 defineOptions({
-  name: "CategoryView",
+  name: "CategoryDetails",
 });
 
 const cosmetic = useCosmeticStore();

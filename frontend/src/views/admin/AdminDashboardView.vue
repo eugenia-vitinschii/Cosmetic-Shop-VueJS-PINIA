@@ -15,7 +15,7 @@ import TheAdminHeader from "@/components/layout/TheAdminHeader.vue"
 
 //component settings
 defineOptions({
-   name: "AdminView"
+   name: "AdminDashboardView"
 })
 
 </script>

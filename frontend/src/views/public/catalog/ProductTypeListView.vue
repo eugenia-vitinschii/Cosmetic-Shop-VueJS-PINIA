@@ -7,30 +7,30 @@
           <traverse-history/>
         </div>
         <div class="brand__items">
-         <the-category-type
-            v-for="(item, index) in allCategory"
+         <the-product-type
+            v-for="(item, index) in allProductTypes"
             :index="index"
             :key="index"
             :brand="item"
           >
             {{ item }}
-            </the-category-type>
+            </the-product-type>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"> 
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 
 //components
 import TheDecor from "@/components/sections/TheDecor.vue"
 import TraverseHistory from "@/components/sections/TraverseHistory.vue";
-import TheCategoryType from "@/components/TheCategoryType.vue";
+import TheProductType from "@/components/TheProductType.vue";
 
 defineOptions({
-  name: "AllCategoryView",
+  name: "ProductTypeListView",
 });
 
 //pinia
@@ -39,7 +39,7 @@ import { storeToRefs } from "pinia";
 
 const store = useCosmeticStore();
 const { fetchCosmetics } = store;
-const {allCategory } = storeToRefs(store);
+const { allProductTypes } = storeToRefs(store);
 
 let created = ref(false);
 

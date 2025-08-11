@@ -2,9 +2,11 @@
   <div class="cart__item">
     <div class="cart__img">
       <router-link :to="'/product/' + id">
-        <img
-          :src="image_link"
-          @error="onImgError"
+               <app-image
+        :src="image_link"
+        :backup="api_featured_image"
+        fallback="@/assets/img/no-img.jpg"
+        alt="Img"
         />
       </router-link>
     </div>
@@ -49,6 +51,10 @@
 <script setup lang="ts">
 //product model
 import type {ProductData} from "@/models/product";
+
+
+//components
+import AppImage from "../core/AppImage.vue";
 
 defineOptions({
   name: "CartItem",

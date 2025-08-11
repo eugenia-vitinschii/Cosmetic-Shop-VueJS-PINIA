@@ -21,7 +21,12 @@
               <tr v-for="product in admin.products" :key="product.id">
                 <td>
                   <div class="admin__img">
-                    <img :src="product.image_link"  @error="$event.target.src = api_featured_image">
+                            <app-image
+        :src="product.image_link"
+        :backup="product.api_featured_image"
+        fallback="@/assets/img/no-img.jpg"
+        alt="Img"
+        />
                   </div>
                 </td>
                 <td>{{ product.brand }}</td>
@@ -75,7 +80,7 @@ import { onMounted } from "vue";
 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
-
+import AppImage from "@/components/core/AppImage.vue";
 //component settings
 defineOptions({
   name: "ProductDashboardView",

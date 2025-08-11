@@ -4,9 +4,11 @@
     <!-- product-card img + button -->
     <div class="product-card__image-wrapper">
       <router-link :to="`/product/${id}`">
-        <img
-          :src="image_link"
-          @error="$event.target.src = api_featured_image"
+        <app-image
+        :src="image_link"
+        :backup="api_featured_image"
+        fallback="@/assets/img/no-img.jpg"
+        alt="Img"
         />
       </router-link>
       <button 
@@ -54,6 +56,8 @@
 <script setup lang="ts">
 //components
 import StarRating from "../sections/StarRating.vue";
+import AppImage from "../core/AppImage.vue";
+
 //product model
 import type {ProductData} from "@/models/product";
 

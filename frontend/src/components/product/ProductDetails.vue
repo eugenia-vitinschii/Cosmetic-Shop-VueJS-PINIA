@@ -29,10 +29,12 @@
       <!-- Middle column - img-->
       <div class="product__media">
         <div class="product__img">
-          <img
-            :src="image_link"
-            @error="$event.target.src = api_featured_image"
-          />
+                  <app-image
+        :src="image_link"
+        :backup="api_featured_image"
+        fallback="@/assets/img/no-img.jpg"
+        alt="Img"
+        />
         </div>
       </div>
       <!-- Right column - prices, colors, actions  -->
@@ -126,7 +128,7 @@ import type {ProductData} from "@/models/product";
 //components
 import StarRating from "../sections/StarRating.vue";
 import DeliveryInfo from "../sections/DeliveryInfo.vue";
-
+import AppImage from "../core/AppImage.vue";
 defineOptions({
   name: "ProductDetails",
 });

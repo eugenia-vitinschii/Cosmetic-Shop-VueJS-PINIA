@@ -4,6 +4,13 @@
       <div class="admin__wrapper">
         <the-admin-header />
         <p class="heading">All products {{ admin.products.length }} </p>
+        
+        <product-filters
+              v-model="filters"
+      :brands="admin.brands"
+      :categories="admin.categories"
+      :productTypes="admin.productTypes"
+        />
         <div class="admin-content">
           <table class="admin__table" v-if="admin.products">
             <thead>
@@ -18,7 +25,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="product in admin.products" :key="product.id">
+              <tr v-for="product in filteredProducts" :key="product.id">
                 <td>
                   <div class="admin__img">
                     <app-image :src="product.image_link" :backup="product.api_featured_image"
@@ -74,12 +81,12 @@
 
 <script setup lang="ts">
 // import vue hooks
-import { onMounted } from "vue";
+import { onMounted, ref, computed } from "vue";
 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
 import AppImage from "@/components/core/AppImage.vue";
-
+import ProductFilters from "@/components/admin/ProductFilters.vue";
 //pinia store imports
 import { useAdminStore } from "@/stores/admin.store"
 import { useAutoSave } from "@/composables/useAutoSave";
@@ -139,5 +146,24 @@ onMounted(() => {
   })
 });
 
+//filter logic
+const filters = ref({ brand: '', category: '', type: '', query: ''})
+
+//filer function
+const filteredProducts = computed(() => {
+  const q = filters.value.query.trim().toLowerCase();
+
+  return admin.products.filter( p => {
+    const okBrand = !filters.value.brand || p.brand === filters.value.brand;
+    const okCategory = !filters.value.category || p.category === filters.value.category;
+    const okType = !filters.value.type|| p.product_type === filters.value.type;
+
+    const okQuery = !q || (p.name?.toLowerCase().includes(q)) ||
+    (p.id?.toLowerCase?.().includes(q)) ||
+    (typeof p.id === 'string' ? p.id?.toLowerCase().includes(q): String(p.id).includes(q));
+
+    return okBrand && okCategory && okType && okQuery
+  })
+})
 
 </script>

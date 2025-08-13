@@ -21,29 +21,27 @@
               <tr v-for="product in admin.products" :key="product.id">
                 <td>
                   <div class="admin__img">
-                            <app-image
-        :src="product.image_link"
-        :backup="product.api_featured_image"
-        fallback="@/assets/img/no-img.jpg"
-        alt="Img"
-        />
+                    <app-image :src="product.image_link" :backup="product.api_featured_image"
+                      fallback="@/assets/img/no-img.jpg" alt="Img" />
                   </div>
                 </td>
                 <td>{{ product.brand }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.category }}/ {{ product.product_type }}</td>
-                 <td>
-                <div class="input__wrapper">
-            <select multiple v-model="product.sliderTags">
-                              <option 
-               v-for="option in sliderOptions"
-               :key="option"
-               :value="option"
-               >
-               {{ option }}
-            </option>
-            </select>
-         </div>
+                <td>
+                  <div class="input__wrapper">
+                    <select 
+                    multiple 
+                    v-model="product.sliderTags"
+                    @change="onSliderChange(product)"
+                    >
+                      <option v-for="option in sliderOptions" :key="option" :value="option">
+                        {{ option }}
+                      </option>
+                    </select>
+                    <span v-if="status.isSaving" >Saving...!!!!</span>
+                    <span v-else-if="status.isSaved">Saved!</span>
+                  </div>
                 </td>
                 <td>
                   <button @click="deleteItem(product.id)" class="delete tooltip">
@@ -81,32 +79,65 @@ import { onMounted } from "vue";
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
 import AppImage from "@/components/core/AppImage.vue";
+
+//pinia store imports
+import { useAdminStore } from "@/stores/admin.store"
+import { useAutoSave } from "@/composables/useAutoSave";
+
+import type{ Product } from "@/models/product";
+
 //component settings
 defineOptions({
   name: "ProductDashboardView",
 });
-
-//pinia store imports
-import { useAdminStore} from "@/stores/admin.store"
-
 //pinia variables
 const admin = useAdminStore();
 
 //delete item
 const deleteItem = (id?: string) => {
-  if(!id) return;
+  if (!id) return;
   const confirm = window.confirm("delete item?");
   if (confirm) {
     admin.deleteProduct(id);
   }
 }
- 
 
 const sliderOptions = [
-   "top", "brand", "category"
+  "top", "brand", "category"
 ];
+
+
+//context
+const {save: autoSave, isSaving, isSaved} = 
+useAutoSave((id: string, payload: Product) => admin.updateProduct(id, payload), 800)
+
+//statuses
+const status = {isSaving, isSaved}
+
+//helper: copy object
+function clonePlain<T>(obj: T): T{
+  try{
+    return typeof structuredClone === 'function' ? structuredClone(obj) : JSON.parse(JSON.stringify(obj))
+  } catch {
+    return JSON.parse(JSON.stringify(obj))
+  }
+}
+
+function onSliderChange(product: Product){
+  if(!product?.id) return
+  const payload = clonePlain(product)
+  autoSave(product.id, payload) 
+}
+
 // use hooks
 onMounted(() => {
   admin.fetchAllProducts();
+  admin.products.forEach( p => {
+    if(!Array.isArray(p.sliderTags)){
+      p.sliderTags = []
+    }
+  })
 });
+
+
 </script>

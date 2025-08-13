@@ -1,7 +1,7 @@
 //stores/admin.store.ts
 
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 import { useCosmeticStore } from "./cosmetic.store";
 
@@ -18,6 +18,8 @@ export const useAdminStore = defineStore("admin", () => {
    const count = ref(1)
 
    const cosmetics = useCosmeticStore();
+
+   /* === FETCH PRODUCTS === */
 
    const fetchAllProducts = async () => {
       await cosmetics.fetchCosmetics();
@@ -37,6 +39,27 @@ export const useAdminStore = defineStore("admin", () => {
       return null
     }
   }
+
+
+   /* === FILTER PRODUCTS === */
+
+   const brands = computed (() => {
+      const set = new Set<string>();
+      for ( const p of products.value) if( p.brand) set.add(p.brand);
+      return [...set].sort()
+   })
+      const categories = computed (() => {
+      const set = new Set<string>();
+      for ( const p of products.value) if( p.category) set.add(p.category);
+      return [...set].sort()
+   })
+      const productTypes = computed (() => {
+      const set = new Set<string>();
+      for ( const p of products.value) if( p.product_type) set.add(p.product_type);
+      return [...set].sort()
+   })
+
+   /* === CREATE & UDDATE & DELETE PRODUCTS === */
 
    async function createProduct(payload: Product) {
       if (!payload.name || !payload.brand) return;
@@ -62,7 +85,7 @@ export const useAdminStore = defineStore("admin", () => {
             products.value[index] = data;
          }
       } catch (err) {
-         console.log(err)
+         console.log(err) 
       }
    }
 
@@ -75,7 +98,7 @@ export const useAdminStore = defineStore("admin", () => {
       }
    }
 
-   return { products, limit, page, complected, count, fetchAllProducts,fetchProductById, createProduct, updateProduct, deleteProduct }
+   return { products, limit, page, complected, count, fetchAllProducts,fetchProductById, brands, categories, productTypes, createProduct, updateProduct, deleteProduct }
 })
 
 

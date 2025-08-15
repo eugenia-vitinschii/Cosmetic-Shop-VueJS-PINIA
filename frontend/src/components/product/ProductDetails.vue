@@ -29,7 +29,7 @@
       <!-- Middle column - img-->
       <div class="product__media">
         <div class="product__img">
-                  <app-image
+          <app-image
         :src="image_link"
         :backup="api_featured_image"
         fallback="@/assets/img/no-img.jpg"
@@ -52,24 +52,18 @@
         </div>
         <div class="product__actions">
           <!-- wish list button -->
-          <button @click="$emit('addItemFavorite', selectedColor.value)"  class="tooltip">
-               <span class="tooltip-text small-text">favorite</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#EFA15D"
-            >
-              <path
-                d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"
-              />
-            </svg>
-          </button>
+                <button 
+     
+        :class="{ active: isFavorite}"
+        @click="$emit('toggleFavorite')" 
+        aria-label="Add to favorite"
+      > 
+<svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="root___Z1kvz animated___FWX6h filled___PLueY"><mask id="animatedHeartCircleMask" maskUnits="userSpaceOnUse" x="-5" y="-5" width="34" height="34" style="mask-type: alpha;"><circle cx="12" cy="12" r="12" fill="white"></circle></mask><g mask="url(#animatedHeartCircleMask)"><g class="heartWrapper___nT_tl" x="12" y="12"><path class="heart___RwxGZ" d="M12.5383 19.7993C12.2329 20.0676 11.7679 20.0668 11.4635 19.7974L10.84 19.2455C6.72 15.6133 4 13.2178 4 10.2778C4 7.88222 5.936 6 8.4 6C9.792 6 11.128 6.63 12 7.62555C12.872 6.63 14.208 6 15.6 6C18.064 6 20 7.88222 20 10.2778C20 13.2178 17.28 15.6133 13.16 19.2533L12.5383 19.7993Z" fill="currentColor"></path></g><circle cx="12" cy="12" r="6.6" class="circle___sJ2hy"></circle><g class="splashesWrapper___fdtqJ"><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g></g></g></svg>
+      </button>
           <!-- add to card button -->
           <button 
-          @click="$emit('addItemCart',{ item: props, color: selectedColor})" 
-          :disabled="!selectedColor"
+          @click="$emit('addItemToCart',{ item: props, color: selectedColor})" 
+          :disabled="hasColors && !selectedColor"
            class="tooltip"
            >
       <span class="tooltip-text small-text">cart</span>
@@ -122,23 +116,45 @@
 
 <script setup lang="ts">
 //vue
-import { ref } from "vue";
+import { ref, computed } from "vue";
+
 //product model
-import type {ProductData} from "@/models/product";
-//components
+import type {ProductData,  ProductColor } from "@/models/product";
+
+// //components
 import StarRating from "../sections/StarRating.vue";
 import DeliveryInfo from "../sections/DeliveryInfo.vue";
 import AppImage from "../core/AppImage.vue";
+
+//import store
+import { useUserStore } from '@/stores/user.store'
+
 defineOptions({
   name: "ProductDetails",
 });
 
+//store
+const user = useUserStore()
 
-const props = defineProps<Omit<ProductData, "quantity" | 
-"product_link" |"created_at" | "updated_at">>();
+//props
+type props = Omit<ProductData, 'isFavorite' | 'quantity' | 'product_link' | "updated_at">
+const props = defineProps<props>()
 
-
-
+//selected color
 const selectedColor = ref<ProductColor | null>(null)
+
+// emit cart, favorite actions
+const emit = defineEmits<{
+  (e: 'addItemToCart', payload: {item: props; color: ProductColor | null}): void
+  (e: 'toggleFavorite'):void
+}>()
+
+//select color
+const hasColors = computed(() => (props.product_colors?.length ?? 0) > 0)
+
+// heart color toggle
+const isFavorite = computed(() => 
+  props.id ? user.isFavorite(String(props.id)): false
+)
 
 </script>

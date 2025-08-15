@@ -4,29 +4,31 @@
     <div class="container">
       <div class="product__wrapper" >
          <button-back />
-         <div class="product__cosmetics"  v-if="created">
+         <div class="product__cosmetics"  v-if="item">
           <!-- product cosmetics -->
             <product-details
-            v-if="item"
-          :id="item.id"
-          :image_link="item.image_link"
-          :name="item.name"
-          :product_type="item.product_type"
-          :price="item.price"
-          :price_sign="item.price_sign"
-          :api_featured_image="item.api_featured_image"
-          :brand="item.brand"
-          :description="item.description"
-          :category="item.category"
-          :currency="item.currency"
-          :rating="item.rating"
-          :tag_list="item.tag_list"
-          :product_colors="item.product_colors"
-          :website_link="item.website_link"
-           @addItemCart="pushToCart"
-           @addItemFavorite="pushtoFavorite(item)"
+            v-if="created"
+              :id="item.id"
+              :image_link="item.image_link"
+              :name="item.name"
+              :product_type="item.product_type"
+              :price="item.price"
+              :price_sign="item.price_sign"
+              :api_featured_image="item.api_featured_image"
+              :brand="item.brand"
+              :description="item.description"
+              :category="item.category"
+              :currency="item.currency"
+              :rating="item.rating"
+              :tag_list="item.tag_list"
+              :product_colors="item.product_colors"
+              :website_link="item.website_link"
+              :isFavorite="item.id ? user.isFavorite(item.id) :false"
+              @toggleFavorite="toggleFavorite"
+              @addItemToCart="pushToCart"
         />
          </div>
+         <p v-else>Loading...</p>
       </div>
     </div>
   </div>
@@ -42,46 +44,52 @@ import ProductDetails from "@/components/product/ProductDetails.vue";
 
 //pinia & router
 import { useCosmeticStore } from "@/stores/cosmetic.store";
-import { storeToRefs } from "pinia";
-import { useRoute } from "vue-router";
+import { useUserStore } from "@/stores/user.store";
 
-//product
-import type { Product, ProductColor } from "@/models/product";
+//route
+import { useRoute } from "vue-router";
 
 //component settings
 defineOptions({
   name: "ProductView",
 });
+
 //pinia store 
-const store = useCosmeticStore();
+const cosmetic = useCosmeticStore();
+const user = useUserStore()
 
-
-const { cosmetics } = storeToRefs(store);
-const { fetchProductById ,  addToCart, addToFavorite } = store;
 
 const route = useRoute();
 const id = route.params.id as string;
+
+
 let created = ref(false);
 
-//add to wish list
-function pushToCart({item, color}:{ item: Product; color: ProductColor | null}) {
-  if(!color){
-    alert("Please select a color befor adding to cart");
-    return
-  }
-  addToCart(item, color);
-}
-// add to favorite
-function pushtoFavorite(item: Product){
-    addToFavorite(item);
-}
-const item = computed(() => cosmetics.value.find((p) => p.id === id))
+const item = computed(() => cosmetic.products.find((p) => p.id === id))
 
-
-onMounted(() => {
+onMounted(async() => {
   created.value = true;
-  console.log('mounted product');
-  fetchProductById(id);
+  await cosmetic.fetchProductById(id);
 });
+
+
+//push to cart
+function pushToCart({item, color}: {item: any; color: any | null}){
+  //select color alert
+  if((item.product_colors?.length ?? 0)> 0 && !color){
+    alert('Please select a color before adding to cart')
+      return
+  }
+
+  user.addToCart(item)
+}
+
+//toogle favorite
+function toggleFavorite(){
+  if(item.value) user.toggleFavorite(item.value)
+}
+
+
+
 
 </script>

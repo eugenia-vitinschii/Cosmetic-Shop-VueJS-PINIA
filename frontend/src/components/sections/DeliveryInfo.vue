@@ -38,9 +38,6 @@ defineOptions({
   name: "DeliveryInfo",
 });
 
-const props = defineProps<{
-  source: string
-}>()
 
 const showModal = ref(false)
 </script>

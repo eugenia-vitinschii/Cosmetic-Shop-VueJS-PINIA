@@ -154,16 +154,15 @@ const filteredProducts = computed(() => {
   const q = filters.value.query.trim().toLowerCase();
 
   return admin.products.filter( p => {
-    const okBrand = !filters.value.brand || p.brand === filters.value.brand;
-    const okCategory = !filters.value.category || p.category === filters.value.category;
-    const okType = !filters.value.type|| p.product_type === filters.value.type;
+    const conditions = [
+      !filters.value.brand || p.brand === filters.value.brand,
+      !filters.value.category || p.category === filters.value.category,
+      !filters.value.type || p.product_type === filters.value.type,
+      !q || p.name?.toLowerCase().includes(q) || String(p.id).toLowerCase().includes(q)
+    ];
+    return conditions.every(Boolean);
 
-    const okQuery = !q || (p.name?.toLowerCase().includes(q)) ||
-    (p.id?.toLowerCase?.().includes(q)) ||
-    (typeof p.id === 'string' ? p.id?.toLowerCase().includes(q): String(p.id).includes(q));
-
-    return okBrand && okCategory && okType && okQuery
-  })
+});
 })
 
 </script>

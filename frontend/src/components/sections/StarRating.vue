@@ -1,5 +1,5 @@
 <template>
-<div class="star">
+<div class="star" v-if="ratingStar">
    <div class="star__item-gray">
       <svg
         v-for="i in 5"
@@ -15,10 +15,9 @@
         />
       </svg>
    </div>
-   <div class="star__item-color"
-   >
-            <svg
-        v-for="i in ratingStar"
+   <div class="star__item-color">
+      <svg
+        v-for="i in filteredCount"
         :key="`color-${i}`"
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
@@ -31,16 +30,31 @@
         />
       </svg>
    </div>
-   <div class="star__item" v-if="ratingStar !== null">
+   <div class="star__item" v-if="hasRating">
       ({{ ratingStar }})
    </div>
 </div>
 </template>
 
 <script setup lang="ts">
+//vue
+import { computed} from 'vue';
+
 //props
-defineProps<{
-  ratingStar: number | null;
-}>();
+const props = withDefaults(defineProps<{
+  ratingStar?:number |null
+}>(),{
+  ratingStar: null
+})
+
+//colored starts count
+const filteredCount = computed(() =>{
+  const c = props.ratingStar ?? 0;
+  return Math.max(0, Math.floor(c));
+})
+
+//show rating 
+const hasRating = computed(() => props.ratingStar != null)
+
 </script>
  

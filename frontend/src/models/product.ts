@@ -8,7 +8,6 @@ export interface ProductColor {
 
 export interface ProductData {
    id?: string;
-   quantity?: number;
    brand?: string;
    name?: string;
    price?: number;
@@ -34,7 +33,6 @@ export interface ProductData {
 
 export class Product {
    id?: string;
-   quantity?: number;
    brand?: string;
    name?: string;
    price?: number;
@@ -59,7 +57,6 @@ export class Product {
 
    constructor(data: ProductData = {}) {
       this.id = data.id;
-      this.quantity = data.quantity;
       this.brand = data.brand;
       this.name = data.name;
       this.price = data.price;

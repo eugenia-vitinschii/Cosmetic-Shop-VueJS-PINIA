@@ -66,7 +66,7 @@ defineOptions({
 });
 
 
-const props = defineProps<Omit<ProductData,"isFavorite" | "quantity" | 
+const props = defineProps<Omit<ProductData,"isFavorite" |
 "product_link" | "tag_list" | 
 "created_at" | "updated_at" | 
 "product_colors"> & {isFavorite: boolean}>();

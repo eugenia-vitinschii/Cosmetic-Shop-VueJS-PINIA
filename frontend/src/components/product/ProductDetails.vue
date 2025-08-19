@@ -137,7 +137,7 @@ defineOptions({
 const user = useUserStore()
 
 //props
-type props = Omit<ProductData, 'isFavorite' | 'quantity' | 'product_link' | "updated_at">
+type props = Omit<ProductData, 'isFavorite' | 'product_link' | "updated_at">
 const props = defineProps<props>()
 
 //selected color

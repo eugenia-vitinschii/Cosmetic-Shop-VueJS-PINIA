@@ -23,6 +23,7 @@
               :tag_list="item.tag_list"
               :product_colors="item.product_colors"
               :website_link="item.website_link"
+              :selectedColor="item.selectedColor"
               :isFavorite="item.id ? user.isFavorite(item.id) :false"
               @toggleFavorite="toggleFavorite"
               @addItemToCart="pushToCart"
@@ -62,7 +63,6 @@ const user = useUserStore()
 const route = useRoute();
 const id = route.params.id as string;
 
-
 let created = ref(false);
 
 const item = computed(() => cosmetic.products.find((p) => p.id === id))
@@ -72,15 +72,10 @@ onMounted(async() => {
   await cosmetic.fetchProductById(id);
 });
 
+import type { CartItem} from "@/types/cart";
 
 //push to cart
-function pushToCart({item, color}: {item: any; color: any | null}){
-  //select color alert
-  if((item.product_colors?.length ?? 0)> 0 && !color){
-    alert('Please select a color before adding to cart')
-      return
-  }
-
+function pushToCart(item: CartItem) {
   user.addToCart(item)
 }
 
@@ -88,8 +83,5 @@ function pushToCart({item, color}: {item: any; color: any | null}){
 function toggleFavorite(){
   if(item.value) user.toggleFavorite(item.value)
 }
-
-
-
 
 </script>

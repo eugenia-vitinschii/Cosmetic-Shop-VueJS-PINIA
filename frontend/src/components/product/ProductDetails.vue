@@ -53,7 +53,6 @@
         <div class="product__actions">
           <!-- wish list button -->
                 <button 
-     
         :class="{ active: isFavorite}"
         @click="$emit('toggleFavorite')" 
         aria-label="Add to favorite"
@@ -62,7 +61,7 @@
       </button>
           <!-- add to card button -->
           <button 
-          @click="$emit('addItemToCart',{ item: props, color: selectedColor})" 
+          @click="handleAddToCart" 
           :disabled="hasColors && !selectedColor"
            class="tooltip"
            >
@@ -96,8 +95,6 @@
         <delivery-info />
       </div>
     </div>
-
-
     <!-- description & tags -->
     <div class="product__description">
       <p class="body-text">{{ description }}</p>
@@ -129,6 +126,11 @@ import AppImage from "../core/AppImage.vue";
 //import store
 import { useUserStore } from '@/stores/user.store'
 
+
+
+import type { CartItem} from "@/types/cart";
+
+
 defineOptions({
   name: "ProductDetails",
 });
@@ -137,20 +139,46 @@ defineOptions({
 const user = useUserStore()
 
 //props
-type props = Omit<ProductData, 'isFavorite' | 'product_link' | "updated_at">
-const props = defineProps<props>()
+type ProductProps = Omit<ProductData, 'product_link' | "updated_at">
+const props = defineProps<ProductProps>()
 
 //selected color
 const selectedColor = ref<ProductColor | null>(null)
 
+//select color
+const hasColors = computed(() => (props.product_colors?.length ?? 0) > 0)
+
 // emit cart, favorite actions
 const emit = defineEmits<{
-  (e: 'addItemToCart', payload: {item: props; color: ProductColor | null}): void
+  (e: 'addItemToCart', payload: CartItem): void
   (e: 'toggleFavorite'):void
 }>()
 
-//select color
-const hasColors = computed(() => (props.product_colors?.length ?? 0) > 0)
+function handleAddToCart() {
+  console.log("hasColors:", hasColors.value, "selectedColor:", selectedColor.value)
+
+  if (hasColors.value && !selectedColor.value) {
+    alert("Please select a color before adding to cart")
+    return
+  }
+
+  const cartItem: CartItem = {
+    id: props.id  ?? '',
+    name: props.name ?? '',
+    price: props.price ?? 0,
+    price_sign: props.price_sign ?? '$',
+    image_link: props.image_link ?? "",
+    product_type: props.product_type ?? "",
+    api_featured_image: props.api_featured_image ?? "",
+    category: props.category ?? "",
+    selectedColor: selectedColor.value ?? undefined,
+    currency: props.currency ?? "",
+    quantity: 1,
+    colorKey: `${props.id}-${selectedColor.value?.hex_value ?? 'default'}`
+  }
+
+  emit("addItemToCart", cartItem)
+}
 
 // heart color toggle
 const isFavorite = computed(() => 

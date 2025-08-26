@@ -66,11 +66,11 @@ defineOptions({
 });
 
 
-const props = defineProps<Omit<ProductData,"isFavorite" |
-"product_link" | "tag_list" | 
+
+type props = Omit<ProductData, "product_link" | "tag_list" | 
 "created_at" | "updated_at" | 
-"product_colors"> & {isFavorite: boolean}>();
+"product_colors"> & {isFavorite: boolean}
 
-
+const props = defineProps<props>()
 </script>
 

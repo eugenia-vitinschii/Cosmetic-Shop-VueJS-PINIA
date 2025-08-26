@@ -21,7 +21,7 @@
             :api_featured_image="item.api_featured_image"
             :name="item.name"
             :product_type="item.product_type"
-            :price="item.price"
+            :price="Number(item.price)"
             :price_sign="item.price_sign"
             :category="item.category"
             :brand="item.brand"

@@ -19,7 +19,7 @@
           :api_featured_image="item.api_featured_image"
           :name="item.name"
           :product_type="item.product_type"
-          :price="item.price"
+          :price="Number(item.price)"
           :price_sign="item.price_sign"
           :category="item.category"
           :brand="item.brand"
@@ -66,8 +66,6 @@ defineOptions({
    name: "FavoriteView"
 })
 
-//import components
-
 
 //ref 
 let created = ref<boolean>(false);
@@ -75,13 +73,6 @@ let created = ref<boolean>(false);
 //import store
 const user = useUserStore();
 const { favorite } = storeToRefs(user)
-
-// import type { Product } from "@/models/product";
-
-//pinia actions, data , getters
- 
-
-
 
 //hooks
 onMounted(() => {

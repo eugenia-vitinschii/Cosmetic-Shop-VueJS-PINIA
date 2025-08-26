@@ -77,6 +77,6 @@ export class Product {
       this.product_colors = data.product_colors ?? [];
       this.sliderTags = data.sliderTags ?? [];
       this.selectedColor =  data.selectedColor;
-      this.colorKey = data.colorKey ?? `${data.id}-${data.selectedColor?.hex_value ?? "default"}`;
+      this.colorKey = data.colorKey;
    }
 }

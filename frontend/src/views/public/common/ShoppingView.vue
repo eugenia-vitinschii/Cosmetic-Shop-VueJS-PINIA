@@ -3,14 +3,14 @@
     <div class="container">
       <div class="cart__wrapper">
         <div class="cart__heading">
-          <p class="heading" v-if="user.cart.length >= 1">
-            Shopping cart ({{ user.cart.length }})
+          <p class="heading" v-if="cart.length > 0" >
+            Shopping cart ({{ cart.length }})
           </p>
-          <p class="heading" v-else>Cosul este gol {{ user.cart.length }}</p>
+          <p class="heading" v-else>Cosul este gol</p>
         </div>
-        <div class="cart__items">
+        <div class="cart__items" >
          <cart-item
-            v-for="item in user.cart"
+            v-for="item in cart"
             :key="item.id"
             :id="item.id"
             :name="item.name"
@@ -23,7 +23,8 @@
             :price_sign="item.price_sign"
             :currency="item.currency"
             :quantity="item.quantity"
-            @deleteItem="removeItemFromCart(item.id)"
+            :colorKey="item.colorKey"
+
          />
 
         </div>
@@ -42,17 +43,11 @@ defineOptions({
 import CartItem from "@/components/sections/CartItem.vue";
 
 //import store
-import { useCosmeticStore } from "@/stores/cosmetic.store";
+import { useUserStore } from "@/stores/user.store";
 import { storeToRefs } from "pinia";
 
+
 //pinia const
-const store = useCosmeticStore();
-const { user } = storeToRefs(store);
-const { removeItem, incrementQuantity} = store;
-
-// delete item from cart
-function removeItemFromCart(item){
-  removeItem(item)
-}
-
+const user = useUserStore();
+const {cart} = storeToRefs(user)
 </script>

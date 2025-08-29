@@ -1,15 +1,18 @@
 @use '../abstracts/variables' as *
    
-.footer
+.footer-decor
    margin-top: 50px
-   &__decor
-      height: 100px
-      background-image: url('@/assets/img/BORCELLE-footer.jpg')
-      background-repeat: repeat-x
-      background-size: contain
-
+   height: 30px
+   width: 100%
+   background:$color-accent
+   border-top-left-radius: 30px
+   border-top-right-radius: 30px
+.footer
+   background: $color-accent
    &__wrapper
       margin-top: 10px
+      a, p
+         color: #DACEC0
    &__info
       display: flex
       justify-content: space-between
@@ -26,16 +29,16 @@
       li
          margin-bottom: 10px
       a:hover
-         color: $green
+         color: $color-green
    &__link--item:last-child
       margin-right: 0px
    &__connect
       margin-top: 15px
       width: 300px
    &__connect--link
-      color: $gold
+      color: $color-accent
    &__connect--link:hover
-      color: $green
+      color: $color-green
    &__title
       p
          text-align: center

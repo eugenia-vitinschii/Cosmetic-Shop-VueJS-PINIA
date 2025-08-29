@@ -5,11 +5,10 @@
 .product-card
    display: flex
    flex-direction: column
-   border: 2px solid $white
    padding: $margin-sm
    position: relative
       a:hover
-         сolor: $gold
+         сolor: $color-accent
    .product-card:hover
       @include section-wrapper-item
       position: relative
@@ -24,9 +23,9 @@
       right: 8px
       background: transparent
       cursor: pointer
-      color: $brown
+      color: $color-text-secondary
    &__favorite.active
-      color: $red
+      color: $color-red
 
 
 
@@ -52,7 +51,7 @@
    &__button
       
       svg
-         fill: $red
+         fill: $color-red
       p
          text-align: center
 

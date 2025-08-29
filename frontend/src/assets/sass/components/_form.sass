@@ -20,17 +20,17 @@
          margin: 16px 0px
       input::placeholder
          font-size: 16px
-         color: $white
+         color: $color-white
          width: 100%
 
 input,
 textarea, select
-   border: 1px solid $brown
+   border: 1px solid $color-text-secondary
    @include input()
    @include transition()
 
 input::placeholder
-   color: $black
+   color: $color-black
 
 input:focus
-   border: 1px solid $gold
+   border: 1px solid $color-accent

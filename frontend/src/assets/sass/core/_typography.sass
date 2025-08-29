@@ -2,28 +2,28 @@
 @use '../abstracts/variables' as *
 
 .heading
-   font-family: "Dancing Script", cursive
-   @include font-style( $dark-brown, 10px, left)
+   font-family: "EB Garamond", serif
+   @include font-style( $color-text, 10px, left)
    @include font-size($heading, 40px)
 .subheading
-   @include font-style( $brown, 10px, left)
+   @include font-style( $color-text-secondary, 10px, left)
    @include font-size($subheading, 32px)
 
 .body-text, .body-text-light
    @include font-size($body-text,24px)
 .body-text
-   @include font-style( $brown, 10px, left)
+   @include font-style( $color-text-secondary, 10px, left)
 .body-text-light
-   @include font-style( $light-brown, 10px, left)
+   @include font-style( $color-text-secondary, 10px, left)
 .small-text
-   @include font-style( $light-brown, 10px, left)
+   @include font-style( $color-text-secondary, 10px, left)
    @include font-size($body-text-small, 24px)
 
  
 
 .menu-item
    @include font-size($subheading, 32px)
-   @include font-style( $ivory, 10px, left)
+   @include font-style( $color-bg-base, 10px, left)
    margin: 0px
 
 // medium devices
@@ -62,8 +62,8 @@
    position: absolute
    top: 30px
    padding: 3px
-   background: $gold
-   color: $white
+   background: $color-accent
+   color: $color-white
    z-index: 4
    font-size: 10px
    @include transition()

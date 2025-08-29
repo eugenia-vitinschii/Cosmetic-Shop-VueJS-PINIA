@@ -46,8 +46,8 @@
                         {{ option }}
                       </option>
                     </select>
-                    <span v-if="status.isSaving" >Saving...!!!!</span>
-                    <span v-else-if="status.isSaved">Saved!</span>
+                    <!-- <span v-if="status.isSaving" >Saving...!!!!</span>
+                    <span v-else-if="status.isSaved">Saved!</span> -->
                   </div>
                 </td>
                 <td>
@@ -146,10 +146,9 @@ onMounted(() => {
   })
 });
 
-//filter logic
 const filters = ref({ brand: '', category: '', type: '', query: ''})
 
-//filer function
+//filter function
 const filteredProducts = computed(() => {
   const q = filters.value.query.trim().toLowerCase();
 

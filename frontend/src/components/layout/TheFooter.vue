@@ -1,4 +1,9 @@
 <template>
+  <div>
+    <div class="footer-decor">
+
+    </div>
+  </div>
   <footer class="footer">
     <div class="footer__decor">
     </div>
@@ -60,7 +65,7 @@
         <div class="footer__title">
           <div class="footer__title--img">
             <router-link to="/"> 
-               <img src="@/assets/img/BORCELLE.jpg" alt="img">
+               <img src="@/assets/img/BORCELLE-footer.jpg" alt="img">
               </router-link>
              
           </div>

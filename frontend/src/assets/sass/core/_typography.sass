@@ -19,8 +19,12 @@
    @include font-style( $color-text-secondary, 10px, left)
    @include font-size($body-text-small, 24px)
 
- 
-
+.link
+   @include transition()
+   &:hover
+      color: $color-accent-hover
+   &:active
+      color: $color-text-secondary
 .menu-item
    @include font-size($subheading, 32px)
    @include font-style( $color-bg-base, 10px, left)

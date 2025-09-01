@@ -24,7 +24,7 @@
     <div class="product-card__info">
       <!-- product-card name -->
       <div class="product-card__info-name">
-        <router-link :to="'/product/' + id" class="body-text">
+        <router-link :to="'/product/' + id" class="body-text link">
           {{ name }} 
         </router-link>
       </div>
@@ -35,10 +35,10 @@
       <!-- product-card description  -->
       <div class="product-card__info-description">
          <p class="small-text">{{brand}}</p>
-          <router-link :to="'/product-type/' + product_type" class="small-text">
+          <router-link :to="'/product-type/' + product_type" class="small-text link">
             {{ product_type }}
           </router-link>
-          <router-link :to="'/category/' + category" class="small-text" v-if="category">
+          <router-link :to="'/category/' + category" class="small-text link" v-if="category">
             /{{ category }}</router-link
           >
         </div>

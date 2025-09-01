@@ -33,6 +33,18 @@
    transition: $transition
    border-radius: $border-radius
 
+// === Shadow === //
+@mixin shadow()
+   -webkit-box-shadow: $shadow
+   -moz-box-shadow: $shadow
+   box-shadow: $shadow
+
+@mixin shadow-hover()
+   -webkit-box-shadow: $shadow-hover
+   -moz-box-shadow: $shadow-hover
+   box-shadow: $shadow-hover
+
+
 //img style
 @mixin img-style
    width: 100%
@@ -41,30 +53,18 @@
    margin: 3px
    overflow: hidden
    background: $color-white
-   border: 1px solid $color-text-secondary
    border-radius: $border-radius
    object-fit: cover
    display: block
    background-size: contain
-   -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-   -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-   box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
+   @include shadow()
+   @include transition() 
+   
 
 //hover img
 @mixin img-style-hover
-   -webkit-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
-   -moz-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
-   box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
-
-@mixin shadow()
-   -webkit-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-   -moz-box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-   box-shadow: 10px 12px 9px -3px rgba(71,61,49,0.22)
-
-@mixin shadow-hover()
-   -webkit-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
-   -moz-box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
-   box-shadow: 10px 12px 9px -3px rgba(0,0,0,0.75)
+   @include shadow-hover()
+   
 
 // input
 @mixin input()

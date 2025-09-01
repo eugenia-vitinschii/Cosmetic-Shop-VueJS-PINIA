@@ -1,6 +1,6 @@
 <template>
   <div class="brand__item">
-    <router-link :to="'/brand/' + brand" class="body-text-light">
+    <router-link :to="'/brand/' + brand" class="body-text-light link">
       {{ brand }}
     </router-link>
   </div>

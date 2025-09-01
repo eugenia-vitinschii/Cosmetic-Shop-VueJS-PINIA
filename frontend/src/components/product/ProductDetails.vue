@@ -6,10 +6,10 @@
       <div class="product__details">
         <!-- brand /category -->
         <div class="product__brand">
-          <router-link :to="'/brand/' + brand" class="body-text">
+          <router-link :to="'/brand/' + brand" class="body-text link">
             {{ brand }}
           </router-link>
-          <router-link :to="'/category/' + category" class="body-text-light">
+          <router-link :to="'/category/' + category" class="body-text-light  link">
             /{{ category }}
           </router-link>
         </div>
@@ -18,7 +18,7 @@
         </div>
         <div class="product__type">
           <!-- product_type -->
-          <router-link :to="'/product-type/' + product_type" class="small-text">
+          <router-link :to="'/product-type/' + product_type" class="small-text  link">
             {{ product_type }}
           </router-link>
         </div>

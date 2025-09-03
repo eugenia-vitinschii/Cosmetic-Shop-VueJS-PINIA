@@ -1,35 +1,35 @@
 <template>
-  <div class="brand">
+  <div class="brand-details">
     <div class="container">
-      <div class="brand__wrapper" v-if="brand">
-        <div class="brand__nav">
+      <div class="brand-details__wrapper" v-if="brand">
+        <div class="brand-details__nav">
            <button-back />
         <router-links :base="'/brand'" :sub="brand" />
         </div>
         <!-- brand title -->
-        <div class="brand__title">
+        <div class="brand-details__title">
           <p class="heading">Brand: {{ brand }}</p>
           <p class="small-text">
              {{ filtered(brand).length }}  products were found</p>
         </div>
         <!-- brand items -->
-        <div class="brand__items products-wrapper">
+        <div class="products-wrapper">
           <product-card
             v-for="item in filtered(brand)"
-          :key="item.id"
-          :id="item.id"
-          :image_link="item.image_link"
-          :api_featured_image="item.api_featured_image"
-          :name="item.name"
-          :product_type="item.product_type"
-          :price="Number(item.price)"
-          :price_sign="item.price_sign"
-          :category="item.category"
-          :brand="item.brand"
-          :rating="item.rating"
-          :currency="item.currency"
-          :isFavorite="item.id ? user.isFavorite(item.id) :false"
-          @toggleFavorite="user.toggleFavorite(item)"
+            :key="item.id"
+            :id="item.id"
+            :image_link="item.image_link"
+            :api_featured_image="item.api_featured_image"
+            :name="item.name"
+            :product_type="item.product_type"
+            :price="Number(item.price)"
+            :price_sign="item.price_sign"
+            :category="item.category"
+            :brand="item.brand"
+            :rating="item.rating"
+            :currency="item.currency"
+            :isFavorite="item.id ? user.isFavorite(item.id) :false"
+            @toggleFavorite="user.toggleFavorite(item)"
           />
         </div>
       </div>

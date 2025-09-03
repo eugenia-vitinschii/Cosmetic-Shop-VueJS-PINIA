@@ -1,6 +1,5 @@
 <template>
   <div class="brand">
-    <the-decor/>
     <div class="container">
       <div class="brand__wrapper">
         <div class="brand__nav">
@@ -25,7 +24,6 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 //components
-import TheDecor from "@/components/sections/TheDecor.vue"
 import ButtonBack from "@/components/sections/ButtonBack.vue";
 import ProductTypeLink from "@/components/ui/ProductTypeLink.vue";
 

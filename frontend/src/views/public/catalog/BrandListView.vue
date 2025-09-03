@@ -1,7 +1,6 @@
 <template>
 <!-- all brands -->
   <div class="brand">
-    <the-decor/>
     <div class="container">
       <div class="brand__wrapper">
         <!-- brand nav -->
@@ -29,7 +28,6 @@
 import { ref, onMounted} from "vue";
 
 //components
-import TheDecor from "@/components/sections/TheDecor.vue"
 import ButtonBack from "@/components/sections/ButtonBack.vue";
 import BrandLink from "@/components/ui/BrandLink.vue";
 

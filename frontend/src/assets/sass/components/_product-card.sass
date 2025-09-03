@@ -14,8 +14,10 @@
       position: relative
    &__image-wrapper
       @include img-style
-      height: 300px
+      
       img
+         aspect-ratio: 1 / 1
+         object-fit: contain
          width: 100%
    &__image-wrapper:hover
       @include img-style-hover

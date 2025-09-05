@@ -2,10 +2,16 @@
   <div class="category">
     <div class="container">
       <div class="category__wrapper">
-         <div class="category__nav brand__nav">
-            <button-back />
-            <router-links :items="'/category'" :item="category" />
-         </div>
+         <div class="category__nav page-header">
+          <back-button/>
+          <the-breadcrumbs
+            :items="[
+              {label: 'home', to: '/'},
+              {label: 'categories', to: '/category'},
+            ]"
+            :current="category"
+          />
+        </div>
         <div class="category__title">
           <p class="heading">Category: {{ category }}</p>
           <p class="small-text">{{  cosmetic.fileredByCategory(category).length }}</p>
@@ -40,8 +46,8 @@ import { onMounted, watch,  computed } from "vue";
 import { useRoute } from "vue-router";
 
 //componets
-import ButtonBack from "@/components/sections/ButtonBack.vue";
-import RouterLinks from "@/components/sections/RouterLinks.vue";
+import TheBreadcrumbs from "@/components/core/Breadcrumbs.vue"
+import BackButton from "@/components/core/BackButton.vue";
 import ProductCard from "@/components/product/ProductCard.vue";
 
 //pinia

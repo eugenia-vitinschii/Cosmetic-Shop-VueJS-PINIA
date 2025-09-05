@@ -2,9 +2,15 @@
   <div class="brand-details">
     <div class="container">
       <div class="brand-details__wrapper" v-if="brand">
-        <div class="brand-details__nav">
-           <button-back />
-        <router-links :base="'/brand'" :sub="brand" />
+        <div class="brand-details__nav page-header">
+          <back-button/>
+          <the-breadcrumbs
+            :items="[
+              {label: 'home', to: '/'},
+              {label: 'brands', to: '/brand'},
+            ]"
+            :current="brand"
+          />
         </div>
         <!-- brand title -->
         <div class="brand-details__title">
@@ -45,13 +51,15 @@ import { onMounted, watch, computed} from "vue";
 import { useRoute } from "vue-router";
 
 //componets
-import ButtonBack from "@/components/sections/ButtonBack.vue";
-import RouterLinks from "@/components/sections/RouterLinks.vue";
+import TheBreadcrumbs from "@/components/core/Breadcrumbs.vue"
+import BackButton from "@/components/core/BackButton.vue";
 import ProductCard from "@/components/product/ProductCard.vue";
+
 
 //pinia
 import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { useUserStore } from "@/stores/user.store";
+
 
 
 defineOptions({

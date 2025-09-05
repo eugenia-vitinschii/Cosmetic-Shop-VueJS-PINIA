@@ -4,8 +4,14 @@
     <div class="container">
       <div class="brand__wrapper">
         <!-- brand nav -->
-        <div class="brand__nav">
-          <button-back/>
+        <div class="brand__nav page-header">
+          <back-button/>
+          <the-breadcrumbs
+            :items="[
+              {label: 'home', to: '/'}
+            ]"
+             :current="'brands'"
+          />
         </div>
         <!-- brands items -->
         <div class="brand__items" v-if="created">
@@ -28,7 +34,8 @@
 import { ref, onMounted} from "vue";
 
 //components
-import ButtonBack from "@/components/sections/ButtonBack.vue";
+import BackButton from "@/components/core/BackButton.vue";
+import TheBreadcrumbs from "@/components/core/Breadcrumbs.vue"
 import BrandLink from "@/components/ui/BrandLink.vue";
 
 

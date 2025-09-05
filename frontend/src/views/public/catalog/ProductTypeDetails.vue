@@ -2,9 +2,15 @@
   <div class="type">
     <div class="container">
       <div class="type__wrapper">
-        <div class="type__nav brand__nav">
-          <button-back />
-          <router-links :items="'/product-type'" :item="product_type" />
+        <div class="type__nav page-header">
+          <back-button/>
+          <the-breadcrumbs
+            :items="[
+              {label: 'home', to: '/'},
+              {label: 'types', to: '/product-type'},
+            ]"
+            :current="product_type"
+          />
         </div>
         <div class="type_title">
           <p class="heading">The {{ product_type }}</p>
@@ -42,8 +48,8 @@ import { ref, onMounted, onUnmounted, computed } from "vue";
 import { useRoute } from "vue-router";
 
 //componets
-import ButtonBack from "@/components/sections/ButtonBack.vue";
-import RouterLinks from "@/components/sections/RouterLinks.vue";
+import TheBreadcrumbs from "@/components/core/Breadcrumbs.vue"
+import BackButton from "@/components/core/BackButton.vue";
 import ProductCard from "@/components/product/ProductCard.vue";
 
 //pinia

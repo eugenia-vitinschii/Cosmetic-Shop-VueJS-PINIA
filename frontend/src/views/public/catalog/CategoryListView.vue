@@ -2,8 +2,14 @@
   <div class="brand">
     <div class="container">
       <div class="brand__wrapper">
-        <div class="brand__nav">
-          <button-back/>
+        <div class="brand__nav page-header">
+          <back-button/>
+          <the-breadcrumbs
+            :items="[
+              {label: 'home', to: '/'},
+            ]"
+            :current="'categories'"
+          />
         </div>
         <div class="brand__items">
          <category-type-link
@@ -24,7 +30,8 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 //components
-import ButtonBack from "@/components/sections/ButtonBack.vue";
+import TheBreadcrumbs from "@/components/core/Breadcrumbs.vue"
+import BackButton from "@/components/core/BackButton.vue";
 import CategoryTypeLink from "@/components/ui/CategoryTypeLink.vue";
 
 defineOptions({

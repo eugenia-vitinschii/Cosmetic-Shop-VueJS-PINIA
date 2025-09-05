@@ -8,7 +8,7 @@
         height="24px"
         viewBox="0 -960 960 960"
         width="24px"
-        fill="#e3e3e3"
+        fill="#FAF8F6"
       >
         <path
           d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143Z"
@@ -23,15 +23,12 @@
         height="24px"
         viewBox="0 -960 960 960"
         width="24px"
-        fill="#ffc107"
+        fill="#A44F05"
       >
         <path
           d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143Z"
         />
       </svg>
-   </div>
-   <div class="star__item" v-if="hasRating">
-      ({{ ratingStar }})
    </div>
 </div>
 </template>

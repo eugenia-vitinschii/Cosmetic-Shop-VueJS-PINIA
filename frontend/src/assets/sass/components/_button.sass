@@ -52,7 +52,9 @@
 .cart-button:active
    @include button-style($color-black, #fff)
 
-
+.cart-button.disabled
+   background: #ccc
+   cursor: not-allowed
 
 .load-more
    background: $color-bg-base

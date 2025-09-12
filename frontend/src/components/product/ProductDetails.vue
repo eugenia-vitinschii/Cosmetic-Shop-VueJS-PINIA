@@ -61,11 +61,16 @@
           <!-- add to card button -->
           <button 
           @click="handleAddToCart" 
-          :disabled="hasColors && !selectedColor"
-           class=" cart-button"
+          :class="['cart-button', {disabled : hasColors && !selectedColor}]"
            >
       add to cart
           </button>
+        
+        </div>
+        <div class="product__message">
+            <p class="small-text" v-show="hasColors && !selectedColor">
+            Please select a color
+          </p>
         </div>
         <div class="product__hex">
           <p class="small-text" v-if="selectedColor">

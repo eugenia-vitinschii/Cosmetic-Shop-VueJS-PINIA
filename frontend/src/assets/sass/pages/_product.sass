@@ -38,6 +38,7 @@
             margin-top: 20px
    &__type
    &__media //product img
+      position: relative
       justify-self: center  
       margin: 0px 10px
    &__img
@@ -49,7 +50,15 @@
          width: 100%
    &__img:hover
       @include img-style-hover
-
+   &__favorite 
+      position: absolute
+      top: 8px
+      right: 8px
+      background: transparent
+      cursor: pointer
+      color: $color-text-secondary
+   &__favorite.active
+      color: $color-red
    &__info //price colors
       text-align: center
 

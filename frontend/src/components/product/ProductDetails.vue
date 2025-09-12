@@ -39,6 +39,14 @@
         fallback="@/assets/img/no-img.jpg"
         alt="Img"
         />
+              <button 
+        class="product__favorite"
+        :class="{ active: isFavorite}"
+        @click="$emit('toggleFavorite')" 
+        aria-label="Add to favorite"
+      > 
+<svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="root___Z1kvz animated___FWX6h filled___PLueY"><mask id="animatedHeartCircleMask" maskUnits="userSpaceOnUse" x="-5" y="-5" width="34" height="34" style="mask-type: alpha;"><circle cx="12" cy="12" r="12" fill="white"></circle></mask><g mask="url(#animatedHeartCircleMask)"><g class="heartWrapper___nT_tl" x="12" y="12"><path class="heart___RwxGZ" d="M12.5383 19.7993C12.2329 20.0676 11.7679 20.0668 11.4635 19.7974L10.84 19.2455C6.72 15.6133 4 13.2178 4 10.2778C4 7.88222 5.936 6 8.4 6C9.792 6 11.128 6.63 12 7.62555C12.872 6.63 14.208 6 15.6 6C18.064 6 20 7.88222 20 10.2778C20 13.2178 17.28 15.6133 13.16 19.2533L12.5383 19.7993Z" fill="currentColor"></path></g><circle cx="12" cy="12" r="6.6" class="circle___sJ2hy"></circle><g class="splashesWrapper___fdtqJ"><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g><g class="splash___yEdST"><rect x="11.5" y="10" height="3" width="1" fill="currentColor" rx="1" ry="0.5" class="splashRect___fO39Z"></rect></g></g></g></svg>
+      </button>
         </div>
       </div>
       <!-- Right column - prices, colors, actions  -->

@@ -41,7 +41,17 @@
    svg
       fill: $color-white
 
- 
+
+.cart-button
+   transition: $transition 
+   @include button-style($color-white, $color-red)
+
+.cart-button:hover
+   @include button-style($color-text-secondary, #fff)
+
+.cart-button:active
+   @include button-style($color-black, #fff)
+
 
 
 .load-more

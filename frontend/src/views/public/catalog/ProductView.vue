@@ -2,8 +2,16 @@
    <!-- product page  -->
   <div class="product">
     <div class="container">
-      <div class="product__wrapper" >
-         <button-back />
+      <div class="product__wrapper">
+         <div class=" page-header" v-if="item">
+          <back-button/>
+          <the-breadcrumbs
+            :items="[
+              {label: 'home', to: '/'},
+            ]"
+             :current="item.name ?? ''"
+          />
+        </div>
          <div class="product__cosmetics"  v-if="item">
           <!-- product cosmetics -->
             <product-details
@@ -40,7 +48,8 @@
 import {ref,  onMounted, computed} from "vue";
 
 // components
-import ButtonBack from "@/components/sections/ButtonBack.vue";
+import TheBreadcrumbs from "@/components/core/Breadcrumbs.vue"
+import BackButton from "@/components/core/BackButton.vue";
 import ProductDetails from "@/components/product/ProductDetails.vue";
 
 //pinia & router
@@ -73,6 +82,7 @@ onMounted(async() => {
 });
 
 import type { CartItem} from "@/types/cart";
+
 
 //push to cart
 function pushToCart(item: CartItem) {

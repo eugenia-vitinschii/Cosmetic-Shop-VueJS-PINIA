@@ -4,31 +4,58 @@
 .product // product page :id
    &__wrapper
    &__item
+      margin-top: 20px
    &__layout //top blocks
-      display: flex
-      justify-content: space-between
-
+      display: grid
+      grid-template-columns:  repeat(3, 1fr)
+      gap: 10px
+      @media (max-width: 1023px) and (min-width: 768px)  
+         grid-template-columns:  repeat(2, 1fr)
+         .product__details
+            grid-column: 1 / span 2
+            grid-row: 1  
+         .product__media
+            grid-column: 1 
+            grid-row: 2
+         .product__info
+            grid-column: 2
+            grid-row: 2
+      @media (max-width: 767px) 
+         grid-template-columns:1fr
+         .product__details, .product__media, .product__info
+         grid-column: auto
+         grid-row: auto
+  
    &__details //brand name product type
-      width: 33%
  
    &__brand
    &__name
+      display: flex
+      align-items: center
+      justify-content: space-between
+      a
+         svg
+            margin-top: 20px
    &__type
    &__media //product img
-      width: 33%
-      padding-right: 20px      
+      justify-self: center  
+      margin: 0px 10px
    &__img
       @include img-style
       transition: $transition
       img
+         aspect-ratio: 1 / 1
+         object-fit: contain
          width: 100%
    &__img:hover
       @include img-style-hover
 
    &__info //price colors
-      width: 33%
       text-align: center
+
    &__price
+      display: flex
+      justify-content: space-between
       p
          text-align: center
 

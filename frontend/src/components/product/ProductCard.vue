@@ -34,7 +34,10 @@
       </div>
       <!-- product-card description  -->
       <div class="product-card__info-description">
-         <p class="small-text">{{brand}}</p>
+          <router-link :to="'/brand/' + brand" class="small-text link">
+            {{brand }}
+          </router-link>
+          <br>
           <router-link :to="'/product-type/' + product_type" class="small-text link">
             {{ product_type }}
           </router-link>

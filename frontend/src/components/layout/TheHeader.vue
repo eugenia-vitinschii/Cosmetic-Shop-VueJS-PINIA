@@ -91,7 +91,7 @@
         </div>
         <!-- header nav -->
         <nav v-bind:class="{ active: showNav  }">
-          <button  @click="showNav = !showNav ">
+          <button  @click="showNav = !showNav " class="header__nav--toogle">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
           </button>
           <ul class="header__top">
@@ -108,125 +108,9 @@
             </li>
           </ul>
             <!-- category -->
-            <div class="dropdown">
-              <!-- button -->
-              <div class="dropdown__button">
-                 <router-link to="/category" class="header__link">Category</router-link>
-              <button @click="showDropdown = !showDropdown" v-bind:class="{ active: showDropdown  }"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg></button> 
-              </div>
-              <!-- category items -->
-              <div class="header__bottom dropdown__menu"  v-bind:class="{ active: showDropdown  }">
-                <div class="dropdown__menu--items">
-                  <!-- eyes -->
-                  <ul class="dropdown__menu--item">
-                    <li>
-                      <router-link to="/category/liquid" class="header__link">Liquid</router-link>
-                    </li>
-                    <li>
-                      <router-link to="/category/palette" class="header__link"> Palette</router-link>
-                    </li>
-                    <li>
-                      <router-link to="/category/pencil" class="header__link">Pencil</router-link>
-                    </li>
-                  </ul>
-                <!-- lips -->
-                <ul class="dropdown__menu--item">
-                  <li>
-                    <router-link to="/category/lipstick" class="header__link">Lipstick</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/category/lip_gloss" class="header__link">
-                      Lip gloss
-                    </router-link>
-                  </li>
-                </ul>
-                <!-- face -->
-                <ul class="dropdown__menu--item">
-                  <li>
-                    <router-link to="/category/powder" class="header__link">Powder</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/category/concealer" class="header__link"
-                      >Concealer</router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link to="/category/highlighter" class="header__link"
-                      >Highlighter</router-link
-                    >
-                  </li>
-                </ul>
-                <!-- skin -->
-              <ul class="dropdown__menu--item">
-                <li>
-                  <router-link to="/category/bb_cc" class="header__link">BB_CC</router-link>
-                </li>
-                <li>
-                  <router-link to="/category/contour" class="header__link">Contour</router-link>
-                </li>
-                <li>
-                  <router-link to="/category/cream" class="header__link">Cream</router-link>
-                </li>
-                <li>
-                  <router-link to="/category/mineral" class="header__link">Mineral</router-link>
-                </li>
-                <li>
-                  <router-link to="/category/gel" class="header__link">Gel</router-link>
-                </li>
-                </ul>
-            </div>
-            </div>
-            </div>
+            <dropdown-menu @toggle="toogleDropdown('categories')" :isOpen="openDropdown === 'categories'" title="Category" to="/category" :groups="categories"/>
             <!-- type -->
-            <div class="dropdown">
-               <div class="dropdown__button">
-                 <router-link to="/product-type" class="header__link">Types</router-link>
-              <button @click="showDropdown = !showDropdown" v-bind:class="{ active: showDropdown  }"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg></button> 
-              </div>
-              <div class="header__bottom dropdown__menu">
-                <!-- make up -->
-                <div class="dropdown__menu--items">
-                  <ul class="dropdown__menu--item">
-                <li>
-                  <router-link to="/product-type/eyeshadow" class="header__link"
-                    >Eyeshadow</router-link
-                  >
-                </li>
-                 <li>
-                  <router-link to="/product-type/lipstick" class="header__link"
-                    >Lipstick
-                  </router-link>
-                </li>   
-                <li>
-                  <router-link to="/product-type/eyeliner" class="header__link"
-                    >Eyeliner</router-link
-                  >
-                </li>
-                  </ul>
-
-                  <ul class="dropdown__menu--item">
-                             <li>
-                  <router-link to="/product-type/foundation" class="header__link"
-                    >Foundation
-                  </router-link>
-                </li>
-               
-
-                <li>
-                  <router-link to="/product-type/blush" class="header__link">Blush</router-link>
-                </li>
-                <li>
-                  <router-link to="/product-type/nail_polish" class="header__link"
-                    >Nail Polish
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/product-type/bronzer" class="header__link">Bronzer</router-link>
-                </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+           <dropdown-menu @toggle="toogleDropdown('types')" :isOpen="openDropdown === 'types'" title="Types" to="/product-type" :groups="types"/>
         </nav>
       </div>
     </div>
@@ -238,9 +122,8 @@
 //vue
 import { ref } from "vue";
 
-//import store
-// import { useCosmeticStore } from "@/stores/cosmetic.store";
-// import { storeToRefs } from "pinia";
+//components
+import DropdownMenu from "../core/DropdownMenu.vue";
 
 //component settings
 defineOptions({
@@ -250,10 +133,78 @@ defineOptions({
 
 //variables
 const showNav = ref<boolean>(false);
-const showDropdown= ref<boolean>(false);
 
-//pinia const
-// const store = useCosmeticStore();
-// const { user } = storeToRefs(store);
+//categories
+const categories = [
+  {
+    title: "Eyes",
+    items: [
+      {name: 'Palette', link: '/category/palette'},
+      {name: 'Pencil', link: '/category/pencil'},
+      {name: 'Gel',  link: '/category/gel'},
+    ]
+  },
+  {
+    title: "Lips",
+    items: [
+      {name: "Lipstick", link: '/category/lipstick'},
+      {name: 'Lip gloss', link: '/category/lip_gloss'}
+    ]
+  },
+  {
+    title: "Face",
+    items: [
+      {name: 'Powder',  link: '/category/powder'},
+      {name: 'Liquid', link: '/category/liquid'},
+      {name: 'Highlighter', link: '/category/highlighter'},
+      {name: "Concealer", link: '/category/concealer'}
+    ]
+  },
+  {
+    title: "Skin",
+    items: [
+      { name: 'BB CC',  link: '/category/bb_cc'},
+      {name: 'Contour',  link: '/category/contour'},
+      {name: 'Cream',  link: '/category/cream'},
+      {name: 'Mineral',  link: '/category/mineral'},
+    ]
+  }
+]
+//types
+const types = [
+  {
+    title: "Eyes",
+    items: [
+      {name: 'Eyeshadow', link: '/product-type/eyeshadow'},
+      {name: 'Eyeliner', link: '/product-type/eyeliner'},
+    ]
+  },
+    {
+    title: "Lips",
+    items: [
+      {name: 'Lipstick', link: '/product-type/lipstick'}
+    ]
+  },
+    {
+    title: "Face",
+    items: [
+      {name: 'Blush', link: '/product-type/blush'},
+      {name: 'Foundation', link: '/product-type/foundation'},
+      {name: "Bronzer", link: '/product-type/bronzer'}
+    ]
+  },
+  {
+    title: "Nails",
+    items: [
+      {name: 'Nail Polish', link: '/product-type/nail_polish'}
+    ]
+  }
+]
 
+
+const openDropdown = ref<string |null>(null);
+
+function toogleDropdown(name: string){
+  openDropdown.value = openDropdown.value === name ? null : name
+}
 </script>

@@ -2,11 +2,15 @@
 
 .header
    width: 100%
+   padding: 10px
+   padding-top: calc(10px + env(save-area-inset-top))
+   padding-left: calc(10px + env(save-area-inset-left))
+   padding-right: calc(10px + env(save-area-inset-right))
    nav
       display: flex
       align-items: center
-      button
-         display: none
+   &__button-toggle, &__nav--toogle
+      display: none
    &__data
       display: flex
       align-items: center
@@ -50,9 +54,9 @@
       text-align: center
       cursor: pointer
       font-size: $body-text
-      color: $color-white
-   &__link:hover
       color: $color-accent
+   &__link:hover
+      color: $color-accent-hover
 
    &__link:hover
 
@@ -72,62 +76,59 @@
 // dropdown menu
 .dropdown
    position: relative
-   display: inline-block
+   top: -3px
    &__button
-      button
-         display: none
+      svg
+         fill: $color-accent 
+          margin-left: -20px
+      svg:hover
+         fill: $color-accent-hover     
+   &__tooggle
+      transition: $transition    
+   &__toggle.active
+      transform: rotate(180deg)
+      svg 
+         fill: $color-accent-hover    
    &__menu
-      display: none
-      position: fixed
+      position: absolute
       overflow: hidden
       z-index: 5
+      top: 100%
       left: 0
       right: 0
-      border-top: 1px solid $color-accent
       background: $color-bg-base
-      a
-         color: $color-accent
-      a:hover
-         color: $color-accent
+      margin-left: -5px
+      width: 100%
    &__menu--items
-      display: flex
-      flex-direction: row
-      justify-content: flex-start
-      max-width: 1400px
       margin: 0px auto
-      padding: 0px 10px
+      padding: 0px 5px
+      height: 100%
+      ul
+         display: block
+      a:hover
+         color: $color-accent-hover
    &__menu--item
+
 
 .dropdown:hover
    color: $color-accent
 
-.dropdown:hover .dropdown__menu
-   display: block
 
 
 //small devices
-@media (max-width: 470px)
+@media (max-width: 700px)
    .dropdown:hover .dropdown__menu
       display: none
    .header-nav
       display: block
    .dropdown
-      position: inherit
       width: 100%
       overflow: scroll
       &__button
          display: flex
-      button.active
-         svg
-            fill: blue
-      button
-         display: block
-         svg
-            fill: red
       p
          text-align: left
       &__menu
-         position: inherit
          flex-direction: column  
       &__menu.active
          display: block   

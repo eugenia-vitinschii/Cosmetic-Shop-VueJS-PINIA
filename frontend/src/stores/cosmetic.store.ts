@@ -31,11 +31,11 @@ export const useCosmeticStore = defineStore("cosmetic", () => {
   };
 
   const allBrands = computed(() => {
-    return [...new Set(products.value.map((item) => item.brand))]
+    return [...new Set(products.value.map((item) => item.brand).filter(Boolean))]
   });
 
   const allProductTypes = computed(()  => {
-    return [...new Set(products.value.map((item) => item.product_type))]
+    return [...new Set(products.value.map((item) => item.product_type).filter(Boolean))]
   });
 
   const allCategory = computed(() => {

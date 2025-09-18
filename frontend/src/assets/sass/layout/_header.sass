@@ -41,10 +41,11 @@
       display: flex
       align-items: center
       svg
-         fill: $color-black
+         transition: $transition
+         fill: $color-accent
          margin-left: 7px
       svg:hover
-         fill: $color-text-secondary
+         fill: $color-accent-hover
    &__top
       display: flex
       flex-direction: row
@@ -67,8 +68,7 @@
       &__data--text
          display: none
 
-.header-fav, .header-cart
-//hidden nav button
+
 
 .header-nav
    display: none
@@ -113,30 +113,10 @@
 .dropdown:hover
    color: $color-accent
 
-
-
 //small devices
 @media (max-width: 700px)
-   .dropdown:hover .dropdown__menu
-      display: none
    .header-nav
       display: block
-   .dropdown
-      width: 100%
-      overflow: scroll
-      &__button
-         display: flex
-      p
-         text-align: left
-      &__menu
-         flex-direction: column  
-      &__menu.active
-         display: block   
-      &__menu--items
-         flex-direction: column
-         a,li
-            text-align: left
-            margin: 0px
    .header   
       nav
          display: none

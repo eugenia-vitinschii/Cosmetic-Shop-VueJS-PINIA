@@ -73,22 +73,22 @@
       overflow: scroll
    &__color-option
       display: block
-      border: 2px solid transparent
+      border: 1px solid $color-white
       width: 100%
       padding: 10px
       margin-top: 3px
+      border-radius: $border-radius
       span
          background: $color-bg-base
          padding: 3px
    &__color-option:hover,  
       &__color-option:focus-visible
-      border-color: $color-text
-      @include  shadow()
+      border: 1px solid red
    &__color-preview
       cursor: pointer
-      border: 1px solid $color-text-secondary
+      border: 1px solid red
    &__color-preview:hover
-      border: 1px solid $color-bg-base
+      border: 1px solid red
    &__bottom
       display: inline
       margin-right: 10px

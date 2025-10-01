@@ -4,14 +4,35 @@
 .button
    @include button-style($color-white, $color-text-secondary)
 
-.edit svg
-   transition: $transition 
-   fill: $color-green
-   
+.counter-button
+   display: flex
+   align-items: center
+   justify-content: space-between
+   position: relative
+   background: #b99976ff
+   transition: $transition
+   width: 30px
+   height: 30px
+   border-radius: 50%
+   cursor: pointer
+   &:hover
+      background: $color-accent
+   svg
+      width: 20px
+      height: 20px
+      fill: $color-white
 
-.delete svg
-   transition: $transition 
-   fill: $color-red
+.edit 
+   svg
+      transition: $transition 
+      fill: $color-green
+
+.delete 
+   svg
+      transition: $transition 
+      fill: $color-red
+      width: 30px
+      height: 30px
    
 .edit svg:hover, .delete svg:hover
    fill: $color-black

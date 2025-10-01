@@ -34,3 +34,37 @@ input::placeholder
 
 input:focus
    border: 1px solid $color-accent
+
+
+.custom-checkbox
+   position: relative
+   input
+      display: none
+   label
+      position: relative
+      display: inline-flex
+      align-items: center
+      gap: 8px
+      cursor: pointer
+      user-select: none
+      &::before 
+         content: " "
+         display: inline-block
+         width: 20px
+         height: 20px
+         border: $border
+         border-radius: 4px
+         background: $color-bg-base
+         transition: $transition
+      &::after
+         content: "✔"
+         position: absolute
+         top: 10px
+         left: 2px
+         width: 6px
+         height: 12px
+         border-width: 0px 2px 2px 0
+         opacity: 0
+         transition: $transition
+   input:checked + label::after
+      opacity:  1

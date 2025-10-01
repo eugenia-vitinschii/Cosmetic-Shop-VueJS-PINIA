@@ -24,7 +24,7 @@
             :link="'/'"
           />
         <div class="cart-controls">
-          <div class="cart-controls__select">
+          <div class="cart-controls__select custom-checkbox">
               <input type="checkbox"  id="select-all">
               <label class="subheading" for="select-all">Select all</label>
           </div>

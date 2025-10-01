@@ -56,7 +56,11 @@
    @include shadow()
    @include transition() 
    
-
+@mixin img
+   aspect-ratio: 1 / 1
+   object-fit: contain
+   width: 100%
+   
 //hover img
 @mixin img-style-hover
    @include shadow-hover()

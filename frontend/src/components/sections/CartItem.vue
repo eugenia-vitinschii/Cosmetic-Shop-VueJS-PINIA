@@ -1,6 +1,10 @@
 <template>
   <div class="cart-item">
     <div class="cart-item__media">
+      <div class="custom-checkbox">
+        <input type="checkbox" :id="'select-' + props.colorKey">
+        <label class="subheading" :for="'select-' + props.colorKey"></label>
+          </div>
       <router-link :to="'/product/' + id">
         <app-image :src="image_link" :backup="api_featured_image" fallback="@/assets/img/no-img.jpg" alt="Img" />
       </router-link>

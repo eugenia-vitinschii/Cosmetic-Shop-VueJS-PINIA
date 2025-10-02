@@ -9,6 +9,7 @@
    &:hover
       @include section-wrapper-item
    &__media
+      position: relative
       @include img-style
       width: 300px
       height: 300px
@@ -16,6 +17,10 @@
       height: 100%
       img
         @include img
+      label
+         left: 10px
+         &::after
+            top: 3px
    &__body
       width: 70%
       display: flex
@@ -51,7 +56,7 @@
       &__counter
          margin-top: 10px
 
-   
+
 @media (max-width: 600px)
    .cart-item
       flex-direction: column

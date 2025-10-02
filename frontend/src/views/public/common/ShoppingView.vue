@@ -23,7 +23,7 @@
             :entity="'cart'"
             :link="'/'"
           />
-        <div class="cart-controls">
+        <div class="cart-controls" v-show="cart.length > 0">
           <div class="cart-controls__select custom-checkbox">
               <input type="checkbox"  id="select-all">
               <label class="subheading" for="select-all">Select all</label>

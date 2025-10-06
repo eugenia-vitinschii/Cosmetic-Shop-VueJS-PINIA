@@ -175,7 +175,8 @@ function handleAddToCart() {
     selectedColor: selectedColor.value ?? undefined,
     currency: props.currency ?? "",
     quantity: 1,
-    colorKey: `${props.id}-${selectedColor.value?.hex_value ?? 'default'}`
+    colorKey: `${props.id}-${selectedColor.value?.hex_value ?? 'default'}`,
+    selected: true
   }
 
   emit("addItemToCart", cartItem)

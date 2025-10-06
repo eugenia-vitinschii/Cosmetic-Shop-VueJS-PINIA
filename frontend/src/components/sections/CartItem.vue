@@ -2,7 +2,12 @@
   <div class="cart-item">
     <div class="cart-item__media">
       <div class="custom-checkbox">
-        <input type="checkbox" :id="'select-' + props.colorKey">
+        <input 
+          type="checkbox" 
+          :id="'select-' + props.colorKey"
+          :checked="props.selected"
+          @change="$emit('update:selected', ($event.target as HTMLInputElement).checked)"
+          >
         <label class="subheading" :for="'select-' + props.colorKey"></label>
           </div>
       <router-link :to="'/product/' + id">
@@ -70,5 +75,7 @@ const user = useUserStore()
 
 //props
 const props = defineProps<CartItem>()
-
+const emit = defineEmits<{
+  (e: 'update:selected', value: boolean): void
+}>()
 </script>

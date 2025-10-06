@@ -50,7 +50,15 @@
             :currency="item.currency"
             :quantity="item.quantity"
             :colorKey="item.colorKey"
+            :selected="item.selected"
          />
+        </div>
+        <div class="cart-sum">
+          <div class="cart-sum__amount">
+            <p class="subheading">
+              Summ : {{ totalPrice }} (USD)
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -76,5 +84,5 @@ import { storeToRefs } from "pinia";
 
 //pinia const
 const user = useUserStore();
-const {cart} = storeToRefs(user)
+const {cart, totalPrice} = storeToRefs(user)
 </script>

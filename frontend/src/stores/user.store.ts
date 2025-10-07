@@ -106,6 +106,16 @@ const user = reactive<UserData>({
       ( sum, item ) => item.selected ? sum + item.price * item.quantity : sum, 0
       )
   )
-    
-  return { user, allSelected, removeSelectedFromCart,cart, favorite , addToCart, loadFavorite , toggleFavorite, isFavorite, resetFavorite, incrementQuantity, decrementQuantity, totalPrice, saveCart, removeFromCart}
+
+  function updateItemSelected(colorKey: string, value: boolean){
+    const item = user.cart.find(p => p.colorKey === colorKey)
+
+    if(item) {
+      item.selected = value
+      saveCart()
+    }
+
+  } 
+  
+  return { user, allSelected, removeSelectedFromCart, updateItemSelected,cart, favorite , addToCart, loadFavorite , toggleFavorite, isFavorite, resetFavorite, incrementQuantity, decrementQuantity, totalPrice, saveCart, removeFromCart}
 })

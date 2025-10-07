@@ -25,11 +25,17 @@
           />
         <div class="cart-controls" v-show="cart.length > 0">
           <div class="cart-controls__select custom-checkbox">
-              <input type="checkbox"  id="select-all">
+              <input 
+                type="checkbox"  
+                id="select-all" 
+                v-model="user.allSelected">
               <label class="subheading" for="select-all">Select all</label>
           </div>
           <div class="cart-controls__delete">
-            <button class="delete">
+            <button class="delete"
+              :disabled="!user.cart.some(i => i.selected)"
+              @click="user.removeSelectedFromCart()"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"  fill="#e3e3e3"><path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z"/></svg>
             </button>
           </div>
@@ -51,12 +57,14 @@
             :quantity="item.quantity"
             :colorKey="item.colorKey"
             :selected="item.selected"
+            @update:selected="(val) => user.updateItemSelected(item.colorKey, val)"
+
          />
         </div>
-        <div class="cart-sum">
+        <div class="cart-sum" v-show="cart.length > 0">
           <div class="cart-sum__amount">
             <p class="subheading">
-              Summ : {{ totalPrice }} (USD)
+              total: {{ totalPrice }} (USD)
             </p>
           </div>
         </div>

@@ -19,7 +19,7 @@ export interface CartItem {
    selectedColor?: ProductColor;
    currency: string;
    quantity: number;
-   colorKey: string
+   colorKey: string;
    selected: boolean
 }
 

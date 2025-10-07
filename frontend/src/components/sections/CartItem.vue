@@ -6,7 +6,7 @@
           type="checkbox" 
           :id="'select-' + props.colorKey"
           :checked="props.selected"
-          @change="$emit('update:selected', ($event.target as HTMLInputElement).checked)"
+          @change="onCheckboxChange"
           >
         <label class="subheading" :for="'select-' + props.colorKey"></label>
           </div>
@@ -18,7 +18,7 @@
       <div class="cart-item__info">
         <div class="cart-item__info-title">
           <router-link :to="'/product/' + id" class="body-text">
-            {{ name }}
+            {{ name }} 
           </router-link>
         </div>
         <div class="cart-item__info-meta">
@@ -75,7 +75,15 @@ const user = useUserStore()
 
 //props
 const props = defineProps<CartItem>()
+
 const emit = defineEmits<{
   (e: 'update:selected', value: boolean): void
 }>()
+
+
+function onCheckboxChange(e: Event) {
+  const target = e.target as HTMLInputElement
+  emit('update:selected', target.checked)
+}
+
 </script>

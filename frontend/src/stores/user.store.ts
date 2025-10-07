@@ -10,10 +10,10 @@ import { Product } from "@/models/product"
 
 export const useUserStore = defineStore("user", () => {
  
-  const user = reactive<UserData>({
+const user = reactive<UserData>({
     cart: [],
     favorite: []
-  })
+})
  /* === Favorite logic === */
   const favorite = computed(() => user.favorite);
   
@@ -47,6 +47,7 @@ export const useUserStore = defineStore("user", () => {
     localStorage.removeItem('favorite')
   }
  /* === Cart Logic === */
+
   const cart = computed(() => user.cart);
   
   function addToCart(item: CartItem){
@@ -55,7 +56,7 @@ export const useUserStore = defineStore("user", () => {
     if(index !== -1){
       user.cart[index].quantity++
     } else {
-      user.cart.push({...item, quantity:1});
+      user.cart.push({...item, quantity:1, selected:false});
     }
 
     saveCart()
@@ -78,6 +79,7 @@ export const useUserStore = defineStore("user", () => {
     saveCart()
   }
 
+
   function removeFromCart(colorKey: string){
     user.cart = user.cart.filter((p) => p.colorKey !== colorKey);
     saveCart()
@@ -87,7 +89,10 @@ export const useUserStore = defineStore("user", () => {
   localStorage.setItem("cart", JSON.stringify(user.cart))}
 
   const totalPrice = computed(() => 
-  user.cart.reduce((sum, item ) => sum + item.price * item.quantity, 0))
+    cart.value.reduce(
+    ( sum, item ) => item.selected ? sum + item.price * item.quantity : sum, 0
+    )
+  )
     
-  return { user, cart,  favorite ,  addToCart, loadFavorite , toggleFavorite, isFavorite, resetFavorite, incrementQuantity, decrementQuantity, totalPrice, saveCart, removeFromCart}
+  return { user, cart, favorite , addToCart, loadFavorite , toggleFavorite, isFavorite, resetFavorite, incrementQuantity, decrementQuantity, totalPrice, saveCart, removeFromCart}
 })

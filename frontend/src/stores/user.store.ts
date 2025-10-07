@@ -79,20 +79,33 @@ const user = reactive<UserData>({
     saveCart()
   }
 
-
   function removeFromCart(colorKey: string){
     user.cart = user.cart.filter((p) => p.colorKey !== colorKey);
     saveCart()
   }
 
   function saveCart(){
-  localStorage.setItem("cart", JSON.stringify(user.cart))}
+  localStorage.setItem("cart", JSON.stringify(user.cart))
+  }
+
+  const allSelected = computed({
+    get: ()=> user.cart.length > 0 && user.cart.every(item =>item.selected),
+    set: (value: boolean) =>{
+      user.cart.forEach(item => (item.selected = value))
+      saveCart()
+    }
+  })
+
+  function removeSelectedFromCart(){
+    user.cart = user.cart.filter((item) => !item.selected)
+    saveCart()
+  }
 
   const totalPrice = computed(() => 
     cart.value.reduce(
-    ( sum, item ) => item.selected ? sum + item.price * item.quantity : sum, 0
-    )
+      ( sum, item ) => item.selected ? sum + item.price * item.quantity : sum, 0
+      )
   )
     
-  return { user, cart, favorite , addToCart, loadFavorite , toggleFavorite, isFavorite, resetFavorite, incrementQuantity, decrementQuantity, totalPrice, saveCart, removeFromCart}
+  return { user, allSelected, removeSelectedFromCart,cart, favorite , addToCart, loadFavorite , toggleFavorite, isFavorite, resetFavorite, incrementQuantity, decrementQuantity, totalPrice, saveCart, removeFromCart}
 })

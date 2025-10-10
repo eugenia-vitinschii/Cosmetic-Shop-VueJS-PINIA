@@ -2,7 +2,8 @@
    <div class="admin">
       <div class="container">
          <div class="admin__wrapper">
-            <p class="heading">Admin page</p>
+            <p >Admin Page</p>
+ 
             <the-admin-header/>
          </div>
       </div>

@@ -2,8 +2,9 @@
    <div class="admin">
       <div class="container">
          <div class="admin__wrapper">
-            <p >Admin Page</p>
- 
+            <p class="admin-heading">Admin Page</p>
+            <p class="admin-subheading">Lorem ipsum dolor sit amet.</p>
+            <p class="admin-body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste pariatur cumque laborum repellendus natus! Hic.</p>
             <the-admin-header/>
          </div>
       </div>

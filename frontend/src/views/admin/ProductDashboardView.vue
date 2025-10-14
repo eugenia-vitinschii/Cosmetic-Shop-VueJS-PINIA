@@ -15,11 +15,11 @@
           <table class="admin__table" v-if="admin.products">
             <thead>
               <tr>
-                <th>Img </th>
-                <th>Brand</th>
-                <th>Name</th>
-                <th>Category / Product Type</th>
-                <th>Sliders Tags</th>
+                <th  class="admin-body-text">Img </th>
+                <th class="admin-body-text">Brand</th>
+                <th class="admin-body-text">Name</th>
+                <th class="admin-body-text">Category / Product Type</th>
+                <th class="admin-body-text">Sliders Tags</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -32,9 +32,9 @@
                       fallback="@/assets/img/no-img.jpg" alt="Img" />
                   </div>
                 </td>
-                <td>{{ product.brand }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.category }}/ {{ product.product_type }}</td>
+                <td class="admin-body-text">{{ product.brand }}</td>
+                <td  class="admin-body-text">{{ product.name }}</td>
+                <td class="admin-body-text">{{ product.category }}/ {{ product.product_type }}</td>
                 <td>
                   <div class="input__wrapper">
                     <select 

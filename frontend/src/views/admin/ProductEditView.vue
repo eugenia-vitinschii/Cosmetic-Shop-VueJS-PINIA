@@ -3,7 +3,7 @@
     <div class="container">
       <div class="update__wrapper">
         <the-admin-header />
-        <p class="heading" >
+        <p class="admin-heading" >
           Edit: <span class="bold" v-if="product"> {{ product.name }}</span>
         </p>
         <div class="update__content" >

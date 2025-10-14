@@ -1,7 +1,7 @@
 <template>
        <div class="add__tabs-buttons">
          <button 
-            class="edit"
+             class="admin-body-text"
             v-for="tab in tabs"
             :key="tab.key"
             @click="activeTab = tab.key"         

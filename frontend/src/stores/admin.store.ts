@@ -18,6 +18,7 @@ export const useAdminStore = defineStore("admin", () => {
    const count = ref(1)
 
    const cosmetics = useCosmeticStore();
+   
    /* === DASHBOARD STATISTICS=== */
    const totalProducts = computed(() => cosmetics.products.length) 
    const totalBrands = computed(() => new Set(cosmetics.products.map(p => p.brand)).size)

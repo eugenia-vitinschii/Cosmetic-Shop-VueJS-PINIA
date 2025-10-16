@@ -18,6 +18,11 @@ export const useAdminStore = defineStore("admin", () => {
    const count = ref(1)
 
    const cosmetics = useCosmeticStore();
+   /* === DASHBOARD STATISTICS=== */
+   const totalProducts = computed(() => cosmetics.products.length) 
+   const totalBrands = computed(() => new Set(cosmetics.products.map(p => p.brand)).size)
+   const totalCategories = computed(() => new Set(cosmetics.products.map(p => p.category)).size)
+   const totalTypes = computed(() => new Set(cosmetics.products.map(p => p.product_type)).size)
 
    /* === FETCH PRODUCTS === */
 
@@ -39,7 +44,6 @@ export const useAdminStore = defineStore("admin", () => {
       return null
     }
   }
-
 
    /* === FILTER PRODUCTS === */
 
@@ -98,7 +102,7 @@ export const useAdminStore = defineStore("admin", () => {
       }
    }
 
-   return { products, limit, page, complected, count, fetchAllProducts,fetchProductById, brands, categories, productTypes, createProduct, updateProduct, deleteProduct }
+   return { products, totalProducts, totalBrands, totalCategories, totalTypes,limit, page, complected, count, fetchAllProducts,fetchProductById, brands, categories, productTypes, createProduct, updateProduct, deleteProduct }
 })
 
 

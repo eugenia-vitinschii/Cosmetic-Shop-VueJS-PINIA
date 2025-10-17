@@ -1,0 +1,26 @@
+// components
+@use '../admin/_admin-mixins' as * 
+
+// .admin-stats
+.admin-stats
+   display: flex
+   justify-content: space-between
+   box-sizing: border-box
+   margin-top: 50px
+
+
+.admin-stat-card
+   @include block-style()
+   width: 100%
+   display: flex
+   align-items: center
+   justify-content: space-between
+   flex-direction: column
+   &__icon
+      svg
+         fill: var(--admin-accent)
+         width: 50px
+         height: 50px
+   &__content
+      p
+         text-align: center

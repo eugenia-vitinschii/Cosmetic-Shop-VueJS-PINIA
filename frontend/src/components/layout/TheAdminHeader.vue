@@ -1,6 +1,5 @@
 <template>
    <div class="admin-header">
-      <div class="container">
          <div class="admin-header__wrapper">
             <ul>
                <li><router-link to="/admin" class="admin-header__link">Admin Dashboard</router-link></li>
@@ -11,7 +10,6 @@
 
          </div>
       </div>
-   </div>
 </template>
 
 

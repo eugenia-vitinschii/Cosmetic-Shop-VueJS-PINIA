@@ -1,10 +1,15 @@
 @use '../abstracts/mixins' as *  
 @use '../abstracts/variables' as *
 
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap')
+
+p, a, label, h1
+   font-family: "Karla", sans-serif
+   font-optical-sizing: auto
+
 .admin-heading
-   font-family: "EB Garamond", serif
-   @include font-style( var(--admin-text), 10px, left)
-   @include font-size($heading, 40px)
+   @include font-style( var(--admin-text), 0px, left)
+   @include font-size($heading, 10px)
 .admin-subheading
    @include font-style( var(--admin-text), 10px, left)
    @include font-size($subheading, 32px)

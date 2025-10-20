@@ -25,6 +25,25 @@ export const useAdminStore = defineStore("admin", () => {
    const totalCategories = computed(() => new Set(cosmetics.products.map(p => p.category)).size)
    const totalTypes = computed(() => new Set(cosmetics.products.map(p => p.product_type)).size)
 
+   /* === DASHBOARD ANALYTICS=== */
+   const brandLabels = computed(() => 
+      [...new Set(cosmetics.products.map(p => p.brand).filter((b): b is string => Boolean(b)))])
+   const brandData = computed(() => 
+      brandLabels.value.map(b => cosmetics.products.filter(p => p.brand === b).length))
+
+   const categoryLabels = computed(() =>
+      [...new Set(cosmetics.products.map(p => p.category).filter((b): b is string => Boolean(b) ))]
+   )
+   const categoryData = computed(() =>
+      categoryLabels.value.map(c => cosmetics.products.filter(p => p.category === c).length)
+   )
+
+   const typesLabels = computed(() =>
+      [...new Set(cosmetics.products.map(p => p.product_type).filter((b): b is string => Boolean(b) ))]
+   )
+   const typesData = computed(() =>
+      typesLabels.value.map(c => cosmetics.products.filter(p => p.product_type === c).length)
+   )
    /* === FETCH PRODUCTS === */
 
    const fetchAllProducts = async () => {
@@ -103,7 +122,7 @@ export const useAdminStore = defineStore("admin", () => {
       }
    }
 
-   return { products, totalProducts, totalBrands, totalCategories, totalTypes,limit, page, complected, count, fetchAllProducts,fetchProductById, brands, categories, productTypes, createProduct, updateProduct, deleteProduct }
+   return { products,brandLabels, brandData,categoryLabels, categoryData,typesData, typesLabels,  totalProducts, totalBrands, totalCategories, totalTypes,limit, page, complected, count, fetchAllProducts,fetchProductById, brands, categories, productTypes, createProduct, updateProduct, deleteProduct }
 })
 
 

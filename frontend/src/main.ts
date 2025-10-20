@@ -9,6 +9,7 @@ import { useCosmeticStore } from './stores/cosmetic.store'
 
 import './assets/sass/app.sass'
 
+
 const app = createApp(App)
 const pinia = createPinia()
 

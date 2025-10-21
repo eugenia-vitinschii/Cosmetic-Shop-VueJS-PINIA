@@ -53,6 +53,9 @@
                   :data="admin.typesData"
                />
             </section>
+            <section>
+               <admin-recent-products/>
+            </section>
          </div>
       </div>
    </div>
@@ -64,7 +67,7 @@
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue"
 import AdminStatCard from "@/components/admin/ui/AdminStatCard.vue";
 import AdminChart from "@/components/admin/ui/AdminChart.vue";
-
+import AdminRecentProducts from "@/components/admin/ui/AdminRecentProducts.vue";
 //pinia store imports
 import { useAdminStore } from "@/stores/admin.store"
 

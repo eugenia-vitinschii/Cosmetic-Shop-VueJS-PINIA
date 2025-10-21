@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap')
 
-p, a, label, h1
+p, a, label, h1,td,tr
    font-family: "Karla", sans-serif
    font-optical-sizing: auto
 
@@ -14,7 +14,7 @@ p, a, label, h1
    @include font-style( var(--admin-text), 10px, left)
    @include font-size($subheading, 32px)
 
-.admin-body-text
+.admin-body-text,td,tr
    @include font-style(var(--admin-text), 10px, left)
    @include font-size($body-text,24px)
 

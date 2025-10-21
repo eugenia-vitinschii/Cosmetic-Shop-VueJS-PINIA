@@ -31,7 +31,8 @@
    gap: 20px
    align-items: stretch
    width: 100%
-   height: 450px
+   height: 500px
+
 
 
 .admin-chart
@@ -48,14 +49,35 @@
 @media (max-width: 768px)
    .admin-analytics
       grid-template-columns: 1fr 2fr
-      min-height: 600px
+      height: 1000px
+   .admin-chart
+      height: 470px
    .admin-chart:last-child
       grid-column: span 2
 
 @media (max-width: 500px)
    .admin-analytics
       grid-template-columns: 1fr  
+      height: 1000px
    .admin-chart
-      min-height: 500px 
+      height: 300px 
    .admin-chart:last-child
       grid-column: span 1
+
+// admin-recent-products
+.admin-recent
+    @include block-style()
+    width: 100%
+    &__table
+      width: 100%
+      overflow: scroll
+      border-collapse: collapse
+      td, th
+         border-bottom: 1px solid var(--admin-accent)
+
+@media (max-width: 626px)
+   .admin-recent
+      overflow: scroll
+      &__table
+         min-width: 630px
+         overflow: scroll

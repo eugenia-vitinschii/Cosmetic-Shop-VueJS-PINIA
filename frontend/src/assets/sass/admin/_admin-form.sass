@@ -1,0 +1,61 @@
+//form, input:checkbox, input:text
+
+@use '../abstracts/_variables' as * 
+@use '../admin/_admin-mixins' as * 
+
+//input- text
+.admin-custom-input-text
+   background: var(--admin-bg-muted)
+   border: 1px solid var(--admin-accent)
+   padding: 5px
+   margin: 5px 0px
+   width: 100%
+   color: var(--admin-text)
+   &::placeholder
+      color: var(--admin-text)
+
+//input checkbox
+.admin-custom-checkbox
+   position: relative
+   display: inline-flex
+   align-items: center
+   user-select: none
+   cursor: pointer
+   span
+      padding: 0
+   input
+      display: none
+      border-color: var(--admin-text)
+      color: var(--admin-text)
+   input:focus
+
+   input:checked + .checkmark
+      background: var(--admin-accent)
+   input:checked + .checkmark::after
+      opacity: 1
+
+// checkmark
+.checkmark
+   width: 20px
+   height: 20px
+   border: 1px solid var(--admin-accent)
+   position: relative
+   display: inline-block
+   border-radius: 50%
+   margin-right: 6px
+
+.checkmark::after
+   content: ""
+   position: absolute
+
+
+
+
+
+    
+
+
+
+
+
+

@@ -4,15 +4,31 @@
 .admin-top
    display: grid
    grid-template-columns: 2fr 1fr
+   gap: 5px
 
 //admin to do
 .admin-todos
    @include block-style()
-   
+   gap: 5px
+   height: 450px
+   overflow: scroll
+
+.admin-todo
+   &__head
+      @include flex-center()
+      margin-bottom: 15px
+   &__meta
+   &__add
+      @include flex-center()    
+   &__list
+   &__item
+      @include flex-center()
+
 // .admin-stats
 .admin-stats
    display: grid
    grid-template-columns: 1fr 1fr
+   gap: 0px 5px
 
 
 .admin-stat-card
@@ -22,7 +38,7 @@
    align-items: center
    justify-content: center
    flex-direction: column
-   aspect-ratio: 1 / 1
+   // aspect-ratio: 1 / 1
    margin-right: 10px
    padding:10px !important
    &__icon
@@ -36,6 +52,31 @@
          padding: 4px
          line-height: 15px
          margin: 0
+
+@media (max-width: 1200px)
+   .admin-todos
+      height: 350px
+
+@media (max-width:700px)
+   .admin-top
+      grid-template-columns: 1fr
+      gap: 5px
+   .admin-todos
+      height: 350px
+   .admin-stats
+      grid-template-columns: 1fr 1fr 1fr 1fr
+   .admin-stat-card
+      aspect-ratio: 1 / 1
+      &__icon
+         svg
+            width:30px
+            height: 30px
+
+@media (max-width:515px)
+   .admin-stats
+      grid-template-columns: 1fr 1fr 
+   .admin-stat-card
+      aspect-ratio: auto
 
 // .admin-analytics
 .admin-analytics

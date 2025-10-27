@@ -5,7 +5,7 @@
       </div>
       <div class="admin-stat-card__content">
          <p class="admin-body-text">{{ label }}</p>
-         <p class="admin-subheading">{{ value }}</p>
+         <p class="admin-body-text">{{ value }}</p>
       </div>
    </div>
 </template>

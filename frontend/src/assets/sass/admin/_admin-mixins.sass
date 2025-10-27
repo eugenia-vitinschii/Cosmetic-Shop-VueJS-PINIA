@@ -2,13 +2,16 @@
 @use '../abstracts/_variables' as * 
 
 @mixin block-style()
+   margin-top: 5px
    background: var( --admin-bg-muted)
    border-radius: 20px
    padding: 20px 10px
-   margin: 5px
    transition: $transition
    border: 1px solid transparent
    &:hover
       border: 1px solid var( --admin-accent)
 
-   
+@mixin flex-center()
+   display: flex
+   justify-content: space-between
+   align-items: center

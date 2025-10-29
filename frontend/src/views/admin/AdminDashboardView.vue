@@ -1,8 +1,11 @@
 <template>
    <div class="admin">
       <div class="container">
-         <div class="admin__wrapper">
+         <div class="admin__h">
             <the-admin-header/>
+         </div>
+         <div class="admin__wrapper">
+            
             <section class="admin-top">
                <div class="admin-todos">
                   <admin-todo/>
@@ -70,6 +73,7 @@
 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue"
+
 import AdminTodo from "@/components/admin/ui/AdminTodo.vue";
 import AdminStatCard from "@/components/admin/ui/AdminStatCard.vue";
 import AdminChart from "@/components/admin/ui/AdminChart.vue";

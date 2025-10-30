@@ -12,7 +12,7 @@
       "id": "1004",
       "brand": "glossier",
       "name": "Stretch concealer",
-      "price": 22,
+      "price": 21,
       "price_sign": "$",
       "currency": "USD",
       "image_link": "https://static-assets.glossier.com/production/spree/images/attachments/000/001/631/portrait_normal/SC_Carousel_1_copy_2.jpg?1506948615",
@@ -22,9 +22,11 @@
       "rating": 4,
       "category": "concealer",
       "product_type": "foundation",
-      "tag_list": [],
+      "tag_list": [
+        "week"
+      ],
       "created_at": "2025-09-21T03:11:01.369Z",
-      "updated_at": "2025-12-21T03:12:42.235Z",
+      "updated_at": "2025-10-29T15:54:23.784Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1004.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/004/original/open-uri20171227-4-1wp63cr?1514344255",
       "product_colors": [
@@ -50,7 +52,7 @@
         }
       ],
       "sliderTags": [
-        "category"
+        "top"
       ]
     },
     {
@@ -87,7 +89,7 @@
         }
       ],
       "sliderTags": [
-        "category"
+        "brand"
       ]
     },
     {

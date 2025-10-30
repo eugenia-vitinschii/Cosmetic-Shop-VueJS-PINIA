@@ -3,7 +3,7 @@
     <div class="container">
       <div class="admin__wrapper">
         <the-admin-header />
-        <p class="heading">All products {{ admin.products.length }} </p>
+        <h1 class="admin-heading">All products {{ admin.products.length }} </h1>
         
         <product-filters
               v-model="filters"
@@ -11,8 +11,8 @@
       :categories="admin.categories"
       :productTypes="admin.productTypes"
         />
-        <div class="admin-content">
-          <table class="admin__table" v-if="admin.products">
+        <section class="admin-products">
+          <table class="admin-table" v-if="admin.products">
             <thead>
               <tr>
                 <th  class="admin-body-text">Img </th>
@@ -27,7 +27,7 @@
             <tbody>
               <tr v-for="product in filteredProducts" :key="product.id">
                 <td>
-                  <div class="admin__img">
+                  <div class="admin-table__img">
                     <app-image :src="product.image_link" :backup="product.api_featured_image"
                       fallback="@/assets/img/no-img.jpg" alt="Img" />
                   </div>
@@ -73,7 +73,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </section>
       </div>
     </div>
   </div>

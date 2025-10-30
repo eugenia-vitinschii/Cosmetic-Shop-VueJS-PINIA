@@ -1,5 +1,5 @@
 <template>
-<div class="admin-filers">
+<div class="admin-filters">
    <!-- brans -->
    <select v-model="model.brand">
       <option value="">All brands</option>

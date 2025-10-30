@@ -3,13 +3,12 @@
     <div class="container">
       <div class="admin__wrapper">
         <the-admin-header />
-        <h1 class="admin-heading">All products {{ admin.products.length }} </h1>
-        
+        <admin-title title="Product Dashboard"/>
         <product-filters
-              v-model="filters"
-      :brands="admin.brands"
-      :categories="admin.categories"
-      :productTypes="admin.productTypes"
+          v-model="filters"
+          :brands="admin.brands"
+          :categories="admin.categories"
+          :productTypes="admin.productTypes"
         />
         <section class="admin-products">
           <table class="admin-table" v-if="admin.products">
@@ -85,6 +84,8 @@ import { onMounted, ref, computed } from "vue";
 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
+import AdminTitle from "@/components/admin/ui/AdminTitle.vue";
+
 import AppImage from "@/components/core/AppImage.vue";
 import ProductFilters from "@/components/admin/ProductFilters.vue";
 //pinia store imports

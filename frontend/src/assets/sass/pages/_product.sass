@@ -45,9 +45,7 @@
       @include img-style
       transition: $transition
       img
-         aspect-ratio: 1 / 1
-         object-fit: contain
-         width: 100%
+         @include img()
    &__img:hover
       @include img-style-hover
    &__favorite 

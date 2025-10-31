@@ -1,14 +1,46 @@
 //admin table
-@use '../admin/_admin-mixins' as * 
+@use '../admin/admin-mixins' as * 
+@use '../abstracts/mixins' as *
+@use '../abstracts/variables' as *
 
 //wrapper
 .admin-products
    @include block-style()
    width: 100%
+   overflow: scroll
 
 //admin table
 .admin-table
+   -webkit-border-horizontal-spacing: 0
+   -webkit-border-vertical-spacing: 0
+   width: 100%
+   tr
+      transition: $transition
+   tr:hover
+      background: var(--admin-hover)
+   td
+      padding-right: 10px
+   td:nth-child(4)     
+      max-width: 260px
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
    &__img
       width: 50px
+      height: 50px
+      background: white
       img
-         width: 100%
+         @include img
+
+@media ( max-width: 800px)
+   .admin-table
+      td:nth-child(4)     
+         max-width: 160px
+@media ( max-width: 584px)
+   .admin-table
+      td
+         padding-right: 5px
+      td:first-child, th:first-child
+         display: none
+      
+

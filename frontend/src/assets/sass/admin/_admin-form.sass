@@ -5,14 +5,20 @@
 
 //input- text
 .admin-custom-input-text
-   background: var(--admin-bg-muted)
-   border: 1px solid var(--admin-accent)
-   padding: 5px
-   margin: 5px 0px
-   width: 100%
-   color: var(--admin-text)
+   @include admin-form-element()
    &::placeholder
       color: var(--admin-text)
+
+//select
+.admin-select
+   @include admin-form-element()
+   appearance: none
+   -webkit-appearance: none
+   -moz-appearance: none
+   border-radius: 0
+   z-index: 4
+   cursor: pointer
+
 
 //input checkbox
 .admin-custom-checkbox
@@ -47,6 +53,8 @@
 .checkmark::after
    content: ""
    position: absolute
+
+
 
 
 

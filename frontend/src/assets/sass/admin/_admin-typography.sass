@@ -15,8 +15,8 @@ p, a, label, h1,td,tr
    @include font-size($subheading, 32px)
 
 .admin-body-text,td,tr
-   @include font-style(var(--admin-text), 10px, left)
-   @include font-size($body-text,24px)
+   @include font-style(var(--admin-text), 5px, left)
+   @include font-size($body-text,15px)
 
 
 @media (max-width: 1024px)
@@ -25,7 +25,7 @@ p, a, label, h1,td,tr
    .admin-subheading
       @include font-size($subheading-md, 28px)
    .admin-body-text
-      @include font-size($body-text-md, 22px)
+      @include font-size($body-text-md, 15px)
 
 
 // small devices
@@ -35,7 +35,7 @@ p, a, label, h1,td,tr
    .admin-subheading
       @include font-size($subheading-sm, 26px)
    .admin-body-text
-      @include font-size($body-text-sm, 20px)
+      @include font-size($body-text-sm, 15px)
 
 .done
    text-decoration: line-through

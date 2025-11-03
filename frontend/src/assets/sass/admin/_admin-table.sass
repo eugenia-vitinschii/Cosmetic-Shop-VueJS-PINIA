@@ -14,6 +14,8 @@
    -webkit-border-horizontal-spacing: 0
    -webkit-border-vertical-spacing: 0
    width: 100%
+   th
+      padding: 20px 0px
    tr
       transition: $transition
    tr:hover
@@ -31,7 +33,11 @@
       background: white
       img
          @include img
-
+   &__options
+      display: flex
+      flex-direction: column
+      label
+         margin-top: 3px
 @media ( max-width: 800px)
    .admin-table
       td:nth-child(4)     

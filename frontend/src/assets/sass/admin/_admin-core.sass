@@ -1,0 +1,37 @@
+// admin-core
+@use '../admin/_admin-mixins' as * 
+@use '../admin/_admin-theme' as *
+
+//admin toast notification
+.toast-enter-active, .toast-leave-active
+   transition: opacity 0.4s, transfrom 0.4s
+
+.toast-enter-from, .toast-leave-to
+   opacity: 0
+   transform: translateY(20px)
+
+//admin toast
+.admin-toast
+   position: fixed
+   @include block-style()
+   @include flex-center()
+   background: var(--admin-hover)
+   bottom: 10px
+   left: 10px
+   height: 80px
+   .icon
+      width: 50px
+      height: 50px
+   &.error
+      border: 1px solid $admin-red
+      p
+         color:  $admin-red
+      .icon svg
+         fill: $admin-red
+   &.success
+      border: 1px solid $admin-green
+      p
+         color:$admin-green
+      .icon svg path
+         fill:$admin-green
+

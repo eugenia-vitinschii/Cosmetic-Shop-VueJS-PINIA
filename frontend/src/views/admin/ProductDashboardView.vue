@@ -2,6 +2,7 @@
   <div class="admin">
     <div class="container">
       <div class="admin__wrapper">
+        <admin-toast ref="toast"/>
         <the-admin-header />
         <admin-title title="Product Dashboard"/>
         <product-filters
@@ -14,7 +15,7 @@
           <table class="admin-table" v-if="admin.products">
             <thead>
               <tr>
-                <th  class="admin-body-text">Img </th>
+                <th class="admin-body-text">Img </th>
                 <th class="admin-body-text">Id</th>
                 <th class="admin-body-text">Brand</th>
                 <th class="admin-body-text">Name</th>
@@ -36,19 +37,26 @@
                   {{ product.id }}
                 </td>
                 <td>{{ product.brand }}</td>
-                <td  class="admin-body-text">{{ product.name }}</td>
+                <td class="admin-body-text">{{ product.name }}</td>
                 <td class="admin-body-text">{{ product.category }} <span v-if="product.category && product.product_type">/ </span>{{ product.product_type }}</td>
                 <td>
-                    <select 
-                    class="admin-select"
-                    v-model="product.sliderTags"
-                    @change="onSliderChange(product)"
+                  <div class="admin-table__options">
+                    <label 
+                      class="admin-custom-checkbox"
+                      v-for="option in sliderOptions"
+                      :key="option"
                     >
-                      <option  value="" >clear</option>
-                      <option v-for="option in sliderOptions" :key="option" :value="option">
-                        {{ option }}
-                      </option>
-                    </select>
+                      <input 
+                        type="checkbox"
+                        :value="option"
+                        :checked="product.sliderTags?.includes(option)"
+                        @change="onCheckboxChange(product, option, $event)"
+                      >
+                      <span class="checkmark"></span>
+                      <span>{{ option }}</span>
+                      </input>
+                    </label>
+                  </div>
                 </td>
                 <td>
                   <button @click="deleteItem(product.id)" class="admin-svg-button">
@@ -72,6 +80,7 @@
         </section>
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -82,7 +91,9 @@ import { onMounted, ref, computed } from "vue";
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
 import AdminTitle from "@/components/admin/ui/AdminTitle.vue";
+import AdminToast from "@/components/admin/ui/AdminToast.vue";
 
+   
 import AppImage from "@/components/core/AppImage.vue";
 import ProductFilters from "@/components/admin/ProductFilters.vue";
 //pinia store imports
@@ -95,6 +106,7 @@ import type{ Product } from "@/models/product";
 defineOptions({
   name: "ProductDashboardView",
 });
+
 //pinia variables
 const admin = useAdminStore();
 
@@ -111,13 +123,12 @@ const sliderOptions = [
   "top", "brand", "category"
 ];
 
+const toast = ref<InstanceType<typeof AdminToast>>()
 
 //context
-const {save: autoSave, isSaving, isSaved} = 
+const {save: autoSave} = 
 useAutoSave((id: string, payload: Product) => admin.updateProduct(id, payload), 800)
 
-//statuses
-const status = {isSaving, isSaved}
 
 //helper: copy object
 function clonePlain<T>(obj: T): T{
@@ -128,15 +139,35 @@ function clonePlain<T>(obj: T): T{
   }
 }
 
-function onSliderChange(product: Product){
-  if(!product?.id) return
+
+function onCheckboxChange(product: Product, option: string, event: Event){
+  const checked = (event.target as HTMLInputElement).checked
+
+  if(!Array.isArray(product.sliderTags)) {
+    product.sliderTags = []
+  }
+
+  if(checked) {
+    if(!product.sliderTags.includes(option)){
+      product.sliderTags.push(option)
+    
+  } 
+  }else{
+    product.sliderTags = product.sliderTags.filter( o => o !== option)}
+  if(!product.id){
+    toast.value?.showToast('Error: misssing id')
+    return
+  }
+
   const payload = clonePlain(product)
-  autoSave(product.id, payload) 
+  autoSave(product.id, payload)
+  toast.value?.showToast('Sliter tags updated')
 }
 
+
 // use hooks
-onMounted(() => {
-  admin.fetchAllProducts();
+onMounted(async() => {
+  await admin.fetchAllProducts();
   admin.products.forEach( p => {
     if(!Array.isArray(p.sliderTags)){
       p.sliderTags = []
@@ -159,7 +190,7 @@ const filteredProducts = computed(() => {
     ];
     return conditions.every(Boolean);
 
-});
+})
 })
 
 </script>

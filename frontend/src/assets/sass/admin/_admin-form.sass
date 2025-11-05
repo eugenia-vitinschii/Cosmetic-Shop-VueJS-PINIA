@@ -3,6 +3,26 @@
 @use '../abstracts/_variables' as * 
 @use '../admin/_admin-mixins' as * 
 
+//input wrapper (input + label)
+.admin-input__wrapper
+   label
+      display: inline-block
+      margin: 10px 0px 5px 0px
+   input[type="range"]
+      @include admin-form-element()
+      appearance: none
+      -webkit-appearance: none
+      -moz-appearance: none
+
+
+.admin-checkbox__wrapper
+   display: flex
+   flex-direction: column
+   span:first-child
+      margin: 10px 0px 5px 0px
+   label
+      margin: 5px 0px 5px 0px
+
 //input- text
 .admin-custom-input-text
    @include admin-form-element()

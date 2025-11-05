@@ -1,33 +1,33 @@
 <template>
    <!-- general info -->
-   <div class="update__form-item">
-      <p class="body-text">General info</p>
-      <div class="update__form-item">
-         <the-input 
-            :label="'name'" 
-            :placeholder="'name'" 
+   <div class="admin-form-item">
+      <p class="admin-subheading">General info</p>
+      <div class="admin-form-item__wrapper">
+         <admin-input 
+            :label="'Name'" 
+            :placeholder="'#nofilter powder'" 
             v-model.trim="modelValue.name" 
          />
-         <the-input 
-         :label="'brand'" 
-         :placeholder="'brand'" 
-         v-model.trim="modelValue.brand" 
+         <admin-input 
+            :label="'Brand'" 
+            :placeholder="'La viva!'" 
+            v-model.trim="modelValue.brand" 
          />
-         <the-input 
-         :label="'price'" 
-         :placeholder="'price'"
-          v-model.number="modelValue.price" 
+         <admin-input 
+            :label="'Price'" 
+            :placeholder="'20'"
+            v-model.number="modelValue.price" 
           />
-         <the-input 
-         :label="'currency'" 
-         :placeholder="'currency'" 
-         v-model.trim="modelValue.currency" />
-         <the-input 
-         :label="'price_sign'" 
-         :placeholder="'price_sign'" 
-         v-model.trim="modelValue.price_sign" />
-         <div class="input__wrapper">
-            <label for="rating">Rating {{ modelValue.rating }} </label>
+         <admin-input 
+            :label="'Currency'" 
+            :placeholder="'USD'" 
+            v-model.trim="modelValue.currency" />
+         <admin-input 
+            :label="'Price sign'" 
+            :placeholder="'$'" 
+            v-model.trim="modelValue.price_sign" />
+         <div class="admin-input__wrapper">
+            <label class="admin-body-text" for="rating">Rating <span v-if="modelValue.rating">:</span> {{ modelValue.rating }} </label>
                <input
                   type="range"
                   name="rating"
@@ -43,7 +43,7 @@
 
 <script  setup lang="ts">
 //components
-import TheInput from '@/components/ui/TheInput.vue';
+import AdminInput from '../ui/AdminInput.vue';
 
 //inteface general tab
 interface GeneralTab{
@@ -53,7 +53,6 @@ interface GeneralTab{
    currency?: string;
    price_sign?: string;
    rating?: number;
-
 }
 
 //model

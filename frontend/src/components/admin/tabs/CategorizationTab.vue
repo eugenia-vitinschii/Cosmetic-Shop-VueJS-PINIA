@@ -1,27 +1,37 @@
 <template>
-   <div class="update__form-item">
-      <p class="body-text">Categorization</p>
-      <div class="update__form-item">
+   <div class="admin-form-item">
+      <p class="admin-subheading">Categorization</p>
+      <div class="admin-form-item__wrapper">
         <!-- category -->
-         <div class="input__wrapper">
-            <label for="category">Category</label>
-            <select name="category" id="category" v-model="modelValue.category">
-               <option 
-               v-for="option in categoryOptions"
-               :key="option"
-               :value="option"
-               >
-               {{ option }}
-            </option>
+         <div class="admin-input__wrapper">
+            <label 
+               for="category" 
+               class="admin-body-text"
+            >
+               Category
+            </label>
+            <select 
+               class="admin-select"
+               name="category" 
+               id="category" 
+               v-model="modelValue.category">
+                  <option 
+                  v-for="option in categoryOptions"
+                  :key="option"
+                  :value="option"
+                  >
+                     {{ option }}
+                  </option>
             </select>
          </div>
          <!-- type-->
-         <div class="input__wrapper">
-            <label for="product_type">Type</label>
+         <div class="admin-input__wrapper">
+            <label for="product_type" class="admin-body-text">Type</label>
             <select 
-            name="product_type" 
-            id="product_type"
-             v-model="modelValue.product_type"
+            class="admin-select"
+               name="product_type" 
+               id="product_type"
+               v-model="modelValue.product_type"
              >
                <option 
                v-for="option in typeOptions"
@@ -33,30 +43,36 @@
             </select>
          </div>
          <!-- tags -->
-         <div class="input__wrapper">
-          <label class="body-text">Tags</label>
-             <select multiple v-model="modelValue.tag_list">
-               <option 
+          <div class="admin-checkbox__wrapper">
+            <span class="admin-body-text">Tag options</span>
+            <label 
+               class="admin-custom-checkbox"
+               type="checkbox"
                v-for="option in tagOptions"
                :key="option"
                :value="option"
-               >
-               {{ option }}
-            </option>
-                  </select>
-              </div>
-              <!-- slider tags -->
-         <div class="input__wrapper">
-            <label class="body-text">Include in slider</label>
-            <select multiple v-model="modelValue.sliderTags">
-                              <option 
-               v-for="option in sliderOptions"
+            >
+               <input  >
+               <span class="checkmark"></span>
+               <span class="admin-body-text">{{ option }}</span>
+               </input>
+            </label>
+            </div>
+          <!-- slider tags -->
+         <div class="admin-checkbox__wrapper">
+            <span class="admin-body-text">Slider options</span>
+            <label 
+               class="admin-custom-checkbox"
+               type="checkbox"
+              v-for="option in sliderOptions"
                :key="option"
                :value="option"
-               >
-               {{ option }}
-            </option>
-            </select>
+            >
+               <input  >
+               <span class="checkmark"></span>
+               <span class="admin-body-text">{{ option }}</span>
+               </input>
+            </label>
          </div>
       </div>
    </div>

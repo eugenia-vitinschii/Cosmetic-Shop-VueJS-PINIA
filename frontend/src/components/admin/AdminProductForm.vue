@@ -22,8 +22,7 @@
          <ProductColorsTab v-model="product" v-if="activeTab === 'ProductColorsTab'"/>
       </div>
       <div class="admin-product-form__buttons">
-         <button class="delete tooltip" @click="$router.go(-1)" type="button">
-              <span class="tooltip-text small-text">back</span>
+         <button class="delete" @click="$router.go(-1)" type="button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -36,8 +35,7 @@
                 />
               </svg>
          </button>
-         <button class="edit tooltip" type="submit">
-              <span class="tooltip-text small-text">save</span>
+         <button class="edit" type="submit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"

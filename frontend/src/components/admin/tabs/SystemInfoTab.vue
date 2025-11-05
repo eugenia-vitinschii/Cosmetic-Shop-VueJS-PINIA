@@ -1,31 +1,31 @@
 <template>
-   <div class="update__form-item">
-      <p class="body-text">System information</p>
-      <div class="update__form-item">
-         <the-input 
-         :label="'id'" 
-         :placeholder="'id'" 
-         v-model="modelValue.id"
+   <div class="admin-form-item">
+      <p class="admin-subheading">System information</p>
+      <div class="admin-form-item__wrapper">
+         <admin-input 
+            :label="'Id'" 
+            :placeholder="'rij584555'" 
+            v-model="modelValue.id"
         />
-         <the-input 
-         :label="'Сreated at'" 
-         :placeholder="'2025-03-10T15:12:04.738Z'" 
-         v-model="modelValue.created_at" />
-         <the-input 
-         :label="'updated_at'" 
-         :placeholder="'2025-03-10T15:12:04.738Zt'" 
-         v-model="modelValue.created_at" />
-         <the-input 
-         :label="'Product api url'" 
-         :placeholder="'wwww.name.com/sd/e34'"
-         v-model="modelValue.product_api_url" />
+         <admin-input  
+            :label="'Сreated at'" 
+            :placeholder="'2025-03-10T15:12:04.738Z'" 
+            v-model="modelValue.created_at" />
+         <admin-input 
+            :label="'Updated at'" 
+            :placeholder="'2025-03-10T15:12:04.738Zt'" 
+            v-model="modelValue.created_at" />
+         <admin-input  
+            :label="'Product api url'" 
+            :placeholder="'wwww.name.com/sd/e34'"
+            v-model="modelValue.product_api_url" />
       </div>
    </div>
 </template>
 
 <script  setup lang="ts">
 //components
-import TheInput from '@/components/ui/TheInput.vue';
+import AdminInput from '../ui/AdminInput.vue';
 
 defineOptions({
    name: "SystemInfoTab"

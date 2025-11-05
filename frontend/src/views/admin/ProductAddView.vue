@@ -1,11 +1,11 @@
 <template>
-  <div class="add">
+  <div class="admin">
     <div class="container">
-      <div class="add__wrapper">
+      <div class="admin__wrapper">
         <the-admin-header />
-        <p class="heading bold">Add new product</p>
-        <div class="add__contaner">
-          <ProductForm
+        <admin-title title="Create new product"/>
+        <div class="admin-create">
+          <admin-product-form
           v-model="product"
           @submit="save"
           />
@@ -21,7 +21,9 @@ import { ref } from "vue";
 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
-import ProductForm from "@/components/admin/ProductForm.vue";
+import AdminTitle from "@/components/admin/ui/AdminTitle.vue";
+
+import AdminProductForm from "@/components/admin/AdminProductForm.vue";
 
 //component settings
 defineOptions({

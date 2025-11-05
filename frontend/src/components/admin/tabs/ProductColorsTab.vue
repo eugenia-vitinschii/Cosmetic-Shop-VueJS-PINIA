@@ -1,6 +1,6 @@
 <template>
-  <div class="update__form-item">
-    <p class="body-text">Colors</p>
+  <div class="admin-form-item">
+    <p class="admin-subheading">Colors</p>
     <div
       v-for="(color, index) in  modelValue.product_colors"
       :key="index"

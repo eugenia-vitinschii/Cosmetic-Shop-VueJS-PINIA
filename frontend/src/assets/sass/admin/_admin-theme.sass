@@ -43,3 +43,14 @@
 //varianles
 $admin-red:#e51f1f
 $admin-green: #44ce1b
+
+button
+  &:disabled
+    cursor: not-allowed
+    svg
+      fill: var( --admin-hover)
+
+.tab-button
+  font-weight: bold
+  &.active, &:hover
+    color: var( --admin-accent)

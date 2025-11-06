@@ -2,12 +2,27 @@
 <div class="admin-product-form">
    <div class="admin-product-form__buttons">
       <button 
-         class="admin-body-text"
-         v-for="tab in tabs"
-         :key="tab.key"
-         @click="activeTab = tab.key"         
+         class="admin-svg-button"
+         @click="prevTab"
+         :disabled="activeIndex === 0"
       >
-         {{ tab.label }}
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+      </button>
+      <button 
+         class="admin-body-text"
+         v-for="(tab, i) in tabs"
+         :key="i"   
+         :class="['tab-button', {active: activeIndex === i}]"
+         @click="activeIndex = i"  
+      >
+         {{ tab.label}}
+      </button>
+      <button 
+         class="admin-svg-button"
+         @click="nextTab"
+         :disabled="activeIndex === tabs.length -1"
+      >
+         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
       </button>
    </div>
    <form 
@@ -15,38 +30,19 @@
       @submit.prevent="handleSubmit"
    >
       <div class="admin-product-form__tabs">
-         <GeneralTab v-model="product" v-if="activeTab === 'GeneralTab'"/>
-         <CategorizationTab v-model="product" v-if="activeTab === 'CategorizationTab'"/>
-         <MediaTab v-model="product" v-if="activeTab === 'MediaTab'"/>
-         <SystemInfoTab v-model="product" v-if="activeTab === 'SystemInfoTab'"/>
-         <ProductColorsTab v-model="product" v-if="activeTab === 'ProductColorsTab'"/>
+         <keep-alive>
+            <component 
+               :is="activeTab.component"
+               v-model="product"
+            />
+         </keep-alive>
       </div>
       <div class="admin-product-form__buttons">
-         <button class="delete" @click="$router.go(-1)" type="button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
-              >
-                <path
-                  d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"
-                />
-              </svg>
+         <button class="admin-svg-button" @click="$router.go(-1)" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" ><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
          </button>
-         <button class="edit" type="submit">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
-              >
-                <path
-                  d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"
-                />
-              </svg>
+         <button class="admin-svg-button" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
          </button>
       </div>
    </form>   
@@ -56,28 +52,31 @@
 
 <script setup lang="ts">
 //vue
-import {ref, watch } from 'vue';
+import {computed, defineAsyncComponent, ref, watch } from 'vue';
 
 //product model
 import type { ProductData } from '@/models/product';
 
-//components
-import CategorizationTab from './tabs/CategorizationTab.vue';
-import GeneralTab from './tabs/GeneralTab.vue';
-import MediaTab from './tabs/MediaTab.vue';
-import SystemInfoTab from'./tabs/SystemInfoTab.vue';
-import ProductColorsTab from './tabs/ProductColorsTab.vue';
+
 //tab logic
-const activeTab = ref('GeneralTab')
+const activeIndex = ref(0)
+const activeTab = computed(() => tabs[activeIndex.value])
 
 const tabs = [
-   {key: 'GeneralTab', label:'General'},
-   {key: 'CategorizationTab', label:'Categorization'},
-   {key: 'MediaTab', label:'Media'},
-   {key: 'SystemInfoTab', label:'System Info'},
-   {key: 'ProductColorsTab', label:'Product colors'},
+   {key: 'GeneralTab', label:'General', component: defineAsyncComponent(() => import('./tabs/GeneralTab.vue'))},
+   {key: 'CategorizationTab', label:'Categorization', component: defineAsyncComponent(() => import('./tabs/CategorizationTab.vue'))},
+   {key: 'MediaTab', label:'Media', component: defineAsyncComponent(() => import('./tabs/MediaTab.vue'))},
+   {key: 'SystemInfoTab', label:'System Info', component: defineAsyncComponent(() => import('./tabs/SystemInfoTab.vue'))},
+   {key: 'ProductColorsTab', label:'Product colors', component: defineAsyncComponent(() => import('./tabs/ProductColorsTab.vue'))},
 ]
 
+function nextTab(){
+   if(activeIndex.value < tabs.length -1) activeIndex.value ++
+}
+
+function prevTab(){
+   if(activeIndex.value > 0) activeIndex.value --
+}
 
 //emit
 const emit = defineEmits<{
@@ -93,6 +92,7 @@ const props = defineProps<{
 //local copy
 const product = ref<Partial<ProductData>>({...props.modelValue})
 
+//sync with v-model
 watch(product, (newVal) => {
    emit('update:modelValue', newVal as ProductData)
 }, {deep: true})

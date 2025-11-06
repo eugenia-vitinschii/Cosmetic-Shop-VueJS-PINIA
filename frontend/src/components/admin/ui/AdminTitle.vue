@@ -1,6 +1,10 @@
 <template>
-<div class="admin-title">
-   <h1 class="admin-heading">{{ title }}</h1>
+   <div class="admin-title">
+      <h1 class="admin-heading">
+         <slot>
+            {{ title }}
+         </slot>
+      </h1>
 </div>
 </template>
 
@@ -12,7 +16,7 @@ defineOptions({
 })
 
 defineProps<{
-   title: string
+   title?: string
 }>()
 
 </script>

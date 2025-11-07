@@ -31,12 +31,12 @@ defineOptions({
 });
 
 // import pinia store
-import { useCosmeticStore } from "@/stores/cosmetic.store";
+import { useAdminStore } from "@/stores/admin.store";
 import { Product} from "@/models/product";
 
 //pinia variables
-const store = useCosmeticStore();
-const { createProduct } = store;
+const admin = useAdminStore()
+
 
 //variables
 const product = ref<Partial<Product>>({})
@@ -44,7 +44,7 @@ const product = ref<Partial<Product>>({})
 // //functions
 const save = () => {
   const now = new Date().toISOString();
-  createProduct({
+  admin.createProduct({
     ...product.value,
        product_colors: [],
     created_at: now,

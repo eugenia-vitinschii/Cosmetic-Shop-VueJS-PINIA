@@ -1,5 +1,6 @@
 <template>
 <div class="admin-product-form">
+   <admin-toast ref="toast"/>
    <div class="admin-product-form__buttons">
       <button 
          class="admin-svg-button"
@@ -54,6 +55,9 @@
 //vue
 import {computed, defineAsyncComponent, ref, watch } from 'vue';
 
+//components
+import AdminToast from './ui/AdminToast.vue';
+
 //product model
 import type { ProductData } from '@/models/product';
 
@@ -97,9 +101,19 @@ watch(product, (newVal) => {
    emit('update:modelValue', newVal as ProductData)
 }, {deep: true})
 
+//toast
+const toast = ref<InstanceType<typeof AdminToast>>()
+
 //handleSubmit
 function handleSubmit(){
+   if(!product.value) {
+       toast.value?.showToast('Error: missing product data')
+       return
+   }
+
    emit('submit', product.value as ProductData)
+
+   toast.value?.showToast('Product saved successfully')
 }
 
 </script>

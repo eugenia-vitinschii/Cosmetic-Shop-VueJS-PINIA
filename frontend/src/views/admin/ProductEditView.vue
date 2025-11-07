@@ -1,16 +1,15 @@
 <template>
-  <div class="update">
+  <div class="admin">
     <div class="container">
-      <div class="update__wrapper">
+      <div class="admin__wrapper">
         <the-admin-header />
-        <p class="admin-heading" >
-          Edit: <span class="bold" v-if="product"> {{ product.name }}</span>
-        </p>
-        <div class="update__content" >
-          <product-form v-if="product"  v-model="product" @submit="update()" />
-  <p v-else>Error</p>
+        <admin-title>
+          Edit: <span>{{ product?.name }}</span>
+        </admin-title>
+        <div class="admin-update">
+          <admin-product-form v-if="product"  v-model="product" @submit="update()" />
+          <p v-else>Error</p>
         </div>
-      
       </div>
     </div>
   </div>
@@ -25,7 +24,8 @@ import { useRoute } from "vue-router";
 
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
-import ProductForm from "@/components/admin/ProductForm.vue";
+import AdminTitle from "@/components/admin/ui/AdminTitle.vue";
+import AdminProductForm from "@/components/admin/AdminProductForm.vue";
 
 // pinia store imports
 import { useAdminStore } from "@/stores/admin.store";

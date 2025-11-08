@@ -1,10 +1,11 @@
 <template>
     <div class="admin-input__wrapper">
-      <label class="admin-body-text">{{ label }}</label>
+      <label class="admin-body-text" :class="{'admin-disabled-text': disabled}">{{ label }}</label>
       <input
          class="admin-custom-input-text"
          type="text"
          :value="modelValue"
+         :disabled="disabled"
          @input="onInput"
          :placeholder="placeholder"
       />
@@ -24,6 +25,7 @@ const props = defineProps<{
   modelValue: number | string | undefined,
   label: string,
   placeholder?: string
+  disabled?: boolean
 }>()
 
 //emit
@@ -32,7 +34,7 @@ const emit = defineEmits<{
 }>()
 
 const onInput = (e: Event) => {
-  const target = e.target as HTMLInputElement;
+  const target = e.target as HTMLInputElement; 
   const value = typeof props.modelValue === 'number' ? Number (target.value) : target.value
   emit('update:modelValue', value)
 }

@@ -70,6 +70,7 @@ const tabs = [
    {key: 'GeneralTab', label:'General', component: defineAsyncComponent(() => import('./tabs/GeneralTab.vue'))},
    {key: 'CategorizationTab', label:'Categorization', component: defineAsyncComponent(() => import('./tabs/CategorizationTab.vue'))},
    {key: 'MediaTab', label:'Media', component: defineAsyncComponent(() => import('./tabs/MediaTab.vue'))},
+   {key: 'DescriptionTab', label:'Description', component: defineAsyncComponent(() => import('./tabs/DescriptionTab.vue'))},
    {key: 'SystemInfoTab', label:'System Info', component: defineAsyncComponent(() => import('./tabs/SystemInfoTab.vue'))},
    {key: 'ProductColorsTab', label:'Product colors', component: defineAsyncComponent(() => import('./tabs/ProductColorsTab.vue'))},
 ]

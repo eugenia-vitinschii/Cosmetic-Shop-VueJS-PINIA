@@ -1,17 +1,20 @@
 <template>
    <div class="admin-form-item">
-      <p class="admin-subheading">System information</p>
+      <h3 class="admin-subheading">System information</h3>
       <div class="admin-form-item__wrapper">
          <admin-input 
+            :disabled="true"
             :label="'Id'" 
             :placeholder="'rij584555'" 
             v-model="modelValue.id"
         />
          <admin-input  
+            :disabled="true"
             :label="'Сreated at'" 
             :placeholder="'2025-03-10T15:12:04.738Z'" 
             v-model="modelValue.created_at" />
          <admin-input 
+            :disabled="true"
             :label="'Updated at'" 
             :placeholder="'2025-03-10T15:12:04.738Zt'" 
             v-model="modelValue.created_at" />

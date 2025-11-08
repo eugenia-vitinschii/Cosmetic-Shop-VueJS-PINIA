@@ -1,6 +1,6 @@
 <template>
    <div class="admin-form-item">
-      <p class="admin-heading">Media</p>
+      <h3 class="admin-subheading">Media</h3>
       <div class="admin-form-item__wrapper">
          <admin-input
             :label="'Image Link'"

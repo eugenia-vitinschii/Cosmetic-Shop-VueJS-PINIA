@@ -1,7 +1,7 @@
 <template>
    <!-- general info -->
    <div class="admin-form-item">
-      <p class="admin-subheading">General info</p>
+      <h3 class="admin-subheading">General info</h3>
       <div class="admin-form-item__wrapper">
          <admin-input 
             :label="'Name'" 
@@ -21,11 +21,13 @@
          <admin-input 
             :label="'Currency'" 
             :placeholder="'USD'" 
-            v-model.trim="modelValue.currency" />
+            v-model.trim="modelValue.currency" 
+         />
          <admin-input 
             :label="'Price sign'" 
             :placeholder="'$'" 
-            v-model.trim="modelValue.price_sign" />
+            v-model.trim="modelValue.price_sign" 
+         />
          <div class="admin-input__wrapper">
             <label class="admin-body-text" for="rating">Rating <span v-if="modelValue.rating">:</span> {{ modelValue.rating }} </label>
                <input
@@ -35,6 +37,7 @@
                   min="0"
                   max="5"
                   v-model="modelValue.rating"
+                  disabled
                 />
          </div>
       </div>

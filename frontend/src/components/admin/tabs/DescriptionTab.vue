@@ -1,11 +1,12 @@
 <template>
-   <div class="update__form-item">
-      <p class="body-text">Description</p>
-         <div class="input__wrapper">
+   <div class="admin-form-item">
+      <h3 class="admin-subheading">Description</h3>
+         <div class="admin-form-item__wrapper">
             <textarea 
+            class="admin-textarea"
             name="description" 
             id="description"
-            v-model.trim="modelValue"
+            v-model.trim="modelValue.description"
             placeholder="Enter product description"
             ></textarea>
          </div>
@@ -13,6 +14,11 @@
 </template>
 
 <script setup lang="ts">
-const modelValue = defineModel<string>()
+
+interface DescriptionTab{
+   description?: string
+}
+
+const modelValue = defineModel<DescriptionTab>({default: () => ({description: ''})})
 
 </script>

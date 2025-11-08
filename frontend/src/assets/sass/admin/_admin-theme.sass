@@ -11,14 +11,14 @@
   --admin-bg-muted: #1A2639
   --admin-text: #f5f5f5
   --admin-accent: #0095FF
-  --admin-hover:  #223451
+  --admin-hover:  #3864abb1
 
 .admin-light 
   --admin-bg-base: #D8D6E8
   --admin-bg-muted:#F4F4F4
   --admin-text: #1A2639
   --admin-accent: #0095FF
-  --admin-hover: #d9e6ef
+  --admin-hover: #8fadc3
 
 
 
@@ -49,6 +49,12 @@ button
     cursor: not-allowed
     svg
       fill: var( --admin-hover)
+
+.admin-input__wrapper
+  input[type="range"]:disabled, input[type="text"]:disabled, input[type="checkbox"]:disabled  label
+    cursor: not-allowed
+    border-color: var(--admin-hover)
+    color: var(--admin-hover)
 
 .tab-button
   font-weight: bold

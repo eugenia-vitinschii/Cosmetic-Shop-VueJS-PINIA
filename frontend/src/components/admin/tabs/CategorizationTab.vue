@@ -1,6 +1,6 @@
 <template>
    <div class="admin-form-item">
-      <p class="admin-subheading">Categorization</p>
+      <h3 class="admin-subheading">Categorization</h3>
       <div class="admin-form-item__wrapper">
         <!-- category -->
          <div class="admin-input__wrapper">
@@ -28,7 +28,7 @@
          <div class="admin-input__wrapper">
             <label for="product_type" class="admin-body-text">Type</label>
             <select 
-            class="admin-select"
+               class="admin-select"
                name="product_type" 
                id="product_type"
                v-model="modelValue.product_type"
@@ -47,12 +47,15 @@
             <span class="admin-body-text">Tag options</span>
             <label 
                class="admin-custom-checkbox"
-               type="checkbox"
                v-for="option in tagOptions"
                :key="option"
-               :value="option"
             >
-               <input  >
+               <input 
+                  type="checkbox"
+                  :value="option"
+                  :checked="modelValue.tag_list?.includes(option)"
+                  @change="onTagChange(option, $event)"
+               >
                <span class="checkmark"></span>
                <span class="admin-body-text">{{ option }}</span>
                </input>
@@ -63,12 +66,15 @@
             <span class="admin-body-text">Slider options</span>
             <label 
                class="admin-custom-checkbox"
-               type="checkbox"
-              v-for="option in sliderOptions"
+               v-for="option in sliderOptions"
                :key="option"
-               :value="option"
             >
-               <input  >
+               <input 
+                  type="checkbox"
+                  :value="option"
+                  :checked="modelValue.sliderTags?.includes(option)"
+                  @change="onSliderTagChange(option, $event)"
+               >
                <span class="checkmark"></span>
                <span class="admin-body-text">{{ option }}</span>
                </input>
@@ -89,6 +95,37 @@ interface ProductCategorization{
 
 //defineModel
 const modelValue = defineModel<ProductCategorization>({default: () => ({})})
+
+function onTagChange(option: string, event: Event){
+   const cheked = (event.target as HTMLInputElement).checked
+
+   //create tag list
+   if(!modelValue.value.tag_list){
+      modelValue.value.tag_list = []
+   }
+
+   if(cheked){
+      modelValue.value.tag_list.push(option)
+   } else {
+      modelValue.value.tag_list = modelValue.value.tag_list.filter(tag => tag !== option)
+   }
+}
+
+
+function onSliderTagChange(option: string, event: Event){
+   const cheked = (event.target as HTMLInputElement).checked
+
+   //create tag list
+   if(!modelValue.value.sliderTags){
+      modelValue.value.sliderTags = []
+   }
+
+   if(cheked){
+      modelValue.value.sliderTags.push(option)
+   } else {
+      modelValue.value.sliderTags = modelValue.value.sliderTags.filter(tag => tag !== option)
+   }
+}
 
 //categotyOptions
 const categoryOptions = [

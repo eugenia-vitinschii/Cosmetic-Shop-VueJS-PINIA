@@ -9,15 +9,17 @@
       >
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
       </button>
-      <button 
-         class="admin-body-text"
-         v-for="(tab, i) in tabs"
-         :key="i"   
-         :class="['tab-button', {active: activeIndex === i}]"
-         @click="activeIndex = i"  
+      <div class="admin-product-form__buttons-tabs">
+         <button 
+            class="admin-body-text"
+            v-for="(tab, i) in tabs"
+            :key="i"   
+            :class="['tab-button', {active: activeIndex === i}]"
+            @click="activeIndex = i"  
       >
          {{ tab.label}}
       </button>
+      </div>
       <button 
          class="admin-svg-button"
          @click="nextTab"
@@ -38,7 +40,7 @@
             />
          </keep-alive>
       </div>
-      <div class="admin-product-form__buttons">
+      <div class="admin-product-form__actions">
          <button class="admin-svg-button" @click="$router.go(-1)" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" ><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
          </button>
@@ -107,8 +109,8 @@ const toast = ref<InstanceType<typeof AdminToast>>()
 
 //handleSubmit
 function handleSubmit(){
-   if(!product.value) {
-       toast.value?.showToast('Error: missing product data')
+   if(!product.value?.name?.trim() || !product.value.brand?.trim()) {
+       toast.value?.showToast('Error: missing product data: name & brand')
        return
    }
 

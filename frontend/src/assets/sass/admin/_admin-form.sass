@@ -13,6 +13,13 @@
       appearance: none
       -webkit-appearance: none
       -moz-appearance: none
+      
+.admin-input__wrapper
+  input[type="range"]:disabled, input[type="text"]:disabled, input[type="checkbox"]:disabled  
+    cursor: not-allowed
+    border-color: var(--admin-hover)
+    color: var(--admin-hover)
+
 
 .admin-textarea
    @include admin-form-element()

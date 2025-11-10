@@ -13,9 +13,20 @@
       </select>
       <!-- types -->
       <select v-model="model.type" class="admin-select">
-         <option value="">Filter by categories</option>
+         <option value="">Filter by types</option>
          <option  v-for="i in productTypes" :key="i"  :value="i">{{ i }}</option>
       </select>
+      <!-- tag option -->
+       <select v-model="model.tag" class="admin-select">
+         <option value="">Filter by tags</option>
+         <option 
+            v-for="i in sliderTags"
+            :key="i"
+            :value="i"
+         >
+            {{ i }}
+         </option>
+       </select>
    </div>
    <div class="admin-filters__search">
    <!-- search by name or id -->
@@ -38,6 +49,7 @@
 </template>
 
 <script setup lang="ts">
+
 import { ref, watch} from "vue";
 
 type Filters = {
@@ -45,22 +57,32 @@ type Filters = {
    category: string;
    type: string;
    query: string;
+   tag: string;
 }
 
 const props = defineProps<{
    brands: string[];
    categories: string[];
    productTypes: string[];
+   sliderTags: string[];
    modelValue: Filters;
 }>();
 
 
-const emit = defineEmits<{'update:modelValue': [Filters]}>();
+const emit = defineEmits<{
+   (e: 'update:modelValue', value: Filters):void
+}>();
 
 //use local copy for control debounche
 const model = ref<Filters>({...props.modelValue});
 
-watch(() => props.modelValue, v => (model.value = { ...v}))
+watch(() => props.modelValue, 
+   (newVal) =>{
+      if(JSON.stringify(newVal) !== JSON.stringify(model.value)) {
+         model.value = {...newVal}
+      }
+   }, {deep: true}
+)
 
 //search
 const searchLocal = ref(model.value.query);
@@ -80,7 +102,7 @@ watch(model, (v) => emit('update:modelValue', {...v}), { deep: true})
 
 //reset
 function reset(){
-   model.value = { brand: '', category: '', type: '', query: ''};
+   model.value = { brand: '', category: '', type: '', tag: '', query: ''};
    searchLocal.value = '';
    emit('update:modelValue', { ...model.value})
 }

@@ -10,6 +10,7 @@
           :brands="admin.brands"
           :categories="admin.categories"
           :productTypes="admin.productTypes"
+          :sliderTags="admin.sliderTags"
         />
         <section class="admin-products">
           <table class="admin-table" v-if="admin.products">
@@ -43,7 +44,7 @@
                   <div class="admin-table__options">
                     <label 
                       class="admin-custom-checkbox"
-                      v-for="option in sliderOptions"
+                      v-for="option in admin.sliderTags"
                       :key="option"
                     >
                       <input 
@@ -119,10 +120,6 @@ const deleteItem = (id?: string) => {
   }
 }
 
-const sliderOptions = [
-  "top", "brand", "category"
-];
-
 const toast = ref<InstanceType<typeof AdminToast>>()
 
 //context
@@ -175,7 +172,7 @@ onMounted(async() => {
   })
 });
 
-const filters = ref({ brand: '', category: '', type: '', query: ''})
+const filters = ref({ brand: '', category: '', type: '', query: '', tag: ''})
 
 //filter function
 const filteredProducts = computed(() => {
@@ -186,6 +183,8 @@ const filteredProducts = computed(() => {
       !filters.value.brand || p.brand === filters.value.brand,
       !filters.value.category || p.category === filters.value.category,
       !filters.value.type || p.product_type === filters.value.type,
+      !filters.value.tag || p.sliderTags?.some(
+        tag => tag.toLocaleLowerCase() === filters.value.tag.toLocaleLowerCase()),
       !q || p.name?.toLowerCase().includes(q) || String(p.id).toLowerCase().includes(q)
     ];
     return conditions.every(Boolean);

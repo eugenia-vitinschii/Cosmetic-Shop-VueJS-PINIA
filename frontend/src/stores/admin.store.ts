@@ -72,17 +72,25 @@ export const useAdminStore = defineStore("admin", () => {
       for ( const p of products.value) if( p.brand) set.add(p.brand);
       return [...set].sort()
    })
-      const categories = computed (() => {
+   const categories = computed (() => {
       const set = new Set<string>();
       for ( const p of products.value) if( p.category) set.add(p.category);
       return [...set].sort()
    })
-      const productTypes = computed (() => {
+   const productTypes = computed (() => {
       const set = new Set<string>();
       for ( const p of products.value) if( p.product_type) set.add(p.product_type);
       return [...set].sort()
    })
 
+   const sliderTags = computed(() =>{
+      const tags = new Set<string>()
+      cosmetics.products.forEach(p => {
+         p.sliderTags?.forEach(tag => tags.add(tag))
+      })
+      return Array.from(tags)
+      })
+    
    /* === CREATE & UDDATE & DELETE PRODUCTS === */
 
    async function createProduct(payload: Product) {
@@ -96,7 +104,7 @@ export const useAdminStore = defineStore("admin", () => {
          });
          products.value.push(data);
       } catch (err) {
-         console.log(err)
+         console.log('Create Product Error', err)
       }
    }
 
@@ -122,7 +130,7 @@ export const useAdminStore = defineStore("admin", () => {
       }
    }
 
-   return { products,brandLabels, brandData,categoryLabels, categoryData,typesData, typesLabels,  totalProducts, totalBrands, totalCategories, totalTypes,limit, page, complected, count, fetchAllProducts,fetchProductById, brands, categories, productTypes, createProduct, updateProduct, deleteProduct }
+   return { products,brandLabels, sliderTags, brandData,categoryLabels, categoryData,typesData, typesLabels,  totalProducts, totalBrands, totalCategories, totalTypes,limit, page, complected, count, fetchAllProducts,fetchProductById, brands, categories, productTypes, createProduct, updateProduct, deleteProduct }
 })
 
 

@@ -5,9 +5,36 @@
 //input- text
 .admin-product-form
    @include block-style()
-   &__buttons
+   &__buttons,&__actions
       display: flex   
       justify-content: space-between
       align-items: center
       button
          height: 50px
+
+.admin-form-item
+   &__color, &__create-color
+      display: grid
+      grid-template-columns: 30px 1fr 30px 1fr 30px
+      gap: 5px
+      input, span
+         margin-right: 10px
+         height: 30px
+   &__hex
+      width: 30px
+      border: 1px solid var(--admin-accent)
+      padding: 5px
+      margin: 5px 0px
+
+@media ( max-width: 600px)
+   .admin-product-form__buttons-tabs
+      width: 100%
+      display: grid
+      place-items: center
+      grid-template-columns: 1fr 1fr 1fr
+
+@media ( max-width:450px)
+   .admin-product-form__buttons-tabs
+      grid-template-columns: 1fr
+      place-items: center
+      

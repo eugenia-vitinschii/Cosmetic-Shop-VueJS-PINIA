@@ -152,13 +152,13 @@ function onCheckboxChange(product: Product, option: string, event: Event){
   }else{
     product.sliderTags = product.sliderTags.filter( o => o !== option)}
   if(!product.id){
-    toast.value?.showToast('Error: misssing id')
+    toast.value?.showToast('Error: misssing id', 'error')
     return
   }
 
   const payload = clonePlain(product)
   autoSave(product.id, payload)
-  toast.value?.showToast('Sliter tags updated')
+  toast.value?.showToast('Sliter tags updated', 'success')
 }
 
 

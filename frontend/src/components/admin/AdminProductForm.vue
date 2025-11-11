@@ -110,13 +110,14 @@ const toast = ref<InstanceType<typeof AdminToast>>()
 //handleSubmit
 function handleSubmit(){
    if(!product.value?.name?.trim() || !product.value.brand?.trim()) {
-       toast.value?.showToast('Error: missing product data: name & brand')
+      
+       toast.value?.showToast('Error: missing product data: name, brand','error')
        return
    }
 
    emit('submit', product.value as ProductData)
 
-   toast.value?.showToast('Product saved successfully')
+   toast.value?.showToast('Product saved successfully', 'success')
 }
 
 </script>

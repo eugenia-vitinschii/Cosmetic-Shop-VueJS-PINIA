@@ -91,6 +91,9 @@ const newColor = reactive<ProductColor>({
 function addColor(){
   if(!newColor.colour_name.trim()) return;
 
+  if(!Array.isArray(modelValue.value.product_colors)){
+    modelValue.value.product_colors = []
+  }
     modelValue.value.product_colors.push({
       hex_value: newColor.hex_value,
       colour_name: newColor.colour_name

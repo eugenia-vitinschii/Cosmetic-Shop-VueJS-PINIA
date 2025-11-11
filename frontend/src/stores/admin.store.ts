@@ -103,6 +103,7 @@ export const useAdminStore = defineStore("admin", () => {
             updated_at: createdAt,
          });
          products.value.push(data);
+         return data;
       } catch (err) {
          console.log('Create Product Error', err)
       }

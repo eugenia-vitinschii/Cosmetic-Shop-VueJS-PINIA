@@ -1,6 +1,6 @@
 <template>
    <div class="admin-title">
-      <h1 class="admin-heading">
+      <h1 class="admin-subheading">
          <slot>
             {{ title }}
          </slot>

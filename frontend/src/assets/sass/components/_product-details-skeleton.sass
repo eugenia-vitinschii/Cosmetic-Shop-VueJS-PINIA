@@ -1,0 +1,62 @@
+//details skeleton
+@use '../abstracts/mixins' as *  
+@use '../abstracts/variables' as *
+
+.product-details-skeleton
+   margin-top: 20px
+   &__layout
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 20px
+   &__details
+   &__details--top
+   &__details--text
+      margin-top: 6px
+   &__details--text:first-child
+      @include skeleton-text(100px)
+   &__details--text:last-child
+      margin-top: 40px
+      @include skeleton-text(60px)
+   &__details--bottom
+      margin-top: 6px
+      @include skeleton-text(60px)
+   &__media
+      @include skeleton-img()
+   &__info
+   &__info--price
+      @include skeleton-text(50px)
+   &__info--colors
+   &__info--color
+      @include skeleton-text(100%)
+      height: 40px
+      margin-top: 6px
+   &__description
+      margin-top: 30px
+   &__text
+      @include skeleton-text(100%)
+      margin-top: 6px
+
+@media (max-width: 1023px)
+   .product-details-skeleton
+      &__layout
+         grid-template-columns: repeat(2, 1fr)
+      &__details
+         grid-column: 1 / span 2
+         grid-row: 1
+      &__media
+         grid-column: 1
+         grid-row: 2
+      &__info
+         grid-column: 2
+         grid-row: 2
+
+@media (max-width: 767px)
+   .product-details-skeleton
+      &__layout
+         grid-template-columns: 1fr
+         gap: 40px
+      &__details, &__media, &__info
+         grid-column: auto
+         grid-row: auto
+      &__description
+         margin-top: 30px

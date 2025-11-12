@@ -76,9 +76,28 @@
    color: $color-text-secondary
    font-size: $body-text-sm
 
-   ///import css-variables from 
 @mixin transition() 
    transition-duration: 0.9s
-   transition-timing-function: ease
+   transition-timing-function: ease  
+
+//skeletons 
+@mixin skeleton-color()
+   background: $color-text-secondary   
+   opacity: 0.6
+
+@mixin skeleton-text($width)
+   @include skeleton-color()
+   width:$width
+   height: 20px
+   border-radius: $border-radius
+
+@mixin skeleton-img()
+   @include img-style()
+   @include skeleton-color()
+   aspect-ratio: 1 / 1
+   width: 100%
+
+
+
 
    

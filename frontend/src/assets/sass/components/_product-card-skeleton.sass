@@ -1,0 +1,49 @@
+//skeleton
+@use '../abstracts/mixins' as *  
+@use '../abstracts/variables' as *
+
+
+.product-card-skeleton
+   display: flex
+   flex-direction: column
+   padding: $margin-sm
+   cursor: progress
+   &__img
+      @include skeleton-img()
+   &__content
+   &__title
+      @include skeleton-text(100%)
+      margin-top: 20px
+   &__info
+      margin-top: 60px
+   &__text:first-child
+      margin-top: 10px
+      @include skeleton-text(50px)
+   &__text:nth-child(2)
+      margin-top: 10px
+      @include skeleton-text(120px)
+   &__text:nth-child(3)
+      margin-top: 25px
+      @include skeleton-text(40px)
+
+//shimmer styles
+.shimmer
+   position: relative
+   overflow: hidden
+
+.shimmer::before
+   content: ''
+   position: absolute
+   top: 0
+   left: -150px
+   height: 100%
+   width: inherit
+   background: linear-gradient(to right, transparent 0%, #ffffff33 50%, transparent 100%)
+   animation: loading 1.2s infinite
+
+@keyframes loading
+   0%
+      left: -150px
+
+   100%
+      left: 100%

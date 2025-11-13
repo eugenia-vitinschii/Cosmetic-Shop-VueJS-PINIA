@@ -23,15 +23,16 @@
       "category": "concealer",
       "product_type": "foundation",
       "tag_list": [
-        "week"
+        "week",
+        "brand"
       ],
       "created_at": "2025-09-21T03:11:01.369Z",
-      "updated_at": "2025-10-29T15:54:23.784Z",
+      "updated_at": "2025-11-07T16:16:07.062Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/1004.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/004/original/open-uri20171227-4-1wp63cr?1514344255",
       "product_colors": [
         {
-          "hex_value": "#96644A",
+          "hex_value": "#aa7942",
           "colour_name": "Deep"
         },
         {
@@ -49,11 +50,13 @@
         {
           "hex_value": "#F1DBC3",
           "colour_name": "Light"
+        },
+        {
+          "hex_value": "#ff4013",
+          "colour_name": "test"
         }
       ],
-      "sliderTags": [
-        "top"
-      ]
+      "sliderTags": []
     },
     {
       "id": "1002",
@@ -88,9 +91,7 @@
           "colour_name": "Rich"
         }
       ],
-      "sliderTags": [
-        "brand"
-      ]
+      "sliderTags": []
     },
     {
       "id": "1001",
@@ -125,9 +126,7 @@
           "colour_name": "Moonstone"
         }
       ],
-      "sliderTags": [
-        "category"
-      ]
+      "sliderTags": []
     },
     {
       "id": "1000",
@@ -170,9 +169,7 @@
           "colour_name": "Deep"
         }
       ],
-      "sliderTags": [
-        "brand"
-      ]
+      "sliderTags": []
     },
     {
       "id": "939",
@@ -194,9 +191,7 @@
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/939.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/939/original/open-uri20171224-4-1mv4cht?1514082691",
       "product_colors": [],
-      "sliderTags": [
-        "brand"
-      ]
+      "sliderTags": []
     },
     {
       "id": "938",
@@ -227,9 +222,7 @@
           "colour_name": "Magical"
         }
       ],
-      "sliderTags": [
-        "brand"
-      ]
+      "sliderTags": []
     },
     {
       "id": "937",
@@ -489,7 +482,7 @@
       "id": "932",
       "brand": "nyx",
       "name": "Radiant Finishing powder",
-      "price": 9,
+      "price": 14,
       "price_sign": "$",
       "currency": "USD",
       "image_link": "https://www.nyxcosmetics.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-cpd-nyxusa-master-catalog/default/dwf8ec0855/ProductImages/Face/Radiant_Finishing_powder/radiantfinishingpowder_main.jpg?sw=390&sh=390&sm=fit",
@@ -501,7 +494,7 @@
       "product_type": "foundation",
       "tag_list": [],
       "created_at": "2017-12-24T02:31:20.618Z",
-      "updated_at": "2017-12-24T02:31:21.184Z",
+      "updated_at": "2025-11-06T16:14:16.848Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/932.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/932/original/open-uri20171224-4-tpsvw?1514082680",
       "product_colors": [
@@ -3810,6 +3803,9 @@
           "hex_value": "#7C431D",
           "colour_name": "CN 126 Espresso"
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -4032,6 +4028,9 @@
           "hex_value": "#F99673",
           "colour_name": "Medium"
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -4252,6 +4251,9 @@
           "hex_value": "#b86530",
           "colour_name": "Deep"
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -4613,6 +4615,9 @@
           "hex_value": "#DB9781",
           "colour_name": "004 Warm Light"
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -4687,7 +4692,8 @@
       "id": "679"
     },
     {
-      "id": "678"
+      "id": "678",
+      "sliderTags": []
     },
     {
       "id": "677"
@@ -5000,6 +5006,9 @@
           "hex_value": "#cf743b",
           "colour_name": "nutmeg"
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -5050,6 +5059,9 @@
           "hex_value": "#95633b",
           "colour_name": "DARK"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -5104,6 +5116,9 @@
           "hex_value": "#b17c60",
           "colour_name": "DARK  "
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -5166,6 +5181,9 @@
           "hex_value": "#905839",
           "colour_name": "10"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -5220,6 +5238,9 @@
           "hex_value": "#795947",
           "colour_name": "DARK"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -5316,6 +5337,9 @@
           "hex_value": "#B17966",
           "colour_name": "DARK"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -5578,6 +5602,9 @@
           "hex_value": "#C6956D",
           "colour_name": "Nude Beige "
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -5668,6 +5695,9 @@
           "hex_value": "#daa778",
           "colour_name": "Medium to Dark "
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -6147,6 +6177,9 @@
           "hex_value": "#A05F21",
           "colour_name": "Sweet Chocolate "
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -6526,6 +6559,9 @@
           "hex_value": "#F7AC8C",
           "colour_name": "Prairie Rose (Fair - Cool Tones) "
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -6997,7 +7033,8 @@
           "hex_value": "#492117",
           "colour_name": "F-100 "
         }
-      ]
+      ],
+      "sliderTags": []
     },
     {
       "id": "342",
@@ -7018,7 +7055,10 @@
       "updated_at": "2017-12-23T21:08:23.403Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/342.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/342/original/data?1514063303",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "top"
+      ]
     },
     {
       "id": "341",
@@ -7039,7 +7079,10 @@
       "updated_at": "2017-12-23T21:08:23.280Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/341.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/341/original/data?1514063303",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "top"
+      ]
     },
     {
       "id": "340",
@@ -7184,6 +7227,9 @@
           "hex_value": "#94583F",
           "colour_name": "Mocha "
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -7490,6 +7536,9 @@
           "hex_value": "#D89A75",
           "colour_name": "Medium "
         }
+      ],
+      "sliderTags": [
+        "top"
       ]
     },
     {
@@ -12549,6 +12598,9 @@
           "hex_value": "#c16055",
           "colour_name": "HONEY (SARA)"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -16996,6 +17048,9 @@
           "hex_value": "#EFC1AE",
           "colour_name": "color 14"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -17055,7 +17110,10 @@
       "updated_at": "2017-12-26T00:33:00.593Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/527.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/527/original/open-uri20171223-4-aqs6ml?1514062151",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "brand"
+      ]
     },
     {
       "id": "526",
@@ -17164,6 +17222,9 @@
           "hex_value": "#47352B",
           "colour_name": "color 3"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -19633,7 +19694,10 @@
       "updated_at": "2017-12-23T20:49:20.484Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/559.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/559/original/data?1514062160",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "brand"
+      ]
     },
     {
       "id": "557",
@@ -20149,7 +20213,10 @@
       "updated_at": "2017-12-23T20:51:32.291Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/456.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/456/original/open-uri20171223-4-c79x3p?1514062292",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "category"
+      ]
     },
     {
       "id": "455",
@@ -20210,6 +20277,9 @@
           "hex_value": "#99504D",
           "colour_name": "color 4"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -20445,6 +20515,9 @@
           "hex_value": "#f69476",
           "colour_name": "Mango Ice (Warm) "
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -20477,6 +20550,9 @@
           "hex_value": "#faaab5",
           "colour_name": "Rose (7860C) "
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -20598,6 +20674,9 @@
           "hex_value": "#AC564D",
           "colour_name": "Apricot Blush (Warm Tones) "
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -20708,6 +20787,9 @@
           "hex_value": "#e07b78",
           "colour_name": "Tender Twig "
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -20857,7 +20939,10 @@
       "updated_at": "2017-12-23T21:08:43.426Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/429.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/429/original/open-uri20171223-4-156cku8?1514063323",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "category"
+      ]
     },
     {
       "id": "428",
@@ -21207,7 +21292,10 @@
       "updated_at": "2017-12-23T21:08:30.276Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/370.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/370/original/open-uri20171223-4-ev2twx?1514063310",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "category"
+      ]
     },
     {
       "id": "278",
@@ -21710,6 +21798,9 @@
           "hex_value": "#A37948",
           "colour_name": "Caribbean"
         }
+      ],
+      "sliderTags": [
+        "category"
       ]
     },
     {
@@ -23680,7 +23771,10 @@
       "updated_at": "2017-12-23T20:49:14.323Z",
       "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/534.json",
       "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/534/original/data?1514062154",
-      "product_colors": []
+      "product_colors": [],
+      "sliderTags": [
+        "brand"
+      ]
     },
     {
       "id": "533",
@@ -23764,6 +23858,9 @@
           "hex_value": "#8792a2",
           "colour_name": "3D GUNMETAL"
         }
+      ],
+      "sliderTags": [
+        "brand"
       ]
     },
     {
@@ -26214,6 +26311,33 @@
           "colour_name": "Charcoal 954 "
         }
       ]
+    },
+    {
+      "id": "43s9",
+      "name": "test product",
+      "brand": "Brand Name",
+      "category": "concealer",
+      "price_sign": "$",
+      "price": 20,
+      "currency": "USD",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.",
+      "image_link": "https://passportglobal.com/wp-content/uploads/2024/03/cljj243vq1n72owewpowag4hg-istock-1414801672.full_.webp",
+      "api_featured_image": "https://passportglobal.com/wp-content/uploads/2024/03/cljj243vq1n72owewpowag4hg-istock-1414801672.full_.webp",
+      "product_colors": [
+        {
+          "hex_value": "#f5ec00",
+          "colour_name": "Yellow color"
+        },
+        {
+          "hex_value": "#d95000",
+          "colour_name": "Orage color"
+        }
+      ],
+      "updated_at": "2025-11-12T14:14:43.455Z",
+      "created_at": "2025-11-11T12:45:13.127Z",
+      "product_type": "foundation",
+      "tag_list": [],
+      "sliderTags": []
     }
   ]
 }

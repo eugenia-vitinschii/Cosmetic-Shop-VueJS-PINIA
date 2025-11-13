@@ -27,7 +27,7 @@
           />
 
          <!-- favorite items -->
-         <div class="favorite__items products-wrapper" v-if="created">
+         <div class="favorite__items filtered-products__container" v-if="created">
             
           <product-card
          v-for="item in favorite"

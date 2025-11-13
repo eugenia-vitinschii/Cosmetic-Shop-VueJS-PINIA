@@ -2,8 +2,8 @@
    <!-- product page  -->
   <div class="product">
     <div class="container">
-      <div class="product__wrapper">
-         <div class=" page-header" v-if="item">
+      <div class="product__wrapper" v-if="item" >
+         <div class=" page-header" >
           <back-button/>
           <the-breadcrumbs
             :items="[
@@ -12,10 +12,12 @@
              :current="item.name ?? ''"
           />
         </div>
-         <div class="product__cosmetics"  v-if="item">
+        <transition-group name="skeleton" tag="div" appear>
+          <product-details-skeleton  v-if="loading"/>
+          <template v-else>
           <!-- product cosmetics -->
+           <div class="product__cosmetics">
             <product-details
-            v-if="created"
               :id="item.id"
               :image_link="item.image_link"
               :name="item.name"
@@ -35,11 +37,12 @@
               :isFavorite="item.id ? user.isFavorite(item.id) :false"
               @toggleFavorite="toggleFavorite"
               @addItemToCart="pushToCart"
-        />
+          />
+           </div>
+         </template>
+        </transition-group>
          </div>
-         <p v-else>Loading...</p>
       </div>
-    </div>
   </div>
 </template>
 
@@ -51,7 +54,7 @@ import {ref,  onMounted, computed} from "vue";
 import TheBreadcrumbs from "@/components/core/Breadcrumbs.vue"
 import BackButton from "@/components/core/BackButton.vue";
 import ProductDetails from "@/components/product/ProductDetails.vue";
-
+import ProductDetailsSkeleton from "@/components/skeletons/ProductDetailsSkeleton.vue";
 //pinia & router
 import { useCosmeticStore } from "@/stores/cosmetic.store";
 import { useUserStore } from "@/stores/user.store";
@@ -72,13 +75,21 @@ const user = useUserStore()
 const route = useRoute();
 const id = route.params.id as string;
 
-let created = ref(false);
+
+const loading = ref(true)
 
 const item = computed(() => cosmetic.products.find((p) => p.id === id))
 
 onMounted(async() => {
-  created.value = true;
-  await cosmetic.fetchProductById(id);
+  try{
+    await cosmetic.fetchProductById(id);  
+  }catch(err){
+    console.error('Eroor fetch products:', err)
+  }finally{
+    setTimeout(() => {
+      loading.value = false
+    }, 1000)
+  }
 });
 
 import type { CartItem} from "@/types/cart";

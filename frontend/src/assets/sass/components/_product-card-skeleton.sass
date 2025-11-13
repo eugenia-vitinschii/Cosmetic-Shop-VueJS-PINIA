@@ -12,19 +12,15 @@
       @include skeleton-img()
    &__content
    &__title
-      @include skeleton-text(100%)
-      margin-top: 20px
+      @include skeleton-text(100%, 20px)
    &__info
       margin-top: 60px
    &__text:first-child
-      margin-top: 10px
-      @include skeleton-text(50px)
+      @include skeleton-text(50px, 10px)
    &__text:nth-child(2)
-      margin-top: 10px
-      @include skeleton-text(120px)
+      @include skeleton-text(120px, 10px)
    &__text:nth-child(3)
-      margin-top: 25px
-      @include skeleton-text(40px)
+      @include skeleton-text(40px, 25px)
 
 //shimmer styles
 .shimmer

@@ -85,11 +85,12 @@
    background: $color-text-secondary   
    opacity: 0.6
 
-@mixin skeleton-text($width)
+@mixin skeleton-text($width, $margin-top: 0 )
    @include skeleton-color()
    width:$width
    height: 20px
    border-radius: $border-radius
+   margin-top: $margin-top
 
 @mixin skeleton-img()
    @include img-style()

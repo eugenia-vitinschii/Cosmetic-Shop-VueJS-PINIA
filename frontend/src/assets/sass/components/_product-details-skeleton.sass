@@ -15,11 +15,9 @@
    &__details--text:first-child
       @include skeleton-text(100px)
    &__details--text:last-child
-      margin-top: 40px
-      @include skeleton-text(60px)
+      @include skeleton-text(60px, 40px)
    &__details--bottom
-      margin-top: 6px
-      @include skeleton-text(60px)
+      @include skeleton-text(60px, 6px)
    &__media
       @include skeleton-img()
    &__info
@@ -27,14 +25,12 @@
       @include skeleton-text(50px)
    &__info--colors
    &__info--color
-      @include skeleton-text(100%)
+      @include skeleton-text(100%, 6px)
       height: 40px
-      margin-top: 6px
    &__description
       margin-top: 30px
-   &__text
-      @include skeleton-text(100%)
-      margin-top: 6px
+   &__description--text
+      @include skeleton-text(100%, 6px)
 
 @media (max-width: 1023px)
    .product-details-skeleton
@@ -54,7 +50,6 @@
    .product-details-skeleton
       &__layout
          grid-template-columns: 1fr
-         gap: 40px
       &__details, &__media, &__info
          grid-column: auto
          grid-row: auto

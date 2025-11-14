@@ -63,19 +63,20 @@
       fill: $color-white
 
 
-.cart-button
+.custom-button
    transition: $transition 
    @include button-style($color-white, $color-accent-hover)
 
-.cart-button:hover
+.custom-button:hover
    @include button-style($color-white, $color-accent)
 
-.cart-button:active
+.custom-button:active
    @include button-style($color-accent-hover, $color-bg-base)
 
-.cart-button.disabled
+.custom-button.disabled
    background: #ccc
    cursor: not-allowed
+
 
 .load-more
    background: $color-bg-base

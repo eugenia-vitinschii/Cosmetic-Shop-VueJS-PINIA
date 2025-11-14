@@ -61,7 +61,7 @@
           <!-- add to card button -->
           <button 
           @click="handleAddToCart" 
-          :class="['cart-button', {disabled : hasColors && !selectedColor}]"
+          :class="['custom-button', {disabled : hasColors && !selectedColor}]"
            >
       add to cart
           </button>

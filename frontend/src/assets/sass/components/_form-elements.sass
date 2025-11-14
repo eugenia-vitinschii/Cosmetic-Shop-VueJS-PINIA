@@ -1,9 +1,30 @@
 @use '../abstracts/mixins' as *  
 @use '../abstracts/variables' as *
 
-.form
-   &__wrapper
-      @include section-wrapper
+.custom-input__wrapper
+   label
+      display: inline-block
+      margin: 10px 0px 5px 0px
+
+.custom-input-text
+   width: 100%
+   background: $color-bg-base
+   border: 1px solid $color-bg-base
+   color: $color-accent-hover
+   @include transition()
+   &::placeholder
+      opacity: 0.9
+   &:hover
+      border-bottom: 1px solid $color-accent-hover
+
+.custom-input-password
+   display: flex
+   &__button
+      svg
+         width: 30px
+         height:30px
+         fill: $color-text
+
 
 .custom
    max-width: 800px

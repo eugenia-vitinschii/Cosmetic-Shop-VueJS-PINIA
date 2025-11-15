@@ -91,7 +91,8 @@
         </div>
         <!-- header nav -->
         <nav v-bind:class="{ active: showNav  }">
-          <button  @click="showNav = !showNav " class="header__nav--toogle">
+          
+          <button  @click="showNav = !showNav" class="header__nav--toogle">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
           </button>
           <ul class="header__top">
@@ -107,10 +108,12 @@
               <router-link to="/brand" class="header__link">Brands</router-link>
             </li>
           </ul>
-            <!-- category -->
-            <dropdown-menu @toggle="toogleDropdown('categories')" :isOpen="openDropdown === 'categories'" title="Category" to="/category" :groups="categories"/>
+             <!-- category -->
+            <dropdown-menu @toggle="toogleDropdown('categories')"  @close="toogleDropdown('')" :isOpen="openDropdown === 'categories'" title="Category" to="/category" :groups="categories"/>
             <!-- type -->
-           <dropdown-menu @toggle="toogleDropdown('types')" :isOpen="openDropdown === 'types'" title="Types" to="/product-type" :groups="types"/>
+           <dropdown-menu @toggle="toogleDropdown('types')" @close="toogleDropdown('')" :isOpen="openDropdown === 'types'" title="Types" to="/product-type" :groups="types"/>
+
+
         </nav>
       </div>
     </div>
@@ -120,8 +123,8 @@
 
 <script setup lang="ts">
 //vue
-import { ref } from "vue";
-
+import { ref, watch } from "vue";
+import {useRoute} from 'vue-router'
 //components
 import DropdownMenu from "../core/DropdownMenu.vue";
 
@@ -207,4 +210,10 @@ const openDropdown = ref<string |null>(null);
 function toogleDropdown(name: string){
   openDropdown.value = openDropdown.value === name ? null : name
 }
+
+const route = useRoute()
+
+watch(() => route.fullPath, () => {
+  showNav.value = false
+})
 </script>

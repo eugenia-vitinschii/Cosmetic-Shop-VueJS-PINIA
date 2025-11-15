@@ -7,7 +7,7 @@
       </button>
    </div>
 
-   <div v-if="isOpen" class="header__bottom dropdown__menu">
+   <div v-if="isOpen" class="header__bottom dropdown__menu" @click.self="$emit('close')">
       <div class="dropdown__menu--items">
          <ul v-for="(group, i) in groups" :key="i" class="dropdown__menu--item">
             <li v-for="item in group.items" :key="item.link">
@@ -29,5 +29,5 @@ const props = defineProps<{
    groups: { title?: string; items: { name: string; link: string}[]} []
 }>()
 
-defineEmits(["toggle"])
+defineEmits(["toggle", "close"])
 </script>

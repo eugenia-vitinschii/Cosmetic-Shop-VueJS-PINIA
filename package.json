@@ -1,0 +1,18 @@
+{
+  "name": "e-commerce-mireya",
+  "version": "2.0.0",
+  "description": "--- ![PINIA](https://img.shields.io/badge/PINIA-blue?style=flat&logo=vuedotjs&logoColor=fff) ![VUE](https://img.shields.io/badge/Vue%20JS%203-blue?style=flat&logo=vuedotjs&logoColor=fff) ![Axios](https://img.shields.io/badge/axios-blue?style=flat&logo=axios&logoColor=fff) ![SASS](https://img.shields.io/badge/SASS-blue?style=flat&logo=sass&logoColor=fff) ![HTML](https://img.shields.io/badge/HTML%205-blue?style=flat&logo=html5&logoColor=fff)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "frontend": "npm --prefix frontend run dev",
+    "backend": "npm --prefix backend run dev",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+  },
+  "keywords": [],
+  "author": "Eugenia Vitinschii",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

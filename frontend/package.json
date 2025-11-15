@@ -1,8 +1,7 @@
 {
-  "name": "mireya-frontend",
+  "name": "e-commerce-mireya-frontend",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"vite\" \"json-server -w db.json --port 3000\" ",
     "build": "vue-tsc -b && vite build",

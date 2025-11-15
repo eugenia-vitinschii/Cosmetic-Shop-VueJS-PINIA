@@ -1,4 +1,4 @@
-### MIREYA | Vue 3 E-commerce App | TypeScript, Pinia
+### MIREYA | Vue 3 E-commerce App | TypeScript, Pinia, Nodejs
 ---
 ![PINIA](https://img.shields.io/badge/PINIA-blue?style=flat&logo=vuedotjs&logoColor=fff)
 ![VUE](https://img.shields.io/badge/Vue%20JS%203-blue?style=flat&logo=vuedotjs&logoColor=fff)
@@ -9,23 +9,8 @@
 ![ChartJS](https://img.shields.io/badge/ChartJS-blue)
 ![SwiperJS](https://img.shields.io/badge/SwiperJS-blue)
 
-![Last commit](https://img.shields.io/github/last-commit/vuejs/core)
-
----
-
- #### Developed a modern e-commerce application with both customer-facing and admin functionality:
-<sub>   Frontend: Vue 3 (Composition API, <​script setup>), TypeScript, Pinia, Sass;.</sub>
-
- <sub>  Core features: product catalog with filtering and search, product detail page with color selection, shopping cart with quantity & total price calculation, favorites list;.</sub>
- 
- <sub> Admin panel: product creation/editing with tab-based forms, category and color management;.</sub>
- 
-<sub> UX: implemented dynamic colorKey generation to handle product variants (different colors of the same product) correctly in the cart;.</sub>
-
- <sub> State management: clean Pinia store architecture (state, getters, actions), localStorage persistence;.</sub>
- 
-<sub>  Design system: Sass variables for typography, colors, and responsive layout.</sub>
-
+![Node-js](https://img.shields.io/badge/node-js?style=flat&logo=nodedotjs&logoColor=%23fff&color=%23f77f00)
+![Express-js](https://img.shields.io/badge/express-js?style=flat&logo=express&logoColor=%23ffffff&color=%23f77f00)
 
 ---
 #### Project setup
@@ -33,9 +18,72 @@
 npm install 
 ```
 
-
 #### Start
 ```
 npm run dev
 ```
+
+## 📁 Project Structure
+
+```
+discount/
+├── backend/         # Node.js Express API
+│   └── src/
+│       └── server.ts
+│   └── ...
+| 
+├── frontend/        # Vue 3 frontend
+│   └── src/
+│       └── assets/
+│           └── sass/
+│              └── abstracts/
+│                 └── _all.scss
+│                 └── _mixins.scss
+│                 └── _variables.scss
+│                 └── ...
+│              └── compoments/
+│              └── admin/
+│              └── core/
+│                 └── _all.scss
+│                 └── _reset.scss
+│                 └── _typography.scss
+│              └── layout/
+│                 └── _all.scss
+│                 └── _header.scss
+│                 └── _footer.scss
+│                 └── _navigation.scss
+│              └── pages/
+│              └── sections/
+│              └── app.sass #import all sass folders
+│       └── components/
+│       └── models/
+│           └── product.ts
+│       └── router/
+│           └── about.routes.ts
+│           └── account.routes.ts
+│           └── admin.routes.ts
+│           └── brand.routes.ts
+│           └── category.routes.ts
+│           └── product-type.routes.ts
+│           └── index.ts
+│       └── stores/
+│           └── admin.store.ts
+│           └── admin.todo.store.ts
+│           └── cosmetic.store.ts
+│           └── user.store.ts
+│       └── types/
+│           └── cart.ts
+│           └── cosmetic.ts
+│           └── user.ts
+│       └── views/
+│           └── admin/
+│           └── public/
+│       └── App.vue/
+│   └── db.json
+│   └── ...
+
+
+```
+---
+
 

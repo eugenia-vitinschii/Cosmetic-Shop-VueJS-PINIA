@@ -9,7 +9,7 @@
           <p class="subheading">Login</p>
         </div>
         <div class="auth__container">
-          <form  class="auth__form">
+          <form  class="auth__form" @submit.prevent="onLogin">
             <div class="custom-input__wrapper">
               <label class="body-text">Name</label>
               <input
@@ -93,7 +93,6 @@ const showPassword = ref(false)
 
 const auth = useAuthStore();
 
-
 const username = ref("");
 const password= ref("");
 
@@ -104,10 +103,13 @@ const onLogin = async () => {
   if(ok){
     console.log(`Hello, ${auth.user?.username}! Role: ${auth.user?.role}`)
   }
+  username.value = ''
+  password.value = ''
+
 }
 
 
-const logoutUser  = async () =>{
+const logoutUser  = () =>{
   username.value = ''
   password.value = ''
 

@@ -22,7 +22,7 @@ export const useAuthStore = defineStore("auth", ()=>{
    }
 
    /* === REGISTER=== */
-   async function register(creadentials: {username: string, email: string, password: string}){
+   async function register(credentials: {username: string, email: string, password: string}){
       loading.value = true;
       error.value = null;
 
@@ -30,7 +30,7 @@ export const useAuthStore = defineStore("auth", ()=>{
          const res = await fetch("http://localhost:4000/api/auth/register",{
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(creadentials)
+            body: JSON.stringify(credentials)
          });
          
          const data  = await res.json()
@@ -79,7 +79,6 @@ export const useAuthStore = defineStore("auth", ()=>{
          user.value = data.user
 
          localStorage.setItem("user", JSON.stringify(data.user))
-
          
          return true;
 

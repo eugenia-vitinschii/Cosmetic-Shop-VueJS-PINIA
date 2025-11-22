@@ -3,9 +3,9 @@
 //imports
 import { Request, Response } from "express";
 import {users} from "../models/userModel"
+import { generateToken } from "../utils/generateToken";
 
-
-//login
+ /* === LOGIN === */
 export const login = (req: Request, res: Response) => {
    const { username, password} = req.body;
 
@@ -21,15 +21,21 @@ export const login = (req: Request, res: Response) => {
       return res.status(401).json({message: "Wrong data!"});
    }
 
+   const token = generateToken(user.id, user.role);
+
    return res.json({
       message: "Login succesful!",
-      username: user.username,
-      role: user.role,
+      user: {
+         id: user.id,
+         username: user.username,
+         email: user.email,
+         role: user.role, 
+      },
+      token
    });
-
 }
 
-//register 
+ /* === Register === */
 export const register = (req: Request, res: Response) => {
    const {username, password, email} = req.body;
 
@@ -48,9 +54,18 @@ export const register = (req: Request, res: Response) => {
    }
 
    users.push(newUser);
+
+   const token = generateToken(newUser.id, newUser.role);
    
-   console.log("REGISTER request received!");
 
-   res.status(201).json({message: "User was created!", user: newUser})
-
+   res.status(201).json({
+      message: "User was created!",
+      user: {
+         id: newUser.id,
+         username: newUser.username,
+         email: newUser.email,
+         role: newUser.role,
+      },
+      token,
+   });
 }

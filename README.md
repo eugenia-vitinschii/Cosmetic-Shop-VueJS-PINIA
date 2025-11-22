@@ -29,7 +29,18 @@ npm run dev
 discount/
 ├── backend/         # Node.js Express API
 │   └── src/
+│       └── controllers/
+│           └── authController.ts
+│       └── middleware/
+│           └── authMiddleware.ts
+│       └── models/
+│           └── userModel.ts
+│       └── routes/
+│           └── authRoutes.ts
+│       └── utils/
+│           └── generateToken.ts
 │       └── server.ts
+│   └── .env
 │   └── ...
 | 
 ├── frontend/        # Vue 3 frontend
@@ -69,6 +80,8 @@ discount/
 │       └── stores/
 │           └── admin.store.ts
 │           └── admin.todo.store.ts
+│           └── adminTheme.store.ts
+│           └── auth.store.ts
 │           └── cosmetic.store.ts
 │           └── user.store.ts
 │       └── types/

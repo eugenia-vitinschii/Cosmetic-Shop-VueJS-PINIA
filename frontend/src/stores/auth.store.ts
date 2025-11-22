@@ -15,11 +15,16 @@ export const useAuthStore = defineStore("auth", ()=>{
    const loading = ref(false);
    const error = ref<string | null>(null);
 
+   const token = ref<string |null>(null)
+
    /* === AUTO LOGIN === */
+
    const savedUser = localStorage.getItem("user");
-   if(savedUser){
-      user.value = JSON.parse(savedUser)
-   }
+   const savedToken = localStorage.getItem("token");
+
+   if(savedUser) user.value = JSON.parse(savedUser)
+   if(savedToken) token.value = savedToken;
+
 
    /* === REGISTER=== */
    async function register(credentials: {username: string, email: string, password: string}){
@@ -42,9 +47,13 @@ export const useAuthStore = defineStore("auth", ()=>{
          }
        
          user.value = data.user;
+         token.value = data.token;
 
          localStorage.setItem("user", JSON.stringify(data.user));
+         localStorage.setItem("token", data.token);
+
          console.log("Registration: SUCCESS: ", data.user)
+
          return true
 
       }catch(err){
@@ -76,10 +85,11 @@ export const useAuthStore = defineStore("auth", ()=>{
             loading.value = false;
             return false;
          }
-         user.value = data.user
+         user.value = data.user;
+         token.value = data.token;
 
          localStorage.setItem("user", JSON.stringify(data.user))
-         
+         localStorage.setItem("token", data.token)
          return true;
 
       } catch(err) {
@@ -92,8 +102,11 @@ export const useAuthStore = defineStore("auth", ()=>{
 
    /* === LOGOUT=== */
    function logout(){ 
-      user.value = null
-      localStorage.removeItem("user")
+      user.value = null;
+      token.value = null;
+
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
    }
 
    return { login, register,logout, user, loading, error}

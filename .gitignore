@@ -4,6 +4,7 @@ node_modules
 
 README.md
 
+
 # local env files
 .env
 .env.local
@@ -23,3 +24,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# types
+types/

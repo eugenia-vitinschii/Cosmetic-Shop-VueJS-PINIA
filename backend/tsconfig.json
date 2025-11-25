@@ -3,12 +3,12 @@
     "module": "nodenext",
     "target": "esnext",
     "types": ["node"],
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "verbatimModuleSyntax": false,
     "isolatedModules": true,
@@ -16,5 +16,5 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }

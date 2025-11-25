@@ -8,6 +8,7 @@ dotenv.config();
 
 //folders
 import authRoutes from "./routes/authRoutes"
+import adminRoutes from "./routes/adminRoutes"
 
 const app = express()
 const PORT = process.env.PORT || 4000;
@@ -18,7 +19,7 @@ app.use(express.json())
 
 //routes
 app.use("/api/auth", authRoutes)
-
+app.use("/admin", adminRoutes)
 
 app.listen(PORT, () => {
    console.log(`Server is running on http://localhost:${PORT}`)

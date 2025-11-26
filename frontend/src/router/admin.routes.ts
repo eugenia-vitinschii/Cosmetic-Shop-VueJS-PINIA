@@ -4,6 +4,7 @@ import type { RouteRecordRaw} from 'vue-router';
 const routes: RouteRecordRaw[]= [
   {
     path: "/admin",
+    meta: {requiresAdmin: true},
     children: [
       {
         path: "",
@@ -24,6 +25,7 @@ const routes: RouteRecordRaw[]= [
       },
     ],
   },
+
 ];
 
 export default routes;

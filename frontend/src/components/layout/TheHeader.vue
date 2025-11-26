@@ -96,7 +96,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
           </button>
           <ul class="header__top">
-            <li >
+            <li v-if="store.user?.role === 'admin' ">
               <router-link to="/admin" class="header__link">Admin</router-link>
             </li>
             <!-- home -->
@@ -128,12 +128,14 @@ import {useRoute} from 'vue-router'
 //components
 import DropdownMenu from "../core/DropdownMenu.vue";
 
+
+import { useAuthStore } from "@/stores/auth.store";
 //component settings
 defineOptions({
   name: "TheHeader",
 });
 
-
+const store = useAuthStore()
 //variables
 const showNav = ref<boolean>(false);
 

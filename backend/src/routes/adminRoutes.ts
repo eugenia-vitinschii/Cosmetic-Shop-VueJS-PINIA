@@ -1,17 +1,18 @@
 //adminRoutes
 
 import { Router} from "express";
-import { adminInfo } from "../controllers/adminController";
 import { authMiddleware} from "../middleware/authMiddleware";
 import { adminMiddleware } from "../middleware/adminMiddleware";
+import { adminInfo } from "../controllers/adminController";
 
 const router = Router();
 
 router.get(
    '/',
    authMiddleware,
+   adminMiddleware,
    adminInfo,
-   adminMiddleware
+
 )
 
 export default router;

@@ -1,16 +1,20 @@
-//user.controller.ts
+//user.controller.ts (edit itself user: use)
+
 import { Request, Response} from "express";
-import User from "../models/user.model";
+import { userService } from "../services/user.service";
 
-/* === getMyProfile === */
-export const getMyProfile = async (req: Request, res: Response) => {
-   const user = await User.findById(req.user._id);
-   res.json(user);
+class UserController{
+   async getMe(req: Request, res: Response){
+      const userId = req.user.id;
+      const user = await userService.getById(userId);
+      return res.json(user);
+   }
+
+   async updateMe(req: Request, res: Response){
+      const userId = req.user.id;
+      const updated = await userService.update(userId, req.body);
+      return res.json(updated)
+   }
 }
 
-/* === updateMyProfile === */
-export const updateMyProfile = async (req: Request, res: Response) => {
-   const updates = req.body; 
-   const user = await User.findByIdAndUpdate(req.user._id, updates, {new: true});
-   res.json(user);
-}
+export const userController = new UserController();

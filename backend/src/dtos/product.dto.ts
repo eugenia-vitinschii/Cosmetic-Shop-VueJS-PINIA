@@ -21,10 +21,10 @@ export const ProductSchema = z.object({
    category: z.string(),
    product_type: z.string(),
    tag_list: z.array(z.string()).optional(),
-   product_api_url: z.string(),
-   api_featured_image: z.string(),
+   product_api_url: z.string().optional(),
+   api_featured_image: z.string().optional(),
    product_colors: z.array(ColorSchema).optional(),
    sliderTags:  z.array(z.string()).optional(),
    selectedColor: ColorSchema.optional(),
-   colorKey: z.string().optional,
+   colorKey: z.string().optional(),
 });

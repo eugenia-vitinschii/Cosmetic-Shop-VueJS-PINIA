@@ -2,8 +2,9 @@
 
 //imports
 import { Request, Response } from "express";
-import User from "../models/user.model";
+import { userService } from "../services/user.service";
 import { generateToken } from "../utils/generateToken";
+import bcrypt from "bcrypt"
 
  /* === LOGIN === */
 export const login =  async(req: Request, res: Response) => {
@@ -13,14 +14,15 @@ export const login =  async(req: Request, res: Response) => {
       return res.status(400).json({ message: "Enter your login and password!"})
    }
 
-   const user =  await User.findOne({username});
+   const user =  await userService.getByUsername(username);
 
    if(!user){
       return res.status(401).json({message: "Wrong data!"});
    }
 
-   if(user.password !== password){
-      return res.status(401).json({message: "wrong data!"})
+   const isMatch = await bcrypt.compare(password, user.password);
+   if(!isMatch){
+      return res.status(401).json({ message: "Wrong password"})
    }
 
    const token = generateToken(user._id.toString(), user.role);
@@ -40,19 +42,13 @@ export const login =  async(req: Request, res: Response) => {
 export const register = async (req: Request, res: Response) => {
    const {username, password, email} = req.body;
 
-   const existingUser = await User.findOne({username})
+   const existingUser = await userService.getByUsername(username);
 
    if(existingUser) {
      return res.status(400).json({ message: "This user exist!"})
    }
 
-   const newUser = await User.create({
-      username,
-      email,
-      password,
-      role: 'user' as "user"
-   })
-   User.insertOne(newUser);
+   const newUser = await userService.create({ username, email, password})
 
    const token = generateToken(newUser._id.toString(), newUser.role);
    

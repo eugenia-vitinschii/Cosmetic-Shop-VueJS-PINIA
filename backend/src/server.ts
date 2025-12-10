@@ -7,12 +7,7 @@ import dotenv from "dotenv"
 dotenv.config();
 
 import { connectDB } from './config/db';
-
-//folders
-import authRoutes from "./routes/auth.routes"
-import adminRoutes from "./routes/admin.routes"
-import productRoutes from "./routes/product.routes";
-import userRoutes from "./routes/user.routes"
+import routes from './routes';
 
 
 const app = express()
@@ -21,13 +16,7 @@ const PORT = process.env.PORT || 4000;
 //middleware
 app.use(cors())
 app.use(express.json())
-
-//routes
-app.use("/api/auth", authRoutes)
-app.use("/admin", adminRoutes)
-app.use("/products", productRoutes);
-app.use("/users", userRoutes)
-
+app.use("/api", routes)
 
 connectDB().then(()=> {
    app.listen(PORT, () => {

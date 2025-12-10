@@ -18,6 +18,7 @@ const UserSchema: Schema = new Schema<IUser> ({
    role: { type: String, enum: ["admin", "user"], default: "user"}
 }, {timestamps: true});
 
+//hash password before saving if it was modified
 UserSchema.pre<IUser>("save", async function (next){
    if (!this.isModified("password")) return next();
 

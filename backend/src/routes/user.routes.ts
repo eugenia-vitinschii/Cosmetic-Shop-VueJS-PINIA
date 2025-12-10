@@ -3,12 +3,22 @@
 //imports
 import { Router} from 'express';
 import { authMiddleware } from '../middleware/auth.middleware';
-import { getMyProfile, updateMyProfile } from '../controllers/user.controller';
+import { userController } from '../controllers/user.controller';
+import { validateresource } from '../middleware/validateResource';
+import { updateUserDTO } from '../dtos/update-user.dto';
 
 
 const router = Router();
 
-router.get("/profile", authMiddleware, getMyProfile)
-router.patch("/profile", authMiddleware, updateMyProfile)
+/* === GET MY PROFILE === */
+router.get("/profile", authMiddleware, userController.getMe)
+
+
+/* === UPDATE MY PROFILE === */
+router.put("/profile", 
+   authMiddleware, 
+   validateresource(updateUserDTO),
+   userController.updateMe
+)
 
 export default router;

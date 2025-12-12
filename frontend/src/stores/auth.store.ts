@@ -2,6 +2,7 @@
 
 import { defineStore } from "pinia";
 import {ref} from 'vue'
+import api from "@/api/api";
 
 interface UserData{
    username:string;
@@ -14,11 +15,9 @@ export const useAuthStore = defineStore("auth", ()=>{
    const user = ref <UserData | null>(null);
    const loading = ref(false);
    const error = ref<string | null>(null);
-
    const token = ref<string |null>(null)
 
    /* === AUTO LOGIN === */
-
    const savedUser = localStorage.getItem("user");
    const savedToken = localStorage.getItem("token");
 
@@ -32,38 +31,22 @@ export const useAuthStore = defineStore("auth", ()=>{
       error.value = null;
 
       try{
-         const res = await fetch("http://localhost:4000/api/auth/register",{
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(credentials)
-         });
-         
-         const data  = await res.json()
+         const res = await api.post("/auth/register", credentials);
 
-         if(!res.ok){
-            error.value = typeof data.message === "string" ? data.message : "Registration failed!";
-            console.error("Registration FAILED", error.value)
-            return false;
-         }
-       
-         user.value = data.user;
-         token.value = data.token;
+         user.value = res.data.user;
+         token.value = res.data.token;
 
-         localStorage.setItem("user", JSON.stringify(data.user));
-         localStorage.setItem("token", data.token);
-
-         console.log("Registration: SUCCESS: ", data.user)
+         localStorage.setItem("user", JSON.stringify(res.data.user));
+         localStorage.setItem("token", res.data.token);
 
          return true
 
-      }catch(err){
-         console.error("Network error:", err)
-         error.value = "Network error"
+      }catch(err: any){
+         error.value = err.response?.data?.message || "Registration failed";
          return false
       }finally{
          loading.value = false
       }
-
    }
 
    /* === LOGIN === */
@@ -72,28 +55,17 @@ export const useAuthStore = defineStore("auth", ()=>{
       error.value = null;
 
       try{
-         const res = await fetch("http://localhost:4000/api/auth/login",{
-         method: "POST",
-         headers: {"Content-Type": "application/json"},
-         body: JSON.stringify({username, password})
-         });
+         const res = await api.post("/auth/login", {username, password});
 
-         const data = await res.json()
+         user.value = res.data.user;
+         token.value = res.data.token;
 
-         if(!res.ok){
-            error.value = typeof data.message === "string" ? data.message : "error loign";
-            loading.value = false;
-            return false;
-         }
-         user.value = data.user;
-         token.value = data.token;
-
-         localStorage.setItem("user", JSON.stringify(data.user))
-         localStorage.setItem("token", data.token)
+         localStorage.setItem("user", JSON.stringify(res.data.user))
+         localStorage.setItem("token", res.data.token)
          return true;
 
-      } catch(err) {
-         error.value = "server error!"
+      } catch(err:any) {
+         error.value =  err.response?.data?.message || "Login failed"
          return false
       } finally{
          loading.value = false;
@@ -109,5 +81,5 @@ export const useAuthStore = defineStore("auth", ()=>{
       localStorage.removeItem("token");
    }
 
-   return { login, register,logout, user, loading, error}
+   return { login, register,logout, user, loading, error, token}
 })

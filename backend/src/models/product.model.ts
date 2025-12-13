@@ -61,4 +61,11 @@ const ProductSchema: Schema = new Schema({
    colorKey:  {type: String},
 }, {timestamps: true});
 
+// fix _id to id for frontend logic
+ProductSchema.set("toJSON",{
+   transform: (_, ret)=>{
+      ret.id = ret._id.toString();
+      delete ret._id;
+   }
+})
 export default mongoose.model<IProduct>("Product", ProductSchema);

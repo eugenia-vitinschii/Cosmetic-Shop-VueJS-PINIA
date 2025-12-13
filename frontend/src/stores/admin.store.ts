@@ -5,10 +5,9 @@ import { ref, computed } from "vue";
 
 import { useCosmeticStore } from "./cosmetic.store";
 
-
-// import type { CosmeticState } from "@/types/cosmetic"
 import { Product } from "@/models/product"
-import { api } from "@/utils/api"
+
+import api from "@/api/api";
 
 export const useAdminStore = defineStore("admin", () => {
    const products = ref<Product[]>([]);
@@ -57,7 +56,7 @@ export const useAdminStore = defineStore("admin", () => {
 
    async function fetchProductById(id: string): Promise<Product | null> {
     try {
-      const response = await api.get(`/cosmetics/${id}`);
+      const response = await api.get(`/products/${id}`);
       return response.data;
     } catch (error) {
       console.log("Admin: fetchProductById(id) error:", error);
@@ -97,7 +96,7 @@ export const useAdminStore = defineStore("admin", () => {
       if (!payload.name || !payload.brand) return;
       try {
          const createdAt = new Date().toISOString()
-         const { data } = await api.post("/cosmetics", {
+         const { data } = await api.post("/products", {
             ...payload,
             created_at: createdAt,
             updated_at: createdAt,
@@ -111,7 +110,7 @@ export const useAdminStore = defineStore("admin", () => {
 
    async function updateProduct(id: string, payload: Product) {
       try {
-         const { data } = await api.put(`/cosmetics/${id}`, payload);
+         const { data } = await api.put(`/products/${id}`, payload);
 
          const index = products.value.findIndex(p => p.id === id);
          if (index !== -1) {
@@ -124,7 +123,7 @@ export const useAdminStore = defineStore("admin", () => {
 
    async function deleteProduct(id: string) {
       try {
-         await api.delete(`/cosmetics/${id}`);
+         await api.delete(`/products/${id}`);
          products.value = products.value.filter((item) => item.id !== id);
       } catch (err) {
          console.error("Delete item ERROR!", err);

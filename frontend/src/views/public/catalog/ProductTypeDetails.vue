@@ -71,7 +71,7 @@ const route = useRoute();
 const productType = route.params.product_type as string;
 
 
-const filtered = computed(() => cosmetic.fileredByProductType)
+const filtered = computed(() => cosmetic.filteredByProductType)
 
 //delay
 const loading = ref(true)
@@ -79,7 +79,7 @@ const loading = ref(true)
 onMounted(async() => {
   try{
     await await cosmetic.fetchCosmetics();
-    cosmetic.fileredByProductType(productType)
+    cosmetic.filteredByProductType(productType)
    
   }catch(err){
     console.error('Error fetching cosmetics:', err)
@@ -94,7 +94,7 @@ onMounted(async() => {
 
 watch(() => route.params.product_type,
   (newType) => {
-    cosmetic.fileredByProductType(newType as string)
+    cosmetic.filteredByProductType(newType as string)
   }
 )
 </script>

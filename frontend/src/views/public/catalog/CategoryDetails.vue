@@ -14,7 +14,7 @@
         </div>
         <div class="filtered-products__title">
           <p class="heading">Category: {{ category }}</p>
-          <p class="small-text">{{  cosmetic.fileredByCategory(category).length }}</p>
+          <p class="small-text">{{  cosmetic.filteredByCategory (category).length }}</p>
         </div>
           <transition-group name="skeleton" tag="div" appear class="filtered-products__container">
             <product-card-skeleton v-if="loading" v-for="i in 9" :key="i" />  
@@ -69,7 +69,7 @@ const route = useRoute();
 const category =  computed (() => route.params.category as string);
 
 //filtered
-const filtered = computed(() => cosmetic.fileredByCategory)
+const filtered = computed(() => cosmetic.filteredByCategory )
 
 //delay
 const loading = ref(true)
@@ -77,7 +77,7 @@ const loading = ref(true)
 onMounted(async() => {
   try{
     await cosmetic.fetchCosmetics();
-    cosmetic.fileredByCategory(category.value)
+    cosmetic.filteredByCategory (category.value)
   }catch(err){
     console.error('Error fetching cosmetics:', err)
   }finally{
@@ -90,7 +90,7 @@ onMounted(async() => {
 
 
 watch(() => route.params.category,
-  (newCategory) => cosmetic.fileredByCategory(newCategory as string)
+  (newCategory) => cosmetic.filteredByCategory (newCategory as string)
 )
 
 </script>

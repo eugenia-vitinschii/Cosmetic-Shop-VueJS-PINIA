@@ -8,7 +8,10 @@
         </admin-title>
         <div class="admin-update">
           <admin-product-form v-if="product"  v-model="product" @submit="update()" />
-          <p v-else>Error</p>
+          <div class="admin-title" v-else >
+            <p class="admin-subheading">==== Error ====</p>
+          </div>
+          
         </div>
       </div>
     </div>

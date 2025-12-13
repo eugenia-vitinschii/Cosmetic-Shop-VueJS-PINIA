@@ -47,7 +47,6 @@ const save =  async() => {
 
   const productData: Product = {
     ...(product.value as Product),
-    id: String(product.value?.id ?? Math.random().toString(36).substring(2,6)) ,
     product_colors: product.value?.product_colors ?? [],
     updated_at: now, 
     created_at: product.value?.created_at ?? now

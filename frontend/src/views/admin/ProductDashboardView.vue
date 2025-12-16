@@ -6,7 +6,7 @@
         <the-admin-header />
         <admin-title title="Product Dashboard"/>
         <product-filters
-          v-model="filters"
+          v-model="filters"  
           :brands="admin.brands"
           :categories="admin.categories"
           :productTypes="admin.productTypes"

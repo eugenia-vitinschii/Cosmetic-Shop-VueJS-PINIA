@@ -15,11 +15,14 @@
                      <th></th>
                   </tr>
                </thead>
-               <tbody>
-                  <tr>
-                     <td class="admin-body-text">TestUser 123</td>
-                     <td class="admin-body-text">user@email.com</td>
-                     <td class="admin-body-text">user</td>
+               <tbody v-if="adminUser.users.length">
+                  <tr 
+                     v-for="user in adminUser.users ?? []"
+                     :key="user.id"
+                  >
+                     <td class="admin-body-text">{{ user.username }}</td>
+                     <td class="admin-body-text">{{ user.email }}</td>
+                     <td class="admin-body-text">{{user.role}}</td>
                      <td>
                         <button class="admin-svg-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z" /></svg>
@@ -32,6 +35,9 @@
                      </td>
                   </tr>
                </tbody>
+               <p class="admin-heading" v-else>
+                  No users!
+               </p>
             </table>
          </section>
       </div>
@@ -46,8 +52,15 @@
 import TheAdminHeader from '@/components/layout/TheAdminHeader.vue';
 import AdminTitle from '@/components/admin/ui/AdminTitle.vue';
 
+//pinia
+import { useAdminUserStore } from '@/stores/admin.users.store';
+
 //Component settings
 defineOptions({
   name: 'UsersDashboardView'
 })
+
+
+//variables
+const adminUser = useAdminUserStore();
 </script>

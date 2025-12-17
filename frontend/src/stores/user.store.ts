@@ -3,14 +3,14 @@
 import { defineStore } from "pinia";
 import { reactive, computed } from "vue";
 
-import type { UserData } from "@/types/user";
+import type { UserPreferences } from "@/types/userPreferences";
 import type { CartItem } from "@/types/cart";
 
 import { Product } from "@/models/product"
 
 export const useUserStore = defineStore("user", () => {
  
-const user = reactive<UserData>({
+const user = reactive<UserPreferences>({
     cart: [],
     favorite: []
 })

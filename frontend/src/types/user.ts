@@ -1,9 +1,8 @@
-// types/user.ts
+//user
 
-import { Product  } from "@/models/product"
-import  type { CartItem } from "./cart"
-
-export interface UserData{
-  cart: CartItem[],
-  favorite: Product[]
+export interface User{
+   id: string;
+   email: string;
+   username: string;
+   role: "admin" | "user";
 }

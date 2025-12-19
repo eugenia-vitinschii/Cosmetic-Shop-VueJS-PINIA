@@ -1,8 +1,8 @@
-//user
+//types for user
 
 export interface User{
    id: string;
-   email: string;
    username: string;
+   email: string;
    role: "admin" | "user";
 }

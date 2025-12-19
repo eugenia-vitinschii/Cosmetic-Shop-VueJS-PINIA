@@ -28,4 +28,11 @@ UserSchema.pre<IUser>("save", async function (next){
 
 })
 
+UserSchema.set("toJSON", {
+   transform: (_, ret) =>{
+      ret.id = ret._id.toString();
+      delete ret._id;
+   }
+})
+
 export default mongoose.model<IUser>("User", UserSchema);

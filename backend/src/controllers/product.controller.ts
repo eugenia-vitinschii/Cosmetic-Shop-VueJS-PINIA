@@ -16,7 +16,7 @@ class ProductController {
 
    async create(req: Request, res:Response){
       const newProduct = await productService.create(req.body);
-      return res.status(201).json(newProduct);
+      return res.status(201).json(newProduct.toJSON());
    }
 
    async update(req: Request, res:Response){

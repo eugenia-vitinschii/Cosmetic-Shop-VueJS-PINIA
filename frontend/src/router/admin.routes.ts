@@ -19,6 +19,11 @@ const routes: RouteRecordRaw[]= [
         component: () => import("@/views/admin/UsersDashboardView.vue")
       },
       {
+        path: "user/:id",
+        component: () => import("@/views/admin/UserEditView.vue"),
+        props: true,
+      },
+      {
         path: "add",
         component: () => import("@/views/admin/ProductAddView.vue"),
       },

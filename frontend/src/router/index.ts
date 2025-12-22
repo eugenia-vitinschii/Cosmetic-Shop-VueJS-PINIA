@@ -1,25 +1,32 @@
-//vue router
+/* === vue router === */
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
-// import routes
-import adminRoutes from './admin.routes';
-import accountRoutes from "./account.routes";
-import aboutRoutes from "./about.routes";
-import brandRoutes from "./brand.routes";
-import categoryRoutes from "./category.routes";
-import productTypeRoutes from "./product-type.routes";
+
+/* === modules=== */
+import {accountRoutes} from "./modules/account.routes"
+import { adminRoutes } from "./modules/admin.routes";
+import { authRoutes } from "./modules/auth.routes";
+
+/* === modules/public === */
+import {publicRoutes} from './modules/public/public.routes'; 
+import { infoRoutes } from "./modules/public/info.routes";
+import { categoryRoutes } from "./modules/public/category.routes";
+import { typesRoutes } from "./modules/public/type.routes";
+import { brandRoutes } from "./modules/public/brand.routes";
+
 
 //routes
 const routes: RouteRecordRaw[] = [
-      ...adminRoutes,
-    ...accountRoutes,
-    ...aboutRoutes,
-    ...brandRoutes,
-    ...categoryRoutes,
-    ...productTypeRoutes,
+  ...accountRoutes,
+  ...adminRoutes,
+  ...authRoutes,
+  ...publicRoutes,
+  ...infoRoutes,
+  ...categoryRoutes,
+  ...typesRoutes,
+  ...brandRoutes
 ]
 
-//creste router
 const router = createRouter({
   history: createWebHistory(),
   routes,
@@ -28,11 +35,26 @@ const router = createRouter({
 router.beforeEach((to, _from,  next) =>{
   const user = JSON.parse(localStorage.getItem("user") ||"null" );
 
+  /* ADMIN ONLY */
   if(to.meta.requiresAdmin){
     if(!user || user.role !== "admin"){
       return next("/")
     }
   }
+
+  /* AUTH ONLY */
+   if(to.meta.requiresAuth){
+    if(!user){
+      return next("/login")
+    }
+   }
+
+   /* GUEST ONLY  */
+   if(to.meta.guestOnly){
+    if(user) {
+      return next("/account")
+    }
+   }
   next()
 })
 

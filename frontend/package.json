@@ -3,10 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "concurrently \"vite\" \"json-server -w db.json --port 3000\" ",
+    "dev": "concurrently \"vite\" ",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
-    "mock": "json-server -w db.json --port 3000"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@vueuse/core": "^13.3.0",

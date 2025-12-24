@@ -3,8 +3,10 @@
 import { defineStore } from "pinia";
 import {ref} from 'vue'
 import api from "@/api/api";
+import type { UpdateMePayload } from "@/types/updateUserPayload";
 
 interface UserData{
+   id: string,
    username:string;
    email: string;
    password: string;
@@ -71,7 +73,18 @@ export const useAuthStore = defineStore("auth", ()=>{
          loading.value = false;
       }
    }
-
+   /* === FETCH ME === */
+   async function fetchMe(){
+      const {data} = await api.get("users/profile");
+      user.value = data;
+      localStorage.setItem("user", JSON.stringify(data))
+   }
+   /* === UPDATE ME === */
+   async function updateMe(payload: UpdateMePayload){
+      const {data} = await api.put("users/profile", payload);
+      user.value = data;
+      localStorage.setItem("user", JSON.stringify(data))
+   }
    /* === LOGOUT=== */
    function logout(){ 
       user.value = null;
@@ -81,5 +94,5 @@ export const useAuthStore = defineStore("auth", ()=>{
       localStorage.removeItem("token");
    }
 
-   return { login, register,logout, user, loading, error, token}
+   return { fetchMe, updateMe, login, register,logout, user, loading, error, token}
 })

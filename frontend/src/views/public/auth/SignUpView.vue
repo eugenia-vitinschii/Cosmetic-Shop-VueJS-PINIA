@@ -81,6 +81,8 @@
 <script setup lang="ts">
 
 import {ref} from 'vue'
+import { useRouter } from 'vue-router';
+
 import { useAuthStore } from '@/stores/auth.store';
 
 //component settings
@@ -89,6 +91,7 @@ defineOptions({
 });
 
 const auth = useAuthStore();
+const router = useRouter()
 
 const username = ref("");
 const email= ref("");
@@ -111,6 +114,6 @@ const registerUser= async () => {
   }else {
     console.warn("Registration failed:", auth.error)
   } 
-
+  router.push("/account")
 }
 </script>

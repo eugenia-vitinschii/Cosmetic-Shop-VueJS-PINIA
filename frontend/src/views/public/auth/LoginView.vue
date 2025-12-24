@@ -79,7 +79,7 @@
 <script setup lang="ts">
 //vue
 import {ref} from 'vue'
-
+import {useRouter} from "vue-router"
 //store
 import { useAuthStore } from '@/stores/auth.store';
 
@@ -90,7 +90,7 @@ defineOptions({
 
 //variables
 const showPassword = ref(false)
-
+const router = useRouter()
 const auth = useAuthStore();
 
 const username = ref("");
@@ -105,7 +105,7 @@ const onLogin = async () => {
   }
   username.value = ''
   password.value = ''
-
+  router.push("/account")
 }
 
 
@@ -114,5 +114,6 @@ const logoutUser  = () =>{
   password.value = ''
 
   auth.logout()
+  router.push("/login")
 }
 </script>

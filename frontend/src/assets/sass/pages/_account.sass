@@ -1,12 +1,13 @@
 //acount
 @use '../abstracts/variables' as *
-
+@use '../abstracts/_mixins' as *
 .account
    &__wrapper
    &__nav
       display: flex
       align-items: center
       flex-direction: column
+      @include flex-box()
       button
          margin-left: 20px
    &__nav--img
@@ -15,3 +16,13 @@
          fill: $color-accent
    &__nav--buttons
       display: flex
+
+
+.account-edit
+   &__update
+      @include flex-box()
+   &__update--form
+      width: 500px
+      max-width: 100%  
+      p
+         text-align: center

@@ -18,6 +18,7 @@
                 placeholder="enter name"
                 v-model="username"
               />
+              <p class="body-text red" v-if="usernameError">{{ usernameError }}</p>
             </div>
             <div class="custom-input__wrapper">
               <label class="body-text">Password</label>
@@ -36,32 +37,16 @@
                <svg v-else xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"><path d="M240-640h360v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85h-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640Zm0 480h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM240-160v-400 400Z"/></svg>
               </button>
               </div>
+               <p class="body-text red" v-if="passwordError">{{ passwordError }}</p>
             </div>
             <div class="auth__buttons">
-              <button  
-                v-if="auth.user"
-                class="custom-button auth__button"  
-                @click="logoutUser"
-              >
-                Logout
-              </button>
               <button 
-                v-else
                 class="custom-button auth__button"
+                :disabled="isSubmitDisabled"
                 @click="onLogin"
-                :disabled="auth.loading"
               >
-              {{ auth.loading ? "login..." : "Login" }}
+              login
             </button>
-            </div>
-            <div class="auth__messages">
-              <p class="body-text red" v-if="auth.error">
-                {{ auth.error }}
-              </p>
-              <p class="body-text" v-if="auth.user">
-              Hi {{ auth.user?.username }}, role: <span class="bold">{{ auth.user?.role }} </span>    
-             </p>
-
             </div>
           </form>
          <p class="body-text" v-if="!auth.user">
@@ -78,10 +63,18 @@
 
 <script setup lang="ts">
 //vue
-import {ref} from 'vue'
+import {ref, computed} from 'vue'
 import {useRouter} from "vue-router"
+
 //store
 import { useAuthStore } from '@/stores/auth.store';
+
+//zod
+import { loginSchema } from '@/validation/auth/login.schema';
+
+//vee validate
+import {useForm, useField} from "vee-validate";
+import { toFormValidator } from '@vee-validate/zod';
 
 //component settings
 defineOptions({
@@ -93,27 +86,32 @@ const showPassword = ref(false)
 const router = useRouter()
 const auth = useAuthStore();
 
-const username = ref("");
-const password= ref("");
+//form
+const {handleSubmit, resetForm, meta, setFieldError, isSubmitting} = useForm({
+  validationSchema: toFormValidator(loginSchema)
+});
 
 
-const onLogin = async () => {
-  const ok = await auth.login(username.value, password.value);
+//fields
+const {value: username, errorMessage: usernameError} = useField<string>("username");
+const {value: password, errorMessage: passwordError} = useField<string>("password");
+
+
+//login
+const onLogin = handleSubmit(async(values) => {
+  const ok = await auth.login(values);
 
   if(ok){
-    console.log(`Hello, ${auth.user?.username}! Role: ${auth.user?.role}`)
-  }
-  username.value = ''
-  password.value = ''
+   resetForm();
   router.push("/account")
-}
+  }else{
+    setFieldError("password", "Invalid username or password")
+  }
 
+})
 
-const logoutUser  = () =>{
-  username.value = ''
-  password.value = ''
-
-  auth.logout()
-  router.push("/login")
-}
+//disable submit
+const isSubmitDisabled = computed(() =>{
+  return !meta.value.valid || isSubmitting.value
+})
 </script>

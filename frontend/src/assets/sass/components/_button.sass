@@ -67,6 +67,10 @@
 .custom-button
    transition: $transition 
    @include button-style($color-white, $color-accent-hover)
+   &:disabled, &:hover:disabled
+      background: #ccc
+      color: #696969
+      opacity: 0.4
 
 .custom-button:hover
    @include button-style($color-white, $color-accent)
@@ -74,9 +78,6 @@
 .custom-button:active
    @include button-style($color-accent-hover, $color-bg-base)
 
-.custom-button.disabled
-   background: #ccc
-   cursor: not-allowed
 
 
 .load-more

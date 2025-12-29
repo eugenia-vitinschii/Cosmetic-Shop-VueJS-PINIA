@@ -18,6 +18,7 @@
                 placeholder="enter name"
                 v-model="username"
               />
+              <p class="body-text red" v-if="usernameError">{{ usernameError }}</p>
             </div>
             <div class="custom-input__wrapper">
               <label class="body-text">Email</label>
@@ -27,6 +28,7 @@
                 placeholder="enter email"
                 v-model="email"
               />
+               <p class="body-text red" v-if="emailError">{{ emailError }}</p>
             </div>
             <div class="custom-input__wrapper">
               <label class="body-text">Password</label>
@@ -42,30 +44,16 @@
                <svg v-else xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"><path d="M240-640h360v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85h-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640Zm0 480h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM240-160v-400 400Z"/></svg>
               </button>
               </div>
+               <p class="body-text red" v-if="passwordError">{{ passwordError }}</p>              
             </div>
             <div class="auth__buttons">
               <button 
-              v-if="!auth.user"
               type="submit" 
-              :disabled="auth.loading"
+              :disabled="isSubmitDisabled"
               class="custom-button auth__button"
-            >{{ auth.loading ? "registering..." : "Sign up" }}
-          
-          </button>
-            <button
-            v-else
-             class="custom-button auth__button"
-            v-on:click="auth.logout"
             >
-              logout {{ auth.user?.username }}
-              </button> 
-            </div>
-
-           
-              <div class="auth__messages">
-              <p class="body-text red" v-if="auth.error">
-                {{ auth.error }}
-              </p>
+              Sign up
+            </button>
             </div>
           </form>
           <p class="body-text">
@@ -79,11 +67,18 @@
 </template>
 
 <script setup lang="ts">
-
-import {ref} from 'vue'
+//vue
+import {ref, computed} from 'vue'
 import { useRouter } from 'vue-router';
 
+//pinia
 import { useAuthStore } from '@/stores/auth.store';
+//zod
+import { signUpSchema } from '@/validation/auth/signup.schema';
+
+//vee validate
+import {useForm, useField} from "vee-validate"
+import {toFormValidator} from "@vee-validate/zod"
 
 //component settings
 defineOptions({
@@ -91,29 +86,34 @@ defineOptions({
 });
 
 const auth = useAuthStore();
-const router = useRouter()
+const router = useRouter();
 
-const username = ref("");
-const email= ref("");
-const password= ref("");
+const showPassword = ref(false);
 
-const showPassword = ref(false)
+//form 
+const {handleSubmit, resetForm, meta} = useForm({
+  validationSchema: toFormValidator(signUpSchema)
+});
 
-const registerUser= async () => {
-  const ok = await auth.register({
-    username: username.value, 
-    email:email.value, 
-    password: password.value
-  });
+//fields
+const {value: username, errorMessage:  usernameError} = useField<string>("username");
+
+const {value:  email, errorMessage: emailError} = useField<string>("email");
+
+const {value: password, errorMessage:passwordError } = useField<string>("password");
+
+//submit
+const registerUser = handleSubmit(async (values) => {
+  const ok = await auth.register(values)
 
   if(ok){
-    console.log("Registration Successful")
-    username.value = ''
-    password.value = ''
-    email.value= ''
-  }else {
-    console.warn("Registration failed:", auth.error)
-  } 
-  router.push("/account")
-}
+    resetForm();
+    router.push("/account")
+  }
+
+})
+//submit disable 
+const isSubmitDisabled = computed(() => {
+  return !meta.value.valid || meta.value.pending
+})
 </script>

@@ -30,7 +30,7 @@
    </div>
    <form 
       class="admin-product-form__form" 
-      @submit.prevent="handleSubmit"
+      @submit.prevent="onSubmit"
    >
       <div class="admin-product-form__tabs">
          <keep-alive>
@@ -57,11 +57,16 @@
 //vue
 import {computed, defineAsyncComponent, ref, watch } from 'vue';
 
+//vee validate
+import {useForm} from "vee-validate" 
+import { toFormValidator } from '@vee-validate/zod';
+
 //components
 import AdminToast from './ui/AdminToast.vue';
 
-//product model
+//product model, schema
 import type { ProductData } from '@/models/product';
+import { productSchema } from '@/validation/product/product.schema';
 
 
 //tab logic
@@ -80,11 +85,9 @@ const tabs = [
 function nextTab(){
    if(activeIndex.value < tabs.length -1) activeIndex.value ++
 }
-
 function prevTab(){
    if(activeIndex.value > 0) activeIndex.value --
 }
-
 //emit
 const emit = defineEmits<{
    (e: 'update:modelValue', value: ProductData): void
@@ -107,17 +110,16 @@ watch(product, (newVal) => {
 //toast
 const toast = ref<InstanceType<typeof AdminToast>>()
 
-//handleSubmit
-function handleSubmit(){
-   if(!product.value?.name?.trim() || !product.value.brand?.trim()) {
-      
-       toast.value?.showToast('Error: missing product data: name, brand','error')
-       return
-   }
+//validation
+const{handleSubmit} = useForm({
+   validationSchema: toFormValidator(productSchema)
+})
 
-   emit('submit', product.value as ProductData)
-
+//onSubmit
+const onSubmit = handleSubmit((values) => {
+   emit("submit", values);
    toast.value?.showToast('Product saved successfully', 'success')
-}
+})
+
 
 </script>

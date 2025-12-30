@@ -4,39 +4,43 @@
       <h3 class="admin-subheading">General info</h3>
       <div class="admin-form-item__wrapper">
          <admin-input 
-            :label="'Name'" 
+            :label="'Name*'" 
             :placeholder="'#nofilter powder'" 
-            v-model.trim="modelValue.name" 
+            v-model.trim="name" 
+            :error="nameError"
          />
          <admin-input 
-            :label="'Brand'" 
+            :label="'Brand*'" 
             :placeholder="'La viva!'" 
-            v-model.trim="modelValue.brand" 
+            v-model.trim="brand" 
+            :error="brandError"
          />
          <admin-input 
-            :label="'Price'" 
+            :label="'Price*'" 
             :placeholder="'20'"
-            v-model.number="modelValue.price" 
+            v-model.number="price" 
+            :price="priceError"
+            :error="priceError"
           />
          <admin-input 
             :label="'Currency'" 
             :placeholder="'USD'" 
-            v-model.trim="modelValue.currency" 
+            v-model.trim="currency" 
          />
          <admin-input 
             :label="'Price sign'" 
             :placeholder="'$'" 
-            v-model.trim="modelValue.price_sign" 
+            v-model.trim="price_sign" 
          />
          <div class="admin-input__wrapper">
-            <label class="admin-body-text" for="rating">Rating <span v-if="modelValue.rating">:</span> {{ modelValue.rating }} </label>
+            <label class="admin-body-text" for="rating">Rating <span v-if="rating">:</span> {{ rating }} </label>
                <input
                   type="range"
                   name="rating"
                   id="rating"
                   min="0"
                   max="5"
-                  v-model="modelValue.rating"
+                  v-model="rating"
                   disabled
                 />
          </div>
@@ -48,16 +52,15 @@
 //components
 import AdminInput from '../ui/AdminInput.vue';
 
-//inteface general tab
-interface GeneralTab{
-   name?: string;
-   brand?: string;
-   price?: number;
-   currency?: string;
-   price_sign?: string;
-   rating?: number;
-}
+//vee-validate
+import { useField } from 'vee-validate';
 
-//model
-const modelValue = defineModel<GeneralTab>({default: () => ({})})
+//fields
+const {value: name, errorMessage: nameError} = useField<string>("name");
+const {value: brand, errorMessage: brandError} = useField<string>("brand");
+const {value: price, errorMessage: priceError} = useField<number>("price");
+const {value: currency} = useField<string>("currency");
+const {value: price_sign } = useField<string>("price_sign");
+const {value: rating } = useField<number>("rating");
+
 </script>

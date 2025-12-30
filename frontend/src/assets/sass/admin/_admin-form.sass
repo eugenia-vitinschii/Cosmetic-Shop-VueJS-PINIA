@@ -13,6 +13,8 @@
       appearance: none
       -webkit-appearance: none
       -moz-appearance: none
+   p
+      margin-top: 0
       
 .admin-input__wrapper
   input[type="range"]:disabled, input[type="text"]:disabled, input[type="checkbox"]:disabled  
@@ -20,7 +22,15 @@
     border-color: var(--admin-hover)
     color: var(--admin-hover)
 
-
+//error input
+.admin-input-error__wrapper
+   label
+      color:  $color-red
+   input[type="text"]
+      border: 1px solid red
+      color: red
+      &::placeholder
+         color: red
 .admin-textarea
    @include admin-form-element()
    height: 150px

@@ -7,7 +7,7 @@
           Edit: <span>{{ product?.name }}</span>
         </admin-title>
         <div class="admin-update">
-          <admin-product-form v-if="product"  v-model="product" @submit="update()" />
+          <admin-product-form v-if="product" :initial-values="product" @submit="update" />
           <div class="admin-title" v-else >
             <p class="admin-subheading">==== Error ====</p>
           </div>
@@ -34,7 +34,7 @@ import AdminProductForm from "@/components/admin/AdminProductForm.vue";
 import { useAdminStore } from "@/stores/admin.store";
 
 // product
-import type { Product } from "@/models/product";
+import type { ProductData } from "@/models/product";
 
 //component settings
 defineOptions({
@@ -49,16 +49,16 @@ const admin = useAdminStore()
 const route = useRoute();
 const id = computed(() => String(route.params.id));
 
-const product = ref<Product | null>(null);
+const product = ref<ProductData | null>(null);
 
 //updateProduct
-const update = () => {
-  if (!product.value) return;
+const update = (values: ProductData) => {
+  const now = new Date().toISOString();
 
-const now = new Date().toISOString();
   admin.updateProduct(id.value, {
-    ...product.value,
-    updated_at: now,
+    ...values,
+    product_colors: values.product_colors ?? [],
+    updated_at: now
   });
 }
 

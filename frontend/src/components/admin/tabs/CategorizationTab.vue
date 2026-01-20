@@ -8,13 +8,13 @@
                for="category" 
                class="admin-body-text"
             >
-               Category
+               Category *
             </label>
             <select 
                class="admin-select"
                name="category" 
                id="category" 
-               v-model="modelValue.category">
+               v-model="category">
                   <option 
                   v-for="option in categoryOptions"
                   :key="option"
@@ -23,15 +23,16 @@
                      {{ option }}
                   </option>
             </select>
+              <p class="body-text red" v-if="categoryError">{{ categoryError }}</p>
          </div>
          <!-- type-->
          <div class="admin-input__wrapper">
-            <label for="product_type" class="admin-body-text">Type</label>
+            <label for="product_type" class="admin-body-text">Type *</label>
             <select 
                class="admin-select"
                name="product_type" 
                id="product_type"
-               v-model="modelValue.product_type"
+               v-model="product_type"
              >
                <option 
                v-for="option in typeOptions"
@@ -41,6 +42,7 @@
                {{ option }}
             </option>
             </select>
+            <p class="body-text red" v-if="typeError">{{ typeError}}</p>
          </div>
          <!-- tags -->
           <div class="admin-checkbox__wrapper">
@@ -53,7 +55,7 @@
                <input 
                   type="checkbox"
                   :value="option"
-                  :checked="modelValue.tag_list?.includes(option)"
+                  :checked="tag_list?.includes(option)"
                   @change="onTagChange(option, $event)"
                >
                <span class="checkmark"></span>
@@ -72,7 +74,7 @@
                <input 
                   type="checkbox"
                   :value="option"
-                  :checked="modelValue.sliderTags?.includes(option)"
+                  :checked="sliderTags?.includes(option)"
                   @change="onSliderTagChange(option, $event)"
                >
                <span class="checkmark"></span>
@@ -85,29 +87,29 @@
 </template>
 
 <script setup lang="ts">
-//types
-interface ProductCategorization{
-   category?: string;
-   product_type?: string;
-   tag_list?: string[];
-   sliderTags?: string[];
-}
+//vee
+import { useField } from 'vee-validate';
 
-//defineModel
-const modelValue = defineModel<ProductCategorization>({default: () => ({})})
+//fields
+const {value: category, errorMessage: categoryError} = useField<string>("category")
+const {value: product_type, errorMessage: typeError} = useField<string>("product_type")
+const {value:tag_list } = useField<string[]>("tag_list")
+const {value: sliderTags} = useField<string[]>("sliderTags")
+
+
 
 function onTagChange(option: string, event: Event){
    const cheked = (event.target as HTMLInputElement).checked
 
    //create tag list
-   if(!modelValue.value.tag_list){
-      modelValue.value.tag_list = []
+   if(!tag_list.value){
+      tag_list.value = []
    }
 
    if(cheked){
-      modelValue.value.tag_list.push(option)
+     tag_list.value.push(option)
    } else {
-      modelValue.value.tag_list = modelValue.value.tag_list.filter(tag => tag !== option)
+    tag_list.value = tag_list.value.filter(tag => tag !== option)
    }
 }
 
@@ -116,14 +118,14 @@ function onSliderTagChange(option: string, event: Event){
    const cheked = (event.target as HTMLInputElement).checked
 
    //create tag list
-   if(!modelValue.value.sliderTags){
-      modelValue.value.sliderTags = []
+   if(!sliderTags.value){
+      sliderTags.value = []
    }
 
    if(cheked){
-      modelValue.value.sliderTags.push(option)
+      sliderTags.value.push(option)
    } else {
-      modelValue.value.sliderTags = modelValue.value.sliderTags.filter(tag => tag !== option)
+    sliderTags.value = sliderTags.value.filter(tag => tag !== option)
    }
 }
 
@@ -134,7 +136,7 @@ const categoryOptions = [
 ];
 
 //typeOptions
-const typeOptions = [
+const typeOptions = ["",
 "foundation", "lipstick", "eyeshadow", "blush", "nail_polish", "bronzer"
 ];
 //tagOptions

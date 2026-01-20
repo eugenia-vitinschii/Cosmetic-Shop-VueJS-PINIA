@@ -3,30 +3,30 @@
     <h3 class="admin-subheading">Colors</h3>
     <div  
       class="admin-form-item__color "
-      v-for="(color, index) in  modelValue.product_colors"
+      v-for="(filed, index) in  productColors"
       :key="index"
     >
       <input
         class="admin-custom-input-color"
         type="color"
-        v-model="color.hex_value"
+        v-model="filed.value.hex_value"
       />
       <input
       class="admin-custom-input-text"
         type="text"
         placeholder="Hex value"
-        v-model="color.hex_value"
+        v-model="filed.value.hex_value"
       />
-      <span class="admin-form-item__hex" :style="{ backgroundColor: color.hex_value }"></span>
+      <span class="admin-form-item__hex" :style="{ backgroundColor: filed.value.hex_value }"></span>
       <input
         class="admin-custom-input-text"
         type="text"
         placeholder="Colour name"
-        v-model="color.colour_name"
+        v-model="filed.value.colour_name"
       />
       <button 
       class="admin-svg-button"
-        v-if="modelValue.product_colors" 
+        v-if="productColors" 
         @click.prevent="removeColor(index)"
       >
       <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"><path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z"/></svg>
@@ -64,21 +64,19 @@
 <script setup lang="ts">
 //vue
 import { reactive } from 'vue';
+//vee
+import { useFieldArray} from 'vee-validate';
 
-interface ProductColor{
-  hex_value: string;
-  colour_name: string;
-}
+//type prduct
+import  type {ProductColor} from "@/types/productColor"
 
-interface ProductColorTab{
-  product_colors: ProductColor[]
-}
+//fields
+const { fields: productColors, push, remove} = useFieldArray<ProductColor>("product_colors")
 
-const modelValue = defineModel<ProductColorTab>({default: () => ({product_colos: []})})
 
 //remove color
 function removeColor(index: number){
-  modelValue.value.product_colors.splice(index, 1);
+  remove(index)
 }
 
 //new color
@@ -91,16 +89,13 @@ const newColor = reactive<ProductColor>({
 function addColor(){
   if(!newColor.colour_name.trim()) return;
 
-  if(!Array.isArray(modelValue.value.product_colors)){
-    modelValue.value.product_colors = []
-  }
-    modelValue.value.product_colors.push({
-      hex_value: newColor.hex_value,
-      colour_name: newColor.colour_name
-    });
+  push({
+    hex_value: newColor.hex_value,
+    colour_name: newColor.colour_name
+  });
 
-    newColor.hex_value = '#121212';
-    newColor.colour_name = ''
+  newColor.hex_value = '#ffffff';
+   newColor.colour_name = '';
 
 }
 </script>

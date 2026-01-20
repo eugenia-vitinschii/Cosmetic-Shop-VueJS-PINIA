@@ -6,7 +6,6 @@
         <admin-title title="Create new product"/>
         <div class="admin-create">
           <admin-product-form
-          v-model="product"
           @submit="save"
           />
         </div>
@@ -18,7 +17,8 @@
 <script setup lang="ts">
 //vue
 import { ref } from "vue";
-import router from "@/router";
+//route
+import {  useRouter } from "vue-router";
 //import components
 import TheAdminHeader from "@/components/layout/TheAdminHeader.vue";
 import AdminTitle from "@/components/admin/ui/AdminTitle.vue";
@@ -32,24 +32,26 @@ defineOptions({
 
 // import pinia store
 import { useAdminStore } from "@/stores/admin.store";
-import { Product} from "@/models/product";
+import { Product, type ProductData} from "@/models/product";
 
 //pinia variables
 const admin = useAdminStore()
 
-//variables
-const product = ref<Partial<Product>>({})
 
+//variables
+const product = ref<Product | null>(null)
+const router = useRouter()
 // //functions
-const save =  async() => {
+const save =  async(values: ProductData) => {
 
   const now = new Date().toISOString();
 
   const productData: Product = {
-    ...(product.value as Product),
-    product_colors: product.value?.product_colors ?? [],
+    ...values,
+    product_colors: values.product_colors ?? [],
     updated_at: now, 
-    created_at: product.value?.created_at ?? now
+    created_at: product.value?.created_at ?? now,
+    id: product.value?.id
   } 
 
   if(!product.value?.id){

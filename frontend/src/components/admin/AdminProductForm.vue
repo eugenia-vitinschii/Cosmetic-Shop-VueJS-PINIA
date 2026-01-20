@@ -14,7 +14,7 @@
             class="admin-body-text"
             v-for="(tab, i) in tabs"
             :key="i"   
-            :class="['tab-button', {active: activeIndex === i}]"
+            :class="{'active-tab': activeIndex === i, 'tab-error': tabHasErrors(tab)}"
             @click="activeIndex = i"  
       >
          {{ tab.label}}
@@ -36,7 +36,6 @@
          <keep-alive>
             <component 
                :is="activeTab.component"
-               v-model="product"
             />
          </keep-alive>
       </div>
@@ -55,10 +54,11 @@
 
 <script setup lang="ts">
 //vue
-import {computed, defineAsyncComponent, ref, watch } from 'vue';
+import {computed, defineAsyncComponent, watch,ref, markRaw} from 'vue';
 
 //vee validate
-import {useForm} from "vee-validate" 
+import  {useForm} from "vee-validate" 
+import  type { FormErrors, InvalidSubmissionContext} from "vee-validate" 
 import { toFormValidator } from '@vee-validate/zod';
 
 //components
@@ -68,19 +68,30 @@ import AdminToast from './ui/AdminToast.vue';
 import type { ProductData } from '@/models/product';
 import { productSchema } from '@/validation/product/product.schema';
 
+import type {TabConfig, ProductField} from "@/types/tab"
 
 //tab logic
 const activeIndex = ref(0)
 const activeTab = computed(() => tabs[activeIndex.value])
 
-const tabs = [
-   {key: 'GeneralTab', label:'General', component: defineAsyncComponent(() => import('./tabs/GeneralTab.vue'))},
-   {key: 'CategorizationTab', label:'Categorization', component: defineAsyncComponent(() => import('./tabs/CategorizationTab.vue'))},
-   {key: 'MediaTab', label:'Media', component: defineAsyncComponent(() => import('./tabs/MediaTab.vue'))},
-   {key: 'DescriptionTab', label:'Description', component: defineAsyncComponent(() => import('./tabs/DescriptionTab.vue'))},
-   {key: 'SystemInfoTab', label:'System Info', component: defineAsyncComponent(() => import('./tabs/SystemInfoTab.vue'))},
-   {key: 'ProductColorsTab', label:'Product colors', component: defineAsyncComponent(() => import('./tabs/ProductColorsTab.vue'))},
-]
+const tabs =markRaw<TabConfig[]> ([
+   { 
+      key: 'GeneralTab', 
+      label:'General', 
+      fields: ['name', 'brand', 'price'],
+      component: defineAsyncComponent(() => import('./tabs/GeneralTab.vue'))
+   },
+   {
+      key: 'CategorizationTab', 
+      label:'Categorization', 
+      fields: ['product_type', 'category'],
+      component: defineAsyncComponent(() => import('./tabs/CategorizationTab.vue'))
+   },
+   {key: 'MediaTab', label:'Media',  fields: [],component: defineAsyncComponent(() => import('./tabs/MediaTab.vue'))},
+   {key: 'DescriptionTab', label:'Description',  fields: [],component: defineAsyncComponent(() => import('./tabs/DescriptionTab.vue'))},
+   {key: 'SystemInfoTab', label:'System Info',  fields: [],component: defineAsyncComponent(() => import('./tabs/SystemInfoTab.vue'))},
+   {key: 'ProductColorsTab', label:'Product colors',  fields: [],component: defineAsyncComponent(() => import('./tabs/ProductColorsTab.vue'))},
+])
 
 function nextTab(){
    if(activeIndex.value < tabs.length -1) activeIndex.value ++
@@ -88,38 +99,65 @@ function nextTab(){
 function prevTab(){
    if(activeIndex.value > 0) activeIndex.value --
 }
-//emit
+// //emit
 const emit = defineEmits<{
-   (e: 'update:modelValue', value: ProductData): void
    (e: 'submit', value: ProductData): void
 }>()
 
+//validation
+const {handleSubmit, setValues, errors, submitCount} = useForm({
+   validationSchema: toFormValidator(productSchema)
+})
+
 //props
 const props = defineProps<{
-   modelValue: ProductData
+   initialValues?: ProductData
 }>()
 
-//local copy
-const product = ref<Partial<ProductData>>({...props.modelValue})
 
-//sync with v-model
-watch(product, (newVal) => {
-   emit('update:modelValue', newVal as ProductData)
-}, {deep: true})
+watch(() => props.initialValues, (val) => {
+   if(val){
+      setValues(val);
+   }
+},{immediate: true}
+)
 
 //toast
 const toast = ref<InstanceType<typeof AdminToast>>()
 
-//validation
-const{handleSubmit} = useForm({
-   validationSchema: toFormValidator(productSchema)
-})
+//hash errors
+function tabHasErrors(tab: TabConfig):boolean{
+   if(submitCount.value === 0) return false
+   
+   return tab.fields.some(
+      field => Boolean((errors.value as Partial<Record<ProductField, string>>)?.[field])
+   ) 
+}
+
+//move to error tab
+function goToFirstErrorTab(formErrors: FormErrors<ProductData>){
+   const errorFields = Object.keys(formErrors) as ProductField[]
+
+   const index = tabs.findIndex(tab =>
+      tab.fields.some(field => errorFields.includes(field))
+   )
+
+   if(index !== -1){
+      activeIndex.value = index
+   }
+}
 
 //onSubmit
-const onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit(
+   (values) => {
    emit("submit", values);
    toast.value?.showToast('Product saved successfully', 'success')
-})
+   },(ctx: InvalidSubmissionContext) => { 
+      toast.value?.showToast("Fill required fields",'error')
+      goToFirstErrorTab(ctx.errors)
+   }
+)
+
 
 
 </script>

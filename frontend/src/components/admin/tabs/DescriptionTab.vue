@@ -6,7 +6,7 @@
             class="admin-textarea"
             name="description" 
             id="description"
-            v-model.trim="modelValue.description"
+            v-model.trim="description"
             placeholder="Enter product description"
             ></textarea>
          </div>
@@ -15,10 +15,9 @@
 
 <script setup lang="ts">
 
-interface DescriptionTab{
-   description?: string
-}
+import { useField } from 'vee-validate';
 
-const modelValue = defineModel<DescriptionTab>({default: () => ({description: ''})})
+//fields
+const {value: description} = useField<string>("description")
 
 </script>

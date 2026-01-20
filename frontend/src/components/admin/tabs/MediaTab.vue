@@ -5,22 +5,22 @@
          <admin-input
             :label="'Image Link'"
             :placeholder="'Enter image link'"
-            v-model.trim="modelValue.image_link"
+            v-model.trim="image_link"
          />
          <admin-input
             :label="'API featured image'"
             :placeholder="'Enter API featured image'"
-            v-model.trim="modelValue.api_featured_image"
+            v-model.trim="api_featured_image"
          />
          <admin-input
             :label="'Product link'"
             :placeholder="'Enter product link'"
-            v-model.trim="modelValue.product_link"
+            v-model.trim="product_link"
          />
          <admin-input
             :label="'Website link'"
             :placeholder="'Enter Website link'"
-            v-model.trim="modelValue.website_link"
+            v-model.trim="website_link"
          />         
       </div>
    </div>
@@ -31,12 +31,12 @@
 //components
 import AdminInput from '../ui/AdminInput.vue';
 
-interface ProductMedia {
-   image_link?: string;
-   api_featured_image?: string;
-   product_link?: string;
-   website_link?: string;
-}
+//vee-validate
+import { useField } from 'vee-validate';
 
-const modelValue = defineModel<ProductMedia>({default: () => ({})})
+//fields
+const {value: image_link} = useField<string>("image_link");
+const {value: api_featured_image} = useField<string>("api_featured_image");
+const {value: product_link} = useField<string>("product_link");
+const {value: website_link} = useField<string>("website_link");
 </script>

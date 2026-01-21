@@ -37,7 +37,6 @@ import { Product, type ProductData} from "@/models/product";
 //pinia variables
 const admin = useAdminStore()
 
-
 //variables
 const product = ref<Product | null>(null)
 const router = useRouter()

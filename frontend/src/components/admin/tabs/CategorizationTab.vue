@@ -7,6 +7,7 @@
             <label 
                for="category" 
                class="admin-body-text"
+               :class="{'tab-error': categoryError}"
             >
                Category *
             </label>
@@ -14,11 +15,14 @@
                class="admin-select"
                name="category" 
                id="category" 
-               v-model="category">
+               v-model="category"                 
+               :class="{'error': categoryError}"
+               >
                   <option 
                   v-for="option in categoryOptions"
                   :key="option"
                   :value="option"
+
                   >
                      {{ option }}
                   </option>
@@ -27,11 +31,16 @@
          </div>
          <!-- type-->
          <div class="admin-input__wrapper">
-            <label for="product_type" class="admin-body-text">Type *</label>
+            <label 
+               for="product_type" 
+               class="admin-body-text"
+               :class="{'tab-error': typeError}"
+               >Type *</label>
             <select 
                class="admin-select"
                name="product_type" 
                id="product_type"
+               :class="{'error': typeError}"
                v-model="product_type"
              >
                <option 
